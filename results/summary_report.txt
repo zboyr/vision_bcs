@@ -1,0 +1,35 @@
+============================================================
+BCS Visual Assessment Study - Summary Report
+============================================================
+
+--- Dataset Overview ---
+Total images: 50
+Ground Truth range: 1.0 - 9.0
+Ground Truth mean: 6.08 (SD: 2.12)
+Weight classes: IW=20, OW=11, OB=19
+
+--- Expert Scorers (n=9) ---
+  scorer_a_bcs: MAE = 0.26
+  scorer_b_bcs: MAE = 0.26
+  scorer_c_bcs: MAE = 0.67
+  scorer_d_bcs: MAE = 0.52
+  scorer_e_bcs: MAE = 0.66
+  scorer_f_bcs: MAE = 0.47
+  scorer_g_bcs: MAE = 0.47
+  scorer_h_bcs: MAE = 0.47
+  scorer_i_bcs: MAE = 0.47
+
+--- ChatGPT Assessment ---
+Scored images: 49/50
+MAE: 0.55
+Mean deviation: -0.29 (SD: 0.70)
+
+--- Human Survey Assessment ---
+Respondents: 1
+Total ratings: 50
+MAE: 1.39
+Mean deviation: -1.20 (SD: 1.23)
+
+--- Mean Deviation vs Closest Reference (Scorer A or B) ---
+Human: n=1, mean deviation = 1.130 (SD 0.000)
+AI: n=4 runs, mean deviation = 0.581 (SD 0.199)

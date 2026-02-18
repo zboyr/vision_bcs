@@ -1,0 +1,4552 @@
+[
+  {
+    "image_id": 1,
+    "image_path": "images/cat_01.jpeg",
+    "ground_truth": 4.0,
+    "weight_class": "IW",
+    "is_duplicate": false,
+    "duplicate_of": null,
+    "scorers": {
+      "Scorer_A": {
+        "bcs": 4.0,
+        "confidence": "A",
+        "raw_scores": [
+          4,
+          4
+        ],
+        "raw_string": "4=4"
+      },
+      "Scorer_B": {
+        "bcs": 4.0,
+        "confidence": "A",
+        "raw_scores": [
+          4,
+          4
+        ],
+        "raw_string": "4=4"
+      },
+      "Scorer_C": {
+        "bcs": 5.0,
+        "confidence": "A",
+        "raw_scores": [
+          5,
+          5
+        ],
+        "raw_string": "5=5"
+      },
+      "Scorer_D": {
+        "bcs": 5.0,
+        "confidence": "A",
+        "raw_scores": [
+          5,
+          5
+        ],
+        "raw_string": "5=5"
+      },
+      "Scorer_E": {
+        "bcs": 4.0,
+        "confidence": "A",
+        "raw_scores": [
+          4,
+          4
+        ],
+        "raw_string": "4=4"
+      },
+      "Scorer_F": {
+        "bcs": 4.0,
+        "confidence": "A",
+        "raw_scores": [
+          4,
+          4
+        ],
+        "raw_string": "4=4"
+      },
+      "Scorer_G": {
+        "bcs": 5.0,
+        "confidence": "C",
+        "raw_scores": [
+          5,
+          4
+        ],
+        "raw_string": "5>4"
+      },
+      "Scorer_H": {
+        "bcs": 4.5,
+        "confidence": "B",
+        "raw_scores": [
+          4,
+          5
+        ],
+        "raw_string": "4=5"
+      },
+      "Scorer_I": {
+        "bcs": 5.0,
+        "confidence": "A",
+        "raw_scores": [
+          5,
+          5
+        ],
+        "raw_string": "5=5"
+      }
+    }
+  },
+  {
+    "image_id": 2,
+    "image_path": "images/cat_02.jpeg",
+    "ground_truth": 5.25,
+    "weight_class": "OW",
+    "is_duplicate": true,
+    "duplicate_of": 50,
+    "scorers": {
+      "Scorer_A": {
+        "bcs": 5.0,
+        "confidence": "A",
+        "raw_scores": [
+          5,
+          5
+        ],
+        "raw_string": "5=5"
+      },
+      "Scorer_B": {
+        "bcs": 5.5,
+        "confidence": "B",
+        "raw_scores": [
+          5,
+          6
+        ],
+        "raw_string": "5=6"
+      },
+      "Scorer_C": {
+        "bcs": 6.0,
+        "confidence": "C",
+        "raw_scores": [
+          6,
+          5
+        ],
+        "raw_string": "6>5"
+      },
+      "Scorer_D": {
+        "bcs": 7.0,
+        "confidence": "C",
+        "raw_scores": [
+          7,
+          6
+        ],
+        "raw_string": "7>6"
+      },
+      "Scorer_E": {
+        "bcs": 4.5,
+        "confidence": "B",
+        "raw_scores": [
+          4,
+          5
+        ],
+        "raw_string": "4=5"
+      },
+      "Scorer_F": {
+        "bcs": 5.0,
+        "confidence": "A",
+        "raw_scores": [
+          5,
+          5
+        ],
+        "raw_string": "5=5"
+      },
+      "Scorer_G": {
+        "bcs": 6.0,
+        "confidence": "A",
+        "raw_scores": [
+          6,
+          6
+        ],
+        "raw_string": "6=6"
+      },
+      "Scorer_H": {
+        "bcs": 5.0,
+        "confidence": "A",
+        "raw_scores": [
+          5,
+          5
+        ],
+        "raw_string": "5=5"
+      },
+      "Scorer_I": {
+        "bcs": 7.0,
+        "confidence": "A",
+        "raw_scores": [
+          7,
+          7
+        ],
+        "raw_string": "7=7"
+      }
+    }
+  },
+  {
+    "image_id": 3,
+    "image_path": "images/cat_03.jpeg",
+    "ground_truth": 8.0,
+    "weight_class": "OB",
+    "is_duplicate": false,
+    "duplicate_of": null,
+    "scorers": {
+      "Scorer_A": {
+        "bcs": 8.0,
+        "confidence": "C",
+        "raw_scores": [
+          8,
+          7
+        ],
+        "raw_string": "8>7"
+      },
+      "Scorer_B": {
+        "bcs": 8.0,
+        "confidence": "A",
+        "raw_scores": [
+          8,
+          8
+        ],
+        "raw_string": "8=8"
+      },
+      "Scorer_C": {
+        "bcs": 8.0,
+        "confidence": "C",
+        "raw_scores": [
+          8,
+          9
+        ],
+        "raw_string": "8>9"
+      },
+      "Scorer_D": {
+        "bcs": 8.5,
+        "confidence": "B",
+        "raw_scores": [
+          8,
+          9
+        ],
+        "raw_string": "8=9"
+      },
+      "Scorer_E": {
+        "bcs": 8.0,
+        "confidence": "C",
+        "raw_scores": [
+          8,
+          9
+        ],
+        "raw_string": "8>9"
+      },
+      "Scorer_F": {
+        "bcs": 8.5,
+        "confidence": "B",
+        "raw_scores": [
+          8,
+          9
+        ],
+        "raw_string": "8=9"
+      },
+      "Scorer_G": {
+        "bcs": 8.0,
+        "confidence": "A",
+        "raw_scores": [
+          8,
+          8
+        ],
+        "raw_string": "8=8"
+      },
+      "Scorer_H": {
+        "bcs": 9.0,
+        "confidence": "A",
+        "raw_scores": [
+          9,
+          9
+        ],
+        "raw_string": "9=9"
+      },
+      "Scorer_I": {
+        "bcs": 8.0,
+        "confidence": "A",
+        "raw_scores": [
+          8,
+          8
+        ],
+        "raw_string": "8=8"
+      }
+    }
+  },
+  {
+    "image_id": 4,
+    "image_path": "images/cat_04.jpeg",
+    "ground_truth": 6.75,
+    "weight_class": "OW",
+    "is_duplicate": false,
+    "duplicate_of": null,
+    "scorers": {
+      "Scorer_A": {
+        "bcs": 6.5,
+        "confidence": "B",
+        "raw_scores": [
+          6,
+          7
+        ],
+        "raw_string": "6=7"
+      },
+      "Scorer_B": {
+        "bcs": 7.0,
+        "confidence": "C",
+        "raw_scores": [
+          7,
+          8
+        ],
+        "raw_string": "7>8"
+      },
+      "Scorer_C": {
+        "bcs": 7.0,
+        "confidence": "C",
+        "raw_scores": [
+          7,
+          6
+        ],
+        "raw_string": "7>6"
+      },
+      "Scorer_D": {
+        "bcs": 6.0,
+        "confidence": "C",
+        "raw_scores": [
+          6,
+          7
+        ],
+        "raw_string": "6>7"
+      },
+      "Scorer_E": {
+        "bcs": 6.0,
+        "confidence": "A",
+        "raw_scores": [
+          6,
+          6
+        ],
+        "raw_string": "6=6"
+      },
+      "Scorer_F": {
+        "bcs": 6.5,
+        "confidence": "B",
+        "raw_scores": [
+          6,
+          7
+        ],
+        "raw_string": "6=7"
+      },
+      "Scorer_G": {
+        "bcs": 7.0,
+        "confidence": "A",
+        "raw_scores": [
+          7,
+          7
+        ],
+        "raw_string": "7=7"
+      },
+      "Scorer_H": {
+        "bcs": 7.0,
+        "confidence": "A",
+        "raw_scores": [
+          7,
+          7
+        ],
+        "raw_string": "7=7"
+      },
+      "Scorer_I": {
+        "bcs": 6.5,
+        "confidence": "B",
+        "raw_scores": [
+          6,
+          7
+        ],
+        "raw_string": "6=7"
+      }
+    }
+  },
+  {
+    "image_id": 5,
+    "image_path": "images/cat_05.jpeg",
+    "ground_truth": 4.0,
+    "weight_class": "IW",
+    "is_duplicate": true,
+    "duplicate_of": 47,
+    "scorers": {
+      "Scorer_A": {
+        "bcs": 4.0,
+        "confidence": "C",
+        "raw_scores": [
+          4,
+          3
+        ],
+        "raw_string": "4>3"
+      },
+      "Scorer_B": {
+        "bcs": 4.0,
+        "confidence": "A",
+        "raw_scores": [
+          4,
+          4
+        ],
+        "raw_string": "4=4"
+      },
+      "Scorer_C": {
+        "bcs": 5.0,
+        "confidence": "A",
+        "raw_scores": [
+          5,
+          5
+        ],
+        "raw_string": "5=5"
+      },
+      "Scorer_D": {
+        "bcs": 4.5,
+        "confidence": "B",
+        "raw_scores": [
+          4,
+          5
+        ],
+        "raw_string": "4=5"
+      },
+      "Scorer_E": {
+        "bcs": 3.5,
+        "confidence": "B",
+        "raw_scores": [
+          3,
+          4
+        ],
+        "raw_string": "3=4"
+      },
+      "Scorer_F": {
+        "bcs": 4.0,
+        "confidence": "A",
+        "raw_scores": [
+          4,
+          4
+        ],
+        "raw_string": "4=4"
+      },
+      "Scorer_G": {
+        "bcs": 4.0,
+        "confidence": "A",
+        "raw_scores": [
+          4,
+          4
+        ],
+        "raw_string": "4=4"
+      },
+      "Scorer_H": {
+        "bcs": 4.0,
+        "confidence": "A",
+        "raw_scores": [
+          4,
+          4
+        ],
+        "raw_string": "4=4"
+      },
+      "Scorer_I": {
+        "bcs": 5.0,
+        "confidence": "A",
+        "raw_scores": [
+          5,
+          5
+        ],
+        "raw_string": "5=5"
+      }
+    }
+  },
+  {
+    "image_id": 6,
+    "image_path": "images/cat_06.jpeg",
+    "ground_truth": 4.75,
+    "weight_class": "IW",
+    "is_duplicate": false,
+    "duplicate_of": null,
+    "scorers": {
+      "Scorer_A": {
+        "bcs": 4.5,
+        "confidence": "B",
+        "raw_scores": [
+          4,
+          5
+        ],
+        "raw_string": "4=5"
+      },
+      "Scorer_B": {
+        "bcs": 5.0,
+        "confidence": "A",
+        "raw_scores": [
+          5,
+          5
+        ],
+        "raw_string": "5=5"
+      },
+      "Scorer_C": {
+        "bcs": 5.5,
+        "confidence": "B",
+        "raw_scores": [
+          5,
+          6
+        ],
+        "raw_string": "5=6"
+      },
+      "Scorer_D": {
+        "bcs": 5.0,
+        "confidence": "A",
+        "raw_scores": [
+          5,
+          5
+        ],
+        "raw_string": "5=5"
+      },
+      "Scorer_E": {
+        "bcs": 4.0,
+        "confidence": "A",
+        "raw_scores": [
+          4,
+          4
+        ],
+        "raw_string": "4=4"
+      },
+      "Scorer_F": {
+        "bcs": 5.0,
+        "confidence": "A",
+        "raw_scores": [
+          5,
+          5
+        ],
+        "raw_string": "5=5"
+      },
+      "Scorer_G": {
+        "bcs": 5.0,
+        "confidence": "A",
+        "raw_scores": [
+          5,
+          5
+        ],
+        "raw_string": "5=5"
+      },
+      "Scorer_H": {
+        "bcs": 5.0,
+        "confidence": "A",
+        "raw_scores": [
+          5,
+          5
+        ],
+        "raw_string": "5=5"
+      },
+      "Scorer_I": {
+        "bcs": 4.5,
+        "confidence": "B",
+        "raw_scores": [
+          4,
+          5
+        ],
+        "raw_string": "4=5"
+      }
+    }
+  },
+  {
+    "image_id": 7,
+    "image_path": "images/cat_07.jpeg",
+    "ground_truth": 5.0,
+    "weight_class": "IW",
+    "is_duplicate": false,
+    "duplicate_of": null,
+    "scorers": {
+      "Scorer_A": {
+        "bcs": 5.0,
+        "confidence": "A",
+        "raw_scores": [
+          5,
+          5
+        ],
+        "raw_string": "5=5"
+      },
+      "Scorer_B": {
+        "bcs": 5.0,
+        "confidence": "A",
+        "raw_scores": [
+          5,
+          5
+        ],
+        "raw_string": "5=5"
+      },
+      "Scorer_C": {
+        "bcs": 5.5,
+        "confidence": "B",
+        "raw_scores": [
+          5,
+          6
+        ],
+        "raw_string": "5=6"
+      },
+      "Scorer_D": {
+        "bcs": 5.0,
+        "confidence": "A",
+        "raw_scores": [
+          5,
+          5
+        ],
+        "raw_string": "5=5"
+      },
+      "Scorer_E": {
+        "bcs": 3.0,
+        "confidence": "A",
+        "raw_scores": [
+          3,
+          3
+        ],
+        "raw_string": "3=3"
+      },
+      "Scorer_F": {
+        "bcs": 5.0,
+        "confidence": "A",
+        "raw_scores": [
+          5,
+          5
+        ],
+        "raw_string": "5=5"
+      },
+      "Scorer_G": {
+        "bcs": 4.0,
+        "confidence": "C",
+        "raw_scores": [
+          4,
+          5
+        ],
+        "raw_string": "4>5"
+      },
+      "Scorer_H": {
+        "bcs": 5.0,
+        "confidence": "A",
+        "raw_scores": [
+          5,
+          5
+        ],
+        "raw_string": "5=5"
+      },
+      "Scorer_I": {
+        "bcs": 5.0,
+        "confidence": "A",
+        "raw_scores": [
+          5,
+          5
+        ],
+        "raw_string": "5=5"
+      }
+    }
+  },
+  {
+    "image_id": 8,
+    "image_path": "images/cat_08.jpeg",
+    "ground_truth": 1.0,
+    "weight_class": "IW",
+    "is_duplicate": false,
+    "duplicate_of": null,
+    "scorers": {
+      "Scorer_A": {
+        "bcs": 1.0,
+        "confidence": "C",
+        "raw_scores": [
+          1,
+          2
+        ],
+        "raw_string": "1>2"
+      },
+      "Scorer_B": {
+        "bcs": 1.0,
+        "confidence": "C",
+        "raw_scores": [
+          1,
+          2
+        ],
+        "raw_string": "1>2"
+      },
+      "Scorer_C": {
+        "bcs": 2.5,
+        "confidence": "B",
+        "raw_scores": [
+          2,
+          3
+        ],
+        "raw_string": "2=3"
+      },
+      "Scorer_D": {
+        "bcs": 1.0,
+        "confidence": "A",
+        "raw_scores": [
+          1,
+          1
+        ],
+        "raw_string": "1=1"
+      },
+      "Scorer_E": {
+        "bcs": 1.0,
+        "confidence": "A",
+        "raw_scores": [
+          1,
+          1
+        ],
+        "raw_string": "1=1"
+      },
+      "Scorer_F": {
+        "bcs": 1.0,
+        "confidence": "A",
+        "raw_scores": [
+          1,
+          1
+        ],
+        "raw_string": "1=1"
+      },
+      "Scorer_G": {
+        "bcs": 2.5,
+        "confidence": "B",
+        "raw_scores": [
+          2,
+          3
+        ],
+        "raw_string": "2=3"
+      },
+      "Scorer_H": {
+        "bcs": 2.0,
+        "confidence": "A",
+        "raw_scores": [
+          2,
+          2
+        ],
+        "raw_string": "2=2"
+      },
+      "Scorer_I": {
+        "bcs": 2.0,
+        "confidence": "A",
+        "raw_scores": [
+          2,
+          2
+        ],
+        "raw_string": "2=2"
+      }
+    }
+  },
+  {
+    "image_id": 9,
+    "image_path": "images/cat_09.jpeg",
+    "ground_truth": 5.0,
+    "weight_class": "IW",
+    "is_duplicate": false,
+    "duplicate_of": null,
+    "scorers": {
+      "Scorer_A": {
+        "bcs": 5.0,
+        "confidence": "A",
+        "raw_scores": [
+          5,
+          5
+        ],
+        "raw_string": "5=5"
+      },
+      "Scorer_B": {
+        "bcs": 5.0,
+        "confidence": "A",
+        "raw_scores": [
+          5,
+          5
+        ],
+        "raw_string": "5=5"
+      },
+      "Scorer_C": {
+        "bcs": 5.0,
+        "confidence": "C",
+        "raw_scores": [
+          5,
+          6
+        ],
+        "raw_string": "5>6"
+      },
+      "Scorer_D": {
+        "bcs": 6.0,
+        "confidence": "A",
+        "raw_scores": [
+          6,
+          6
+        ],
+        "raw_string": "6=6"
+      },
+      "Scorer_E": {
+        "bcs": 4.5,
+        "confidence": "B",
+        "raw_scores": [
+          4,
+          5
+        ],
+        "raw_string": "4=5"
+      },
+      "Scorer_F": {
+        "bcs": 5.0,
+        "confidence": "A",
+        "raw_scores": [
+          5,
+          5
+        ],
+        "raw_string": "5=5"
+      },
+      "Scorer_G": {
+        "bcs": 6.0,
+        "confidence": "C",
+        "raw_scores": [
+          6,
+          5
+        ],
+        "raw_string": "6>5"
+      },
+      "Scorer_H": {
+        "bcs": 6.0,
+        "confidence": "A",
+        "raw_scores": [
+          6,
+          6
+        ],
+        "raw_string": "6=6"
+      },
+      "Scorer_I": {
+        "bcs": 5.0,
+        "confidence": "A",
+        "raw_scores": [
+          5,
+          5
+        ],
+        "raw_string": "5=5"
+      }
+    }
+  },
+  {
+    "image_id": 10,
+    "image_path": "images/cat_10.jpeg",
+    "ground_truth": 7.0,
+    "weight_class": "OW",
+    "is_duplicate": false,
+    "duplicate_of": null,
+    "scorers": {
+      "Scorer_A": {
+        "bcs": 7.0,
+        "confidence": "A",
+        "raw_scores": [
+          7,
+          7
+        ],
+        "raw_string": "7=7"
+      },
+      "Scorer_B": {
+        "bcs": 7.0,
+        "confidence": "A",
+        "raw_scores": [
+          7,
+          7
+        ],
+        "raw_string": "7=7"
+      },
+      "Scorer_C": {
+        "bcs": 6.0,
+        "confidence": "C",
+        "raw_scores": [
+          6,
+          7
+        ],
+        "raw_string": "6>7"
+      },
+      "Scorer_D": {
+        "bcs": 6.0,
+        "confidence": "A",
+        "raw_scores": [
+          6,
+          6
+        ],
+        "raw_string": "6=6"
+      },
+      "Scorer_E": {
+        "bcs": 6.0,
+        "confidence": "C",
+        "raw_scores": [
+          6,
+          7
+        ],
+        "raw_string": "6>7"
+      },
+      "Scorer_F": {
+        "bcs": 6.5,
+        "confidence": "B",
+        "raw_scores": [
+          6,
+          7
+        ],
+        "raw_string": "6=7"
+      },
+      "Scorer_G": {
+        "bcs": 7.0,
+        "confidence": "A",
+        "raw_scores": [
+          7,
+          7
+        ],
+        "raw_string": "7=7"
+      },
+      "Scorer_H": {
+        "bcs": 6.5,
+        "confidence": "B",
+        "raw_scores": [
+          6,
+          7
+        ],
+        "raw_string": "6=7"
+      },
+      "Scorer_I": {
+        "bcs": 7.0,
+        "confidence": "A",
+        "raw_scores": [
+          7,
+          7
+        ],
+        "raw_string": "7=7"
+      }
+    }
+  },
+  {
+    "image_id": 11,
+    "image_path": "images/cat_11.jpeg",
+    "ground_truth": 9.0,
+    "weight_class": "OB",
+    "is_duplicate": false,
+    "duplicate_of": null,
+    "scorers": {
+      "Scorer_A": {
+        "bcs": 9.0,
+        "confidence": "A",
+        "raw_scores": [
+          9,
+          9
+        ],
+        "raw_string": "9=9"
+      },
+      "Scorer_B": {
+        "bcs": 9.0,
+        "confidence": "A",
+        "raw_scores": [
+          9,
+          9
+        ],
+        "raw_string": "9=9"
+      },
+      "Scorer_C": {
+        "bcs": 9.0,
+        "confidence": "A",
+        "raw_scores": [
+          9,
+          9
+        ],
+        "raw_string": "9=9"
+      },
+      "Scorer_D": {
+        "bcs": 9.0,
+        "confidence": "A",
+        "raw_scores": [
+          9,
+          9
+        ],
+        "raw_string": "9=9"
+      },
+      "Scorer_E": {
+        "bcs": 9.0,
+        "confidence": "A",
+        "raw_scores": [
+          9,
+          9
+        ],
+        "raw_string": "9=9"
+      },
+      "Scorer_F": {
+        "bcs": 9.0,
+        "confidence": "A",
+        "raw_scores": [
+          9,
+          9
+        ],
+        "raw_string": "9=9"
+      },
+      "Scorer_G": {
+        "bcs": 9.0,
+        "confidence": "A",
+        "raw_scores": [
+          9,
+          9
+        ],
+        "raw_string": "9=9"
+      },
+      "Scorer_H": {
+        "bcs": 9.0,
+        "confidence": "A",
+        "raw_scores": [
+          9,
+          9
+        ],
+        "raw_string": "9=9"
+      },
+      "Scorer_I": {
+        "bcs": 9.0,
+        "confidence": "A",
+        "raw_scores": [
+          9,
+          9
+        ],
+        "raw_string": "9=9"
+      }
+    }
+  },
+  {
+    "image_id": 12,
+    "image_path": "images/cat_12.jpeg",
+    "ground_truth": 8.0,
+    "weight_class": "OB",
+    "is_duplicate": false,
+    "duplicate_of": null,
+    "scorers": {
+      "Scorer_A": {
+        "bcs": 8.0,
+        "confidence": "C",
+        "raw_scores": [
+          8,
+          7
+        ],
+        "raw_string": "8>7"
+      },
+      "Scorer_B": {
+        "bcs": 8.0,
+        "confidence": "A",
+        "raw_scores": [
+          8,
+          8
+        ],
+        "raw_string": "8=8"
+      },
+      "Scorer_C": {
+        "bcs": 8.5,
+        "confidence": "B",
+        "raw_scores": [
+          8,
+          9
+        ],
+        "raw_string": "8=9"
+      },
+      "Scorer_D": {
+        "bcs": 8.0,
+        "confidence": "A",
+        "raw_scores": [
+          8,
+          8
+        ],
+        "raw_string": "8=8"
+      },
+      "Scorer_E": {
+        "bcs": 7.5,
+        "confidence": "B",
+        "raw_scores": [
+          7,
+          8
+        ],
+        "raw_string": "7=8"
+      },
+      "Scorer_F": {
+        "bcs": 8.5,
+        "confidence": "B",
+        "raw_scores": [
+          8,
+          9
+        ],
+        "raw_string": "8=9"
+      },
+      "Scorer_G": {
+        "bcs": 9.0,
+        "confidence": "A",
+        "raw_scores": [
+          9,
+          9
+        ],
+        "raw_string": "9=9"
+      },
+      "Scorer_H": {
+        "bcs": 8.0,
+        "confidence": "A",
+        "raw_scores": [
+          8,
+          8
+        ],
+        "raw_string": "8=8"
+      },
+      "Scorer_I": {
+        "bcs": 8.0,
+        "confidence": "A",
+        "raw_scores": [
+          8,
+          8
+        ],
+        "raw_string": "8=8"
+      }
+    }
+  },
+  {
+    "image_id": 13,
+    "image_path": "images/cat_13.jpeg",
+    "ground_truth": 9.0,
+    "weight_class": "OB",
+    "is_duplicate": false,
+    "duplicate_of": null,
+    "scorers": {
+      "Scorer_A": {
+        "bcs": 9.0,
+        "confidence": "A",
+        "raw_scores": [
+          9,
+          9
+        ],
+        "raw_string": "9=9"
+      },
+      "Scorer_B": {
+        "bcs": 9.0,
+        "confidence": "A",
+        "raw_scores": [
+          9,
+          9
+        ],
+        "raw_string": "9=9"
+      },
+      "Scorer_C": {
+        "bcs": 9.0,
+        "confidence": "A",
+        "raw_scores": [
+          9,
+          9
+        ],
+        "raw_string": "9=9"
+      },
+      "Scorer_D": {
+        "bcs": 9.0,
+        "confidence": "A",
+        "raw_scores": [
+          9,
+          9
+        ],
+        "raw_string": "9=9"
+      },
+      "Scorer_E": {
+        "bcs": 8.0,
+        "confidence": "A",
+        "raw_scores": [
+          8,
+          8
+        ],
+        "raw_string": "8=8"
+      },
+      "Scorer_F": {
+        "bcs": 9.0,
+        "confidence": "A",
+        "raw_scores": [
+          9,
+          9
+        ],
+        "raw_string": "9=9"
+      },
+      "Scorer_G": {
+        "bcs": 9.0,
+        "confidence": "A",
+        "raw_scores": [
+          9,
+          9
+        ],
+        "raw_string": "9=9"
+      },
+      "Scorer_H": {
+        "bcs": 9.0,
+        "confidence": "A",
+        "raw_scores": [
+          9,
+          9
+        ],
+        "raw_string": "9=9"
+      },
+      "Scorer_I": {
+        "bcs": 9.0,
+        "confidence": "A",
+        "raw_scores": [
+          9,
+          9
+        ],
+        "raw_string": "9=9"
+      }
+    }
+  },
+  {
+    "image_id": 14,
+    "image_path": "images/cat_14.jpeg",
+    "ground_truth": 9.0,
+    "weight_class": "OB",
+    "is_duplicate": false,
+    "duplicate_of": null,
+    "scorers": {
+      "Scorer_A": {
+        "bcs": 9.0,
+        "confidence": "A",
+        "raw_scores": [
+          9,
+          9
+        ],
+        "raw_string": "9=9"
+      },
+      "Scorer_B": {
+        "bcs": 9.0,
+        "confidence": "A",
+        "raw_scores": [
+          9,
+          9
+        ],
+        "raw_string": "9=9"
+      },
+      "Scorer_C": {
+        "bcs": 9.0,
+        "confidence": "A",
+        "raw_scores": [
+          9,
+          9
+        ],
+        "raw_string": "9=9"
+      },
+      "Scorer_D": {
+        "bcs": 9.0,
+        "confidence": "A",
+        "raw_scores": [
+          9,
+          9
+        ],
+        "raw_string": "9=9"
+      },
+      "Scorer_E": {
+        "bcs": 8.0,
+        "confidence": "C",
+        "raw_scores": [
+          8,
+          9
+        ],
+        "raw_string": "8>9"
+      },
+      "Scorer_F": {
+        "bcs": 9.0,
+        "confidence": "A",
+        "raw_scores": [
+          9,
+          9
+        ],
+        "raw_string": "9=9"
+      },
+      "Scorer_G": {
+        "bcs": 9.0,
+        "confidence": "A",
+        "raw_scores": [
+          9,
+          9
+        ],
+        "raw_string": "9=9"
+      },
+      "Scorer_H": {
+        "bcs": 9.0,
+        "confidence": "A",
+        "raw_scores": [
+          9,
+          9
+        ],
+        "raw_string": "9=9"
+      },
+      "Scorer_I": {
+        "bcs": 9.0,
+        "confidence": "A",
+        "raw_scores": [
+          9,
+          9
+        ],
+        "raw_string": "9=9"
+      }
+    }
+  },
+  {
+    "image_id": 15,
+    "image_path": "images/cat_15.jpeg",
+    "ground_truth": 9.0,
+    "weight_class": "OB",
+    "is_duplicate": false,
+    "duplicate_of": null,
+    "scorers": {
+      "Scorer_A": {
+        "bcs": 9.0,
+        "confidence": "A",
+        "raw_scores": [
+          9,
+          9
+        ],
+        "raw_string": "9=9"
+      },
+      "Scorer_B": {
+        "bcs": 9.0,
+        "confidence": "A",
+        "raw_scores": [
+          9,
+          9
+        ],
+        "raw_string": "9=9"
+      },
+      "Scorer_C": {
+        "bcs": 9.0,
+        "confidence": "A",
+        "raw_scores": [
+          9,
+          9
+        ],
+        "raw_string": "9=9"
+      },
+      "Scorer_D": {
+        "bcs": 9.0,
+        "confidence": "A",
+        "raw_scores": [
+          9,
+          9
+        ],
+        "raw_string": "9=9"
+      },
+      "Scorer_E": {
+        "bcs": 9.0,
+        "confidence": "A",
+        "raw_scores": [
+          9,
+          9
+        ],
+        "raw_string": "9=9"
+      },
+      "Scorer_F": {
+        "bcs": 9.0,
+        "confidence": "A",
+        "raw_scores": [
+          9,
+          9
+        ],
+        "raw_string": "9=9"
+      },
+      "Scorer_G": {
+        "bcs": 9.0,
+        "confidence": "A",
+        "raw_scores": [
+          9,
+          9
+        ],
+        "raw_string": "9=9"
+      },
+      "Scorer_H": {
+        "bcs": 9.0,
+        "confidence": "A",
+        "raw_scores": [
+          9,
+          9
+        ],
+        "raw_string": "9=9"
+      },
+      "Scorer_I": {
+        "bcs": 9.0,
+        "confidence": "A",
+        "raw_scores": [
+          9,
+          9
+        ],
+        "raw_string": "9=9"
+      }
+    }
+  },
+  {
+    "image_id": 16,
+    "image_path": "images/cat_16.jpeg",
+    "ground_truth": 9.0,
+    "weight_class": "OB",
+    "is_duplicate": false,
+    "duplicate_of": null,
+    "scorers": {
+      "Scorer_A": {
+        "bcs": 9.0,
+        "confidence": "A",
+        "raw_scores": [
+          9,
+          9
+        ],
+        "raw_string": "9=9"
+      },
+      "Scorer_B": {
+        "bcs": 9.0,
+        "confidence": "A",
+        "raw_scores": [
+          9,
+          9
+        ],
+        "raw_string": "9=9"
+      },
+      "Scorer_C": {
+        "bcs": 9.0,
+        "confidence": "A",
+        "raw_scores": [
+          9,
+          9
+        ],
+        "raw_string": "9=9"
+      },
+      "Scorer_D": {
+        "bcs": 9.0,
+        "confidence": "A",
+        "raw_scores": [
+          9,
+          9
+        ],
+        "raw_string": "9=9"
+      },
+      "Scorer_E": {
+        "bcs": 9.0,
+        "confidence": "A",
+        "raw_scores": [
+          9,
+          9
+        ],
+        "raw_string": "9=9"
+      },
+      "Scorer_F": {
+        "bcs": 9.0,
+        "confidence": "A",
+        "raw_scores": [
+          9,
+          9
+        ],
+        "raw_string": "9=9"
+      },
+      "Scorer_G": {
+        "bcs": 9.0,
+        "confidence": "A",
+        "raw_scores": [
+          9,
+          9
+        ],
+        "raw_string": "9=9"
+      },
+      "Scorer_H": {
+        "bcs": 9.0,
+        "confidence": "A",
+        "raw_scores": [
+          9,
+          9
+        ],
+        "raw_string": "9=9"
+      },
+      "Scorer_I": {
+        "bcs": 9.0,
+        "confidence": "A",
+        "raw_scores": [
+          9,
+          9
+        ],
+        "raw_string": "9=9"
+      }
+    }
+  },
+  {
+    "image_id": 17,
+    "image_path": "images/cat_17.jpeg",
+    "ground_truth": 4.75,
+    "weight_class": "IW",
+    "is_duplicate": false,
+    "duplicate_of": null,
+    "scorers": {
+      "Scorer_A": {
+        "bcs": 5.0,
+        "confidence": "C",
+        "raw_scores": [
+          5,
+          4
+        ],
+        "raw_string": "5>4"
+      },
+      "Scorer_B": {
+        "bcs": 4.5,
+        "confidence": "B",
+        "raw_scores": [
+          4,
+          5
+        ],
+        "raw_string": "4=5"
+      },
+      "Scorer_C": {
+        "bcs": 4.0,
+        "confidence": "C",
+        "raw_scores": [
+          4,
+          5
+        ],
+        "raw_string": "4>5"
+      },
+      "Scorer_D": {
+        "bcs": 4.5,
+        "confidence": "B",
+        "raw_scores": [
+          4,
+          5
+        ],
+        "raw_string": "4=5"
+      },
+      "Scorer_E": {
+        "bcs": 5.0,
+        "confidence": "A",
+        "raw_scores": [
+          5,
+          5
+        ],
+        "raw_string": "5=5"
+      },
+      "Scorer_F": {
+        "bcs": 5.0,
+        "confidence": "A",
+        "raw_scores": [
+          5,
+          5
+        ],
+        "raw_string": "5=5"
+      },
+      "Scorer_G": {
+        "bcs": 5.0,
+        "confidence": "A",
+        "raw_scores": [
+          5,
+          5
+        ],
+        "raw_string": "5=5"
+      },
+      "Scorer_H": {
+        "bcs": 4.0,
+        "confidence": "A",
+        "raw_scores": [
+          4,
+          4
+        ],
+        "raw_string": "4=4"
+      },
+      "Scorer_I": {
+        "bcs": 4.5,
+        "confidence": "B",
+        "raw_scores": [
+          4,
+          5
+        ],
+        "raw_string": "4=5"
+      }
+    }
+  },
+  {
+    "image_id": 18,
+    "image_path": "images/cat_18.jpeg",
+    "ground_truth": 3.0,
+    "weight_class": "IW",
+    "is_duplicate": false,
+    "duplicate_of": null,
+    "scorers": {
+      "Scorer_A": {
+        "bcs": 3.0,
+        "confidence": "C",
+        "raw_scores": [
+          3,
+          2
+        ],
+        "raw_string": "3>2"
+      },
+      "Scorer_B": {
+        "bcs": 3.0,
+        "confidence": "C",
+        "raw_scores": [
+          3,
+          4
+        ],
+        "raw_string": "3>4"
+      },
+      "Scorer_C": {
+        "bcs": 4.0,
+        "confidence": "C",
+        "raw_scores": [
+          4,
+          5
+        ],
+        "raw_string": "4>5"
+      },
+      "Scorer_D": {
+        "bcs": 3.0,
+        "confidence": "A",
+        "raw_scores": [
+          3,
+          3
+        ],
+        "raw_string": "3=3"
+      },
+      "Scorer_E": {
+        "bcs": 3.0,
+        "confidence": "A",
+        "raw_scores": [
+          3,
+          3
+        ],
+        "raw_string": "3=3"
+      },
+      "Scorer_F": {
+        "bcs": 3.0,
+        "confidence": "A",
+        "raw_scores": [
+          3,
+          3
+        ],
+        "raw_string": "3=3"
+      },
+      "Scorer_G": {
+        "bcs": 3.0,
+        "confidence": "A",
+        "raw_scores": [
+          3,
+          3
+        ],
+        "raw_string": "3=3"
+      },
+      "Scorer_H": {
+        "bcs": 3.0,
+        "confidence": "A",
+        "raw_scores": [
+          3,
+          3
+        ],
+        "raw_string": "3=3"
+      },
+      "Scorer_I": {
+        "bcs": 3.0,
+        "confidence": "A",
+        "raw_scores": [
+          3,
+          3
+        ],
+        "raw_string": "3=3"
+      }
+    }
+  },
+  {
+    "image_id": 19,
+    "image_path": "images/cat_19.jpeg",
+    "ground_truth": 4.5,
+    "weight_class": "IW",
+    "is_duplicate": false,
+    "duplicate_of": null,
+    "scorers": {
+      "Scorer_A": {
+        "bcs": 5.0,
+        "confidence": "A",
+        "raw_scores": [
+          5,
+          5
+        ],
+        "raw_string": "5=5"
+      },
+      "Scorer_B": {
+        "bcs": 4.0,
+        "confidence": "C",
+        "raw_scores": [
+          4,
+          5
+        ],
+        "raw_string": "4>5"
+      },
+      "Scorer_C": {
+        "bcs": 6.0,
+        "confidence": "C",
+        "raw_scores": [
+          6,
+          5
+        ],
+        "raw_string": "6>5"
+      },
+      "Scorer_D": {
+        "bcs": 6.0,
+        "confidence": "A",
+        "raw_scores": [
+          6,
+          6
+        ],
+        "raw_string": "6=6"
+      },
+      "Scorer_E": {
+        "bcs": 5.0,
+        "confidence": "C",
+        "raw_scores": [
+          5,
+          4
+        ],
+        "raw_string": "5>4"
+      },
+      "Scorer_F": {
+        "bcs": 5.0,
+        "confidence": "A",
+        "raw_scores": [
+          5,
+          5
+        ],
+        "raw_string": "5=5"
+      },
+      "Scorer_G": {
+        "bcs": 5.0,
+        "confidence": "A",
+        "raw_scores": [
+          5,
+          5
+        ],
+        "raw_string": "5=5"
+      },
+      "Scorer_H": {
+        "bcs": 3.5,
+        "confidence": "B",
+        "raw_scores": [
+          3,
+          4
+        ],
+        "raw_string": "3=4"
+      },
+      "Scorer_I": {
+        "bcs": 6.0,
+        "confidence": "A",
+        "raw_scores": [
+          6,
+          6
+        ],
+        "raw_string": "6=6"
+      }
+    }
+  },
+  {
+    "image_id": 20,
+    "image_path": "images/cat_20.jpeg",
+    "ground_truth": 5.25,
+    "weight_class": "OW",
+    "is_duplicate": false,
+    "duplicate_of": null,
+    "scorers": {
+      "Scorer_A": {
+        "bcs": 5.0,
+        "confidence": "A",
+        "raw_scores": [
+          5,
+          5
+        ],
+        "raw_string": "5=5"
+      },
+      "Scorer_B": {
+        "bcs": 5.5,
+        "confidence": "B",
+        "raw_scores": [
+          5,
+          6
+        ],
+        "raw_string": "5=6"
+      },
+      "Scorer_C": {
+        "bcs": 5.5,
+        "confidence": "B",
+        "raw_scores": [
+          5,
+          6
+        ],
+        "raw_string": "5=6"
+      },
+      "Scorer_D": {
+        "bcs": 4.5,
+        "confidence": "B",
+        "raw_scores": [
+          4,
+          5
+        ],
+        "raw_string": "4=5"
+      },
+      "Scorer_E": {
+        "bcs": 4.0,
+        "confidence": "A",
+        "raw_scores": [
+          4,
+          4
+        ],
+        "raw_string": "4=4"
+      },
+      "Scorer_F": {
+        "bcs": 5.5,
+        "confidence": "B",
+        "raw_scores": [
+          5,
+          6
+        ],
+        "raw_string": "5=6"
+      },
+      "Scorer_G": {
+        "bcs": 5.5,
+        "confidence": "B",
+        "raw_scores": [
+          5,
+          6
+        ],
+        "raw_string": "5=6"
+      },
+      "Scorer_H": {
+        "bcs": 4.5,
+        "confidence": "B",
+        "raw_scores": [
+          4,
+          5
+        ],
+        "raw_string": "4=5"
+      },
+      "Scorer_I": {
+        "bcs": 6.0,
+        "confidence": "A",
+        "raw_scores": [
+          6,
+          6
+        ],
+        "raw_string": "6=6"
+      }
+    }
+  },
+  {
+    "image_id": 21,
+    "image_path": "images/cat_21.jpeg",
+    "ground_truth": 7.25,
+    "weight_class": "OB",
+    "is_duplicate": false,
+    "duplicate_of": null,
+    "scorers": {
+      "Scorer_A": {
+        "bcs": 7.5,
+        "confidence": "B",
+        "raw_scores": [
+          7,
+          8
+        ],
+        "raw_string": "7=8"
+      },
+      "Scorer_B": {
+        "bcs": 7.0,
+        "confidence": "C",
+        "raw_scores": [
+          7,
+          8
+        ],
+        "raw_string": "7>8"
+      },
+      "Scorer_C": {
+        "bcs": 7.5,
+        "confidence": "B",
+        "raw_scores": [
+          7,
+          8
+        ],
+        "raw_string": "7=8"
+      },
+      "Scorer_D": {
+        "bcs": 7.0,
+        "confidence": "C",
+        "raw_scores": [
+          7,
+          6
+        ],
+        "raw_string": "7>6"
+      },
+      "Scorer_E": {
+        "bcs": 7.0,
+        "confidence": "A",
+        "raw_scores": [
+          7,
+          7
+        ],
+        "raw_string": "7=7"
+      },
+      "Scorer_F": {
+        "bcs": 8.0,
+        "confidence": "C",
+        "raw_scores": [
+          8,
+          9
+        ],
+        "raw_string": "8>9"
+      },
+      "Scorer_G": {
+        "bcs": 7.0,
+        "confidence": "A",
+        "raw_scores": [
+          7,
+          7
+        ],
+        "raw_string": "7=7"
+      },
+      "Scorer_H": {
+        "bcs": 6.5,
+        "confidence": "B",
+        "raw_scores": [
+          6,
+          7
+        ],
+        "raw_string": "6=7"
+      },
+      "Scorer_I": {
+        "bcs": 7.0,
+        "confidence": "C",
+        "raw_scores": [
+          7,
+          8
+        ],
+        "raw_string": "7>8"
+      }
+    }
+  },
+  {
+    "image_id": 22,
+    "image_path": "images/cat_22.jpeg",
+    "ground_truth": 1.25,
+    "weight_class": "IW",
+    "is_duplicate": false,
+    "duplicate_of": null,
+    "scorers": {
+      "Scorer_A": {
+        "bcs": 1.5,
+        "confidence": "B",
+        "raw_scores": [
+          1,
+          2
+        ],
+        "raw_string": "1=2"
+      },
+      "Scorer_B": {
+        "bcs": 1.0,
+        "confidence": "A",
+        "raw_scores": [
+          1,
+          1
+        ],
+        "raw_string": "1=1"
+      },
+      "Scorer_C": {
+        "bcs": 2.0,
+        "confidence": "C",
+        "raw_scores": [
+          2,
+          3
+        ],
+        "raw_string": "2>3"
+      },
+      "Scorer_D": {
+        "bcs": 1.0,
+        "confidence": "A",
+        "raw_scores": [
+          1,
+          1
+        ],
+        "raw_string": "1=1"
+      },
+      "Scorer_E": {
+        "bcs": 1.0,
+        "confidence": "A",
+        "raw_scores": [
+          1,
+          1
+        ],
+        "raw_string": "1=1"
+      },
+      "Scorer_F": {
+        "bcs": 1.0,
+        "confidence": "A",
+        "raw_scores": [
+          1,
+          1
+        ],
+        "raw_string": "1=1"
+      },
+      "Scorer_G": {
+        "bcs": 1.0,
+        "confidence": "A",
+        "raw_scores": [
+          1,
+          1
+        ],
+        "raw_string": "1=1"
+      },
+      "Scorer_H": {
+        "bcs": 1.0,
+        "confidence": "A",
+        "raw_scores": [
+          1,
+          1
+        ],
+        "raw_string": "1=1"
+      },
+      "Scorer_I": {
+        "bcs": 1.5,
+        "confidence": "B",
+        "raw_scores": [
+          1,
+          2
+        ],
+        "raw_string": "1=2"
+      }
+    }
+  },
+  {
+    "image_id": 23,
+    "image_path": "images/cat_23.jpeg",
+    "ground_truth": 6.25,
+    "weight_class": "OW",
+    "is_duplicate": false,
+    "duplicate_of": null,
+    "scorers": {
+      "Scorer_A": {
+        "bcs": 6.0,
+        "confidence": "C",
+        "raw_scores": [
+          6,
+          7
+        ],
+        "raw_string": "6>7"
+      },
+      "Scorer_B": {
+        "bcs": 6.5,
+        "confidence": "B",
+        "raw_scores": [
+          6,
+          7
+        ],
+        "raw_string": "6=7"
+      },
+      "Scorer_C": {
+        "bcs": 7.0,
+        "confidence": "C",
+        "raw_scores": [
+          7,
+          8
+        ],
+        "raw_string": "7>8"
+      },
+      "Scorer_D": {
+        "bcs": 6.0,
+        "confidence": "C",
+        "raw_scores": [
+          6,
+          7
+        ],
+        "raw_string": "6>7"
+      },
+      "Scorer_E": {
+        "bcs": 6.5,
+        "confidence": "B",
+        "raw_scores": [
+          6,
+          7
+        ],
+        "raw_string": "6=7"
+      },
+      "Scorer_F": {
+        "bcs": 8.0,
+        "confidence": "A",
+        "raw_scores": [
+          8,
+          8
+        ],
+        "raw_string": "8=8"
+      },
+      "Scorer_G": {
+        "bcs": 6.0,
+        "confidence": "A",
+        "raw_scores": [
+          6,
+          6
+        ],
+        "raw_string": "6=6"
+      },
+      "Scorer_H": {
+        "bcs": 7.0,
+        "confidence": "A",
+        "raw_scores": [
+          7,
+          7
+        ],
+        "raw_string": "7=7"
+      },
+      "Scorer_I": {
+        "bcs": 7.5,
+        "confidence": "B",
+        "raw_scores": [
+          7,
+          8
+        ],
+        "raw_string": "7=8"
+      }
+    }
+  },
+  {
+    "image_id": 24,
+    "image_path": "images/cat_24.jpeg",
+    "ground_truth": 7.25,
+    "weight_class": "OB",
+    "is_duplicate": false,
+    "duplicate_of": null,
+    "scorers": {
+      "Scorer_A": {
+        "bcs": 7.5,
+        "confidence": "B",
+        "raw_scores": [
+          7,
+          8
+        ],
+        "raw_string": "7=8"
+      },
+      "Scorer_B": {
+        "bcs": 7.0,
+        "confidence": "A",
+        "raw_scores": [
+          7,
+          7
+        ],
+        "raw_string": "7=7"
+      },
+      "Scorer_C": {
+        "bcs": 8.0,
+        "confidence": "C",
+        "raw_scores": [
+          8,
+          7
+        ],
+        "raw_string": "8>7"
+      },
+      "Scorer_D": {
+        "bcs": 8.0,
+        "confidence": "C",
+        "raw_scores": [
+          8,
+          7
+        ],
+        "raw_string": "8>7"
+      },
+      "Scorer_E": {
+        "bcs": 7.0,
+        "confidence": "A",
+        "raw_scores": [
+          7,
+          7
+        ],
+        "raw_string": "7=7"
+      },
+      "Scorer_F": {
+        "bcs": 9.0,
+        "confidence": "A",
+        "raw_scores": [
+          9,
+          9
+        ],
+        "raw_string": "9=9"
+      },
+      "Scorer_G": {
+        "bcs": 8.0,
+        "confidence": "C",
+        "raw_scores": [
+          8,
+          9
+        ],
+        "raw_string": "8>9"
+      },
+      "Scorer_H": {
+        "bcs": 7.0,
+        "confidence": "A",
+        "raw_scores": [
+          7,
+          7
+        ],
+        "raw_string": "7=7"
+      },
+      "Scorer_I": {
+        "bcs": 7.0,
+        "confidence": "A",
+        "raw_scores": [
+          7,
+          7
+        ],
+        "raw_string": "7=7"
+      }
+    }
+  },
+  {
+    "image_id": 25,
+    "image_path": "images/cat_25.jpeg",
+    "ground_truth": 3.5,
+    "weight_class": "IW",
+    "is_duplicate": true,
+    "duplicate_of": 48,
+    "scorers": {
+      "Scorer_A": {
+        "bcs": 4.0,
+        "confidence": "C",
+        "raw_scores": [
+          4,
+          5
+        ],
+        "raw_string": "4>5"
+      },
+      "Scorer_B": {
+        "bcs": 3.0,
+        "confidence": "C",
+        "raw_scores": [
+          3,
+          4
+        ],
+        "raw_string": "3>4"
+      },
+      "Scorer_C": {
+        "bcs": 4.5,
+        "confidence": "B",
+        "raw_scores": [
+          4,
+          5
+        ],
+        "raw_string": "4=5"
+      },
+      "Scorer_D": {
+        "bcs": 3.5,
+        "confidence": "B",
+        "raw_scores": [
+          3,
+          4
+        ],
+        "raw_string": "3=4"
+      },
+      "Scorer_E": {
+        "bcs": 4.5,
+        "confidence": "B",
+        "raw_scores": [
+          4,
+          5
+        ],
+        "raw_string": "4=5"
+      },
+      "Scorer_F": {
+        "bcs": 3.5,
+        "confidence": "B",
+        "raw_scores": [
+          3,
+          4
+        ],
+        "raw_string": "3=4"
+      },
+      "Scorer_G": {
+        "bcs": 5.0,
+        "confidence": "A",
+        "raw_scores": [
+          5,
+          5
+        ],
+        "raw_string": "5=5"
+      },
+      "Scorer_H": {
+        "bcs": 4.0,
+        "confidence": "A",
+        "raw_scores": [
+          4,
+          4
+        ],
+        "raw_string": "4=4"
+      },
+      "Scorer_I": {
+        "bcs": 5.0,
+        "confidence": "A",
+        "raw_scores": [
+          5,
+          5
+        ],
+        "raw_string": "5=5"
+      }
+    }
+  },
+  {
+    "image_id": 26,
+    "image_path": "images/cat_26.jpeg",
+    "ground_truth": 5.75,
+    "weight_class": "OW",
+    "is_duplicate": false,
+    "duplicate_of": null,
+    "scorers": {
+      "Scorer_A": {
+        "bcs": 6.0,
+        "confidence": "A",
+        "raw_scores": [
+          6,
+          6
+        ],
+        "raw_string": "6=6"
+      },
+      "Scorer_B": {
+        "bcs": 5.5,
+        "confidence": "B",
+        "raw_scores": [
+          5,
+          6
+        ],
+        "raw_string": "5=6"
+      },
+      "Scorer_C": {
+        "bcs": 7.0,
+        "confidence": "C",
+        "raw_scores": [
+          7,
+          6
+        ],
+        "raw_string": "7>6"
+      },
+      "Scorer_D": {
+        "bcs": 6.0,
+        "confidence": "C",
+        "raw_scores": [
+          6,
+          7
+        ],
+        "raw_string": "6>7"
+      },
+      "Scorer_E": {
+        "bcs": 5.0,
+        "confidence": "A",
+        "raw_scores": [
+          5,
+          5
+        ],
+        "raw_string": "5=5"
+      },
+      "Scorer_F": {
+        "bcs": 5.5,
+        "confidence": "B",
+        "raw_scores": [
+          5,
+          6
+        ],
+        "raw_string": "5=6"
+      },
+      "Scorer_G": {
+        "bcs": 5.0,
+        "confidence": "C",
+        "raw_scores": [
+          5,
+          6
+        ],
+        "raw_string": "5>6"
+      },
+      "Scorer_H": {
+        "bcs": 6.0,
+        "confidence": "A",
+        "raw_scores": [
+          6,
+          6
+        ],
+        "raw_string": "6=6"
+      },
+      "Scorer_I": {
+        "bcs": 6.0,
+        "confidence": "A",
+        "raw_scores": [
+          6,
+          6
+        ],
+        "raw_string": "6=6"
+      }
+    }
+  },
+  {
+    "image_id": 27,
+    "image_path": "images/cat_27.jpeg",
+    "ground_truth": 5.25,
+    "weight_class": "OW",
+    "is_duplicate": false,
+    "duplicate_of": null,
+    "scorers": {
+      "Scorer_A": {
+        "bcs": 5.0,
+        "confidence": "C",
+        "raw_scores": [
+          5,
+          6
+        ],
+        "raw_string": "5>6"
+      },
+      "Scorer_B": {
+        "bcs": 5.5,
+        "confidence": "B",
+        "raw_scores": [
+          5,
+          6
+        ],
+        "raw_string": "5=6"
+      },
+      "Scorer_C": {
+        "bcs": 5.0,
+        "confidence": "C",
+        "raw_scores": [
+          5,
+          6
+        ],
+        "raw_string": "5>6"
+      },
+      "Scorer_D": {
+        "bcs": 5.0,
+        "confidence": "A",
+        "raw_scores": [
+          5,
+          5
+        ],
+        "raw_string": "5=5"
+      },
+      "Scorer_E": {
+        "bcs": 5.0,
+        "confidence": "A",
+        "raw_scores": [
+          5,
+          5
+        ],
+        "raw_string": "5=5"
+      },
+      "Scorer_F": {
+        "bcs": 6.0,
+        "confidence": "A",
+        "raw_scores": [
+          6,
+          6
+        ],
+        "raw_string": "6=6"
+      },
+      "Scorer_G": {
+        "bcs": 6.0,
+        "confidence": "A",
+        "raw_scores": [
+          6,
+          6
+        ],
+        "raw_string": "6=6"
+      },
+      "Scorer_H": {
+        "bcs": 5.0,
+        "confidence": "A",
+        "raw_scores": [
+          5,
+          5
+        ],
+        "raw_string": "5=5"
+      },
+      "Scorer_I": {
+        "bcs": 5.0,
+        "confidence": "A",
+        "raw_scores": [
+          5,
+          5
+        ],
+        "raw_string": "5=5"
+      }
+    }
+  },
+  {
+    "image_id": 28,
+    "image_path": "images/cat_28.jpeg",
+    "ground_truth": 4.5,
+    "weight_class": "IW",
+    "is_duplicate": false,
+    "duplicate_of": null,
+    "scorers": {
+      "Scorer_A": {
+        "bcs": 5.0,
+        "confidence": "A",
+        "raw_scores": [
+          5,
+          5
+        ],
+        "raw_string": "5=5"
+      },
+      "Scorer_B": {
+        "bcs": 4.0,
+        "confidence": "A",
+        "raw_scores": [
+          4,
+          4
+        ],
+        "raw_string": "4=4"
+      },
+      "Scorer_C": {
+        "bcs": 5.0,
+        "confidence": "C",
+        "raw_scores": [
+          5,
+          6
+        ],
+        "raw_string": "5>6"
+      },
+      "Scorer_D": {
+        "bcs": 3.5,
+        "confidence": "B",
+        "raw_scores": [
+          3,
+          4
+        ],
+        "raw_string": "3=4"
+      },
+      "Scorer_E": {
+        "bcs": 3.0,
+        "confidence": "C",
+        "raw_scores": [
+          3,
+          2
+        ],
+        "raw_string": "3>2"
+      },
+      "Scorer_F": {
+        "bcs": 6.0,
+        "confidence": "C",
+        "raw_scores": [
+          6,
+          5
+        ],
+        "raw_string": "6>5"
+      },
+      "Scorer_G": {
+        "bcs": 4.5,
+        "confidence": "B",
+        "raw_scores": [
+          4,
+          5
+        ],
+        "raw_string": "4=5"
+      },
+      "Scorer_H": {
+        "bcs": 3.5,
+        "confidence": "B",
+        "raw_scores": [
+          3,
+          4
+        ],
+        "raw_string": "3=4"
+      },
+      "Scorer_I": {
+        "bcs": 4.5,
+        "confidence": "B",
+        "raw_scores": [
+          4,
+          5
+        ],
+        "raw_string": "4=5"
+      }
+    }
+  },
+  {
+    "image_id": 29,
+    "image_path": "images/cat_29.jpeg",
+    "ground_truth": 6.0,
+    "weight_class": "OW",
+    "is_duplicate": false,
+    "duplicate_of": null,
+    "scorers": {
+      "Scorer_A": {
+        "bcs": 6.0,
+        "confidence": "A",
+        "raw_scores": [
+          6,
+          6
+        ],
+        "raw_string": "6=6"
+      },
+      "Scorer_B": {
+        "bcs": 6.0,
+        "confidence": "A",
+        "raw_scores": [
+          6,
+          6
+        ],
+        "raw_string": "6=6"
+      },
+      "Scorer_C": {
+        "bcs": 7.0,
+        "confidence": "A",
+        "raw_scores": [
+          7,
+          7
+        ],
+        "raw_string": "7=7"
+      },
+      "Scorer_D": {
+        "bcs": 6.0,
+        "confidence": "A",
+        "raw_scores": [
+          6,
+          6
+        ],
+        "raw_string": "6=6"
+      },
+      "Scorer_E": {
+        "bcs": 4.0,
+        "confidence": "A",
+        "raw_scores": [
+          4,
+          4
+        ],
+        "raw_string": "4=4"
+      },
+      "Scorer_F": {
+        "bcs": 5.0,
+        "confidence": "A",
+        "raw_scores": [
+          5,
+          5
+        ],
+        "raw_string": "5=5"
+      },
+      "Scorer_G": {
+        "bcs": 5.0,
+        "confidence": "A",
+        "raw_scores": [
+          5,
+          5
+        ],
+        "raw_string": "5=5"
+      },
+      "Scorer_H": {
+        "bcs": 4.5,
+        "confidence": "B",
+        "raw_scores": [
+          4,
+          5
+        ],
+        "raw_string": "4=5"
+      },
+      "Scorer_I": {
+        "bcs": 6.0,
+        "confidence": "A",
+        "raw_scores": [
+          6,
+          6
+        ],
+        "raw_string": "6=6"
+      }
+    }
+  },
+  {
+    "image_id": 30,
+    "image_path": "images/cat_30.jpeg",
+    "ground_truth": 4.5,
+    "weight_class": "IW",
+    "is_duplicate": false,
+    "duplicate_of": null,
+    "scorers": {
+      "Scorer_A": {
+        "bcs": 5.0,
+        "confidence": "C",
+        "raw_scores": [
+          5,
+          6
+        ],
+        "raw_string": "5>6"
+      },
+      "Scorer_B": {
+        "bcs": 4.0,
+        "confidence": "C",
+        "raw_scores": [
+          4,
+          5
+        ],
+        "raw_string": "4>5"
+      },
+      "Scorer_C": {
+        "bcs": 5.0,
+        "confidence": "A",
+        "raw_scores": [
+          5,
+          5
+        ],
+        "raw_string": "5=5"
+      },
+      "Scorer_D": {
+        "bcs": 4.0,
+        "confidence": "C",
+        "raw_scores": [
+          4,
+          3
+        ],
+        "raw_string": "4>3"
+      },
+      "Scorer_E": {
+        "bcs": 3.5,
+        "confidence": "B",
+        "raw_scores": [
+          3,
+          4
+        ],
+        "raw_string": "3=4"
+      },
+      "Scorer_F": {
+        "bcs": 4.0,
+        "confidence": "A",
+        "raw_scores": [
+          4,
+          4
+        ],
+        "raw_string": "4=4"
+      },
+      "Scorer_G": {
+        "bcs": 5.0,
+        "confidence": "A",
+        "raw_scores": [
+          5,
+          5
+        ],
+        "raw_string": "5=5"
+      },
+      "Scorer_H": {
+        "bcs": 4.0,
+        "confidence": "A",
+        "raw_scores": [
+          4,
+          4
+        ],
+        "raw_string": "4=4"
+      },
+      "Scorer_I": {
+        "bcs": 4.0,
+        "confidence": "A",
+        "raw_scores": [
+          4,
+          4
+        ],
+        "raw_string": "4=4"
+      }
+    }
+  },
+  {
+    "image_id": 31,
+    "image_path": "images/cat_31.jpeg",
+    "ground_truth": 4.5,
+    "weight_class": "IW",
+    "is_duplicate": false,
+    "duplicate_of": null,
+    "scorers": {
+      "Scorer_A": {
+        "bcs": 5.0,
+        "confidence": "C",
+        "raw_scores": [
+          5,
+          4
+        ],
+        "raw_string": "5>4"
+      },
+      "Scorer_B": {
+        "bcs": 4.0,
+        "confidence": "A",
+        "raw_scores": [
+          4,
+          4
+        ],
+        "raw_string": "4=4"
+      },
+      "Scorer_C": {
+        "bcs": 5.0,
+        "confidence": "A",
+        "raw_scores": [
+          5,
+          5
+        ],
+        "raw_string": "5=5"
+      },
+      "Scorer_D": {
+        "bcs": 4.5,
+        "confidence": "B",
+        "raw_scores": [
+          4,
+          5
+        ],
+        "raw_string": "4=5"
+      },
+      "Scorer_E": {
+        "bcs": 3.0,
+        "confidence": "C",
+        "raw_scores": [
+          3,
+          2
+        ],
+        "raw_string": "3>2"
+      },
+      "Scorer_F": {
+        "bcs": 4.0,
+        "confidence": "A",
+        "raw_scores": [
+          4,
+          4
+        ],
+        "raw_string": "4=4"
+      },
+      "Scorer_G": {
+        "bcs": 5.0,
+        "confidence": "A",
+        "raw_scores": [
+          5,
+          5
+        ],
+        "raw_string": "5=5"
+      },
+      "Scorer_H": {
+        "bcs": 4.0,
+        "confidence": "A",
+        "raw_scores": [
+          4,
+          4
+        ],
+        "raw_string": "4=4"
+      },
+      "Scorer_I": {
+        "bcs": 5.5,
+        "confidence": "B",
+        "raw_scores": [
+          5,
+          6
+        ],
+        "raw_string": "5=6"
+      }
+    }
+  },
+  {
+    "image_id": 32,
+    "image_path": "images/cat_32.jpeg",
+    "ground_truth": 3.5,
+    "weight_class": "IW",
+    "is_duplicate": false,
+    "duplicate_of": null,
+    "scorers": {
+      "Scorer_A": {
+        "bcs": 4.0,
+        "confidence": "C",
+        "raw_scores": [
+          4,
+          3
+        ],
+        "raw_string": "4>3"
+      },
+      "Scorer_B": {
+        "bcs": 3.0,
+        "confidence": "A",
+        "raw_scores": [
+          3,
+          3
+        ],
+        "raw_string": "3=3"
+      },
+      "Scorer_C": {
+        "bcs": 4.5,
+        "confidence": "B",
+        "raw_scores": [
+          4,
+          5
+        ],
+        "raw_string": "4=5"
+      },
+      "Scorer_D": {
+        "bcs": 4.0,
+        "confidence": "C",
+        "raw_scores": [
+          4,
+          3
+        ],
+        "raw_string": "4>3"
+      },
+      "Scorer_E": {
+        "bcs": 3.0,
+        "confidence": "A",
+        "raw_scores": [
+          3,
+          3
+        ],
+        "raw_string": "3=3"
+      },
+      "Scorer_F": {
+        "bcs": 4.0,
+        "confidence": "A",
+        "raw_scores": [
+          4,
+          4
+        ],
+        "raw_string": "4=4"
+      },
+      "Scorer_G": {
+        "bcs": 3.0,
+        "confidence": "A",
+        "raw_scores": [
+          3,
+          3
+        ],
+        "raw_string": "3=3"
+      },
+      "Scorer_H": {
+        "bcs": 3.0,
+        "confidence": "A",
+        "raw_scores": [
+          3,
+          3
+        ],
+        "raw_string": "3=3"
+      },
+      "Scorer_I": {
+        "bcs": 4.0,
+        "confidence": "A",
+        "raw_scores": [
+          4,
+          4
+        ],
+        "raw_string": "4=4"
+      }
+    }
+  },
+  {
+    "image_id": 33,
+    "image_path": "images/cat_33.jpeg",
+    "ground_truth": 8.75,
+    "weight_class": "OB",
+    "is_duplicate": false,
+    "duplicate_of": null,
+    "scorers": {
+      "Scorer_A": {
+        "bcs": 8.5,
+        "confidence": "B",
+        "raw_scores": [
+          8,
+          9
+        ],
+        "raw_string": "8=9"
+      },
+      "Scorer_B": {
+        "bcs": 9.0,
+        "confidence": "A",
+        "raw_scores": [
+          9,
+          9
+        ],
+        "raw_string": "9=9"
+      },
+      "Scorer_C": {
+        "bcs": 9.0,
+        "confidence": "A",
+        "raw_scores": [
+          9,
+          9
+        ],
+        "raw_string": "9=9"
+      },
+      "Scorer_D": {
+        "bcs": 9.0,
+        "confidence": "C",
+        "raw_scores": [
+          9,
+          8
+        ],
+        "raw_string": "9>8"
+      },
+      "Scorer_E": {
+        "bcs": 7.5,
+        "confidence": "B",
+        "raw_scores": [
+          7,
+          8
+        ],
+        "raw_string": "7=8"
+      },
+      "Scorer_F": {
+        "bcs": 9.0,
+        "confidence": "A",
+        "raw_scores": [
+          9,
+          9
+        ],
+        "raw_string": "9=9"
+      },
+      "Scorer_G": {
+        "bcs": 9.0,
+        "confidence": "A",
+        "raw_scores": [
+          9,
+          9
+        ],
+        "raw_string": "9=9"
+      },
+      "Scorer_H": {
+        "bcs": 9.0,
+        "confidence": "A",
+        "raw_scores": [
+          9,
+          9
+        ],
+        "raw_string": "9=9"
+      },
+      "Scorer_I": {
+        "bcs": 8.5,
+        "confidence": "B",
+        "raw_scores": [
+          8,
+          9
+        ],
+        "raw_string": "8=9"
+      }
+    }
+  },
+  {
+    "image_id": 34,
+    "image_path": "images/cat_34.jpeg",
+    "ground_truth": 7.0,
+    "weight_class": "OW",
+    "is_duplicate": false,
+    "duplicate_of": null,
+    "scorers": {
+      "Scorer_A": {
+        "bcs": 8.0,
+        "confidence": "A",
+        "raw_scores": [
+          8,
+          8
+        ],
+        "raw_string": "8=8"
+      },
+      "Scorer_B": {
+        "bcs": 6.0,
+        "confidence": "A",
+        "raw_scores": [
+          6,
+          6
+        ],
+        "raw_string": "6=6"
+      },
+      "Scorer_C": {
+        "bcs": 8.0,
+        "confidence": "A",
+        "raw_scores": [
+          8,
+          8
+        ],
+        "raw_string": "8=8"
+      },
+      "Scorer_D": {
+        "bcs": 7.0,
+        "confidence": "A",
+        "raw_scores": [
+          7,
+          7
+        ],
+        "raw_string": "7=7"
+      },
+      "Scorer_E": {
+        "bcs": 7.0,
+        "confidence": "A",
+        "raw_scores": [
+          7,
+          7
+        ],
+        "raw_string": "7=7"
+      },
+      "Scorer_F": {
+        "bcs": 9.0,
+        "confidence": "A",
+        "raw_scores": [
+          9,
+          9
+        ],
+        "raw_string": "9=9"
+      },
+      "Scorer_G": {
+        "bcs": 8.0,
+        "confidence": "C",
+        "raw_scores": [
+          8,
+          7
+        ],
+        "raw_string": "8>7"
+      },
+      "Scorer_H": {
+        "bcs": 7.5,
+        "confidence": "B",
+        "raw_scores": [
+          7,
+          8
+        ],
+        "raw_string": "7=8"
+      },
+      "Scorer_I": {
+        "bcs": 7.0,
+        "confidence": "A",
+        "raw_scores": [
+          7,
+          7
+        ],
+        "raw_string": "7=7"
+      }
+    }
+  },
+  {
+    "image_id": 35,
+    "image_path": "images/cat_35.jpeg",
+    "ground_truth": 6.5,
+    "weight_class": "OW",
+    "is_duplicate": false,
+    "duplicate_of": null,
+    "scorers": {
+      "Scorer_A": {
+        "bcs": 7.0,
+        "confidence": "C",
+        "raw_scores": [
+          7,
+          8
+        ],
+        "raw_string": "7>8"
+      },
+      "Scorer_B": {
+        "bcs": 6.0,
+        "confidence": "C",
+        "raw_scores": [
+          6,
+          7
+        ],
+        "raw_string": "6>7"
+      },
+      "Scorer_C": {
+        "bcs": 7.0,
+        "confidence": "C",
+        "raw_scores": [
+          7,
+          6
+        ],
+        "raw_string": "7>6"
+      },
+      "Scorer_D": {
+        "bcs": 7.0,
+        "confidence": "A",
+        "raw_scores": [
+          7,
+          7
+        ],
+        "raw_string": "7=7"
+      },
+      "Scorer_E": {
+        "bcs": 6.5,
+        "confidence": "B",
+        "raw_scores": [
+          6,
+          7
+        ],
+        "raw_string": "6=7"
+      },
+      "Scorer_F": {
+        "bcs": 8.0,
+        "confidence": "A",
+        "raw_scores": [
+          8,
+          8
+        ],
+        "raw_string": "8=8"
+      },
+      "Scorer_G": {
+        "bcs": 6.5,
+        "confidence": "B",
+        "raw_scores": [
+          6,
+          7
+        ],
+        "raw_string": "6=7"
+      },
+      "Scorer_H": {
+        "bcs": 7.5,
+        "confidence": "B",
+        "raw_scores": [
+          7,
+          8
+        ],
+        "raw_string": "7=8"
+      },
+      "Scorer_I": {
+        "bcs": 6.5,
+        "confidence": "B",
+        "raw_scores": [
+          6,
+          7
+        ],
+        "raw_string": "6=7"
+      }
+    }
+  },
+  {
+    "image_id": 36,
+    "image_path": "images/cat_36.jpeg",
+    "ground_truth": 9.0,
+    "weight_class": "OB",
+    "is_duplicate": false,
+    "duplicate_of": null,
+    "scorers": {
+      "Scorer_A": {
+        "bcs": 9.0,
+        "confidence": "A",
+        "raw_scores": [
+          9,
+          9
+        ],
+        "raw_string": "9=9"
+      },
+      "Scorer_B": {
+        "bcs": 9.0,
+        "confidence": "A",
+        "raw_scores": [
+          9,
+          9
+        ],
+        "raw_string": "9=9"
+      },
+      "Scorer_C": {
+        "bcs": 9.0,
+        "confidence": "A",
+        "raw_scores": [
+          9,
+          9
+        ],
+        "raw_string": "9=9"
+      },
+      "Scorer_D": {
+        "bcs": 9.0,
+        "confidence": "A",
+        "raw_scores": [
+          9,
+          9
+        ],
+        "raw_string": "9=9"
+      },
+      "Scorer_E": {
+        "bcs": 9.0,
+        "confidence": "A",
+        "raw_scores": [
+          9,
+          9
+        ],
+        "raw_string": "9=9"
+      },
+      "Scorer_F": {
+        "bcs": 9.0,
+        "confidence": "A",
+        "raw_scores": [
+          9,
+          9
+        ],
+        "raw_string": "9=9"
+      },
+      "Scorer_G": {
+        "bcs": 9.0,
+        "confidence": "A",
+        "raw_scores": [
+          9,
+          9
+        ],
+        "raw_string": "9=9"
+      },
+      "Scorer_H": {
+        "bcs": 9.0,
+        "confidence": "A",
+        "raw_scores": [
+          9,
+          9
+        ],
+        "raw_string": "9=9"
+      },
+      "Scorer_I": {
+        "bcs": 9.0,
+        "confidence": "A",
+        "raw_scores": [
+          9,
+          9
+        ],
+        "raw_string": "9=9"
+      }
+    }
+  },
+  {
+    "image_id": 37,
+    "image_path": "images/cat_37.jpeg",
+    "ground_truth": 9.0,
+    "weight_class": "OB",
+    "is_duplicate": false,
+    "duplicate_of": null,
+    "scorers": {
+      "Scorer_A": {
+        "bcs": 9.0,
+        "confidence": "A",
+        "raw_scores": [
+          9,
+          9
+        ],
+        "raw_string": "9=9"
+      },
+      "Scorer_B": {
+        "bcs": 9.0,
+        "confidence": "A",
+        "raw_scores": [
+          9,
+          9
+        ],
+        "raw_string": "9=9"
+      },
+      "Scorer_C": {
+        "bcs": 9.0,
+        "confidence": "A",
+        "raw_scores": [
+          9,
+          9
+        ],
+        "raw_string": "9=9"
+      },
+      "Scorer_D": {
+        "bcs": 9.0,
+        "confidence": "A",
+        "raw_scores": [
+          9,
+          9
+        ],
+        "raw_string": "9=9"
+      },
+      "Scorer_E": {
+        "bcs": 9.0,
+        "confidence": "A",
+        "raw_scores": [
+          9,
+          9
+        ],
+        "raw_string": "9=9"
+      },
+      "Scorer_F": {
+        "bcs": 9.0,
+        "confidence": "A",
+        "raw_scores": [
+          9,
+          9
+        ],
+        "raw_string": "9=9"
+      },
+      "Scorer_G": {
+        "bcs": 9.0,
+        "confidence": "A",
+        "raw_scores": [
+          9,
+          9
+        ],
+        "raw_string": "9=9"
+      },
+      "Scorer_H": {
+        "bcs": 9.0,
+        "confidence": "A",
+        "raw_scores": [
+          9,
+          9
+        ],
+        "raw_string": "9=9"
+      },
+      "Scorer_I": {
+        "bcs": 9.0,
+        "confidence": "A",
+        "raw_scores": [
+          9,
+          9
+        ],
+        "raw_string": "9=9"
+      }
+    }
+  },
+  {
+    "image_id": 38,
+    "image_path": "images/cat_38.jpeg",
+    "ground_truth": 8.25,
+    "weight_class": "OB",
+    "is_duplicate": false,
+    "duplicate_of": null,
+    "scorers": {
+      "Scorer_A": {
+        "bcs": 9.0,
+        "confidence": "C",
+        "raw_scores": [
+          9,
+          8
+        ],
+        "raw_string": "9>8"
+      },
+      "Scorer_B": {
+        "bcs": 7.5,
+        "confidence": "B",
+        "raw_scores": [
+          7,
+          8
+        ],
+        "raw_string": "7=8"
+      },
+      "Scorer_C": {
+        "bcs": 7.0,
+        "confidence": "C",
+        "raw_scores": [
+          7,
+          8
+        ],
+        "raw_string": "7>8"
+      },
+      "Scorer_D": {
+        "bcs": 6.5,
+        "confidence": "B",
+        "raw_scores": [
+          6,
+          7
+        ],
+        "raw_string": "6=7"
+      },
+      "Scorer_E": {
+        "bcs": 7.0,
+        "confidence": "A",
+        "raw_scores": [
+          7,
+          7
+        ],
+        "raw_string": "7=7"
+      },
+      "Scorer_F": {
+        "bcs": 9.0,
+        "confidence": "A",
+        "raw_scores": [
+          9,
+          9
+        ],
+        "raw_string": "9=9"
+      },
+      "Scorer_G": {
+        "bcs": 9.0,
+        "confidence": "A",
+        "raw_scores": [
+          9,
+          9
+        ],
+        "raw_string": "9=9"
+      },
+      "Scorer_H": {
+        "bcs": 8.0,
+        "confidence": "A",
+        "raw_scores": [
+          8,
+          8
+        ],
+        "raw_string": "8=8"
+      },
+      "Scorer_I": {
+        "bcs": 7.5,
+        "confidence": "B",
+        "raw_scores": [
+          7,
+          8
+        ],
+        "raw_string": "7=8"
+      }
+    }
+  },
+  {
+    "image_id": 39,
+    "image_path": "images/cat_39.jpeg",
+    "ground_truth": 7.25,
+    "weight_class": "OB",
+    "is_duplicate": false,
+    "duplicate_of": null,
+    "scorers": {
+      "Scorer_A": {
+        "bcs": 6.5,
+        "confidence": "B",
+        "raw_scores": [
+          6,
+          7
+        ],
+        "raw_string": "6=7"
+      },
+      "Scorer_B": {
+        "bcs": 8.0,
+        "confidence": "A",
+        "raw_scores": [
+          8,
+          8
+        ],
+        "raw_string": "8=8"
+      },
+      "Scorer_C": {
+        "bcs": 6.0,
+        "confidence": "C",
+        "raw_scores": [
+          6,
+          7
+        ],
+        "raw_string": "6>7"
+      },
+      "Scorer_D": {
+        "bcs": 7.0,
+        "confidence": "A",
+        "raw_scores": [
+          7,
+          7
+        ],
+        "raw_string": "7=7"
+      },
+      "Scorer_E": {
+        "bcs": 6.5,
+        "confidence": "B",
+        "raw_scores": [
+          6,
+          7
+        ],
+        "raw_string": "6=7"
+      },
+      "Scorer_F": {
+        "bcs": 7.5,
+        "confidence": "B",
+        "raw_scores": [
+          7,
+          8
+        ],
+        "raw_string": "7=8"
+      },
+      "Scorer_G": {
+        "bcs": 7.0,
+        "confidence": "A",
+        "raw_scores": [
+          7,
+          7
+        ],
+        "raw_string": "7=7"
+      },
+      "Scorer_H": {
+        "bcs": 7.0,
+        "confidence": "A",
+        "raw_scores": [
+          7,
+          7
+        ],
+        "raw_string": "7=7"
+      },
+      "Scorer_I": {
+        "bcs": 7.0,
+        "confidence": "A",
+        "raw_scores": [
+          7,
+          7
+        ],
+        "raw_string": "7=7"
+      }
+    }
+  },
+  {
+    "image_id": 40,
+    "image_path": "images/cat_40.jpeg",
+    "ground_truth": 7.75,
+    "weight_class": "OB",
+    "is_duplicate": false,
+    "duplicate_of": null,
+    "scorers": {
+      "Scorer_A": {
+        "bcs": 8.0,
+        "confidence": "C",
+        "raw_scores": [
+          8,
+          7
+        ],
+        "raw_string": "8>7"
+      },
+      "Scorer_B": {
+        "bcs": 7.5,
+        "confidence": "B",
+        "raw_scores": [
+          7,
+          8
+        ],
+        "raw_string": "7=8"
+      },
+      "Scorer_C": {
+        "bcs": 8.0,
+        "confidence": "C",
+        "raw_scores": [
+          8,
+          7
+        ],
+        "raw_string": "8>7"
+      },
+      "Scorer_D": {
+        "bcs": 6.5,
+        "confidence": "B",
+        "raw_scores": [
+          6,
+          7
+        ],
+        "raw_string": "6=7"
+      },
+      "Scorer_E": {
+        "bcs": 8.0,
+        "confidence": "A",
+        "raw_scores": [
+          8,
+          8
+        ],
+        "raw_string": "8=8"
+      },
+      "Scorer_F": {
+        "bcs": 9.0,
+        "confidence": "A",
+        "raw_scores": [
+          9,
+          9
+        ],
+        "raw_string": "9=9"
+      },
+      "Scorer_G": {
+        "bcs": 8.0,
+        "confidence": "A",
+        "raw_scores": [
+          8,
+          8
+        ],
+        "raw_string": "8=8"
+      },
+      "Scorer_H": {
+        "bcs": 7.5,
+        "confidence": "B",
+        "raw_scores": [
+          7,
+          8
+        ],
+        "raw_string": "7=8"
+      },
+      "Scorer_I": {
+        "bcs": 8.0,
+        "confidence": "A",
+        "raw_scores": [
+          8,
+          8
+        ],
+        "raw_string": "8=8"
+      }
+    }
+  },
+  {
+    "image_id": 41,
+    "image_path": "images/cat_41.jpeg",
+    "ground_truth": 6.25,
+    "weight_class": "OW",
+    "is_duplicate": false,
+    "duplicate_of": null,
+    "scorers": {
+      "Scorer_A": {
+        "bcs": 7.0,
+        "confidence": "A",
+        "raw_scores": [
+          7,
+          7
+        ],
+        "raw_string": "7=7"
+      },
+      "Scorer_B": {
+        "bcs": 5.5,
+        "confidence": "B",
+        "raw_scores": [
+          5,
+          6
+        ],
+        "raw_string": "5=6"
+      },
+      "Scorer_C": {
+        "bcs": 6.0,
+        "confidence": "C",
+        "raw_scores": [
+          6,
+          7
+        ],
+        "raw_string": "6>7"
+      },
+      "Scorer_D": {
+        "bcs": 6.0,
+        "confidence": "A",
+        "raw_scores": [
+          6,
+          6
+        ],
+        "raw_string": "6=6"
+      },
+      "Scorer_E": {
+        "bcs": 5.0,
+        "confidence": "C",
+        "raw_scores": [
+          5,
+          6
+        ],
+        "raw_string": "5>6"
+      },
+      "Scorer_F": {
+        "bcs": 6.5,
+        "confidence": "B",
+        "raw_scores": [
+          6,
+          7
+        ],
+        "raw_string": "6=7"
+      },
+      "Scorer_G": {
+        "bcs": 6.0,
+        "confidence": "A",
+        "raw_scores": [
+          6,
+          6
+        ],
+        "raw_string": "6=6"
+      },
+      "Scorer_H": {
+        "bcs": 6.0,
+        "confidence": "A",
+        "raw_scores": [
+          6,
+          6
+        ],
+        "raw_string": "6=6"
+      },
+      "Scorer_I": {
+        "bcs": 5.0,
+        "confidence": "A",
+        "raw_scores": [
+          5,
+          5
+        ],
+        "raw_string": "5=5"
+      }
+    }
+  },
+  {
+    "image_id": 42,
+    "image_path": "images/cat_42.jpeg",
+    "ground_truth": 7.25,
+    "weight_class": "OB",
+    "is_duplicate": true,
+    "duplicate_of": 49,
+    "scorers": {
+      "Scorer_A": {
+        "bcs": 8.0,
+        "confidence": "C",
+        "raw_scores": [
+          8,
+          7
+        ],
+        "raw_string": "8>7"
+      },
+      "Scorer_B": {
+        "bcs": 6.5,
+        "confidence": "B",
+        "raw_scores": [
+          6,
+          7
+        ],
+        "raw_string": "6=7"
+      },
+      "Scorer_C": {
+        "bcs": 7.0,
+        "confidence": "C",
+        "raw_scores": [
+          7,
+          6
+        ],
+        "raw_string": "7>6"
+      },
+      "Scorer_D": {
+        "bcs": 5.5,
+        "confidence": "B",
+        "raw_scores": [
+          5,
+          6
+        ],
+        "raw_string": "5=6"
+      },
+      "Scorer_E": {
+        "bcs": 6.0,
+        "confidence": "A",
+        "raw_scores": [
+          6,
+          6
+        ],
+        "raw_string": "6=6"
+      },
+      "Scorer_F": {
+        "bcs": 7.5,
+        "confidence": "B",
+        "raw_scores": [
+          7,
+          8
+        ],
+        "raw_string": "7=8"
+      },
+      "Scorer_G": {
+        "bcs": 7.0,
+        "confidence": "A",
+        "raw_scores": [
+          7,
+          7
+        ],
+        "raw_string": "7=7"
+      },
+      "Scorer_H": {
+        "bcs": 5.5,
+        "confidence": "B",
+        "raw_scores": [
+          5,
+          6
+        ],
+        "raw_string": "5=6"
+      },
+      "Scorer_I": {
+        "bcs": 6.5,
+        "confidence": "B",
+        "raw_scores": [
+          6,
+          7
+        ],
+        "raw_string": "6=7"
+      }
+    }
+  },
+  {
+    "image_id": 43,
+    "image_path": "images/cat_43.jpeg",
+    "ground_truth": 4.0,
+    "weight_class": "IW",
+    "is_duplicate": false,
+    "duplicate_of": null,
+    "scorers": {
+      "Scorer_A": {
+        "bcs": 4.0,
+        "confidence": "C",
+        "raw_scores": [
+          4,
+          5
+        ],
+        "raw_string": "4>5"
+      },
+      "Scorer_B": {
+        "bcs": 4.0,
+        "confidence": "A",
+        "raw_scores": [
+          4,
+          4
+        ],
+        "raw_string": "4=4"
+      },
+      "Scorer_C": {
+        "bcs": 5.0,
+        "confidence": "A",
+        "raw_scores": [
+          5,
+          5
+        ],
+        "raw_string": "5=5"
+      },
+      "Scorer_D": {
+        "bcs": 5.0,
+        "confidence": "C",
+        "raw_scores": [
+          5,
+          4
+        ],
+        "raw_string": "5>4"
+      },
+      "Scorer_E": {
+        "bcs": 3.0,
+        "confidence": "A",
+        "raw_scores": [
+          3,
+          3
+        ],
+        "raw_string": "3=3"
+      },
+      "Scorer_F": {
+        "bcs": 4.0,
+        "confidence": "A",
+        "raw_scores": [
+          4,
+          4
+        ],
+        "raw_string": "4=4"
+      },
+      "Scorer_G": {
+        "bcs": 3.0,
+        "confidence": "A",
+        "raw_scores": [
+          3,
+          3
+        ],
+        "raw_string": "3=3"
+      },
+      "Scorer_H": {
+        "bcs": 4.0,
+        "confidence": "A",
+        "raw_scores": [
+          4,
+          4
+        ],
+        "raw_string": "4=4"
+      },
+      "Scorer_I": {
+        "bcs": 4.0,
+        "confidence": "A",
+        "raw_scores": [
+          4,
+          4
+        ],
+        "raw_string": "4=4"
+      }
+    }
+  },
+  {
+    "image_id": 44,
+    "image_path": "images/cat_44.jpeg",
+    "ground_truth": 9.0,
+    "weight_class": "OB",
+    "is_duplicate": false,
+    "duplicate_of": null,
+    "scorers": {
+      "Scorer_A": {
+        "bcs": 9.0,
+        "confidence": "A",
+        "raw_scores": [
+          9,
+          9
+        ],
+        "raw_string": "9=9"
+      },
+      "Scorer_B": {
+        "bcs": 9.0,
+        "confidence": "A",
+        "raw_scores": [
+          9,
+          9
+        ],
+        "raw_string": "9=9"
+      },
+      "Scorer_C": {
+        "bcs": 9.0,
+        "confidence": "A",
+        "raw_scores": [
+          9,
+          9
+        ],
+        "raw_string": "9=9"
+      },
+      "Scorer_D": {
+        "bcs": 9.0,
+        "confidence": "A",
+        "raw_scores": [
+          9,
+          9
+        ],
+        "raw_string": "9=9"
+      },
+      "Scorer_E": {
+        "bcs": 8.0,
+        "confidence": "C",
+        "raw_scores": [
+          8,
+          9
+        ],
+        "raw_string": "8>9"
+      },
+      "Scorer_F": {
+        "bcs": 9.0,
+        "confidence": "A",
+        "raw_scores": [
+          9,
+          9
+        ],
+        "raw_string": "9=9"
+      },
+      "Scorer_G": {
+        "bcs": 9.0,
+        "confidence": "A",
+        "raw_scores": [
+          9,
+          9
+        ],
+        "raw_string": "9=9"
+      },
+      "Scorer_H": {
+        "bcs": 9.0,
+        "confidence": "A",
+        "raw_scores": [
+          9,
+          9
+        ],
+        "raw_string": "9=9"
+      },
+      "Scorer_I": {
+        "bcs": 9.0,
+        "confidence": "A",
+        "raw_scores": [
+          9,
+          9
+        ],
+        "raw_string": "9=9"
+      }
+    }
+  },
+  {
+    "image_id": 45,
+    "image_path": "images/cat_45.jpeg",
+    "ground_truth": 5.0,
+    "weight_class": "IW",
+    "is_duplicate": false,
+    "duplicate_of": null,
+    "scorers": {
+      "Scorer_A": {
+        "bcs": 6.0,
+        "confidence": "C",
+        "raw_scores": [
+          6,
+          5
+        ],
+        "raw_string": "6>5"
+      },
+      "Scorer_B": {
+        "bcs": 4.0,
+        "confidence": "A",
+        "raw_scores": [
+          4,
+          4
+        ],
+        "raw_string": "4=4"
+      },
+      "Scorer_C": {
+        "bcs": 7.0,
+        "confidence": "C",
+        "raw_scores": [
+          7,
+          6
+        ],
+        "raw_string": "7>6"
+      },
+      "Scorer_D": {
+        "bcs": 5.0,
+        "confidence": "A",
+        "raw_scores": [
+          5,
+          5
+        ],
+        "raw_string": "5=5"
+      },
+      "Scorer_E": {
+        "bcs": 5.0,
+        "confidence": "A",
+        "raw_scores": [
+          5,
+          5
+        ],
+        "raw_string": "5=5"
+      },
+      "Scorer_F": {
+        "bcs": 5.0,
+        "confidence": "A",
+        "raw_scores": [
+          5,
+          5
+        ],
+        "raw_string": "5=5"
+      },
+      "Scorer_G": {
+        "bcs": 5.5,
+        "confidence": "B",
+        "raw_scores": [
+          5,
+          6
+        ],
+        "raw_string": "5=6"
+      },
+      "Scorer_H": {
+        "bcs": 6.0,
+        "confidence": "A",
+        "raw_scores": [
+          6,
+          6
+        ],
+        "raw_string": "6=6"
+      },
+      "Scorer_I": {
+        "bcs": 5.0,
+        "confidence": "A",
+        "raw_scores": [
+          5,
+          5
+        ],
+        "raw_string": "5=5"
+      }
+    }
+  },
+  {
+    "image_id": 46,
+    "image_path": "images/cat_46.jpeg",
+    "ground_truth": 7.5,
+    "weight_class": "OB",
+    "is_duplicate": false,
+    "duplicate_of": null,
+    "scorers": {
+      "Scorer_A": {
+        "bcs": 8.0,
+        "confidence": "A",
+        "raw_scores": [
+          8,
+          8
+        ],
+        "raw_string": "8=8"
+      },
+      "Scorer_B": {
+        "bcs": 7.0,
+        "confidence": "C",
+        "raw_scores": [
+          7,
+          8
+        ],
+        "raw_string": "7>8"
+      },
+      "Scorer_C": {
+        "bcs": 8.0,
+        "confidence": "C",
+        "raw_scores": [
+          8,
+          7
+        ],
+        "raw_string": "8>7"
+      },
+      "Scorer_D": {
+        "bcs": 7.0,
+        "confidence": "A",
+        "raw_scores": [
+          7,
+          7
+        ],
+        "raw_string": "7=7"
+      },
+      "Scorer_E": {
+        "bcs": 7.0,
+        "confidence": "A",
+        "raw_scores": [
+          7,
+          7
+        ],
+        "raw_string": "7=7"
+      },
+      "Scorer_F": {
+        "bcs": 7.0,
+        "confidence": "A",
+        "raw_scores": [
+          7,
+          7
+        ],
+        "raw_string": "7=7"
+      },
+      "Scorer_G": {
+        "bcs": 8.0,
+        "confidence": "A",
+        "raw_scores": [
+          8,
+          8
+        ],
+        "raw_string": "8=8"
+      },
+      "Scorer_H": {
+        "bcs": 7.0,
+        "confidence": "A",
+        "raw_scores": [
+          7,
+          7
+        ],
+        "raw_string": "7=7"
+      },
+      "Scorer_I": {
+        "bcs": 8.0,
+        "confidence": "A",
+        "raw_scores": [
+          8,
+          8
+        ],
+        "raw_string": "8=8"
+      }
+    }
+  },
+  {
+    "image_id": 47,
+    "image_path": "images/cat_47.jpeg",
+    "ground_truth": 4.0,
+    "weight_class": "IW",
+    "is_duplicate": true,
+    "duplicate_of": 5,
+    "scorers": {
+      "Scorer_A": {
+        "bcs": 4.0,
+        "confidence": "C",
+        "raw_scores": [
+          4,
+          5
+        ],
+        "raw_string": "4>5"
+      },
+      "Scorer_B": {
+        "bcs": 4.0,
+        "confidence": "C",
+        "raw_scores": [
+          4,
+          5
+        ],
+        "raw_string": "4>5"
+      },
+      "Scorer_C": {
+        "bcs": 5.0,
+        "confidence": "A",
+        "raw_scores": [
+          5,
+          5
+        ],
+        "raw_string": "5=5"
+      },
+      "Scorer_D": {
+        "bcs": 4.5,
+        "confidence": "B",
+        "raw_scores": [
+          4,
+          5
+        ],
+        "raw_string": "4=5"
+      },
+      "Scorer_E": {
+        "bcs": 4.5,
+        "confidence": "B",
+        "raw_scores": [
+          4,
+          5
+        ],
+        "raw_string": "4=5"
+      },
+      "Scorer_F": {
+        "bcs": 5.0,
+        "confidence": "A",
+        "raw_scores": [
+          5,
+          5
+        ],
+        "raw_string": "5=5"
+      },
+      "Scorer_G": {
+        "bcs": 5.0,
+        "confidence": "A",
+        "raw_scores": [
+          5,
+          5
+        ],
+        "raw_string": "5=5"
+      },
+      "Scorer_H": {
+        "bcs": 5.0,
+        "confidence": "A",
+        "raw_scores": [
+          5,
+          5
+        ],
+        "raw_string": "5=5"
+      },
+      "Scorer_I": {
+        "bcs": 4.5,
+        "confidence": "B",
+        "raw_scores": [
+          4,
+          5
+        ],
+        "raw_string": "4=5"
+      }
+    }
+  },
+  {
+    "image_id": 48,
+    "image_path": "images/cat_48.jpeg",
+    "ground_truth": 3.5,
+    "weight_class": "IW",
+    "is_duplicate": true,
+    "duplicate_of": 25,
+    "scorers": {
+      "Scorer_A": {
+        "bcs": 4.0,
+        "confidence": "C",
+        "raw_scores": [
+          4,
+          5
+        ],
+        "raw_string": "4>5"
+      },
+      "Scorer_B": {
+        "bcs": 3.0,
+        "confidence": "A",
+        "raw_scores": [
+          3,
+          3
+        ],
+        "raw_string": "3=3"
+      },
+      "Scorer_C": {
+        "bcs": 5.0,
+        "confidence": "A",
+        "raw_scores": [
+          5,
+          5
+        ],
+        "raw_string": "5=5"
+      },
+      "Scorer_D": {
+        "bcs": 3.5,
+        "confidence": "B",
+        "raw_scores": [
+          3,
+          4
+        ],
+        "raw_string": "3=4"
+      },
+      "Scorer_E": {
+        "bcs": 3.0,
+        "confidence": "A",
+        "raw_scores": [
+          3,
+          3
+        ],
+        "raw_string": "3=3"
+      },
+      "Scorer_F": {
+        "bcs": 5.0,
+        "confidence": "A",
+        "raw_scores": [
+          5,
+          5
+        ],
+        "raw_string": "5=5"
+      },
+      "Scorer_G": {
+        "bcs": 4.5,
+        "confidence": "B",
+        "raw_scores": [
+          4,
+          5
+        ],
+        "raw_string": "4=5"
+      },
+      "Scorer_H": {
+        "bcs": 4.0,
+        "confidence": "A",
+        "raw_scores": [
+          4,
+          4
+        ],
+        "raw_string": "4=4"
+      },
+      "Scorer_I": {
+        "bcs": 5.0,
+        "confidence": "A",
+        "raw_scores": [
+          5,
+          5
+        ],
+        "raw_string": "5=5"
+      }
+    }
+  },
+  {
+    "image_id": 49,
+    "image_path": "images/cat_49.jpeg",
+    "ground_truth": 8.0,
+    "weight_class": "OB",
+    "is_duplicate": true,
+    "duplicate_of": 42,
+    "scorers": {
+      "Scorer_A": {
+        "bcs": 8.0,
+        "confidence": "C",
+        "raw_scores": [
+          8,
+          7
+        ],
+        "raw_string": "8>7"
+      },
+      "Scorer_B": {
+        "bcs": 8.0,
+        "confidence": "C",
+        "raw_scores": [
+          8,
+          7
+        ],
+        "raw_string": "8>7"
+      },
+      "Scorer_C": {
+        "bcs": 7.0,
+        "confidence": "C",
+        "raw_scores": [
+          7,
+          6
+        ],
+        "raw_string": "7>6"
+      },
+      "Scorer_D": {
+        "bcs": 5.5,
+        "confidence": "B",
+        "raw_scores": [
+          5,
+          6
+        ],
+        "raw_string": "5=6"
+      },
+      "Scorer_E": {
+        "bcs": 5.5,
+        "confidence": "B",
+        "raw_scores": [
+          5,
+          6
+        ],
+        "raw_string": "5=6"
+      },
+      "Scorer_F": {
+        "bcs": 7.5,
+        "confidence": "B",
+        "raw_scores": [
+          7,
+          8
+        ],
+        "raw_string": "7=8"
+      },
+      "Scorer_G": {
+        "bcs": 7.0,
+        "confidence": "A",
+        "raw_scores": [
+          7,
+          7
+        ],
+        "raw_string": "7=7"
+      },
+      "Scorer_H": {
+        "bcs": 6.0,
+        "confidence": "A",
+        "raw_scores": [
+          6,
+          6
+        ],
+        "raw_string": "6=6"
+      },
+      "Scorer_I": {
+        "bcs": 6.5,
+        "confidence": "B",
+        "raw_scores": [
+          6,
+          7
+        ],
+        "raw_string": "6=7"
+      }
+    }
+  },
+  {
+    "image_id": 50,
+    "image_path": "images/cat_50.jpeg",
+    "ground_truth": 5.0,
+    "weight_class": "IW",
+    "is_duplicate": true,
+    "duplicate_of": 2,
+    "scorers": {
+      "Scorer_A": {
+        "bcs": 5.0,
+        "confidence": "A",
+        "raw_scores": [
+          5,
+          5
+        ],
+        "raw_string": "5=5"
+      },
+      "Scorer_B": {
+        "bcs": 5.0,
+        "confidence": "A",
+        "raw_scores": [
+          5,
+          5
+        ],
+        "raw_string": "5=5"
+      },
+      "Scorer_C": {
+        "bcs": 7.0,
+        "confidence": "C",
+        "raw_scores": [
+          7,
+          6
+        ],
+        "raw_string": "7>6"
+      },
+      "Scorer_D": {
+        "bcs": 7.0,
+        "confidence": "C",
+        "raw_scores": [
+          7,
+          6
+        ],
+        "raw_string": "7>6"
+      },
+      "Scorer_E": {
+        "bcs": 4.5,
+        "confidence": "B",
+        "raw_scores": [
+          4,
+          5
+        ],
+        "raw_string": "4=5"
+      },
+      "Scorer_F": {
+        "bcs": 5.5,
+        "confidence": "B",
+        "raw_scores": [
+          5,
+          6
+        ],
+        "raw_string": "5=6"
+      },
+      "Scorer_G": {
+        "bcs": 6.0,
+        "confidence": "A",
+        "raw_scores": [
+          6,
+          6
+        ],
+        "raw_string": "6=6"
+      },
+      "Scorer_H": {
+        "bcs": 5.0,
+        "confidence": "A",
+        "raw_scores": [
+          5,
+          5
+        ],
+        "raw_string": "5=5"
+      },
+      "Scorer_I": {
+        "bcs": 7.0,
+        "confidence": "A",
+        "raw_scores": [
+          7,
+          7
+        ],
+        "raw_string": "7=7"
+      }
+    }
+  }
+]
