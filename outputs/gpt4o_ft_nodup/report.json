@@ -1,0 +1,16 @@
+{
+  "job_id": "ftjob-qiqPCaGVCu2jO4CaW2J2XZ4x",
+  "status": "succeeded",
+  "model_requested": "gpt-4o-2024-08-06",
+  "fine_tuned_model": "ft:gpt-4o-2024-08-06:personal::DBRmKcVG",
+  "train_rows": 33,
+  "validation_rows_for_job": 9,
+  "eval_rows": 42,
+  "parsed": 42,
+  "coverage": 1.0,
+  "mae_vs_ground_truth": 1.6964285714285714,
+  "class_accuracy": 35.714285714285715,
+  "train_jsonl": "C:\\Users\\zby\\Documents\\cursor_projects\\vision_bcs\\outputs\\gpt4o_ft_nodup\\train.jsonl",
+  "valid_jsonl": "C:\\Users\\zby\\Documents\\cursor_projects\\vision_bcs\\outputs\\gpt4o_ft_nodup\\valid.jsonl",
+  "predictions_csv": "C:\\Users\\zby\\Documents\\cursor_projects\\vision_bcs\\outputs\\gpt4o_ft_nodup\\validation_predictions.csv"
+}

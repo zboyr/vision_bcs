@@ -1,0 +1,8 @@
+{
+  "total": 50,
+  "parsed": 49,
+  "coverage": 0.98,
+  "mae_vs_ground_truth": 1.3316326530612246,
+  "mean_deviation_closest_A_B": 1.0918367346938775,
+  "class_accuracy": 48.97959183673469
+}

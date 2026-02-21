@@ -1,0 +1,122 @@
+Fetching 16 files:   0%|          | 0/16 [00:00<?, ?it/s]Fetching 16 files: 100%|¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€| 16/16 [00:00<?, ?it/s]
+The image processor of type `Qwen2VLImageProcessor` is now loaded as a fast processor by default, even if the model checkpoint was saved with a slow processor. This is a breaking change and may produce slightly different outputs. To continue using the slow processor, instantiate this class with `use_fast=False`. Note that this behavior will be extended to all models in a future release.
+2026-02-19 23:57:02,117 - lmdeploy - WARNING - transformers.py:22 - LMDeploy requires transformers version: [4.33.0 ~ 4.57.3], but found version: 4.57.6
+`torch_dtype` is deprecated! Use `dtype` instead!
+`torch_dtype` is deprecated! Use `dtype` instead!
+2026-02-19 23:57:03,816 - lmdeploy - WARNING - __init__.py:29 - For higher performance, please install FlashAttention-3 https://github.com/Dao-AILab/flash-attention
+Loading weights from safetensors:   0%|          | 0/2 [00:00<?, ?it/s]Loading weights from safetensors:  50%|¨€¨€¨€¨€¨€     | 1/2 [00:01<00:01,  1.69s/it]Loading weights from safetensors: 100%|¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€| 2/2 [00:02<00:00,  1.43s/it]Loading weights from safetensors: 100%|¨€¨€¨€¨€¨€¨€¨€¨€¨€¨€| 2/2 [00:02<00:00,  1.47s/it]
+Process mp_engine_proc:
+Traceback (most recent call last):
+  File "C:\Users\zby\AppData\Local\Programs\Python\Python312\Lib\multiprocessing\process.py", line 314, in _bootstrap
+    self.run()
+  File "C:\Users\zby\AppData\Local\Programs\Python\Python312\Lib\multiprocessing\process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "C:\Users\zby\AppData\Local\Programs\Python\Python312\Lib\site-packages\lmdeploy\pytorch\engine\mp_engine\zmq_engine.py", line 109, in _mp_proc
+    engine = Engine.from_pretrained(
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\zby\AppData\Local\Programs\Python\Python312\Lib\site-packages\lmdeploy\pytorch\engine\engine.py", line 225, in from_pretrained
+    return cls(
+           ^^^^
+  File "C:\Users\zby\AppData\Local\Programs\Python\Python312\Lib\site-packages\lmdeploy\pytorch\engine\engine.py", line 145, in __init__
+    self.executor.init()
+  File "C:\Users\zby\AppData\Local\Programs\Python\Python312\Lib\site-packages\lmdeploy\pytorch\engine\executor\base.py", line 255, in init
+    self.warmup()
+  File "C:\Users\zby\AppData\Local\Programs\Python\Python312\Lib\site-packages\lmdeploy\pytorch\engine\executor\uni_executor.py", line 83, in warmup
+    self.model_agent.warmup()
+  File "C:\Users\zby\AppData\Local\Programs\Python\Python312\Lib\site-packages\lmdeploy\pytorch\engine\model_agent\agent.py", line 469, in warmup
+    self._forward_impl(inputs)
+  File "C:\Users\zby\AppData\Local\Programs\Python\Python312\Lib\site-packages\lmdeploy\pytorch\engine\model_agent\agent.py", line 1118, in _forward_impl
+    output = model_forward(
+             ^^^^^^^^^^^^^^
+  File "C:\Users\zby\AppData\Local\Programs\Python\Python312\Lib\site-packages\torch\utils\_contextlib.py", line 120, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\zby\AppData\Local\Programs\Python\Python312\Lib\site-packages\lmdeploy\pytorch\engine\model_agent\agent.py", line 178, in model_forward
+    output = model(**input_dict)
+             ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\zby\AppData\Local\Programs\Python\Python312\Lib\site-packages\lmdeploy\pytorch\backends\cuda\graph_runner.py", line 232, in __call__
+    output = self.model(**kwargs)
+             ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\zby\AppData\Local\Programs\Python\Python312\Lib\site-packages\torch\nn\modules\module.py", line 1773, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\zby\AppData\Local\Programs\Python\Python312\Lib\site-packages\torch\nn\modules\module.py", line 1784, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\zby\AppData\Local\Programs\Python\Python312\Lib\site-packages\lmdeploy\pytorch\models\qwen2_vl.py", line 661, in forward
+    hidden_states = self.model(
+                    ^^^^^^^^^^^
+  File "C:\Users\zby\AppData\Local\Programs\Python\Python312\Lib\site-packages\torch\nn\modules\module.py", line 1773, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\zby\AppData\Local\Programs\Python\Python312\Lib\site-packages\torch\nn\modules\module.py", line 1784, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\zby\AppData\Local\Programs\Python\Python312\Lib\site-packages\lmdeploy\pytorch\models\qwen2_vl.py", line 278, in forward
+    cos, sin = _apply_mrope_selection(hidden_states, mrope_position_ids, self.mrope_section, position_ids,
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\zby\AppData\Local\Programs\Python\Python312\Lib\site-packages\lmdeploy\pytorch\models\qwen2_vl.py", line 26, in _apply_mrope_selection
+    cos, sin = rotary_emb_func(hidden_states, _mrope_position_ids)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\zby\AppData\Local\Programs\Python\Python312\Lib\site-packages\torch\nn\modules\module.py", line 1773, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\zby\AppData\Local\Programs\Python\Python312\Lib\site-packages\torch\nn\modules\module.py", line 1784, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\zby\AppData\Local\Programs\Python\Python312\Lib\site-packages\lmdeploy\pytorch\backends\default\rotary_embedding.py", line 90, in forward
+    return _rotary_embedding_fwd(position_ids,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\zby\AppData\Local\Programs\Python\Python312\Lib\site-packages\lmdeploy\pytorch\backends\default\rotary_embedding.py", line 35, in wrapper
+    return compiled_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\zby\AppData\Local\Programs\Python\Python312\Lib\site-packages\torch\_dynamo\eval_frame.py", line 736, in compile_wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\zby\AppData\Local\Programs\Python\Python312\Lib\site-packages\lmdeploy\pytorch\backends\default\rotary_embedding.py", line 42, in _rotary_embedding_fwd
+    @safe_torch_compile(dynamic=True)
+  File "C:\Users\zby\AppData\Local\Programs\Python\Python312\Lib\site-packages\torch\_dynamo\eval_frame.py", line 929, in _fn
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\zby\AppData\Local\Programs\Python\Python312\Lib\site-packages\torch\_functorch\aot_autograd.py", line 1241, in forward
+    return compiled_fn(full_args)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\zby\AppData\Local\Programs\Python\Python312\Lib\site-packages\torch\_functorch\_aot_autograd\runtime_wrappers.py", line 384, in runtime_wrapper
+    all_outs = call_func_at_runtime_with_args(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\zby\AppData\Local\Programs\Python\Python312\Lib\site-packages\torch\_functorch\_aot_autograd\utils.py", line 126, in call_func_at_runtime_with_args
+    out = normalize_as_list(f(args))
+                            ^^^^^^^
+  File "C:\Users\zby\AppData\Local\Programs\Python\Python312\Lib\site-packages\torch\_functorch\_aot_autograd\runtime_wrappers.py", line 556, in wrapper
+    return compiled_fn(runtime_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\zby\AppData\Local\Programs\Python\Python312\Lib\site-packages\torch\_inductor\output_code.py", line 584, in __call__
+    return self.current_callable(inputs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\zby\AppData\Local\Programs\Python\Python312\Lib\site-packages\torch\_inductor\utils.py", line 2716, in run
+    out = model(new_inputs)
+          ^^^^^^^^^^^^^^^^^
+  File "C:\Users\zby\AppData\Local\Temp\torchinductor_zby\j4\cj4ecso3lnbmsyrlx2avb2nhsbfm2e2ku6shk4bt6qcvugrhipcy.py", line 110, in call
+    triton_poi_fused__to_copy_cos_repeat_sin_0.run(arg4_1, arg1_1, arg2_1.item(), buf0, buf1, s89, ps0, triton_poi_fused__to_copy_cos_repeat_sin_0_xnumel, stream=stream0)
+  File "C:\Users\zby\AppData\Local\Programs\Python\Python312\Lib\site-packages\torch\_inductor\runtime\triton_heuristics.py", line 1133, in run
+    self.autotune_to_one_config(*args, **kwargs)
+  File "C:\Users\zby\AppData\Local\Programs\Python\Python312\Lib\site-packages\torch\_inductor\runtime\triton_heuristics.py", line 960, in autotune_to_one_config
+    timings = self.benchmark_all_configs(*args, **kwargs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\zby\AppData\Local\Programs\Python\Python312\Lib\site-packages\torch\_inductor\runtime\triton_heuristics.py", line 935, in benchmark_all_configs
+    launcher: self.bench(launcher, *args, **kwargs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\zby\AppData\Local\Programs\Python\Python312\Lib\site-packages\torch\_inductor\runtime\triton_heuristics.py", line 804, in bench
+    return benchmarker.benchmark_gpu(kernel_call, rep=40)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\zby\AppData\Local\Programs\Python\Python312\Lib\site-packages\torch\_inductor\runtime\benchmarking.py", line 39, in wrapper
+    return fn(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\zby\AppData\Local\Programs\Python\Python312\Lib\site-packages\torch\_inductor\runtime\benchmarking.py", line 243, in benchmark_gpu
+    _callable()
+  File "C:\Users\zby\AppData\Local\Programs\Python\Python312\Lib\site-packages\torch\_inductor\runtime\triton_heuristics.py", line 789, in kernel_call
+    launcher(
+  File "<string>", line 5, in launcher
+  File "C:\Users\zby\AppData\Local\Programs\Python\Python312\Lib\site-packages\torch\_inductor\runtime\static_cuda_launcher.py", line 227, in run
+    _StaticCudaLauncher._launch_kernel(
+OverflowError: Python int too large to convert to C long

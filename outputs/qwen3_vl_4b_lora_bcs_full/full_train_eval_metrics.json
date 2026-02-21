@@ -1,0 +1,8 @@
+{
+  "total": 50,
+  "parsed": 0,
+  "coverage": 0.0,
+  "mae_vs_ground_truth": NaN,
+  "mean_deviation_closest_A_B": NaN,
+  "class_accuracy": 0.0
+}

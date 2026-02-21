@@ -11,7 +11,7 @@ bcs/
 ├── results/                    # 统计分析图表输出
 ├── extract_images.py           # 从 PDF 提取猫图片
 ├── build_dataset.py            # 构建标注数据集
-├── chatgpt_scoring.py          # ChatGPT 自动评分
+├── llm_scoring.py              # 多模型自动评分（OpenAI/OpenRouter/本地）
 ├── setup_limesurvey.py         # LimeSurvey 问卷设置
 ├── analyze_results.py          # 统计分析与图表生成
 ├── dataset.csv                 # 标注数据集 (CSV)
@@ -67,21 +67,48 @@ python3 build_dataset.py
 
 输出：`dataset.csv`, `dataset_annotated.json`
 
-### 3. ChatGPT 自动评分
+### 3. 多模型自动评分
 
-使用 OpenAI GPT-4o API 对每张图片进行 BCS 评分：
+使用 OpenAI/OpenRouter/本地 OpenAI 兼容接口对每张图片进行 BCS 评分：
 
 ```bash
-export OPENAI_API_KEY="your-api-key"
-python3 chatgpt_scoring.py
+python3 llm_scoring.py --provider openai --model gpt-5.2
+
+# 或 OpenRouter
+python3 llm_scoring.py --provider openrouter --model qwen/qwen2.5-vl-72b-instruct
+
+# 或本地 vLLM / OpenAI 兼容服务
+python3 llm_scoring.py --provider local --model internvl2-8b --base-url http://127.0.0.1:8000/v1
 ```
 
 可选参数：
-- `--model MODEL`: 模型名称 (默认: gpt-4o)
+- `--provider NAME`: 提供商，`openai/openrouter/local`
+- `--model MODEL`: 模型名称（支持别名 `internvl2-8b`、`qwen2-vl-7b`）
+- `--base-url URL`: OpenAI 兼容接口地址（本地部署常用）
+- `--api-key KEY`: 覆盖环境变量中的 API key
+- `--request-timeout S`: 单次请求超时秒数
 - `--delay SECONDS`: 请求间隔 (默认: 1.0)
-- `--output PATH`: 输出文件路径
 
-输出：`chatgpt_results.csv`
+输出：仅追加到 `responses/ai_responses.csv`（包含 `mean_deviation` 列）
+
+本地双模型部署（vLLM）可用：
+
+```bash
+python3 deploy_local_models_vllm.py --dry-run --target internvl2-8b
+# 或
+python3 deploy_local_models_vllm.py --dry-run --target qwen2-vl-7b
+```
+
+说明：默认不建议同时启动 7B+8B（容易显存不足导致系统卡死）。
+
+批量实验（每模型 3 次）可用：
+
+```bash
+python3 run_model_experiments.py --runs 3 --models openrouter
+# 本地模型建议分开跑：
+python3 run_model_experiments.py --runs 3 --models internvl_local
+python3 run_model_experiments.py --runs 3 --models qwen_local
+```
 
 ### 4. 设置 LimeSurvey 问卷
 
