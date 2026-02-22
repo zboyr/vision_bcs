@@ -120,6 +120,35 @@ Important: Only provide whole numbers for BCS scores."""
 
 USER_PROMPT = """Please assess the Body Condition Score (BCS) of this cat based on the photograph. Provide your assessment in the specified JSON format."""
 
+# System prompt for fine-tuned models that output a single integer
+SYSTEM_PROMPT_INTEGER = """You are an expert veterinary clinician specializing in feline medicine with extensive experience in Body Condition Scoring (BCS) of cats. You will be shown a photograph of a cat and asked to assess its Body Condition Score.
+
+BCS uses a standardized 9-point scale (Association for Pet Obesity Prevention / veterinary consensus). Evaluate these key areas from the photo: ribs/chest, spine and back, hips, abdominal tuck (side view), and waist (top view). Use the following criteria:
+
+Score 1 (Emaciated): Ribs project prominently with sharp edges; no fat layer; visible in short-haired cats. Spine and back project prominently. Hips clearly visible, sharp and protruding. Severe abdominal tuck, concave. Waist extremely narrow, hourglass.
+
+Score 2 (Very Thin): Ribs easily felt with very minimal fat; visible on short-haired cats. Spine projects prominently with sharp edges. Hips visible and prominent. Very pronounced abdominal tuck, concave. Waist very narrow, extreme hourglass.
+
+Score 3 (Thin): Ribs easily felt with slight fat covering; visible on short-haired cats. Spine projects prominently with sharp edges. Hips visible. Pronounced abdominal tuck, small abdominal fat. Visible waistline.
+
+Score 4 (Moderately Thin): Ribs easily felt with light fat covering; not visible. Spine can be felt. Hips less bony, some fat; still visible in short-haired cats. Slight abdominal tuck, small fat pad. Noticeable waistline, not overly narrow.
+
+Score 5 (Ideal): Ribs can be felt with slight fat covering. Spine smooth and easily felt, not sharp or bony. Hips rounded with fat layer. Slight abdominal tuck, small fat pad. Noticeable waistline behind ribs, gently curved hourglass from above.
+
+Score 6 (Moderately Above Ideal): Ribs can still be felt but with more difficulty; not visible. Spine can still be felt. Hips can be felt, not visible; some fat. Minimal abdominal tuck, slight rounding. Waist not defined.
+
+Score 7 (Overweight): Ribs difficult to feel under fat. Spine becoming difficult to feel. Hips felt with some pressure; not visible; fat deposits. No abdominal tuck, rounded abdomen. Waist barely visible or absent; body rounded from above.
+
+Score 8 (Obese): Ribs very difficult to feel under fat. Spine very difficult to feel. Hips difficult to feel under fat, little definition. Pronounced rounding and distension of abdomen. No waist, broad and rounded from above. Notable fat deposits on body.
+
+Score 9 (Severe Obesity): Ribs unable to feel. Spine difficult to feel. Hips heavily padded, significant fat; no definition. Large hanging abdominal fat pad. No waist, broad and rounded. Significant fat over lower spine, neck and chest.
+
+Note: Long hair can obscure contours—infer fat coverage from visible landmarks (rib outline, waist, belly curve). Primordial pouch (loose skin under belly) is normal and not necessarily excess fat.
+
+Please assess the cat's BCS based solely on visual cues from the photograph, using the above criteria. Output ONLY a single integer from 1 to 9. No explanation, no punctuation, just the number."""
+
+USER_PROMPT_INTEGER = "What is the Body Condition Score (BCS) of this cat? Output only a single integer from 1 to 9."
+
 
 def encode_image_to_base64(image_path):
     """将图片编码为 base64 字符串。"""
@@ -214,8 +243,25 @@ def create_client(provider: str, base_url: Optional[str] = None,
     raise ValueError(f"不支持的 provider: {provider}")
 
 
+def parse_integer_response(content: str) -> Optional[Dict[str, Any]]:
+    """Parse a single-integer BCS response (from fine-tuned models)."""
+    text = content.strip()
+    # Bare integer
+    if re.fullmatch(r"[1-9]", text):
+        bcs = int(text)
+        return {"bcs": bcs, "confidence": "A", "second_score": None,
+                "effective_bcs": float(bcs), "reasoning": ""}
+    # First digit 1-9 in text
+    m = re.search(r"\b([1-9])\b", text)
+    if m:
+        bcs = int(m.group(1))
+        return {"bcs": bcs, "confidence": "A", "second_score": None,
+                "effective_bcs": float(bcs), "reasoning": ""}
+    return None
+
+
 def score_image(client: Any, image_path: str, model: str = "gpt-5.2",
-                max_retries: int = 3) -> Dict[str, Any]:
+                max_retries: int = 3, integer_output: bool = False) -> Dict[str, Any]:
     """
     使用 GP 对单张图片进行 BCS 评分。
 
@@ -228,16 +274,20 @@ def score_image(client: Any, image_path: str, model: str = "gpt-5.2",
     base64_image = encode_image_to_base64(abs_path)
     media_type = get_image_media_type(abs_path)
 
+    sys_prompt  = SYSTEM_PROMPT_INTEGER if integer_output else SYSTEM_PROMPT
+    usr_prompt  = USER_PROMPT_INTEGER   if integer_output else USER_PROMPT
+    max_tokens  = 4 if integer_output else 300
+
     for attempt in range(max_retries):
         try:
             response = client.chat.completions.create(
                 model=model,
                 messages=[
-                    {"role": "system", "content": SYSTEM_PROMPT},
+                    {"role": "system", "content": sys_prompt},
                     {
                         "role": "user",
                         "content": [
-                            {"type": "text", "text": USER_PROMPT},
+                            {"type": "text", "text": usr_prompt},
                             {
                                 "type": "image_url",
                                 "image_url": {
@@ -248,18 +298,27 @@ def score_image(client: Any, image_path: str, model: str = "gpt-5.2",
                         ]
                     }
                 ],
-                max_completion_tokens=300,
-                temperature=0.1,  # 低温度以获得更一致的评分
+                max_completion_tokens=max_tokens,
+                temperature=0.1,
             )
 
             content = response.choices[0].message.content.strip()
 
-            # 尝试从回复中提取 JSON
+            # Try integer parser first for fine-tuned models
+            if integer_output:
+                result = parse_integer_response(content)
+                if result:
+                    return result
+            # Then JSON parser
             result = parse_response(content)
             if result:
                 return result
-            else:
-                print(f"  警告: 无法解析回复 (尝试 {attempt+1}/{max_retries}): {content[:100]}")
+            # Fallback: try integer even for non-integer mode
+            result = parse_integer_response(content)
+            if result:
+                return result
+
+            print(f"  警告: 无法解析回复 (尝试 {attempt+1}/{max_retries}): {content[:100]}")
 
         except Exception as e:
             print(f"  错误 (尝试 {attempt+1}/{max_retries}): {e}")
@@ -344,12 +403,26 @@ def validate_result(data: Any) -> Optional[Dict[str, Any]]:
 
 
 def load_dataset(csv_path: str) -> list[Dict[str, str]]:
-    """加载数据集 CSV。"""
+    """
+    加载数据集 CSV，支持两种格式：
+      - 标准格式: image_id, image_path, ground_truth, ...
+      - 简单格式: path, bcs  (Purina 3D dataset)
+    简单格式会自动转换为统一的内部字段名。
+    """
     records = []
     with open(csv_path, "r", encoding="utf-8") as f:
         reader = csv.DictReader(f)
         for row in reader:
-            records.append(row)
+            if "path" in row and "bcs" in row and "image_path" not in row:
+                # Simple format → normalise
+                records.append({
+                    "image_id": str(len(records) + 1),
+                    "image_path": row["path"].strip(),
+                    "ground_truth": row["bcs"].strip(),
+                    "_simple": "1",
+                })
+            else:
+                records.append(row)
     return records
 
 
@@ -484,9 +557,26 @@ def main() -> int:
                         help="单次请求超时秒数")
     parser.add_argument("--migrate-ai-responses-only", action="store_true",
                         help="仅更新 ai_responses.csv 列结构并退出")
+    parser.add_argument("--integer-output", action="store_true",
+                        help="模型输出单个整数（用于微调后的模型）")
+    parser.add_argument("--ft-model", default=None,
+                        help="微调模型ID，或指向 ft_model.txt 的路径；覆盖 --model")
+    parser.add_argument("--max-images", type=int, default=0,
+                        help="最多评分图片数（0 = 全部，用于快速测试）")
     args = parser.parse_args()
 
     load_dotenv(os.path.join(BASE_DIR, ".env"))
+
+    # Resolve fine-tuned model ID (path to ft_model.txt or direct ID)
+    if args.ft_model:
+        ft_path = os.path.join(BASE_DIR, args.ft_model)
+        if os.path.isfile(ft_path):
+            args.model = open(ft_path).read().strip()
+        else:
+            args.model = args.ft_model  # treat as literal model ID
+        args.provider = "openai"
+        if not args.integer_output:
+            print("提示: 使用 --integer-output 以匹配微调模型的输出格式")
 
     model_name = resolve_model_name(args.provider, args.model)
 
@@ -527,10 +617,15 @@ def main() -> int:
         print(f"错误: {e}")
         return 1
 
-    print(f"已加载 {len(records)} 条记录")
+    # Apply max-images limit
+    if args.max_images > 0:
+        records = records[: args.max_images]
 
+    print(f"已加载 {len(records)} 条记录")
     print(f"provider: {args.provider}")
     print(f"使用模型: {model_name}")
+    if args.integer_output:
+        print("输出模式: 单整数")
     if args.base_url:
         print(f"base_url: {args.base_url}")
 
@@ -544,7 +639,8 @@ def main() -> int:
         ground_truth = float(record["ground_truth"])
 
         result = score_image(client, image_path, model=model_name,
-                             max_retries=args.max_retries)
+                             max_retries=args.max_retries,
+                             integer_output=args.integer_output)
 
         if "error" in result:
             print(f"\n  Cat #{image_id}: {result['error']}")
