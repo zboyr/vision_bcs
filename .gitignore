@@ -1,1 +1,7 @@
-
+.env
+__pycache__/
+*.pyc
+logs/
+cat_data/
+nul
+*.pt
