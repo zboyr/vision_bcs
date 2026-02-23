@@ -1,8 +1,10 @@
 {
-  "eval_count": 10,
-  "parsed": 10,
+  "eval_count": 107,
+  "parsed": 107,
   "coverage": 1.0,
-  "mae": 1.825,
-  "train_size": 40,
-  "model_id": "Qwen/Qwen3-VL-4B-Instruct"
+  "mae": 0.48598130841121495,
+  "train_size": 969,
+  "eval_size": 107,
+  "model_id": "Qwen/Qwen3-VL-4B-Instruct_ft_20260223_140535",
+  "mode": "lora"
 }

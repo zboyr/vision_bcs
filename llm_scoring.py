@@ -542,6 +542,20 @@ def check_local_endpoint(base_url: str, timeout_seconds: float = 3.0) -> tuple[b
         return False, f"本地模型服务检查失败: {e}"
 
 
+def fetch_local_model_name(base_url: str) -> Optional[str]:
+    """从本地服务的 /v1/models 接口获取模型名称。"""
+    models_url = f"{base_url.rstrip('/')}/models"
+    try:
+        with urllib.request.urlopen(models_url, timeout=5.0) as resp:
+            data = json.loads(resp.read().decode())
+            models = data.get("data", [])
+            if models:
+                return models[0].get("id")
+    except Exception:
+        pass
+    return None
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description="使用 ChatGPT 对猫图片进行 BCS 评分")
     parser.add_argument("--provider", default="openai", choices=["openai", "openrouter", "local"],
@@ -557,8 +571,8 @@ def main() -> int:
                         help="单次请求超时秒数")
     parser.add_argument("--migrate-ai-responses-only", action="store_true",
                         help="仅更新 ai_responses.csv 列结构并退出")
-    parser.add_argument("--integer-output", action="store_true",
-                        help="模型输出单个整数（用于微调后的模型）")
+    parser.add_argument("--output-mode", default="simple", choices=["simple", "json"],
+                        help="输出模式: simple=单整数, json=完整JSON (默认: simple)")
     parser.add_argument("--ft-model", default=None,
                         help="微调模型ID，或指向 ft_model.txt 的路径；覆盖 --model")
     parser.add_argument("--max-images", type=int, default=0,
@@ -575,8 +589,8 @@ def main() -> int:
         else:
             args.model = args.ft_model  # treat as literal model ID
         args.provider = "openai"
-        if not args.integer_output:
-            print("提示: 使用 --integer-output 以匹配微调模型的输出格式")
+        if args.output_mode != "simple":
+            print("提示: 使用 --output-mode simple 以匹配微调模型的输出格式")
 
     model_name = resolve_model_name(args.provider, args.model)
 
@@ -605,6 +619,12 @@ def main() -> int:
         if not ok:
             print(f"错误: {msg}")
             return 2
+        # 未指定 --model 时，从 server 获取实际模型名作为 source
+        if not args.model:
+            fetched = fetch_local_model_name(local_base_url)
+            if fetched:
+                model_name = fetched
+                print(f"从本地服务获取模型名: {model_name}")
 
     try:
         client = create_client(
@@ -624,7 +644,8 @@ def main() -> int:
     print(f"已加载 {len(records)} 条记录")
     print(f"provider: {args.provider}")
     print(f"使用模型: {model_name}")
-    if args.integer_output:
+    integer_output = args.output_mode == "simple"
+    if integer_output:
         print("输出模式: 单整数")
     if args.base_url:
         print(f"base_url: {args.base_url}")
@@ -640,7 +661,7 @@ def main() -> int:
 
         result = score_image(client, image_path, model=model_name,
                              max_retries=args.max_retries,
-                             integer_output=args.integer_output)
+                             integer_output=integer_output)
 
         if "error" in result:
             print(f"\n  Cat #{image_id}: {result['error']}")
