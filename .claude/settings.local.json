@@ -1,7 +1,0 @@
-{
-  "permissions": {
-    "allow": [
-      "Bash(source /home/zby/vision_bcs_venv/bin/activate && python llm_scoring.py --provider local --base-url http://127.0.0.1:8000/v1 --output-mode simple --max-images 50 2>&1)"
-    ]
-  }
-}
