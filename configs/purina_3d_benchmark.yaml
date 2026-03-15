@@ -1,0 +1,61 @@
+# Benchmark non-fine-tuned VLMs on purina_3d sampled dataset
+# Usage: python3 llm_scoring.py --config configs/purina_3d_benchmark.yaml
+
+dataset: cat_data/purina_3d/purina_3d_sample10.csv
+output: responses/purina_3d_results.csv
+repeats: 3
+delay: 1.0
+max_retries: 3
+request_timeout: 60
+output_mode: json
+
+models:
+  # ── Proprietary SOTA (2026) ──────────────────────────────────
+  - name: openai/gpt-5.4
+    provider: openrouter
+  - name: anthropic/claude-opus-4.6
+    provider: openrouter
+  - name: anthropic/claude-sonnet-4.6
+    provider: openrouter
+  - name: google/gemini-3.1-pro-preview
+    provider: openrouter
+
+  # ── Proprietary strong (2025-2026) ──────────────────────────
+  - name: openai/gpt-4o
+    provider: openrouter
+  - name: openai/gpt-4.1
+    provider: openrouter
+  - name: anthropic/claude-sonnet-4.5
+    provider: openrouter
+  - name: google/gemini-2.5-pro
+    provider: openrouter
+  - name: google/gemini-2.5-flash
+    provider: openrouter
+  - name: google/gemini-3-flash-preview
+    provider: openrouter
+  - name: x-ai/grok-4
+    provider: openrouter
+
+  # ── Open-source VLMs (large) ────────────────────────────────
+  - name: qwen/qwen3-vl-235b-a22b-instruct
+    provider: openrouter
+  - name: qwen/qwen2.5-vl-72b-instruct
+    provider: openrouter
+  - name: meta-llama/llama-4-maverick
+    provider: openrouter
+
+  # ── Open-source / cost-effective (small) ────────────────────
+  - name: qwen/qwen3.5-flash-02-23
+    provider: openrouter
+  - name: moonshotai/kimi-k2.5
+    provider: openrouter
+  - name: openai/gpt-4o-mini
+    provider: openrouter
+
+  # ── Local models (uncomment when local server is running) ───
+  # - name: internvl2-8b
+  #   provider: local
+  #   base_url: http://127.0.0.1:8000/v1
+  # - name: Qwen/Qwen3-VL-4B-Instruct
+  #   provider: local
+  #   base_url: http://127.0.0.1:8000/v1

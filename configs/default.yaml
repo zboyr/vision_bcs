@@ -1,0 +1,14 @@
+# Default configuration - matches original CLI defaults
+# Usage: python3 llm_scoring.py --config configs/default.yaml
+
+dataset: dataset.csv
+output: responses/ai_responses.csv
+repeats: 1
+delay: 1.0
+max_retries: 3
+request_timeout: 60
+output_mode: json   # json = full JSON response, simple = single integer
+
+models:
+  - name: gpt-5.2
+    provider: openai

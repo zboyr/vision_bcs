@@ -1,0 +1,41 @@
+# Continue benchmark: remaining models after first batch
+# Already completed: gpt-5.4, claude-opus-4.6, claude-sonnet-4.6 (in purina_3d_results.csv)
+# Skipped: gemini-3.1-pro-preview (returns null content via OpenRouter)
+
+dataset: cat_data/purina_3d/purina_3d_sample10.csv
+output: responses/purina_3d_results_continue.csv
+repeats: 3
+delay: 1.0
+max_retries: 3
+request_timeout: 60
+output_mode: simple
+
+models:
+  - name: openai/gpt-4o
+    provider: openrouter
+  - name: openai/gpt-4.1
+    provider: openrouter
+  - name: anthropic/claude-sonnet-4.5
+    provider: openrouter
+  - name: google/gemini-2.5-pro
+    provider: openrouter
+  - name: google/gemini-2.5-flash
+    provider: openrouter
+  - name: google/gemini-3-flash-preview
+    provider: openrouter
+  - name: x-ai/grok-4
+    provider: openrouter
+  - name: qwen/qwen3-vl-235b-a22b-instruct
+    provider: openrouter
+  - name: qwen/qwen2.5-vl-72b-instruct
+    provider: openrouter
+  - name: meta-llama/llama-4-maverick
+    provider: openrouter
+  - name: qwen/qwen3.5-flash-02-23
+    provider: openrouter
+  - name: moonshotai/kimi-k2.5
+    provider: openrouter
+  - name: openai/gpt-4o-mini
+    provider: openrouter
+  - name: google/gemini-3.1-pro-preview
+    provider: openrouter
