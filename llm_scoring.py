@@ -611,6 +611,21 @@ def score_dataset_to_wide_row(
     return wide_row, errors, aborted
 
 
+def avg_mean_deviation(run_rows: list[Dict[str, Any]]) -> str:
+    """Average the mean_deviation values across run rows."""
+    values: list[float] = []
+    for row in run_rows:
+        md = row.get("mean_deviation", "").strip()
+        if md:
+            try:
+                values.append(float(md))
+            except ValueError:
+                pass
+    if not values:
+        return ""
+    return f"{sum(values) / len(values):.4f}"
+
+
 def compute_average_row(
     run_rows: list[Dict[str, Any]],
     bcs_columns: list[str],
@@ -774,14 +789,7 @@ def run_from_config(config_path: str) -> int:
         # Average row when repeats > 1
         if repeats > 1 and run_rows:
             avg_row = compute_average_row(run_rows, bcs_columns, resolved_name)
-            if has_scorers:
-                avg_row["mean_deviation"] = calc_mean_deviation_generic(
-                    avg_row, bcs_columns, gt_map, scorer_a_map, scorer_b_map
-                )
-            else:
-                avg_row["mean_deviation"] = calc_mean_deviation_generic(
-                    avg_row, bcs_columns, gt_map
-                )
+            avg_row["mean_deviation"] = avg_mean_deviation(run_rows)
 
             with open(output_path, "a", newline="", encoding="utf-8") as f:
                 writer = csv.DictWriter(f, fieldnames=fieldnames)
@@ -965,14 +973,7 @@ def fill_missing_scores(
         new_avg = compute_average_row(runs, bcs_columns, src)
         for col in bcs_columns:
             avg_row[col] = new_avg.get(col, "")
-        if has_scorers:
-            avg_row["mean_deviation"] = calc_mean_deviation_generic(
-                avg_row, bcs_columns, gt_map, scorer_a_map, scorer_b_map
-            )
-        else:
-            avg_row["mean_deviation"] = calc_mean_deviation_generic(
-                avg_row, bcs_columns, gt_map
-            )
+        avg_row["mean_deviation"] = avg_mean_deviation(runs)
 
     # Write back
     with open(results_path, "w", newline="", encoding="utf-8") as f:
