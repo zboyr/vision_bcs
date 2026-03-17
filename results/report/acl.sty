@@ -1,0 +1,72 @@
+% Minimal ACL style file
+% Based on ACL 2024 formatting guidelines
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{acl}[2024/01/01 Minimal ACL Style]
+
+% Page geometry (letter paper, 1-inch margins)
+\RequirePackage[letterpaper,top=1in,bottom=1in,left=1in,right=1in]{geometry}
+
+% Two-column layout
+\RequirePackage{multicol}
+\setlength{\columnsep}{0.25in}
+
+% Fonts
+\RequirePackage{times}
+\RequirePackage{latexsym}
+\RequirePackage[T1]{fontenc}
+\RequirePackage[utf8]{inputenc}
+\RequirePackage{microtype}
+
+% Graphics and tables
+\RequirePackage{graphicx}
+\RequirePackage{booktabs}
+\RequirePackage{tabularx}
+
+% Hyperlinks
+\RequirePackage[hidelinks]{hyperref}
+\RequirePackage{url}
+
+% Citations
+\RequirePackage[numbers]{natbib}
+
+% Section formatting
+\RequirePackage{titlesec}
+\titleformat{\section}{\normalfont\large\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}{\normalfont\normalsize\bfseries}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}{\normalfont\normalsize\bfseries\itshape}{\thesubsubsection}{1em}{}
+
+% Title formatting
+\newcommand{\acltitle}[1]{%
+  \begin{center}
+    {\Large\bfseries #1\par}
+    \vspace{1em}
+  \end{center}
+}
+
+% Author formatting
+\newcommand{\aclauthor}[1]{%
+  \begin{center}
+    {#1\par}
+    \vspace{1.5em}
+  \end{center}
+}
+
+% Abstract environment
+\renewenvironment{abstract}{%
+  \begin{center}
+    \textbf{Abstract}
+  \end{center}
+  \begin{quote}\small
+}{%
+  \end{quote}
+  \vspace{1em}
+}
+
+% Float placement
+\renewcommand{\topfraction}{0.9}
+\renewcommand{\bottomfraction}{0.8}
+\setcounter{topnumber}{2}
+\setcounter{bottomnumber}{2}
+\setcounter{totalnumber}{4}
+
+\endinput

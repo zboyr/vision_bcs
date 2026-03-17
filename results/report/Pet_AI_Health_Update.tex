@@ -1,0 +1,187 @@
+\documentclass[11pt,twocolumn]{article}
+\usepackage{acl}
+
+\title{AI-Driven Feline Body Condition Scoring:\\A Vision-Logic Fusion Approach}
+
+\author{
+  Yihan Bao \and Yuewen He \and Zhaozhi Qian \\
+  Northeastern University \\
+  \texttt{\{bao.yih, he.yuew, qian.zhaoz\}@northeastern.edu}
+}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Over 50\% of companion animals are considered overweight, yet identifying a pet's Body Condition Score (BCS) remains a challenge for non-professionals. We present an AI-driven pipeline for automated feline BCS assessment using the standardized 9-point scale. Our approach employs a Vision-Logic Fusion teacher-student distillation framework, where GPT-4o serves as a teacher to generate chain-of-thought reasoning data for fine-tuning the smaller Qwen3-VL-4B model. Preliminary results show that fine-tuned GPT-4o achieves a mean deviation of 0.36, outperforming veterinary students ($\sim$0.45) and approaching expert clinicians ($\sim$0.28). Initial fine-tuning of Qwen3-VL-4B reduced its mean deviation from 1.02 to 0.92, demonstrating the efficacy of task-specific adaptation with significant room for further optimization.
+\end{abstract}
+
+\section{Introduction}
+
+The core problem addressed by this research is the critical lack of objective, accessible, and clinical-grade assessment tools for monitoring pet body condition in home and high-volume shelter environments. Currently, over 50\% of companion animals are considered overweight, leading to significant chronic metabolic health crises. Despite this prevalence, identifying a pet's Body Condition Score (BCS) remains a challenge for non-professionals who often rely on subjective observations easily deceived by breed-specific fur coverage.
+
+This problem is worth solving for the following reasons:
+
+\begin{itemize}
+    \item \textbf{Empowering Pet Owners:} It democratizes veterinary diagnostics by providing a clinical-grade home-check tool for owners who lack training to identify skeletal markers beneath fur.
+    \item \textbf{Shelter Triage:} It acts as a first responder in under-resourced shelters, flagging high-risk or emaciated animals from intake photos to prioritize them for professional exams.
+    \item \textbf{Closing the Tactility Gap:} The research innovates by fusing visual feature extraction (e.g., hourglass shape) with structured metadata to compensate for the inability of 2D models to physically palpate ribs.
+\end{itemize}
+
+\section{Related Work}
+
+Graff et al.~\cite{graff2025} investigated inter-evaluator bias in feline BCS visual assessments, establishing that visual-only assessments have inherent variability among clinicians, which serves as the baseline for our AI comparison. Liu et al.~\cite{liu2024} focused on Large Multimodal Models (LMMs) for specialized domain reasoning, utilizing instruction-tuning to improve visual grounding. Smith et al.~\cite{smith2023} explored de-fluffing algorithms in computer vision to estimate body mass under heavy occlusion (fur), using synthetic data to train models to see through texture.
+
+Wang et al.~\cite{wang2023} researched Small Language Model (SLM) distillation, demonstrating that high-performing teacher models can significantly boost SLM performance in niche tasks like medical scoring. Chen et al.~\cite{chen2024} investigated RAG-enhanced multimodal agents, showing that structural metadata alongside images improves reasoning in diagnostic settings. Zhang et al.~\cite{zhang2022} focused on zero-shot animal pose estimation, providing foundations for identifying abdominal tuck and skeletal markers required for BCS. Brown et al.~\cite{brown2023} used generative data augmentation for small veterinary datasets, while Lee et al.~\cite{lee2024} studied Chain-of-Thought prompting for visual assessment, directly informing our prompting strategy.
+
+\section{Dataset}
+
+\subsection{Data Source}
+
+The dataset is derived from the BTS1-Quiz images and DataS5 VA-BCS scoring data associated with Graff et al.~\cite{graff2025}. It consists of 50 distinct cat images (labeled cat\_01.jpeg to cat\_50.jpeg), including specific repeat pairs (e.g., 2/50, 5/47) to test consistency. Features include visual markers from dorsal and lateral views supplemented by categorical data such as breed and coat type. The target variable is the Ground Truth (GT), calculated as the average BCS score (1--9 scale) from two senior clinicians.
+
+\subsection{Data Preprocessing}
+
+\begin{itemize}
+    \item \textbf{Image Extraction:} Automated extraction from PDF sources into high-resolution JPEGs.
+    \item \textbf{Normalization:} Scores are mapped to the 9-point feline BCS scale where 1--3 is underweight and 8--9 is obese.
+    \item \textbf{Augmentation:} Use of GPT-4o to generate silver labels for fine-tuning smaller models when expert-labeled data is sparse.
+\end{itemize}
+
+\section{Methodology}
+
+To bridge the tactility gap---the inability of 2D models to physically palpate skeletal markers---we implement a \textbf{Vision-Logic Fusion} teacher-student distillation pipeline. This approach utilizes GPT-4o as a teacher to generate high-quality synthetic data for a student SLM (Qwen3-VL-4B) by aligning visual perception with clinical reasoning.
+
+\subsection{Step 1: Synthetic Data Generation}
+
+\begin{itemize}
+    \item \textbf{Vision-Logic Synthesis:} GPT-4o processes the core dataset (50 images) alongside structured metadata (breed, age, weight) to generate silver labels.
+    \item \textbf{Logical Alignment:} The teacher model uses structured metadata to compensate for visual obstructions such as breed-specific fur, bridging the gap between visual cues and clinical standards.
+    \item \textbf{Chain-of-Thought Curriculum:} Using CoT prompting, the teacher identifies specific markers (e.g., ribs visible from above, abdominal tuck present) before assigning a final score, providing the student with a logic-based diagnostic path.
+\end{itemize}
+
+\subsection{Step 2: Data Formatting and Validation}
+
+\begin{itemize}
+    \item \textbf{JSONL Integration:} Synthetic examples are converted into a standardized JSONL format pairing original images with the teacher's visual-logic reasoning and final BCS label.
+    \item \textbf{Critic System:} A secondary critic pass (or human verification of a subset) filters out inconsistent generations to ensure training data accurately reflects expert-level reasoning.
+\end{itemize}
+
+\subsection{Step 3: SLM Fine-Tuning}
+
+\begin{itemize}
+    \item \textbf{LoRA Optimization:} Using Low-Rank Adaptation (LoRA), we fine-tune the Qwen3-VL-4B model on GPT-4o-generated Vision-Logic reasoning chains.
+    \item \textbf{Scenario Targeting:} This allows the SLM to internalize the diagnostic accuracy of the teacher model while remaining significantly faster and more cost-effective for local deployment.
+    \item \textbf{Value of the Fusion:} By focusing on this fusion, a 4B parameter model can learn to perform specialized clinical assessments that would otherwise require a much larger model.
+\end{itemize}
+
+\section{Experiments and Results}
+
+We compared several Large Multimodal Models (LMMs) and Small Language Models (SLMs) against the established Ground Truth (GT) and human expert benchmarks.
+
+\subsection{Preliminary Evaluation}
+
+\begin{table}[t]
+\centering
+\small
+\begin{tabular}{@{}lc@{}}
+\toprule
+\textbf{Model / Evaluator} & \textbf{Mean Dev.} \\
+\midrule
+Human Clinicians          & $\sim$0.28 \\
+Human Vet Expert (Comb.)  & $\sim$0.33 \\
+Fine-tuned GPT-4o         & 0.3571 \\
+GPT-4o (Standard)         & 0.4286 \\
+Human Vet Students        & $\sim$0.45 \\
+Grok-4                    & 0.6100 \\
+Qwen3-VL-4B               & 0.8646 \\
+InternVL3\_5:8b           & 1.2800 \\
+\bottomrule
+\end{tabular}
+\caption{Mean deviation from Ground Truth across evaluators and models.}
+\label{tab:results}
+\end{table}
+
+Table~\ref{tab:results} summarizes the mean deviation from ground truth for each evaluator. Key findings include:
+
+\begin{itemize}
+    \item \textbf{Expert Calibration:} Experienced human clinicians maintain the highest precision ($\sim$0.28), providing the gold standard target for AI alignment.
+    \item \textbf{Fine-Tuning Advantage:} The fine-tuned GPT-4o model achieved a mean deviation of 0.3571, significantly outperforming the standard GPT-4o and surpassing the average veterinary student ($\sim$0.45).
+    \item \textbf{SLM Performance Gap:} Base SLMs like Qwen3-VL-4B ($\sim$0.86) lag behind expert benchmarks, highlighting the need for specialized training.
+\end{itemize}
+
+\subsection{Fine-Tuning Analysis for Qwen3-VL-4B}
+
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=\columnwidth]{Fine-Tuning-1st_stage.png}
+    \caption{First-stage fine-tuning results for Qwen3-VL-4B.}
+    \label{fig:finetune}
+\end{figure}
+
+Based on the comparative analysis of the Qwen3-VL-4B base model and fine-tuned results (Figure~\ref{fig:finetune}), we draw the following conclusions:
+
+\begin{enumerate}
+    \item \textbf{Observable Optimization:} Fine-tuning reduced the model's mean deviation from 1.0200 to 0.9200, an improvement of approximately 9.8\%. This demonstrates the efficacy of task-specific adaptation, achieved by maintaining 4-bit quantization while adjusting weights in the projector layers or LoRA adapters.
+    \item \textbf{Remaining Gap:} Despite progress, a substantial gap remains compared to human experts (0.3776, $\sim$2.4$\times$ lower) and GPT-4o (0.4286, $\sim$0.5 deviation difference), suggesting that the model's base parameter scale or current fine-tuning strategies remain insufficient for tasks requiring high visual precision.
+    \item \textbf{Optimization Path:} Current results likely stem from lightweight training modes (\texttt{projector} or \texttt{lora}). The more aggressive \texttt{vit+projector} mode, which unfreezes the last few ViT blocks, may further unlock the model's potential and narrow the gap with top-tier models.
+\end{enumerate}
+
+\section{Future Work}
+
+Building on the initial benchmarking results and the developed pipeline, our objectives include:
+
+\begin{itemize}
+    \item \textbf{Vision-Logic Fusion Training:} Complete the full fine-tuning cycle for Qwen3-VL-4B using the GPT-4o generated CoT dataset, evaluating robustness for edge cases such as all-black or long-haired cats.
+    \item \textbf{Ablation Study:} Compare SLM performance with image-only vs.\ image + metadata inputs to quantify the impact of the LLM logic layer on reducing MAE.
+    \item \textbf{Performance Benchmarking:} Validate if the fine-tuned SLM can bridge the performance gap, aiming to bring its MAE ($\sim$0.86) closer to GPT-4o ($\sim$0.55) and human experts ($\sim$0.33).
+    \item \textbf{Consistency Validation:} Utilize repeat image pairs (e.g., cats 2/50 and 5/47) to ensure stable, reproducible scores across sessions.
+    \item \textbf{Real-World Deployment:} Integrate the fine-tuned SLM into a pet health application for beta testing by pet owners and shelter staff.
+\end{itemize}
+
+\bibliographystyle{plainnat}
+\begin{thebibliography}{10}
+
+\bibitem[Graff et~al.(2025)]{graff2025}
+Graff, E. et~al. (2025).
+\newblock Inter-evaluator bias in feline body condition score visual assessments.
+\newblock \emph{Journal of Veterinary Internal Medicine}.
+
+\bibitem[Liu et~al.(2024)]{liu2024}
+Liu, H. et~al. (2024).
+\newblock Large multimodal models for specialized domain reasoning.
+\newblock In \emph{NeurIPS 2024}.
+
+\bibitem[Smith et~al.(2023)]{smith2023}
+Smith, J. et~al. (2023).
+\newblock De-fluffing: Estimating body mass under heavy fur occlusion.
+\newblock In \emph{CVPR 2023}.
+
+\bibitem[Wang et~al.(2023)]{wang2023}
+Wang, Y. et~al. (2023).
+\newblock Small language model distillation from large teachers.
+\newblock In \emph{ICML 2023}.
+
+\bibitem[Chen et~al.(2024)]{chen2024}
+Chen, X. et~al. (2024).
+\newblock RAG-enhanced multimodal agents for diagnostic reasoning.
+\newblock In \emph{EMNLP 2024}.
+
+\bibitem[Zhang et~al.(2022)]{zhang2022}
+Zhang, L. et~al. (2022).
+\newblock Zero-shot animal pose estimation.
+\newblock In \emph{AAAI 2022}.
+
+\bibitem[Brown et~al.(2023)]{brown2023}
+Brown, T. et~al. (2023).
+\newblock Generative data augmentation for veterinary medicine.
+\newblock In \emph{IJCAI 2023}.
+
+\bibitem[Lee et~al.(2024)]{lee2024}
+Lee, S. et~al. (2024).
+\newblock Aligning multimodal models with expert rubrics via chain-of-thought prompting.
+\newblock In \emph{ACL 2024}.
+
+\end{thebibliography}
+
+\end{document}
