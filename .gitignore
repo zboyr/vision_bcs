@@ -7,3 +7,4 @@ nul
 .DS_Store
 .venv/
 .claude/
+.vscode/settings.json
