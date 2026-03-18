@@ -380,15 +380,24 @@ def load_dataset(csv_path: str) -> list[Dict[str, str]]:
     """
     加载数据集 CSV，支持两种格式：
       - 标准格式: image_id, image_path, ground_truth, ...
-      - 简单格式: path, bcs  (Purina 3D dataset)
-    简单格式会自动转换为统一的内部字段名。
+      - 简单格式: filename, bcs  (Purina 3D / essay dataset)
+    简单格式会自动转换为统一的内部字段名，image_path 由 CSV 所在目录 + filename 拼接。
     """
+    dataset_dir = os.path.relpath(os.path.dirname(csv_path), BASE_DIR)
     records = []
     with open(csv_path, "r", encoding="utf-8") as f:
         reader = csv.DictReader(f)
         for row in reader:
-            if "path" in row and "bcs" in row and "image_path" not in row:
-                # Simple format → normalise
+            if "filename" in row and "bcs" in row and "image_path" not in row:
+                # Simple format (filename, bcs) → normalise
+                records.append({
+                    "image_id": str(len(records) + 1),
+                    "image_path": os.path.join(dataset_dir, row["filename"].strip()),
+                    "ground_truth": row["bcs"].strip(),
+                    "_simple": "1",
+                })
+            elif "path" in row and "bcs" in row and "image_path" not in row:
+                # Simple format (path, bcs) → normalise, path is already relative to BASE_DIR
                 records.append({
                     "image_id": str(len(records) + 1),
                     "image_path": row["path"].strip(),
