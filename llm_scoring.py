@@ -225,13 +225,57 @@ def parse_integer_response(content: str) -> Optional[Dict[str, Any]]:
     return None
 
 
+def parse_mapped_response(content: str,
+                          response_map: Dict[str, float]) -> Optional[Dict[str, Any]]:
+    """Parse a categorical response using a string→score map (e.g., N→2, O→3, U→1)."""
+    text = content.strip().upper()
+    # Exact match
+    if text in response_map:
+        bcs = response_map[text]
+        return {"bcs": bcs, "confidence": "A", "second_score": None,
+                "effective_bcs": bcs, "reasoning": ""}
+    # Search for any mapped key as a standalone word
+    for key, bcs in response_map.items():
+        if re.search(r"\b" + re.escape(key) + r"\b", text):
+            return {"bcs": bcs, "confidence": "A", "second_score": None,
+                    "effective_bcs": bcs, "reasoning": ""}
+    return None
+
+
+def parse_decimal_response(content: str, bcs_min: float = 1.0,
+                           bcs_max: float = 5.0) -> Optional[Dict[str, Any]]:
+    """Parse a decimal BCS response (e.g., '3.25')."""
+    text = content.strip()
+    # Exact decimal or integer
+    m = re.fullmatch(r"(\d+(?:\.\d+)?)", text)
+    if m:
+        bcs = float(m.group(1))
+        if bcs_min <= bcs <= bcs_max:
+            return {"bcs": bcs, "confidence": "A", "second_score": None,
+                    "effective_bcs": bcs, "reasoning": ""}
+    # First number in text within valid range
+    for m in re.finditer(r"\b(\d+(?:\.\d+)?)\b", text):
+        bcs = float(m.group(1))
+        if bcs_min <= bcs <= bcs_max:
+            return {"bcs": bcs, "confidence": "A", "second_score": None,
+                    "effective_bcs": bcs, "reasoning": ""}
+    return None
+
+
 def score_image(client: Any, image_path: str, model: str = "gpt-5.2",
-                max_retries: int = 3, integer_output: bool = False) -> Dict[str, Any]:
+                max_retries: int = 3, integer_output: bool = False,
+                system_prompt: Optional[str] = None,
+                user_prompt: Optional[str] = None,
+                bcs_min: float = 1.0, bcs_max: float = 9.0,
+                response_map: Optional[Dict[str, float]] = None) -> Dict[str, Any]:
     """
     使用 GP 对单张图片进行 BCS 评分。
 
     返回: dict with keys: bcs, confidence, second_score, reasoning
     """
+    sys_prompt = system_prompt or SYSTEM_PROMPT
+    usr_prompt = user_prompt or USER_PROMPT
+
     abs_path = os.path.join(BASE_DIR, image_path)
     if not os.path.exists(abs_path):
         return {"error": f"图片不存在: {abs_path}"}
@@ -239,16 +283,18 @@ def score_image(client: Any, image_path: str, model: str = "gpt-5.2",
     base64_image = encode_image_to_base64(abs_path)
     media_type = get_image_media_type(abs_path)
 
+    use_decimal = bcs_max <= 5.0
+
     for attempt in range(max_retries):
         try:
             response = client.chat.completions.create(
                 model=model,
                 messages=[
-                    {"role": "system", "content": SYSTEM_PROMPT},
+                    {"role": "system", "content": sys_prompt},
                     {
                         "role": "user",
                         "content": [
-                            {"type": "text", "text": USER_PROMPT},
+                            {"type": "text", "text": usr_prompt},
                             {
                                 "type": "image_url",
                                 "image_url": {
@@ -274,8 +320,12 @@ def score_image(client: Any, image_path: str, model: str = "gpt-5.2",
             if not raw_content:
                 reasoning = getattr(choice.message, "reasoning", None)
                 if reasoning:
-                    # Try to extract a BCS integer from the reasoning text
-                    extracted = parse_integer_response(reasoning)
+                    if response_map:
+                        extracted = parse_mapped_response(reasoning, response_map)
+                    elif use_decimal:
+                        extracted = parse_decimal_response(reasoning, bcs_min, bcs_max)
+                    else:
+                        extracted = parse_integer_response(reasoning)
                     if extracted:
                         return extracted
                 print(f"  警告: 模型返回空内容 (尝试 {attempt+1}/{max_retries})"
@@ -283,7 +333,17 @@ def score_image(client: Any, image_path: str, model: str = "gpt-5.2",
                 continue
             content = raw_content.strip()
 
-            # Try integer parser first (primary)
+            # Try mapped response parser (e.g. N/O/U → 1/2/3)
+            if response_map:
+                result = parse_mapped_response(content, response_map)
+                if result:
+                    return result
+            # Try decimal parser for non-integer scales (e.g. cow BCS 1-5)
+            if use_decimal:
+                result = parse_decimal_response(content, bcs_min, bcs_max)
+                if result:
+                    return result
+            # Try integer parser (primary for cat BCS 1-9)
             result = parse_integer_response(content)
             if result:
                 return result
@@ -588,6 +648,11 @@ def score_dataset_to_wide_row(
     max_retries: int = 3,
     delay: float = 1.0,
     integer_output: bool = False,
+    system_prompt: Optional[str] = None,
+    user_prompt: Optional[str] = None,
+    bcs_min: float = 1.0,
+    bcs_max: float = 9.0,
+    response_map: Optional[Dict[str, float]] = None,
 ) -> tuple[Dict[str, Any], int, bool]:
     """Score all images in records and return (wide_row_dict, error_count, aborted)."""
     run_id = datetime.now().strftime("%Y%m%d_%H%M%S")
@@ -601,7 +666,10 @@ def score_dataset_to_wide_row(
     for record in progress_iter(records, total=len(records), desc=f"  {model_name}"):
         image_id = int(record["image_id"])
         result = score_image(client, record["image_path"], model=model_name,
-                             max_retries=max_retries, integer_output=integer_output)
+                             max_retries=max_retries, integer_output=integer_output,
+                             system_prompt=system_prompt, user_prompt=user_prompt,
+                             bcs_min=bcs_min, bcs_max=bcs_max,
+                             response_map=response_map)
         if "error" in result:
             print(f"\n    Cat #{image_id}: {result['error']}")
             errors += 1
@@ -683,6 +751,14 @@ def run_from_config(config_path: str) -> int:
     request_timeout = config.get("request_timeout", 60.0)
     output_mode = config.get("output_mode", "json")
     models = config.get("models", [])
+    custom_system_prompt = config.get("system_prompt")
+    custom_user_prompt = config.get("user_prompt")
+    bcs_min = config.get("bcs_min", 1.0)
+    bcs_max = config.get("bcs_max", 9.0)
+    raw_response_map = config.get("response_map")
+    response_map: Optional[Dict[str, float]] = None
+    if raw_response_map:
+        response_map = {str(k).upper(): float(v) for k, v in raw_response_map.items()}
 
     if not models:
         print("错误: 配置文件中未指定模型")
@@ -765,6 +841,10 @@ def run_from_config(config_path: str) -> int:
                 client, records, resolved_name, bcs_columns,
                 max_retries=max_retries, delay=delay,
                 integer_output=integer_output,
+                system_prompt=custom_system_prompt,
+                user_prompt=custom_user_prompt,
+                bcs_min=bcs_min, bcs_max=bcs_max,
+                response_map=response_map,
             )
             total_errors += errors
 
