@@ -787,11 +787,12 @@ def run_from_config(config_path: str) -> int:
     else:
         fieldnames = ["id", "source", "mean_deviation"] + bcs_columns
 
-    # Create output file with header
+    # Create output file with header, or append to existing file
     os.makedirs(os.path.dirname(output_path), exist_ok=True)
-    with open(output_path, "w", newline="", encoding="utf-8") as f:
-        writer = csv.DictWriter(f, fieldnames=fieldnames)
-        writer.writeheader()
+    if not os.path.exists(output_path) or os.path.getsize(output_path) == 0:
+        with open(output_path, "w", newline="", encoding="utf-8") as f:
+            writer = csv.DictWriter(f, fieldnames=fieldnames)
+            writer.writeheader()
 
     print(f"数据集: {dataset_path} ({num_images} 张图片)")
     print(f"输出文件: {output_path}")
