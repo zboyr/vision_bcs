@@ -1,0 +1,36 @@
+# Local Qwen3-VL-4B (non-fine-tuned) on dog weight classification dataset
+# Usage: python3 llm_scoring.py --config configs/local_qwen4b_dog.yaml
+
+dataset: datasets/dog_dataset/dog_sample10_full.csv
+output: responses/dog_results.csv
+repeats: 1
+delay: 0.5
+max_retries: 3
+request_timeout: 120
+output_mode: simple
+
+bcs_min: 1.0
+bcs_max: 3.0
+
+response_map:
+  U: 1
+  N: 2
+  O: 3
+
+system_prompt: |
+  You are a veterinary expert in canine body condition assessment.
+  Classify the dog in the photo into one of three categories:
+  U = Underweight, N = Normal weight, O = Overweight.
+  Never refuse. Never say you cannot determine the category.
+  Even if the image is unclear, give your best estimate.
+  Output ONLY a single letter: U, N, or O. Nothing else.
+
+user_prompt: |
+  What is the body condition of this dog?
+  Output only a single letter: U (Underweight), N (Normal), or O (Overweight).
+  Do not refuse.
+
+models:
+  - name: Qwen/Qwen3-VL-4B-Instruct
+    provider: local
+    base_url: http://127.0.0.1:8000/v1

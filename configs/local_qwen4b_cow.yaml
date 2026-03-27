@@ -1,0 +1,30 @@
+# Local Qwen3-VL-4B (non-fine-tuned) on cow BCS dataset
+# Usage: python3 llm_scoring.py --config configs/local_qwen4b_cow.yaml
+
+dataset: datasets/cow_dataset/cow_sample5_full.csv
+output: responses/cow_results.csv
+repeats: 1
+delay: 0.5
+max_retries: 3
+request_timeout: 120
+output_mode: simple
+
+bcs_min: 1.0
+bcs_max: 5.0
+
+system_prompt: |
+  You are a veterinary expert in bovine Body Condition Scoring (BCS, 1-5 scale).
+  Assess the cow in the photo. You MUST output EXACTLY one number from the following allowed values:
+  1.0, 1.25, 1.75, 2.0, 2.25, 2.75, 3.0, 3.25, 3.75, 4.0, 4.25, 4.75, 5.0
+  Never refuse. Never say you cannot determine the score. Even if the image is unclear, give your best estimate.
+  Output ONLY the number, nothing else.
+
+user_prompt: |
+  What is the Body Condition Score (BCS) of this cow? You must give a score.
+  Output only a single number from: 1.0, 1.25, 1.75, 2.0, 2.25, 2.75, 3.0, 3.25, 3.75, 4.0, 4.25, 4.75, 5.0
+  Do not refuse.
+
+models:
+  - name: Qwen/Qwen3-VL-4B-Instruct
+    provider: local
+    base_url: http://127.0.0.1:8000/v1

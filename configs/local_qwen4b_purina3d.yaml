@@ -1,0 +1,15 @@
+# Local Qwen3-VL-4B (non-fine-tuned) on purina_3d sampled dataset
+# Usage: python3 llm_scoring.py --config configs/local_qwen4b_purina3d.yaml
+
+dataset: datasets/purina_3d/purina_3d_sample10.csv
+output: responses/purina_3d_results_merged.csv
+repeats: 3
+delay: 0.5
+max_retries: 3
+request_timeout: 120
+output_mode: json
+
+models:
+  - name: Qwen/Qwen3-VL-4B-Instruct
+    provider: local
+    base_url: http://127.0.0.1:8000/v1
