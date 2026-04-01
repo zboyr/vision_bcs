@@ -1,3 +1,4 @@
+
 #!/usr/bin/env python3
 import argparse
 import csv
@@ -21,8 +22,31 @@ from trl import SFTConfig, SFTTrainer
 
 
 SYSTEM_MSG = (
-    "You are a veterinary clinician. Estimate feline body condition score (BCS) from image. "
-    "Output strict JSON with keys: bcs, confidence, second_score, reasoning."
+    "You are a veterinary clinician specialized in feline health and nutrition. "
+    "Your task is to assess the Body Condition Score (BCS) of a cat from an image using the standard 9-point BCS scale. "
+
+    "The BCS scale is defined as follows:\n"
+    "1-2: Emaciated to very thin — ribs, spine, and pelvic bones are highly visible with no fat coverage.\n"
+    "3: Underweight — ribs easily visible, minimal fat covering, obvious waist and abdominal tuck.\n"
+    "4-5: Ideal — ribs palpable with slight fat covering, visible waist behind ribs, abdomen tucked.\n"
+    "6: Slightly overweight — ribs palpable with difficulty, noticeable fat deposits, reduced waist.\n"
+    "7: Overweight — ribs difficult to feel, obvious fat deposits, minimal waist.\n"
+    "8-9: Obese — ribs not palpable, heavy fat deposits, no waist, abdominal distension may be present.\n"
+
+    "When assessing, consider:\n"
+    "- Visibility and palpability of ribs\n"
+    "- Waist definition when viewed from above\n"
+    "- Abdominal tuck when viewed from the side\n"
+    "- Fat deposits around neck, base of tail, and abdomen\n"
+    "- Overall body shape and proportion\n"
+
+    "Output must be strict JSON with the following keys:\n"
+    "- bcs: integer from 1 to 9\n"
+    "- confidence: one of [A, B, C] where A = high confidence, C = low confidence\n"
+    "- second_score: optional alternative integer score if uncertain, otherwise null\n"
+    "- reasoning: brief explanation based on visible physical features\n"
+
+    "Do not output anything other than valid JSON. Do not include extra text."
 )
 USER_MSG = "Assess this cat and return JSON only."
 
@@ -33,20 +57,40 @@ class Sample:
     ground_truth: float
 
 
+def try_load_file(expected_filepath, dataset_csv_filepath):
+    # the working directory of this script sometimes different, so if
+    # dataset only record relative path of it's current location, it will
+    # fail. this func normalizes the path by either try to load the
+    # file as it is, or try to normalize path to where dataset is
+    # if both are not there, error
+    if (os.path.exists(expected_filepath)):
+        return expected_filepath
+    recoverePath = os.path.join(os.path.dirname(dataset_csv_filepath), os.path.basename(expected_filepath))
+    if (os.path.exists(recoverePath)):
+        return recoverePath
+    raise ValueError(f"{expected_filepath} or {recoverePath} don't exist, check your dataset.csv")
+
 def load_samples(base_dir: str, dataset_csv: str) -> list[Sample]:
     path = os.path.join(base_dir, dataset_csv)
     rows: list[Sample] = []
+    print(path)
     with open(path, "r", encoding="utf-8", newline="") as f:
         reader = csv.DictReader(f)
         for r in reader:
             try:
+                img_path = os.path.join(base_dir, r["filename"])
+                corrected_path = try_load_file(img_path, dataset_csv)
                 rows.append(
                     Sample(
-                        image_path=os.path.join(base_dir, r["image_path"]),
-                        ground_truth=float(r["ground_truth"]),
+                        image_path=corrected_path,
+                        ground_truth=float(r["bcs"]),
                     )
                 )
-            except (KeyError, ValueError):
+            except (KeyError, ValueError) as e:
+                print(f"""Failed to load data from entry: {r}. 
+                      Expected headers for csv: filename, bcs
+                       Error: {e}.
+                       """)
                 continue
     return rows
 
@@ -136,14 +180,15 @@ def run_eval(
 
 def main() -> int:
     parser = argparse.ArgumentParser(description="LoRA fine-tune Qwen3-VL-4B on local BCS dataset")
-    parser.add_argument("--dataset", default="dataset.csv")
-    parser.add_argument("--output-dir", default="outputs/qwen3_vl_4b_lora_bcs")
+    parser.add_argument("--dataset", default="datasets/test/dataset.csv")
+    parser.add_argument("--output-dir", default="outputs/qwen3_vl_4b_lora_bcs_with_prompt_tunning")
     parser.add_argument("--epochs", type=int, default=1)
     parser.add_argument("--lr", type=float, default=1e-4)
     parser.add_argument("--batch-size", type=int, default=1)
     parser.add_argument("--grad-accum", type=int, default=4)
     parser.add_argument("--seed", type=int, default=42)
-    parser.add_argument("--train-size", type=int, default=40)
+    # this is now percentage
+    parser.add_argument("--train-size", type=int, default=80)
     parser.add_argument("--max-new-tokens", type=int, default=120)
     args = parser.parse_args()
 
@@ -157,7 +202,7 @@ def main() -> int:
     if len(samples) < 10:
         raise RuntimeError("dataset too small")
     random.shuffle(samples)
-    train_size = min(args.train_size, len(samples))
+    train_size = int(len(samples) * (args.train_size / 100))
     train_set = samples[:train_size]
     eval_set = samples[train_size:]
 
