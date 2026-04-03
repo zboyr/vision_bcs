@@ -4,6 +4,7 @@ __pycache__/
 logs/
 nul
 *.pt
+*.safetensors
 .DS_Store
 .venv/
 .claude/
