@@ -21,33 +21,7 @@ from transformers import (
 from trl import SFTConfig, SFTTrainer
 
 
-SYSTEM_MSG = (
-    "You are a veterinary clinician specialized in feline health and nutrition. "
-    "Your task is to assess the Body Condition Score (BCS) of a cat from an image using the standard 9-point BCS scale. "
-
-    "The BCS scale is defined as follows:\n"
-    "1-2: Emaciated to very thin — ribs, spine, and pelvic bones are highly visible with no fat coverage.\n"
-    "3: Underweight — ribs easily visible, minimal fat covering, obvious waist and abdominal tuck.\n"
-    "4-5: Ideal — ribs palpable with slight fat covering, visible waist behind ribs, abdomen tucked.\n"
-    "6: Slightly overweight — ribs palpable with difficulty, noticeable fat deposits, reduced waist.\n"
-    "7: Overweight — ribs difficult to feel, obvious fat deposits, minimal waist.\n"
-    "8-9: Obese — ribs not palpable, heavy fat deposits, no waist, abdominal distension may be present.\n"
-
-    "When assessing, consider:\n"
-    "- Visibility and palpability of ribs\n"
-    "- Waist definition when viewed from above\n"
-    "- Abdominal tuck when viewed from the side\n"
-    "- Fat deposits around neck, base of tail, and abdomen\n"
-    "- Overall body shape and proportion\n"
-
-    "Output must be strict JSON with the following keys:\n"
-    "- bcs: integer from 1 to 9\n"
-    "- confidence: one of [A, B, C] where A = high confidence, C = low confidence\n"
-    "- second_score: optional alternative integer score if uncertain, otherwise null\n"
-    "- reasoning: brief explanation based on visible physical features\n"
-
-    "Do not output anything other than valid JSON. Do not include extra text."
-)
+DEFAULT_SYSTEM_PROMPT = "prompts/bcs_system_prompt.txt"
 USER_MSG = "Assess this cat and return JSON only."
 
 
@@ -106,9 +80,14 @@ def target_json(gt: float) -> str:
     return json.dumps(obj, ensure_ascii=False)
 
 
-def make_messages(image_path: str, answer_json: str | None) -> list[dict[str, Any]]:
+def load_system_prompt(path: str) -> str:
+    with open(path, "r", encoding="utf-8") as f:
+        return f.read().strip()
+
+
+def make_messages(image_path: str, answer_json: str | None, system_msg: str) -> list[dict[str, Any]]:
     messages: list[dict[str, Any]] = [
-        {"role": "system", "content": [{"type": "text", "text": SYSTEM_MSG}]},
+        {"role": "system", "content": [{"type": "text", "text": system_msg}]},
         {
             "role": "user",
             "content": [
@@ -122,8 +101,8 @@ def make_messages(image_path: str, answer_json: str | None) -> list[dict[str, An
     return messages
 
 
-def collate_train(processor: Any, batch: list[dict[str, Any]]) -> dict[str, Any]:
-    messages = [make_messages(x["image_path"], target_json(float(x["ground_truth"]))) for x in batch]
+def collate_train(processor: Any, batch: list[dict[str, Any]], system_msg: str) -> dict[str, Any]:
+    messages = [make_messages(x["image_path"], target_json(float(x["ground_truth"])), system_msg) for x in batch]
     texts = [processor.apply_chat_template(m, tokenize=False, add_generation_prompt=False) for m in messages]
     image_inputs: list[Any] = []
     for m in messages:
@@ -156,11 +135,12 @@ def run_eval(
     eval_set: list[Sample],
     device: torch.device,
     max_new_tokens: int,
+    system_msg: str,
 ) -> dict[str, Any]:
     abs_errors: list[float] = []
     parsed = 0
     for sample in eval_set:
-        messages = make_messages(sample.image_path, None)
+        messages = make_messages(sample.image_path, None, system_msg)
         text = processor.apply_chat_template(messages, tokenize=False, add_generation_prompt=True)
         imgs, vids = process_vision_info(messages)
         inputs = processor(text=[text], images=imgs, videos=vids, return_tensors="pt", padding=True)
@@ -190,12 +170,17 @@ def main() -> int:
     # this is now percentage
     parser.add_argument("--train-size", type=int, default=80)
     parser.add_argument("--max-new-tokens", type=int, default=120)
+    parser.add_argument("--system-prompt", default=DEFAULT_SYSTEM_PROMPT,
+                        help="Path to system prompt text file")
     args = parser.parse_args()
 
     random.seed(args.seed)
     torch.manual_seed(args.seed)
 
     base_dir = os.path.dirname(os.path.abspath(__file__))
+    prompt_path = os.path.join(base_dir, args.system_prompt) if not os.path.isabs(args.system_prompt) else args.system_prompt
+    system_msg = load_system_prompt(prompt_path)
+    print(f"Loaded system prompt from: {prompt_path} ({len(system_msg)} chars)")
     os.makedirs(os.path.join(base_dir, args.output_dir), exist_ok=True)
 
     samples = load_samples(base_dir, args.dataset)
@@ -255,7 +240,7 @@ def main() -> int:
         model=model,
         args=sft_args,
         train_dataset=train_dataset,
-        data_collator=lambda b: collate_train(processor, b),
+        data_collator=lambda b: collate_train(processor, b, system_msg),
         processing_class=processor,
     )
     trainer.train()
@@ -265,7 +250,7 @@ def main() -> int:
 
     model.eval()
     device = next(model.parameters()).device
-    metrics = run_eval(model, processor, eval_set, device, args.max_new_tokens)
+    metrics = run_eval(model, processor, eval_set, device, args.max_new_tokens, system_msg)
     metrics["train_size"] = len(train_set)
     metrics["model_id"] = model_id
     metrics_path = os.path.join(adapter_dir, "metrics.json")
