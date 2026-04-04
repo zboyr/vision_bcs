@@ -115,7 +115,6 @@ def process_directory(
     conf_threshold: float = 0.4,
     device: str = "",
     target_count: int = 0,
-    padding_pct: float = 0.05,
     ignore_files: set | None = None,
 ) -> dict:
     """处理输入目录，检测并裁剪猫，写入 TinyDB。"""
@@ -209,13 +208,8 @@ def process_directory(
 
         limb_info = estimate_limb_visibility(best_box, img_w, img_h)
 
-        # 加 padding
-        pad_x = (x2 - x1) * padding_pct
-        pad_y = (y2 - y1) * padding_pct
-        cx1 = max(0, int(x1 - pad_x))
-        cy1 = max(0, int(y1 - pad_y))
-        cx2 = min(img_w, int(x2 + pad_x))
-        cy2 = min(img_h, int(y2 + pad_y))
+        # 严格按 bbox 裁剪，不留边
+        cx1, cy1, cx2, cy2 = int(x1), int(y1), int(x2), int(y2)
 
         try:
             img = Image.open(str(img_path))
@@ -301,12 +295,6 @@ def main() -> int:
     )
     parser.add_argument("--device", default="", help="推理设备")
     parser.add_argument(
-        "--padding",
-        type=float,
-        default=0.05,
-        help="裁剪边距比例 (默认: 0.05)",
-    )
-    parser.add_argument(
         "--ignore", nargs="*", default=[], help="忽略的文件名"
     )
     args = parser.parse_args()
@@ -324,7 +312,6 @@ def main() -> int:
         conf_threshold=args.conf,
         device=args.device,
         target_count=args.target,
-        padding_pct=args.padding,
         ignore_files=ignore_files,
     )
 
