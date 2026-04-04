@@ -1,0 +1,8 @@
+{
+  "eval_count": 10,
+  "parsed": 10,
+  "coverage": 1.0,
+  "mae": 1.4,
+  "train_size": 39,
+  "model_id": "Qwen/Qwen3-VL-4B-Instruct"
+}

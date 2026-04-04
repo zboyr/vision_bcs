@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
-Minimal OpenAI-compatible API server for Qwen2-VL-2B-Instruct.
-Usage: python serve_qwen2vl.py [--port 8000]
+Minimal OpenAI-compatible API server for Qwen VL models.
+Usage: python serve_qwen2vl.py --model Qwen/Qwen2.5-VL-3B-Instruct [--port 8000]
 """
 
 import argparse
@@ -14,7 +14,7 @@ import torch
 import uvicorn
 from fastapi import FastAPI
 from pydantic import BaseModel
-from transformers import Qwen2VLForConditionalGeneration, AutoProcessor
+from transformers import AutoModelForImageTextToText, AutoProcessor
 from qwen_vl_utils import process_vision_info
 from PIL import Image
 
@@ -28,7 +28,7 @@ MODEL_NAME = "Qwen/Qwen2-VL-2B-Instruct"
 def load_model():
     global model, processor
     print(f"Loading {MODEL_NAME}...")
-    model = Qwen2VLForConditionalGeneration.from_pretrained(
+    model = AutoModelForImageTextToText.from_pretrained(
         MODEL_NAME,
         torch_dtype=torch.float16,
         device_map="auto",
@@ -124,9 +124,11 @@ def chat_completions(req: ChatRequest):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
+    parser.add_argument("--model", type=str, default="Qwen/Qwen2-VL-2B-Instruct")
     parser.add_argument("--port", type=int, default=8000)
     parser.add_argument("--host", type=str, default="0.0.0.0")
     args = parser.parse_args()
 
+    MODEL_NAME = args.model
     load_model()
     uvicorn.run(app, host=args.host, port=args.port)
