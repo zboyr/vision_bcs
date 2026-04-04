@@ -162,14 +162,14 @@ def score_one(client, row: dict, model: str, max_retries: int = 3) -> dict:
                     },
                 ],
                 temperature=0.2,
-                max_tokens=512,
+                max_tokens=2048,
             )
 
             content = resp.choices[0].message.content.strip()
             # Extract JSON from possible markdown code block
             if "```" in content:
                 import re
-                m = re.search(r"```(?:json)?\s*(\{.*?\})\s*```", content, re.DOTALL)
+                m = re.search(r"```(?:json)?\s*(\{.*\})\s*```", content, re.DOTALL)
                 if m:
                     content = m.group(1)
 
