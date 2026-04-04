@@ -75,17 +75,24 @@ BODY_INDICES = [3, 4]  # Neck, Root_of_Tail
 
 
 def check_body_and_limbs(
+    keypoints: np.ndarray,
     scores: np.ndarray,
-    kpt_thr: float = 0.3,
-    min_limbs: int = 2,
+    img_w: int,
+    img_h: int,
+    kpt_thr: float = 0.5,
+    min_limbs: int = 3,
+    min_spread: float = 0.3,
 ) -> dict:
     """
     检查关键点是否满足身体+肢体可见条件。
 
     Args:
+        keypoints: shape (17, 2) 关键点坐标
         scores: shape (17,) 每个关键点的置信度
+        img_w, img_h: 图片尺寸
         kpt_thr: 关键点置信度阈值
         min_limbs: 最少可见肢体数
+        min_spread: 关键点最小空间跨度（占图片高或宽的比例）
 
     Returns:
         dict with pass/fail info
@@ -99,13 +106,32 @@ def check_body_and_limbs(
         if any(scores[i] >= kpt_thr for i in indices):
             visible_limbs.append(name)
 
-    passed = body_visible and len(visible_limbs) >= min_limbs
+    # 空间分布检查: 防止模型在脸部特写上幻觉出肢体关键点
+    # 所有高置信度关键点应跨越图片的一定比例
+    confident_mask = scores >= kpt_thr
+    spread_ok = False
+    spread_ratio = 0.0
+    if confident_mask.sum() >= 2:
+        pts = keypoints[confident_mask]
+        x_spread = pts[:, 0].max() - pts[:, 0].min()
+        y_spread = pts[:, 1].max() - pts[:, 1].min()
+        spread_ratio = max(
+            x_spread / img_w if img_w > 0 else 0,
+            y_spread / img_h if img_h > 0 else 0,
+        )
+        spread_ok = spread_ratio >= min_spread
+    elif confident_mask.sum() == 1:
+        spread_ok = False  # 只有一个点，不可能是完整猫
+
+    passed = body_visible and len(visible_limbs) >= min_limbs and spread_ok
 
     return {
         "passed": passed,
         "body_visible": body_visible,
         "visible_limbs": visible_limbs,
         "num_visible_limbs": len(visible_limbs),
+        "spread_ratio": round(float(spread_ratio), 3),
+        "spread_ok": spread_ok,
         "body_scores": {AP10K_NAMES[i]: round(float(scores[i]), 4) for i in BODY_INDICES},
         "limb_max_scores": {
             name: round(float(max(scores[i] for i in indices)), 4)
@@ -117,10 +143,12 @@ def check_body_and_limbs(
 def main() -> int:
     parser = argparse.ArgumentParser(description="用 ViTPose 检验猫身体和四肢可见性")
     parser.add_argument("--dataset-dir", default=DEFAULT_DATASET)
-    parser.add_argument("--kpt-thr", type=float, default=0.3,
-                        help="关键点置信度阈值 (默认 0.3)")
-    parser.add_argument("--min-limbs", type=int, default=2,
-                        help="最少可见肢体数 (默认 2)")
+    parser.add_argument("--kpt-thr", type=float, default=0.5,
+                        help="关键点置信度阈值 (默认 0.5)")
+    parser.add_argument("--min-limbs", type=int, default=3,
+                        help="最少可见肢体数 (默认 3)")
+    parser.add_argument("--min-spread", type=float, default=0.3,
+                        help="关键点最小空间跨度比例 (默认 0.3)")
     parser.add_argument("--remove", action="store_true",
                         help="删除不合格图片及其 DB 记录")
     args = parser.parse_args()
@@ -183,7 +211,10 @@ def main() -> int:
             continue
 
         result = check_body_and_limbs(
-            scores[0], kpt_thr=args.kpt_thr, min_limbs=args.min_limbs
+            keypoints[0], scores[0], w, h,
+            kpt_thr=args.kpt_thr,
+            min_limbs=args.min_limbs,
+            min_spread=args.min_spread,
         )
 
         if result["passed"]:
@@ -196,6 +227,10 @@ def main() -> int:
             if result["num_visible_limbs"] < args.min_limbs:
                 reason_parts.append(
                     f"肢体仅{result['num_visible_limbs']}条可见(<{args.min_limbs})"
+                )
+            if not result["spread_ok"]:
+                reason_parts.append(
+                    f"关键点过于集中(spread={result['spread_ratio']:.2f}<{args.min_spread})"
                 )
             reason = "; ".join(reason_parts)
             failed_files.append((fname, reason))
