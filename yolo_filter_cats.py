@@ -368,8 +368,8 @@ def main() -> int:
                         help=f"输入图片目录 (默认: {DEFAULT_INPUT})")
     parser.add_argument("--output-dir", default=DEFAULT_OUTPUT,
                         help=f"输出图片目录 (默认: {DEFAULT_OUTPUT})")
-    parser.add_argument("--model", default="yolo11s.pt",
-                        help="YOLO 模型名称 (默认: yolo11s.pt)")
+    parser.add_argument("--model", default="yolo11m.pt",
+                        help="YOLO 模型名称 (默认: yolo11m.pt)")
     parser.add_argument("--conf", type=float, default=0.65,
                         help="最低检测置信度 (默认: 0.65)")
     parser.add_argument("--edge-margin", type=float, default=0.025,
