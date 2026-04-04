@@ -221,17 +221,15 @@ def process_directory(
             rejected += 1
             continue
 
-        # 保存原始图和裁剪图（统一 .jpg）
-        fname = f"{md5}.jpg"
-
-        raw_dest = os.path.join(raw_dir, fname)
+        # 原始图: 直接 copy 保持原格式，MD5 一定匹配
+        raw_ext = img_path.suffix.lower()
+        raw_fname = f"{md5}{raw_ext}"
+        raw_dest = os.path.join(raw_dir, raw_fname)
         if not os.path.exists(raw_dest):
-            if img_path.suffix.lower() in (".jpg", ".jpeg"):
-                shutil.copy2(str(img_path), raw_dest)
-            else:
-                img.save(raw_dest, "JPEG", quality=95)
+            shutil.copy2(str(img_path), raw_dest)
 
-        crop_dest = os.path.join(images_dir, fname)
+        # 裁剪图: 统一 .jpg
+        crop_dest = os.path.join(images_dir, f"{md5}.jpg")
         crop.save(crop_dest, "JPEG", quality=95)
 
         record = {
