@@ -6,7 +6,7 @@ crop_and_filter.py
 使用方法:
     python crop_and_filter.py
     python crop_and_filter.py --min-dim 256 --padding 0.1
-    python crop_and_filter.py --input-dir cat_data/filtered --output-dir cat_data/cropped
+    python crop_and_filter.py --input-dir datasets/filtered --output-dir datasets/cropped
 """
 
 import argparse
@@ -21,8 +21,8 @@ except ImportError:
     tqdm = None
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-DEFAULT_INPUT = os.path.join(BASE_DIR, "cat_data", "filtered")
-DEFAULT_OUTPUT = os.path.join(BASE_DIR, "cat_data", "cropped")
+DEFAULT_INPUT = os.path.join(BASE_DIR, "datasets", "filtered")
+DEFAULT_OUTPUT = os.path.join(BASE_DIR, "datasets", "cropped")
 
 COCO_CAT_CLASS_ID = 15
 IMAGE_EXTENSIONS = {".jpg", ".jpeg", ".png", ".webp", ".bmp"}

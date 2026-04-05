@@ -1,4 +1,4 @@
-dataset: cat_data/essay/dataset_full.csv
+dataset: datasets/essay/dataset_full.csv
 output: responses/essay_results.csv
 repeats: 3
 delay: 1.0

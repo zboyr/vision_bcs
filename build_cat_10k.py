@@ -5,7 +5,7 @@ build_cat_10k.py
 
 使用方法:
     python3 build_cat_10k.py --input-dir datasets/final --ignore scores.csv
-    python3 build_cat_10k.py --input-dir cat_data/raw --target 10000
+    python3 build_cat_10k.py --input-dir datasets/raw --target 10000
     python3 build_cat_10k.py --input-dir some_dir --no-verify   # 跳过 ViTPose
 
 输出结构:

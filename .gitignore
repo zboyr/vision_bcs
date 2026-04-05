@@ -8,3 +8,6 @@ nul
 .venv/
 .claude/
 .vscode/settings.json
+datasets/cat_10k/raw_images/
+datasets/cat_10k/images/
+*.safetensors

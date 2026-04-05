@@ -1,7 +1,7 @@
 # Benchmark non-fine-tuned VLMs on purina_3d sampled dataset
 # Usage: python3 llm_scoring.py --config configs/purina_3d_benchmark.yaml
 
-dataset: cat_data/purina_3d/purina_3d_sample10.csv
+dataset: datasets/purina_3d/purina_3d_sample10.csv
 output: responses/purina_3d_results.csv
 repeats: 3
 delay: 1.0

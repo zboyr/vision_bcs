@@ -12,7 +12,7 @@ yolo_filter_cats.py
 
 使用方法:
     python yolo_filter_cats.py
-    python yolo_filter_cats.py --input-dir cat_data/raw --output-dir cat_data/filtered
+    python yolo_filter_cats.py --input-dir datasets/raw --output-dir datasets/filtered
     python yolo_filter_cats.py --target 2000 --conf 0.7 --edge-margin 0.03
     python yolo_filter_cats.py --model yolo11m.pt --device cpu
 
@@ -34,8 +34,8 @@ except ImportError:
     tqdm = None
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-DEFAULT_INPUT = os.path.join(BASE_DIR, "cat_data", "raw")
-DEFAULT_OUTPUT = os.path.join(BASE_DIR, "cat_data", "filtered")
+DEFAULT_INPUT = os.path.join(BASE_DIR, "datasets", "raw")
+DEFAULT_OUTPUT = os.path.join(BASE_DIR, "datasets", "filtered")
 
 # COCO 类别索引: cat = 15
 COCO_CAT_CLASS_ID = 15

@@ -11,7 +11,7 @@ download_cats.py
 说明:
     1. 下载 COCO 2017 annotations (~241MB zip)
     2. 解析 instances_train2017.json + instances_val2017.json 获取猫图片 ID
-    3. 并发下载猫图片到 cat_data/raw/ 目录
+    3. 并发下载猫图片到 datasets/raw/ 目录
     4. 支持断点续传（已存在的文件自动跳过）
 """
 
@@ -32,8 +32,8 @@ except ImportError:
     tqdm = None
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-DEFAULT_OUTPUT = os.path.join(BASE_DIR, "cat_data", "raw")
-ANNOTATIONS_DIR = os.path.join(BASE_DIR, "cat_data", "_annotations")
+DEFAULT_OUTPUT = os.path.join(BASE_DIR, "datasets", "raw")
+ANNOTATIONS_DIR = os.path.join(BASE_DIR, "datasets", "_annotations")
 
 # COCO 2017 URLs
 COCO_ANNOTATIONS_URL = "http://images.cocodataset.org/annotations/annotations_trainval2017.zip"
