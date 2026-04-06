@@ -1,0 +1,57 @@
+# Pipeline: Debate V1
+# Stage 1 makes an initial score, stage 2 argues against it, stage 3 defends, stage 4 decides with image
+
+dataset: datasets/essay/dataset_full.csv
+output: responses/pipeline.csv
+repeats: 1
+delay: 0.5
+max_retries: 3
+request_timeout: 180
+output_mode: simple
+run_prefix: debate_v1
+show_detailed_results: true
+
+models:
+  - name: qwen/qwen2.5-vl-72b-instruct
+    provider: openrouter
+    use_pipeline: true
+  - name: qwen/qwen3-vl-235b-a22b-instruct
+    provider: openrouter
+    use_pipeline: true
+  - name: openai/gpt-4o
+    provider: openrouter
+    use_pipeline: true
+  - name: google/gemini-3.1-pro-preview
+    provider: openrouter
+    use_pipeline: true
+
+system_prompt: |
+  You are a veterinary expert in feline Body Condition Scoring (BCS).
+
+pipeline:
+  total_stages: 4
+  stage1:
+    include_image: true
+    prompt: |
+      Score this cat's Body Condition. Use the full BCS 1–9 scale (1=skeletal, 5=ideal, 9=severely obese).
+      Describe what you observe about ribs, waist, abdomen, and bony prominences.
+      End with: INITIAL SCORE: <integer 1-9>
+  stage2:
+    include_image: true
+    prompt: |
+      You are now playing devil's advocate. Your colleague just gave the score above.
+      Look at this cat again and argue for a DIFFERENT score — either one higher or one lower.
+      What visual features could support a different interpretation?
+      End with: ALTERNATIVE SCORE: <integer 1-9>
+  stage3:
+    prompt: |
+      You now have two competing scores. Review both arguments.
+      Which assessment is better supported by the visual evidence described?
+      Are there any features mentioned in both that you agree on?
+      Give your reasoned verdict, then end with: VERDICT SCORE: <integer 1-9>
+  stage4:
+    include_image: true
+    prompt: |
+      You have debated two scores. Look at this cat one final time with fresh eyes.
+      Which verdict is correct based on what you actually see?
+      Output ONLY a single integer from 1 to 9 as the final BCS score. No other text.

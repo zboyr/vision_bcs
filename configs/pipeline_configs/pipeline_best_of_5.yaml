@@ -1,0 +1,68 @@
+# Pipeline: Best of 5
+# 5 independent scoring attempts, then a majority-vote stage
+
+dataset: datasets/essay/dataset_full.csv
+output: responses/pipeline.csv
+repeats: 1
+delay: 0.5
+max_retries: 3
+request_timeout: 180
+output_mode: simple
+run_prefix: best_of_5
+show_detailed_results: true
+
+models:
+  - name: qwen/qwen2.5-vl-72b-instruct
+    provider: openrouter
+    use_pipeline: true
+  - name: qwen/qwen3-vl-235b-a22b-instruct
+    provider: openrouter
+    use_pipeline: true
+  - name: openai/gpt-4o
+    provider: openrouter
+    use_pipeline: true
+  - name: google/gemini-3.1-pro-preview
+    provider: openrouter
+    use_pipeline: true
+
+system_prompt: |
+  You are a veterinary expert in feline Body Condition Scoring (BCS).
+
+pipeline:
+  total_stages: 6
+  stage1:
+    include_image: true
+    prompt: |
+      [Attempt 1 of 5] Score this cat's Body Condition independently.
+      BCS scale: 1=skeletal, 5=ideal, 9=severely obese.
+      Briefly note what you see (ribs, waist, belly, spine), then output: SCORE: <integer 1-9>
+  stage2:
+    include_image: true
+    prompt: |
+      [Attempt 2 of 5] Score this cat's Body Condition independently — do NOT look at your previous answer.
+      BCS scale: 1=skeletal, 5=ideal, 9=severely obese.
+      Briefly note what you see (ribs, waist, belly, spine), then output: SCORE: <integer 1-9>
+  stage3:
+    include_image: true
+    prompt: |
+      [Attempt 3 of 5] Score this cat's Body Condition independently — do NOT look at your previous answers.
+      BCS scale: 1=skeletal, 5=ideal, 9=severely obese.
+      Briefly note what you see (ribs, waist, belly, spine), then output: SCORE: <integer 1-9>
+  stage4:
+    include_image: true
+    prompt: |
+      [Attempt 4 of 5] Score this cat's Body Condition independently — do NOT look at your previous answers.
+      BCS scale: 1=skeletal, 5=ideal, 9=severely obese.
+      Briefly note what you see (ribs, waist, belly, spine), then output: SCORE: <integer 1-9>
+  stage5:
+    include_image: true
+    prompt: |
+      [Attempt 5 of 5] Score this cat's Body Condition independently — do NOT look at your previous answers.
+      BCS scale: 1=skeletal, 5=ideal, 9=severely obese.
+      Briefly note what you see (ribs, waist, belly, spine), then output: SCORE: <integer 1-9>
+  stage6:
+    include_image: true
+    prompt: |
+      You made 5 independent scoring attempts above. Extract the SCORE value from each attempt.
+      Take the majority vote (most common value). If no majority, take the median.
+      Output ONLY a single integer from 1 to 9 as the final BCS score. No other text.

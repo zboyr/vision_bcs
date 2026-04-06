@@ -1,0 +1,64 @@
+# Pipeline - Appearance Assessment V2 (AAV2)
+# same pipeline as AAV1 but the last step has image as reference
+
+dataset: datasets/essay/dataset_full.csv
+output: responses/pipeline.csv
+repeats: 1
+delay: 0.5
+max_retries: 3
+request_timeout: 180
+output_mode: simple
+run_prefix: aav2
+show_detailed_results: true
+
+models:
+  - name: qwen/qwen2.5-vl-72b-instruct
+    provider: openrouter
+    use_pipeline: true
+  - name: qwen/qwen3-vl-235b-a22b-instruct
+    provider: openrouter
+    use_pipeline: true
+  - name: openai/gpt-4o
+    provider: openrouter
+    use_pipeline: true
+  - name: google/gemini-3.1-pro-preview
+    provider: openrouter
+    use_pipeline: true
+
+system_prompt: |
+  You are a veterinary expert in feline Body Condition Scoring (BCS).
+
+pipeline:
+  total_stages: 3
+  stage1:
+    include_image: true
+    prompt: |
+      Carefully examine this cat's body and describe only what you can visually observe.
+      Answer each point in 1-2 sentences:
+      1. Ribs: Are the rib outlines or individual ribs visible through the fur? Does the chest look broad or narrow?
+      2. Waist: Viewed from above, is there an hourglass shape behind the ribs, or does the body appear straight/wide?
+      3. Abdomen: From the side, does the belly tuck upward behind the ribs, hang level, or sag downward?
+      4. Bones: Are the spine bumps, hip bones, or shoulder blades visible as prominent ridges?
+      5. Overall: Does the body appear thin, normal, slightly heavy, or obese?
+  stage2:
+    prompt: |
+      Based on your observations above, use the BCS rubric below to estimate the score.
+
+      BCS 1: Ribs, spine, pelvis all easily visible. No fat. Severe muscle wasting.
+      BCS 2: Ribs and spine visible. Minimal fat cover. Noticeable muscle loss.
+      BCS 3: Ribs visible. Slight fat covering. Narrow waist. Minimal belly fat.
+      BCS 4: Ribs palpable with minimal fat. Waist visible from above. Slight abdominal tuck. Slightly lean.
+      BCS 5: Ribs palpable without excess fat. Clear waist from above. Slight abdominal tuck. IDEAL weight.
+      BCS 6: Ribs palpable with slight excess fat. Waist visible but not prominent. Slight belly rounding.
+      BCS 7: Ribs hard to feel under fat. Waist barely visible. Obvious abdominal rounding. Fat deposits on back.
+      BCS 8: Ribs not palpable under heavy fat. No visible waist. Heavy abdominal fat pad. Fat on neck and limbs.
+      BCS 9: Massive fat deposits everywhere. Ribs not palpable. Severely distended abdomen. No waist. Difficulty moving.
+
+      For each of your 5 observations, state which BCS level it most closely matches.
+      Then give your best single BCS estimate (1-9) considering all features together.
+  stage3:
+    include_image: true
+    prompt: |
+      You have your text-based analysis above. Now look at the image one more time.
+      Does the image confirm or contradict your analysis? If it contradicts, revise accordingly.
+      Output ONLY a single integer from 1 to 9 as the final BCS score. No other text.

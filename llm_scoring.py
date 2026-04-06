@@ -101,6 +101,7 @@ DEFAULT_MODELS = {
     "openai": "gpt-5.2",
     "openrouter": "qwen/qwen2.5-vl-72b-instruct",
     "local": "internvl2-8b",
+    "mlx": "mlx-community/Qwen2.5-VL-3B-Instruct-4bit",
 }
 
 BCS_COLUMNS = [f"bcs{i:02d}" for i in range(1, 51)]
@@ -163,27 +164,27 @@ def get_openai_client_class() -> Any:
     try:
         module = importlib.import_module("openai")
     except ImportError:
-        print("请先安装 openai: pip install openai")
+        print("Please install openai first: pip install openai")
         sys.exit(1)
     return getattr(module, "OpenAI")
 
 
 def create_client(provider: str, base_url: Optional[str] = None,
                   api_key_override: Optional[str] = None,
-                  request_timeout: float = 60.0) -> Any:
+                  request_timeout: float = 120.0) -> Any:
     """根据 provider 创建 OpenAI 客户端。"""
     openai_client_class = get_openai_client_class()
 
     if provider == "openai":
         api_key = api_key_override or os.environ.get("OPENAI_API_KEY")
         if not api_key:
-            raise ValueError("请设置 OPENAI_API_KEY，或通过 --api-key 传入")
+            raise ValueError("Please set OPENAI_API_KEY or pass it via --api-key")
         return openai_client_class(api_key=api_key, timeout=request_timeout)
 
     if provider == "openrouter":
         api_key = api_key_override or os.environ.get("OPENROUTER_API_KEY")
         if not api_key:
-            raise ValueError("请设置 OPENROUTER_API_KEY，或通过 --api-key 传入")
+            raise ValueError("Please set OPENROUTER_API_KEY or pass it via --api-key")
         resolved_base_url = base_url or os.environ.get("OPENROUTER_BASE_URL", "https://openrouter.ai/api/v1")
         app_name = os.environ.get("OPENROUTER_APP_NAME", "vision_bcs")
         app_url = os.environ.get("OPENROUTER_APP_URL", "http://localhost")
@@ -205,7 +206,17 @@ def create_client(provider: str, base_url: Optional[str] = None,
         return openai_client_class(api_key=api_key, base_url=resolved_base_url,
                                    timeout=request_timeout)
 
-    raise ValueError(f"不支持的 provider: {provider}")
+    if provider == "mlx":
+        resolved_base_url = base_url or os.environ.get("MLX_BASE_URL", "http://127.0.0.1:8080/v1")
+        api_key = api_key_override or os.environ.get("MLX_API_KEY", "mlx-local")
+        
+        return openai_client_class(
+            api_key=api_key, 
+            base_url=resolved_base_url,
+            timeout=request_timeout
+        )
+
+    raise ValueError(f"Unsupported provider: {provider}")
 
 
 def parse_integer_response(content: str) -> Optional[Dict[str, Any]]:
@@ -222,6 +233,7 @@ def parse_integer_response(content: str) -> Optional[Dict[str, Any]]:
         bcs = int(m.group(1))
         return {"bcs": bcs, "confidence": "A", "second_score": None,
                 "effective_bcs": float(bcs), "reasoning": ""}
+    print(f"  Warning: unable to parse integer reply: {content[:100]}")
     return None
 
 
@@ -278,7 +290,7 @@ def score_image(client: Any, image_path: str, model: str = "gpt-5.2",
 
     abs_path = os.path.join(BASE_DIR, image_path)
     if not os.path.exists(abs_path):
-        return {"error": f"图片不存在: {abs_path}"}
+        return {"error": f"Image not found: {abs_path}"}
 
     base64_image = encode_image_to_base64(abs_path)
     media_type = get_image_media_type(abs_path)
@@ -310,7 +322,7 @@ def score_image(client: Any, image_path: str, model: str = "gpt-5.2",
             )
 
             if not response.choices:
-                print(f"  警告: 模型返回空 choices (尝试 {attempt+1}/{max_retries})")
+                print(f"  Warning: model returned empty choices (attempt {attempt+1}/{max_retries})")
                 continue
 
             choice = response.choices[0]
@@ -328,7 +340,7 @@ def score_image(client: Any, image_path: str, model: str = "gpt-5.2",
                         extracted = parse_integer_response(reasoning)
                     if extracted:
                         return extracted
-                print(f"  警告: 模型返回空内容 (尝试 {attempt+1}/{max_retries})"
+                print(f"  Warning: model returned empty content (attempt {attempt+1}/{max_retries})"
                       f" finish_reason={choice.finish_reason}")
                 continue
             content = raw_content.strip()
@@ -352,16 +364,82 @@ def score_image(client: Any, image_path: str, model: str = "gpt-5.2",
             if result:
                 return result
 
-            print(f"  警告: 无法解析回复 (尝试 {attempt+1}/{max_retries}): {content[:100]}")
+            print(f"  Warning: unable to parse reply (attempt {attempt+1}/{max_retries}): {content[:100]}")
 
         except Exception as e:
-            print(f"  错误 (尝试 {attempt+1}/{max_retries}): {e}")
+            print(f"  Error (attempt {attempt+1}/{max_retries}): {e}")
             if attempt < max_retries - 1:
                 wait_time = 2 ** (attempt + 1)
-                print(f"  等待 {wait_time} 秒后重试...")
+                print(f"  Retrying in {wait_time} seconds...")
                 time.sleep(wait_time)
 
-    return {"error": "所有重试均失败"}
+    return {"error": "All retries failed"}
+
+def score_image_pipeline(client: Any, image_path: str, model: str = "gpt-5.2",
+                         max_retries: int = 3, system_prompt: str = "", 
+                         pipeline: list[Dict[str, Any]] = [],
+                         show_detailed_results: bool = False) -> Dict[str, Any]:
+    """
+    Returns same dict format as score_image(): bcs, confidence, second_score, effective_bcs, reasoning
+    """
+    abs_path = os.path.join(BASE_DIR, image_path)
+    if not os.path.exists(abs_path):
+        return {"error": f"Image not found: {abs_path}"}
+
+    base64_image = encode_image_to_base64(abs_path)
+    media_type = get_image_media_type(abs_path)
+
+    if show_detailed_results:
+        print(f"\nScoring image: {image_path} with model: {model}")
+
+    for attempt in range(max_retries):
+        try:
+            messages: list[Dict[str, Any]] = [
+                {"role": "system", "content": system_prompt}
+            ]
+
+            r = None
+            for i, stage in enumerate(pipeline):
+                stage_index = i + 1
+                prompt = stage.get("prompt", "")
+                include_image = stage.get("include_image", False)
+                content = [
+                    {"type": "text", "text": prompt},
+                    {"type": "image_url", "image_url": {
+                        "url": f"data:{media_type};base64,{base64_image}",
+                        "detail": "high"
+                    }}
+                ] if include_image else prompt
+                messages.append({"role": "user", "content": content})
+                r = client.chat.completions.create(
+                    model=model, messages=messages, max_tokens=512, temperature=0.1
+                )
+                if not r.choices or not r.choices[0].message.content:
+                    print(f"  Warning: pipeline stage {stage_index} returned empty content. {messages}")
+                    raise ValueError("Pipeline stage failed to return content")
+                output = r.choices[0].message.content.strip()
+                if show_detailed_results:
+                    print(f"""\n    Pipeline Stage {stage_index} Output: 
+{output}""")
+                messages.append({"role": "assistant", "content": output})
+            
+            final_output = r.choices[0].message.content.strip()
+
+            result = parse_integer_response(final_output)
+            if result:
+                result["reasoning"] = messages
+                return result
+
+            print(f"  Warning: pipeline unable to parse final output (attempt {attempt+1}/{max_retries}): {final_output[:80]}")
+
+        except Exception as e:
+            print(f"  Error (attempt {attempt+1}/{max_retries}): {e}")
+            if attempt < max_retries - 1:
+                wait_time = 2 ** (attempt + 1)
+                print(f"  Retrying in {wait_time} seconds...")
+                time.sleep(wait_time)
+
+    return {"error": "All retries failed"}
 
 
 def parse_response(content: str) -> Optional[Dict[str, Any]]:
@@ -580,9 +658,9 @@ def check_local_endpoint(base_url: str, timeout_seconds: float = 3.0) -> tuple[b
         with urllib.request.urlopen(models_url, timeout=timeout_seconds):
             return True, "ok"
     except urllib.error.URLError as e:
-        return False, f"无法连接本地模型服务: {models_url} ({e})"
+        return False, f"Cannot connect to local model service: {models_url} ({e})"
     except Exception as e:  # pragma: no cover
-        return False, f"本地模型服务检查失败: {e}"
+        return False, f"Local model service check failed: {e}"
 
 
 def fetch_local_model_name(base_url: str) -> Optional[str]:
@@ -641,6 +719,7 @@ def calc_mean_deviation_generic(
 
 
 def score_dataset_to_wide_row(
+    run_id: str,
     client: Any,
     records: list[Dict[str, str]],
     model_name: str,
@@ -653,9 +732,11 @@ def score_dataset_to_wide_row(
     bcs_min: float = 1.0,
     bcs_max: float = 9.0,
     response_map: Optional[Dict[str, float]] = None,
+    use_pipeline: bool = False,
+    pipeline: list[Dict[str, Any]] = [],
+    show_detailed_results: bool = False,
 ) -> tuple[Dict[str, Any], int, bool]:
     """Score all images in records and return (wide_row_dict, error_count, aborted)."""
-    run_id = datetime.now().strftime("%Y%m%d_%H%M%S")
     wide_row: Dict[str, Any] = {"id": run_id, "source": model_name}
     for col in bcs_columns:
         wide_row[col] = ""
@@ -665,17 +746,22 @@ def score_dataset_to_wide_row(
     aborted = False
     for record in progress_iter(records, total=len(records), desc=f"  {model_name}"):
         image_id = int(record["image_id"])
-        result = score_image(client, record["image_path"], model=model_name,
-                             max_retries=max_retries, integer_output=integer_output,
-                             system_prompt=system_prompt, user_prompt=user_prompt,
-                             bcs_min=bcs_min, bcs_max=bcs_max,
-                             response_map=response_map)
+        if use_pipeline:
+            result = score_image_pipeline(client, record["image_path"], model=model_name,
+                                          max_retries=max_retries, system_prompt=system_prompt, 
+                                          pipeline=pipeline, show_detailed_results=show_detailed_results)
+        else:
+            result = score_image(client, record["image_path"], model=model_name,
+                                 max_retries=max_retries, integer_output=integer_output,
+                                 system_prompt=system_prompt, user_prompt=user_prompt,
+                                 bcs_min=bcs_min, bcs_max=bcs_max,
+                                 response_map=response_map)
         if "error" in result:
             print(f"\n    Cat #{image_id}: {result['error']}")
             errors += 1
             consecutive_failures += 1
             if consecutive_failures >= 3:
-                print(f"\n    连续 {consecutive_failures} 次失败，跳过该模型本轮")
+                print(f"\n    {consecutive_failures} consecutive failures, skipping this model for this run")
                 aborted = True
                 break
         else:
@@ -730,14 +816,29 @@ def compute_average_row(
     return avg_row
 
 
+def parse_pipeline_config(pipeline_cfg: Dict[str, Any]) -> list[Dict[str, bool]]:
+    """Parse pipeline configuration from config dict."""
+    total_stages = pipeline_cfg.get("total_stages", -1)
+    if total_stages < 1:
+        return [];
+    stages = []
+    for i in range(1, total_stages + 1):
+        stage_cfg = pipeline_cfg.get(f"stage{i}", {})
+        stages.append({
+            "include_image": stage_cfg.get("include_image", False),
+            "prompt": stage_cfg.get("prompt", "")
+        })
+    return stages
+
+
 def run_from_config(config_path: str) -> int:
     """Run scoring from YAML config file."""
     if yaml is None:
-        print("错误: 请安装 pyyaml: pip install pyyaml")
+        print("Error: please install pyyaml: pip install pyyaml")
         return 1
 
     if not os.path.exists(config_path):
-        print(f"错误: 配置文件不存在: {config_path}")
+        print(f"Error: config file not found: {config_path}")
         return 1
 
     with open(config_path, "r", encoding="utf-8") as f:
@@ -745,6 +846,7 @@ def run_from_config(config_path: str) -> int:
 
     dataset_rel = config.get("dataset", "dataset.csv")
     output_rel = config.get("output", "responses/ai_responses.csv")
+    run_id = config.get("run_prefix", "unnamed_run") + "_" + datetime.now().strftime("%Y%m%d_%H%M%S")
     repeats = config.get("repeats", 1)
     delay = config.get("delay", 1.0)
     max_retries = config.get("max_retries", 3)
@@ -756,19 +858,20 @@ def run_from_config(config_path: str) -> int:
     bcs_min = config.get("bcs_min", 1.0)
     bcs_max = config.get("bcs_max", 9.0)
     raw_response_map = config.get("response_map")
+    pipeline = parse_pipeline_config(config.get("pipeline", {}))
     response_map: Optional[Dict[str, float]] = None
     if raw_response_map:
         response_map = {str(k).upper(): float(v) for k, v in raw_response_map.items()}
 
     if not models:
-        print("错误: 配置文件中未指定模型")
+        print("Error: no models specified in config")
         return 1
 
     dataset_path = os.path.join(BASE_DIR, dataset_rel)
     output_path = os.path.join(BASE_DIR, output_rel)
 
     if not os.path.exists(dataset_path):
-        print(f"错误: 找不到数据集: {dataset_path}")
+        print(f"Error: dataset not found: {dataset_path}")
         return 1
 
     records = load_dataset(dataset_path)
@@ -794,10 +897,11 @@ def run_from_config(config_path: str) -> int:
             writer = csv.DictWriter(f, fieldnames=fieldnames)
             writer.writeheader()
 
-    print(f"数据集: {dataset_path} ({num_images} 张图片)")
-    print(f"输出文件: {output_path}")
-    print(f"重复次数: {repeats}")
-    print(f"模型数: {len(models)}")
+    print(f"Dataset: {dataset_path} ({num_images} images)")
+    print(f"Output file: {output_path}")
+    print(f"Repeats: {repeats}")
+    print(f"Models: {len(models)}")
+    print(f"Run ID: {run_id}")
     print()
 
     total_errors = 0
@@ -808,7 +912,7 @@ def run_from_config(config_path: str) -> int:
         base_url = model_cfg.get("base_url")
         api_key = model_cfg.get("api_key")
 
-        print(f"=== 模型: {model_name} (provider: {provider}) ===")
+        print(f"=== Model: {model_name} (provider: {provider}) ===")
 
         # Check local endpoint
         if provider == "local":
@@ -817,7 +921,7 @@ def run_from_config(config_path: str) -> int:
             )
             ok, msg = check_local_endpoint(local_url)
             if not ok:
-                print(f"  跳过: {msg}")
+                print(f"  Skipping: {msg}")
                 continue
 
         try:
@@ -828,7 +932,7 @@ def run_from_config(config_path: str) -> int:
                 request_timeout=request_timeout,
             )
         except ValueError as e:
-            print(f"  跳过: {e}")
+            print(f"  Skipping: {e}")
             continue
 
         resolved_name = resolve_model_name(provider, model_name)
@@ -836,21 +940,26 @@ def run_from_config(config_path: str) -> int:
         run_rows: list[Dict[str, Any]] = []
         for run_idx in range(1, repeats + 1):
             if repeats > 1:
-                print(f"  --- 第 {run_idx}/{repeats} 次 ---")
+                print(f"  --- Run {run_idx}/{repeats} ---")
+
+            use_pipeline = model_cfg.get("use_pipeline", False)
 
             wide_row, errors, aborted = score_dataset_to_wide_row(
-                client, records, resolved_name, bcs_columns,
+                run_id, client, records, resolved_name, bcs_columns,
                 max_retries=max_retries, delay=delay,
                 integer_output=integer_output,
                 system_prompt=custom_system_prompt,
                 user_prompt=custom_user_prompt,
                 bcs_min=bcs_min, bcs_max=bcs_max,
                 response_map=response_map,
+                use_pipeline=use_pipeline,
+                pipeline=pipeline,
+                show_detailed_results=config.get("show_detailed_results", False),
             )
             total_errors += errors
 
             if aborted:
-                print(f"  该模型已中止，跳过后续重复")
+                print(f"  Model aborted, skipping remaining repeats")
                 break
 
             # Calculate mean deviation
@@ -874,7 +983,7 @@ def run_from_config(config_path: str) -> int:
                 writer.writerow(wide_row)
 
             dev_str = wide_row.get("mean_deviation", "")
-            print(f"  完成 (mean_deviation={dev_str}, errors={errors})")
+            print(f"  Done (mean_deviation={dev_str}, errors={errors})")
 
         # Average row when repeats > 1
         if repeats > 1 and run_rows:
@@ -885,13 +994,13 @@ def run_from_config(config_path: str) -> int:
                 writer = csv.DictWriter(f, fieldnames=fieldnames)
                 writer.writerow(avg_row)
 
-            print(f"  平均行已写入 (mean_deviation={avg_row.get('mean_deviation', '')})")
+            print(f"  Average row written (mean_deviation={avg_row.get('mean_deviation', '')})")
 
         print()
 
-    print("=== 完成 ===")
-    print(f"结果已写入: {output_path}")
-    print(f"总失败数: {total_errors}")
+    print("=== Done ===")
+    print(f"Results written to: {output_path}")
+    print(f"Total errors: {total_errors}")
     return 0
 
 
@@ -917,10 +1026,10 @@ def fill_missing_scores(
 ) -> int:
     """Read existing results CSV, find empty BCS cells, re-score only those, and write back."""
     if not os.path.exists(results_path):
-        print(f"错误: 结果文件不存在: {results_path}")
+        print(f"Error: results file not found: {results_path}")
         return 1
     if not os.path.exists(dataset_path):
-        print(f"错误: 数据集不存在: {dataset_path}")
+        print(f"Error: dataset not found: {dataset_path}")
         return 1
 
     # Load dataset to get image paths
@@ -962,16 +1071,16 @@ def fill_missing_scores(
                 missing_by_model[model_name].append((i, img_id))
 
     if not missing_by_model:
-        print("没有缺失项，无需补充。")
+        print("No missing entries, nothing to fill.")
         return 0
 
     total_missing = sum(len(v) for v in missing_by_model.values())
-    print(f"发现 {total_missing} 个缺失项，涉及 {len(missing_by_model)} 个模型:")
+    print(f"Found {total_missing} missing entries across {len(missing_by_model)} model(s):")
     for model, items in missing_by_model.items():
         run_indices = set()
         for row_idx, _ in items:
             run_indices.add(all_rows[row_idx].get("run", "?"))
-        print(f"  {model}: {len(items)} 个缺失 (runs: {', '.join(sorted(run_indices))})")
+        print(f"  {model}: {len(items)} missing (runs: {', '.join(sorted(run_indices))})")
     print()
 
     # Process each model
@@ -980,14 +1089,14 @@ def fill_missing_scores(
 
     for model_name, items in missing_by_model.items():
         provider = infer_provider_for_model(model_name)
-        print(f"=== 补充: {model_name} (provider: {provider}, 缺失: {len(items)}) ===")
+        print(f"=== Fill missing: {model_name} (provider: {provider}, missing: {len(items)}) ===")
 
         if model_name not in clients_cache:
             try:
                 client = create_client(provider, request_timeout=request_timeout)
                 clients_cache[model_name] = client
             except ValueError as e:
-                print(f"  跳过: {e}")
+                print(f"  Skipping: {e}")
                 continue
 
         client = clients_cache[model_name]
@@ -997,11 +1106,11 @@ def fill_missing_scores(
         for row_idx, img_id in items:
             record = id_to_record.get(img_id)
             if not record:
-                print(f"  警告: 找不到 image_id={img_id} 的记录")
+                print(f"  Warning: no record found for image_id={img_id}")
                 continue
 
             run_label = all_rows[row_idx].get("run", "?")
-            print(f"  补充 bcs{img_id:02d} (run {run_label})...", end=" ", flush=True)
+            print(f"  Filling bcs{img_id:02d} (run {run_label})...", end=" ", flush=True)
 
             result = score_image(
                 client, record["image_path"], model=model_name,
@@ -1009,10 +1118,10 @@ def fill_missing_scores(
             )
 
             if "error" in result:
-                print(f"失败: {result['error']}")
+                print(f"Failed: {result['error']}")
                 consecutive_failures += 1
                 if consecutive_failures >= 5:
-                    print(f"  连续 {consecutive_failures} 次失败，跳过该模型")
+                    print(f"  {consecutive_failures} consecutive failures, skipping this model")
                     model_skipped = True
                     break
             else:
@@ -1021,7 +1130,7 @@ def fill_missing_scores(
                 col = f"bcs{img_id:02d}"
                 all_rows[row_idx][col] = str(score)
                 filled_count += 1
-                print(f"得分: {score}")
+                print(f"Score: {score}")
 
             time.sleep(delay)
 
@@ -1071,9 +1180,9 @@ def fill_missing_scores(
         writer.writeheader()
         writer.writerows(all_rows)
 
-    print(f"=== 完成 ===")
-    print(f"成功补充: {filled_count}/{total_missing}")
-    print(f"已更新: {results_path}")
+    print(f"=== Done ===")
+    print(f"Successfully filled: {filled_count}/{total_missing}")
+    print(f"Updated: {results_path}")
     return 0
 
 
@@ -1129,15 +1238,15 @@ def main() -> int:
             args.model = args.ft_model  # treat as literal model ID
         args.provider = "openai"
         if args.output_mode != "simple":
-            print("提示: 使用 --output-mode simple 以匹配微调模型的输出格式")
+            print("Hint: use --output-mode simple to match fine-tuned model output format")
 
     model_name = resolve_model_name(args.provider, args.model)
 
     # 加载数据集
     dataset_path = os.path.join(BASE_DIR, args.dataset)
     if not os.path.exists(dataset_path):
-        print(f"错误: 找不到数据集: {dataset_path}")
-        print("请先运行 build_dataset.py")
+        print(f"Error: dataset not found: {dataset_path}")
+        print("Please run build_dataset.py first")
         return 1
 
     records = load_dataset(dataset_path)
@@ -1149,21 +1258,21 @@ def main() -> int:
     ensure_ai_responses_schema(ai_responses_path, scorer_a_map, scorer_b_map)
 
     if args.migrate_ai_responses_only:
-        print(f"已更新: {ai_responses_path}（包含 mean_deviation 列）")
+        print(f"Updated: {ai_responses_path} (includes mean_deviation column)")
         return 0
 
     if args.provider == "local":
         local_base_url = args.base_url or os.environ.get("LOCAL_OPENAI_BASE_URL", "http://127.0.0.1:8000/v1")
         ok, msg = check_local_endpoint(local_base_url)
         if not ok:
-            print(f"错误: {msg}")
+            print(f"Error: {msg}")
             return 2
         # 未指定 --model 时，从 server 获取实际模型名作为 source
         if not args.model:
             fetched = fetch_local_model_name(local_base_url)
             if fetched:
                 model_name = fetched
-                print(f"从本地服务获取模型名: {model_name}")
+                print(f"Fetched model name from local service: {model_name}")
 
     try:
         client = create_client(
@@ -1173,19 +1282,19 @@ def main() -> int:
             request_timeout=args.request_timeout,
         )
     except ValueError as e:
-        print(f"错误: {e}")
+        print(f"Error: {e}")
         return 1
 
     # Apply max-images limit
     if args.max_images > 0:
         records = records[: args.max_images]
 
-    print(f"已加载 {len(records)} 条记录")
+    print(f"Loaded {len(records)} records")
     print(f"provider: {args.provider}")
-    print(f"使用模型: {model_name}")
+    print(f"Using model: {model_name}")
     integer_output = args.output_mode == "simple"
     if integer_output:
-        print("输出模式: 单整数")
+        print("Output mode: single integer")
     if args.base_url:
         print(f"base_url: {args.base_url}")
 
@@ -1193,7 +1302,7 @@ def main() -> int:
     results = []
     errors = 0
 
-    for record in progress_iter(records, total=len(records), desc="评分进度"):
+    for record in progress_iter(records, total=len(records), desc="Scoring"):
         image_id = int(record["image_id"])
         image_path = record["image_path"]
         ground_truth = float(record["ground_truth"])
@@ -1251,7 +1360,7 @@ def main() -> int:
         time.sleep(args.delay)
 
     if args.output:
-        print("提示: --output 已弃用，当前仅写入 responses/ai_responses.csv")
+        print("Hint: --output is deprecated, results are written to responses/ai_responses.csv only")
 
     # 向 responses/ai_responses.csv 追加一行（id, source, mean_deviation, bcs01..bcs50）
     run_id = datetime.now().strftime("%Y%m%d_%H%M%S")
@@ -1279,7 +1388,7 @@ def main() -> int:
         fieldnames_wide = ["id", "source", "mean_deviation"] + BCS_COLUMNS
         writer = csv.DictWriter(f, fieldnames=fieldnames_wide)
         writer.writerow(wide_row)
-    print(f"已追加一行到: {ai_responses_path} (run_id={run_id})")
+    print(f"Appended row to: {ai_responses_path} (run_id={run_id})")
     print(f"RUN_ID={run_id}")
 
     # 统计摘要
@@ -1296,17 +1405,17 @@ def main() -> int:
                            if r["weight_class_gt"] == r["weight_class_chatgpt"])
         class_accuracy = correct_class / len(valid_results) * 100
 
-        print(f"\n=== ChatGPT 评分统计 ===")
-        print(f"成功评分: {len(valid_results)}/{len(results)}")
-        print(f"平均绝对偏差(closest A/B): {mean_dev:.2f}")
-        print(f"最大绝对偏差(closest A/B): {max_dev:.2f}")
-        print(f"体重分类准确率: {class_accuracy:.1f}%")
-        print(f"失败数: {errors}")
+        print(f"\n=== Scoring Summary ===")
+        print(f"Successful: {len(valid_results)}/{len(results)}")
+        print(f"Mean absolute deviation (closest A/B): {mean_dev:.2f}")
+        print(f"Max absolute deviation (closest A/B): {max_dev:.2f}")
+        print(f"Weight class accuracy: {class_accuracy:.1f}%")
+        print(f"Errors: {errors}")
         return 0
 
-    print("\n=== ChatGPT 评分统计 ===")
-    print(f"成功评分: 0/{len(results)}")
-    print(f"失败数: {errors}")
+    print("\n=== Scoring Summary ===")
+    print(f"Successful: 0/{len(results)}")
+    print(f"Errors: {errors}")
     return 2
 
 

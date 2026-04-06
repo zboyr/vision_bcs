@@ -1,0 +1,71 @@
+# Pipeline 6: Coarse-to-Fine
+# Stage 1 groups into thin/ideal/overweight/obese, stage 2 narrows within that range, stage 3 picks exact score with image
+
+dataset: datasets/essay/dataset_full.csv
+output: responses/pipeline.csv
+repeats: 1
+delay: 0.5
+max_retries: 3
+request_timeout: 180
+output_mode: simple
+run_prefix: tunning_coarse_fine
+show_detailed_results: true
+
+models:
+  - name: qwen/qwen2.5-vl-72b-instruct
+    provider: openrouter
+    use_pipeline: true
+  - name: qwen/qwen3-vl-235b-a22b-instruct
+    provider: openrouter
+    use_pipeline: true
+  - name: openai/gpt-4o
+    provider: openrouter
+    use_pipeline: true
+  - name: google/gemini-3.1-pro-preview
+    provider: openrouter
+    use_pipeline: true
+
+system_prompt: |
+  You are a veterinary expert in feline Body Condition Scoring (BCS).
+
+pipeline:
+  total_stages: 3
+  stage1:
+    include_image: true
+    prompt: |
+      Look at this cat. Classify it into one of these four broad categories:
+        UNDERWEIGHT  → BCS 1–3 (ribs/spine visible, very thin or lean)
+        IDEAL        → BCS 4–5 (healthy weight, ribs easily felt)
+        OVERWEIGHT   → BCS 6–7 (ribs hard to feel, rounding visible)
+        OBESE        → BCS 8–9 (heavy fat deposits, no waist, belly sag)
+      Briefly state your key visual evidence (2-3 sentences), then end with:
+      CATEGORY: <one of UNDERWEIGHT / IDEAL / OVERWEIGHT / OBESE>
+  stage2:
+    include_image: true
+    prompt: |
+      You placed this cat in the category above. Now narrow to the exact BCS within that range.
+
+      If UNDERWEIGHT (BCS 1–3):
+        BCS 1 = skeletal, no fat, severe muscle wasting
+        BCS 2 = ribs/spine visible, minimal fat, muscle loss
+        BCS 3 = ribs visible, slight fat, narrow waist
+
+      If IDEAL (BCS 4–5):
+        BCS 4 = ribs palpable, minimal fat, slightly lean but healthy
+        BCS 5 = ribs palpable, no excess fat, clear waist — perfect weight
+
+      If OVERWEIGHT (BCS 6–7):
+        BCS 6 = slight excess fat over ribs, waist still faintly visible
+        BCS 7 = ribs hard to feel, waist barely visible, obvious abdominal rounding
+
+      If OBESE (BCS 8–9):
+        BCS 8 = ribs not palpable, no waist, heavy fat pad on belly and limbs
+        BCS 9 = massive fat everywhere, distended abdomen, difficulty moving
+
+      State which descriptor best matches what you see, then end with: REFINED SCORE: <integer 1-9>
+  stage3:
+    include_image: true
+    prompt: |
+      You narrowed the score to a refined estimate above. Look at this cat one last time.
+      Does the image confirm that score, or does anything suggest shifting by ±1?
+      Output ONLY a single integer from 1 to 9 as the final BCS score. No other text.

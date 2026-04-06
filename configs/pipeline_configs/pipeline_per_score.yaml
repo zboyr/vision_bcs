@@ -1,0 +1,93 @@
+# Pipeline - Per-Score
+# 9 stages each asking "Is this BCS X?" then a final summarization stage with image
+
+dataset: datasets/essay/dataset_full.csv
+output: responses/pipeline.csv
+repeats: 1
+delay: 0.5
+max_retries: 3
+request_timeout: 180
+output_mode: simple
+run_prefix: per_score
+show_detailed_results: true
+
+models:
+  - name: qwen/qwen2.5-vl-72b-instruct
+    provider: openrouter
+    use_pipeline: true
+  - name: qwen/qwen3-vl-235b-a22b-instruct
+    provider: openrouter
+    use_pipeline: true
+  - name: openai/gpt-4o
+    provider: openrouter
+    use_pipeline: true
+  - name: google/gemini-3.1-pro-preview
+    provider: openrouter
+    use_pipeline: true
+
+system_prompt: |
+  You are a veterinary expert in feline Body Condition Scoring (BCS).
+
+pipeline:
+  total_stages: 10
+  stage1:
+    include_image: true
+    prompt: |
+      Look at this cat carefully. Could this cat be BCS 1?
+      BCS 1: Ribs, spine, and pelvis all easily visible through the fur. No discernible fat. Severe muscle wasting — the cat looks skeletal.
+      Answer only: YES or NO
+  stage2:
+    include_image: true
+    prompt: |
+      Could this cat be BCS 2?
+      BCS 2: Ribs and spine visible. Minimal fat cover. Noticeable muscle loss but not quite skeletal.
+      Answer only: YES or NO
+  stage3:
+    include_image: true
+    prompt: |
+      Could this cat be BCS 3?
+      BCS 3: Ribs visible. Slight fat covering. Narrow waist visible from above. Minimal abdominal fat.
+      Answer only: YES or NO
+  stage4:
+    include_image: true
+    prompt: |
+      Could this cat be BCS 4?
+      BCS 4: Ribs palpable with minimal fat cover. Waist clearly visible from above. Slight abdominal tuck. Slightly lean but not underweight.
+      Answer only: YES or NO
+  stage5:
+    include_image: true
+    prompt: |
+      Could this cat be BCS 5?
+      BCS 5: Ribs palpable without excess fat. Clear waist visible from above. Slight abdominal tuck. IDEAL body weight.
+      Answer only: YES or NO
+  stage6:
+    include_image: true
+    prompt: |
+      Could this cat be BCS 6?
+      BCS 6: Ribs palpable with slight excess fat. Waist visible but not prominent. Slight belly rounding. Slightly overweight.
+      Answer only: YES or NO
+  stage7:
+    include_image: true
+    prompt: |
+      Could this cat be BCS 7?
+      BCS 7: Ribs hard to feel under fat. Waist barely visible. Obvious abdominal rounding. Fat deposits on back.
+      Answer only: YES or NO
+  stage8:
+    include_image: true
+    prompt: |
+      Could this cat be BCS 8?
+      BCS 8: Ribs not palpable under heavy fat. No visible waist. Heavy abdominal fat pad. Fat deposits on neck and limbs.
+      Answer only: YES or NO
+  stage9:
+    include_image: true
+    prompt: |
+      Could this cat be BCS 9?
+      BCS 9: Massive fat deposits everywhere. Ribs not palpable. Severely distended abdomen. No waist. Difficulty moving.
+      Answer only: YES or NO
+  stage10:
+    include_image: true
+    prompt: |
+      You just evaluated this cat against each BCS level (1–9) individually. Review your YES/NO answers above.
+      Multiple YES answers mean those scores are plausible — pick the single most likely one.
+      If all are NO, pick the closest match.
+      Output ONLY a single integer from 1 to 9 as the final BCS score. No other text.
