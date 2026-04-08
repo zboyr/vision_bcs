@@ -1,0 +1,13 @@
+dataset: cat_data/essay/dataset_full.csv
+output: responses/essay_results.csv
+repeats: 3
+delay: 1.0
+max_retries: 3
+request_timeout: 60
+output_mode: reasoning
+
+models:
+  - name: google/gemini-3.1-pro-preview
+    provider: openrouter
+  - name: google/gemini-3.1-flash-image-preview
+    provider: openrouter
