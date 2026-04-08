@@ -114,6 +114,11 @@ USER_PROMPT = "What is the Body Condition Score (BCS) of this cat? You must give
 SYSTEM_PROMPT_INTEGER = SYSTEM_PROMPT
 USER_PROMPT_INTEGER = USER_PROMPT
 
+# BCS 评分提示词（reasoning 模式：先推理再给分）
+SYSTEM_PROMPT_REASONING = """You are a veterinary expert in feline Body Condition Scoring (BCS, 1-9 scale). Assess the cat in the photo. First, provide a brief reasoning about the cat's body condition (rib visibility, waist, abdominal tuck, fat deposits, etc.), then give your BCS score. Never refuse. Even if the image is unclear, give your best estimate. Output valid JSON with exactly two fields: "reasoning" (a brief explanation) and "bcs" (an integer from 1 to 9). Example: {"reasoning": "The cat has a visible waist and ribs can be felt with slight fat covering.", "bcs": 5}"""
+
+USER_PROMPT_REASONING = """What is the Body Condition Score (BCS) of this cat? You must give a score. First explain your reasoning briefly, then provide the score. Output valid JSON: {"reasoning": "...", "bcs": <1-9>}"""
+
 
 def encode_image_to_base64(image_path):
     """将图片编码为 base64 字符串。"""
@@ -781,6 +786,11 @@ def run_from_config(config_path: str) -> int:
 
     integer_output = output_mode == "simple"
 
+    # reasoning 模式：自动设置提示词（除非用户已自定义）
+    if output_mode == "reasoning" and not custom_system_prompt:
+        custom_system_prompt = SYSTEM_PROMPT_REASONING
+        custom_user_prompt = USER_PROMPT_REASONING
+
     # Build fieldnames: add 'run' column when repeats > 1
     if repeats > 1:
         fieldnames = ["id", "source", "run", "mean_deviation"] + bcs_columns
@@ -1092,8 +1102,8 @@ def main() -> int:
                         help="单次请求超时秒数")
     parser.add_argument("--migrate-ai-responses-only", action="store_true",
                         help="仅更新 ai_responses.csv 列结构并退出")
-    parser.add_argument("--output-mode", default="simple", choices=["simple", "json"],
-                        help="输出模式: simple=单整数, json=完整JSON (默认: simple)")
+    parser.add_argument("--output-mode", default="simple", choices=["simple", "json", "reasoning"],
+                        help="输出模式: simple=单整数, json=完整JSON, reasoning=先推理再评分 (默认: simple)")
     parser.add_argument("--ft-model", default=None,
                         help="微调模型ID，或指向 ft_model.txt 的路径；覆盖 --model")
     parser.add_argument("--max-images", type=int, default=0,
@@ -1186,6 +1196,8 @@ def main() -> int:
     integer_output = args.output_mode == "simple"
     if integer_output:
         print("输出模式: 单整数")
+    elif args.output_mode == "reasoning":
+        print("输出模式: 先推理再评分")
     if args.base_url:
         print(f"base_url: {args.base_url}")
 
@@ -1198,9 +1210,13 @@ def main() -> int:
         image_path = record["image_path"]
         ground_truth = float(record["ground_truth"])
 
+        sys_p = SYSTEM_PROMPT_REASONING if args.output_mode == "reasoning" else None
+        usr_p = USER_PROMPT_REASONING if args.output_mode == "reasoning" else None
         result = score_image(client, image_path, model=model_name,
                              max_retries=args.max_retries,
-                             integer_output=integer_output)
+                             integer_output=integer_output,
+                             system_prompt=sys_p,
+                             user_prompt=usr_p)
 
         if "error" in result:
             print(f"\n  Cat #{image_id}: {result['error']}")

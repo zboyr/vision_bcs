@@ -1,0 +1,26 @@
+# Local Qwen3.5-9B via Ollama (thinking disabled) on essay cat BCS dataset
+# Usage: python3 llm_scoring.py --config configs/local_qwen35_9b_nothink_essay.yaml
+
+dataset: datasets/essay/dataset_full.csv
+output: responses/essay_results.csv
+repeats: 3
+delay: 0.5
+max_retries: 3
+request_timeout: 120
+output_mode: simple
+
+system_prompt: |
+  /no_think
+  You are a veterinary expert in feline Body Condition Scoring (BCS, 1-9 scale).
+  Assess the cat in the photo. You MUST output EXACTLY one integer from 1 to 9.
+  Never refuse. Never say you cannot determine the score. Even if the image is unclear, give your best estimate.
+  Output ONLY the number, nothing else.
+
+user_prompt: |
+  What is the Body Condition Score (BCS) of this cat? You must give a score.
+  Output only a single integer from 1 to 9. Do not refuse.
+
+models:
+  - name: qwen3.5:9b
+    provider: local
+    base_url: http://127.0.0.1:11434/v1

@@ -1,0 +1,15 @@
+# Local Qwen3.5-9B via Ollama on essay cat BCS dataset
+# Usage: python3 llm_scoring.py --config configs/local_qwen35_9b_essay.yaml
+
+dataset: datasets/essay/dataset_full.csv
+output: responses/essay_results.csv
+repeats: 3
+delay: 0.5
+max_retries: 3
+request_timeout: 120
+output_mode: simple
+
+models:
+  - name: qwen3.5:9b
+    provider: local
+    base_url: http://127.0.0.1:11434/v1

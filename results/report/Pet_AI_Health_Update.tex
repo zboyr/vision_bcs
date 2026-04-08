@@ -3,11 +3,7 @@
 
 \title{AI-Driven Feline Body Condition Scoring:\\A Vision-Logic Fusion Approach}
 
-\author{
-  Yihan Bao \and Yuewen He \and Zhaozhi Qian \\
-  Northeastern University \\
-  \texttt{\{bao.yih, he.yuew, qian.zhaoz\}@northeastern.edu}
-}
+
 
 \begin{document}
 \maketitle
@@ -20,60 +16,55 @@ Over 50\% of companion animals are considered overweight, yet identifying a pet'
 
 The core problem addressed by this research is the critical lack of objective, accessible, and clinical-grade assessment tools for monitoring pet body condition in home and high-volume shelter environments. Currently, over 50\% of companion animals are considered overweight, leading to significant chronic metabolic health crises. Despite this prevalence, identifying a pet's Body Condition Score (BCS) remains a challenge for non-professionals who often rely on subjective observations easily deceived by breed-specific fur coverage.
 
-This problem is worth solving for the following reasons:
-
-\begin{itemize}
-    \item \textbf{Empowering Pet Owners:} It democratizes veterinary diagnostics by providing a clinical-grade home-check tool for owners who lack training to identify skeletal markers beneath fur.
-    \item \textbf{Shelter Triage:} It acts as a first responder in under-resourced shelters, flagging high-risk or emaciated animals from intake photos to prioritize them for professional exams.
-    \item \textbf{Closing the Tactility Gap:} The research innovates by fusing visual feature extraction (e.g., hourglass shape) with structured metadata to compensate for the inability of 2D models to physically palpate ribs.
-\end{itemize}
+This problem is worth solving for the following reasons. First, it democratizes veterinary diagnostics by providing a clinical-grade home-check tool for owners who lack training to identify skeletal markers beneath fur. Second, it acts as a first responder in under-resourced shelters, flagging high-risk or emaciated animals from intake photos to prioritize them for professional exams. Third, the research innovates by fusing visual feature extraction (e.g., hourglass shape) with structured metadata to compensate for the inability of 2D models to physically palpate ribs.
 
 \section{Related Work}
 
-Graff et al.~\cite{graff2025} investigated inter-evaluator bias in feline BCS visual assessments, establishing that visual-only assessments have inherent variability among clinicians, which serves as the baseline for our AI comparison. Liu et al.~\cite{liu2024} focused on Large Multimodal Models (LMMs) for specialized domain reasoning, utilizing instruction-tuning to improve visual grounding. Smith et al.~\cite{smith2023} explored de-fluffing algorithms in computer vision to estimate body mass under heavy occlusion (fur), using synthetic data to train models to see through texture.
+Graff et al. \cite{graff2025} investigated inter-evaluator bias in feline BCS visual assessments, establishing that visual-only assessments have inherent variability among clinicians, which serves as the baseline for our AI comparison. Li et al. \cite{li2024clipfit} proposed ClipFit, a parameter-efficient method to fine-tun vision-language models by selectively updating bias terms and normalization layers, which informs our LoRA-based fine-tuning strategy for domain adaptation.
 
-Wang et al.~\cite{wang2023} researched Small Language Model (SLM) distillation, demonstrating that high-performing teacher models can significantly boost SLM performance in niche tasks like medical scoring. Chen et al.~\cite{chen2024} investigated RAG-enhanced multimodal agents, showing that structural metadata alongside images improves reasoning in diagnostic settings. Zhang et al.~\cite{zhang2022} focused on zero-shot animal pose estimation, providing foundations for identifying abdominal tuck and skeletal markers required for BCS. Brown et al.~\cite{brown2023} used generative data augmentation for small veterinary datasets, while Lee et al.~\cite{lee2024} studied Chain-of-Thought prompting for visual assessment, directly informing our prompting strategy.
+Jiang et al. \cite{jiang2025curriculum} introduced a two-stage curriculum distillation framework that first builds robust internal problem-solving in a student model before externalizing it as explicit reasoning, directly motivating our teacher-student pipeline design. Lee et al. \cite{lee2025customkd} proposed CustomKD, demonstrating that large vision foundation models can effectively boost edge model performance through knowledge distillation despite architectural discrepancies between teacher and student.
+
+Zhang and Kanjo \cite{zhang2025tinyml} developed a multimodal TinyML system for livestock behavior recognition, demonstrating that compact models can achieve real-time animal health monitoring on resource-constrained hardware. Walczak et al. \cite{walczak2025bitmedvit} further showed that ternary-quantized Vision Transformers can perform structured medical image analysis on edge devices, supporting our goal of light deployment. Shao et al. \cite{shao2024visualcot} introduced the Visual CoT dataset, providing a framework for structured chain-of-thought reasoning in multimodal models that directly informs our GPT-4o prompting strategy. Deng et al. \cite{deng2024ape} surveyed multi-modal animal pose estimation methods, providing the foundations for identifying skeletal landmarks and body shape markers relevant to the assessment of BCS.
+
+Jang et al. \cite{jang2025vl2lite} introduced VL2Lite, a knowledge distillation framework that transfers multimodal knowledge from large Vision-Language Models into lightweight networks via dual visual and linguistic alignment losses, achieving up to 7\% classification improvement without increasing inference cost. This directly informs our distillation strategy from GPT-4o to Qwen3-VL-4B. Yu et al. \cite{cotcd2025} proposed Chain-of-Thought Curriculum Distillation (CoTCD), combining CoT rationale transfer with curriculum learning to enable small student models to reach up to 94\% of a 540B teacher's performance on reasoning tasks. This validates our use of GPT-4o-generated reasoning chains as structured supervision for fine-tuning the student model. Kaya~G{\"u}la{\u{g}}{\i}z, F.  \cite{kaya2025promptml} systematically evaluated prompt engineering strategies — including few-shot prompting and Tree-of-Thought — for LLM-driven regression and classification tasks, finding that effective prompting combined with hyperparameter tuning yields competitive results comparable to AutoML baselines. This informs our prompt pipeline design for GPT-4o silver label generation. Shrivastava et al. \cite{shrivastava2025mllmprompt} benchmarked five multimodal prompt engineering techniques (ICL, CoT, SSR, ToT, and RAG) across diverse datasets and proposed the Greedy Prompt Engineering Strategy (Greedy PES) for adaptive prompt selection in MLLMs. This motivates our structured CoT prompting approach for eliciting clinically grounded BCS reasoning from GPT-4o.
+
 
 \section{Dataset}
 
-\subsection{Data Source}
+\subsection{Data Source and Composition}
 
-The dataset is derived from the BTS1-Quiz images and DataS5 VA-BCS scoring data associated with Graff et al.~\cite{graff2025}. It consists of 50 distinct cat images (labeled cat\_01.jpeg to cat\_50.jpeg), including specific repeat pairs (e.g., 2/50, 5/47) to test consistency. Features include visual markers from dorsal and lateral views supplemented by categorical data such as breed and coat type. The target variable is the Ground Truth (GT), calculated as the average BCS score (1--9 scale) from two senior clinicians.
+The dataset is structured into two hierarchical tiers to balance rigorous validation with large-scale deep learning:
 
-\subsection{Data Preprocessing}
+Validation & Methodology Set: This core set comprises 379 expert-verified canine images and 49 feline images (derived from the Graff et al. [1] BTS1-Quiz and DataS5 VA-BCS series). These images include diverse and challenging feline postures (e.g., dorsal, lateral, and seated views) and represent various breeds and coat types. The target variable is the Ground Truth (GT), originally calculated as the mean BCS score (1–9 scale) from two senior clinicians.
 
-\begin{itemize}
-    \item \textbf{Image Extraction:} Automated extraction from PDF sources into high-resolution JPEGs.
-    \item \textbf{Normalization:} Scores are mapped to the 9-point feline BCS scale where 1--3 is underweight and 8--9 is obese.
-    \item \textbf{Augmentation:} Use of GPT-4o to generate silver labels for fine-tuning smaller models when expert-labeled data is sparse.
-\end{itemize}
+Large-Scale Training Set: To ensure generalization, the project incorporates approximately 1,000 additional pet images with gold-standard labels mapped to a three-category scale (Underweight, Ideal, Overweight). This set, partially sourced from open-source repositories (e.g., overweight-dogs), provides the volume necessary for fine-tuning the student model.
+
+\subsection{Data Preprocessing and Transformation}
+
+To bridge the gap between high-cost clinical labels and model performance, the preprocessing pipeline follows three critical phases:
+
+\begin{enumerate}
+    \item \textbf{Semantic Mapping (Regression to Classification):} To mitigate the high signal-to-noise ratio inherent in the 1–9 BCS scale—where boundaries between scores (e.g., BCS 4 vs. 5) are visually ambiguous without tactile sampling—all numerical scores were mapped into a \textbf{three-category classification}: \textit{Underweight}, \textit{Ideal}, and \textit{Overweight}. This transition stabilizes the model against interference from long fur or complex body contortions.
+    \item \textbf{Synthetic Reasoning Generation:} Rather than traditional silver-labeling, we employ \textbf{Gemini} (the teacher model) as a "logical translator." Gemini processes the images to generate \textbf{Synthetic Reasoning}—structured anatomical justifications (e.g., assessing scapular sharpness or neck fat distribution). This transforms the dataset from simple "image-label" pairs into "image-logic-label" triplets.
+    \item \textbf{Robust Parsing and Feature Augmentation:} * \textbf{Robust Parsing:} Regular expressions are used to extract structured scores from the teacher model’s unstructured natural language outputs, ensuring data integrity across API responses.
+    \begin{itemize}
+        \item \textbf{Posture-aware Logic:} Features are augmented by enforcing specific observational priorities based on posture; for instance, in prone positions, the model is directed to de-emphasize obscured abdominal lines in favor of shoulder and neck contours.
+        \item \textbf{Data Partitioning:} The processed data is split into an \textbf{8:2 training/testing ratio}, ensuring a uniform distribution of "hard samples" (e.g., long-haired or curled pets) across both subsets.
+    \end{itemize}
+\end{enumerate}
+
 
 \section{Methodology}
-
-To bridge the tactility gap---the inability of 2D models to physically palpate skeletal markers---we implement a \textbf{Vision-Logic Fusion} teacher-student distillation pipeline. This approach utilizes GPT-4o as a teacher to generate high-quality synthetic data for a student SLM (Qwen3-VL-4B) by aligning visual perception with clinical reasoning.
+To bridge the tactility gap---the inability of 2D models to physically palpate skeletal markers---we implement a Vision-Logic Fusion teacher-student distillation pipeline. This approach utilizes GPT-4o as a teacher to generate high-quality synthetic data for a student SLM (Qwen3-VL-4B) by aligning visual perception with clinical reasoning.
 
 \subsection{Step 1: Synthetic Data Generation}
-
-\begin{itemize}
-    \item \textbf{Vision-Logic Synthesis:} GPT-4o processes the core dataset (50 images) alongside structured metadata (breed, age, weight) to generate silver labels.
-    \item \textbf{Logical Alignment:} The teacher model uses structured metadata to compensate for visual obstructions such as breed-specific fur, bridging the gap between visual cues and clinical standards.
-    \item \textbf{Chain-of-Thought Curriculum:} Using CoT prompting, the teacher identifies specific markers (e.g., ribs visible from above, abdominal tuck present) before assigning a final score, providing the student with a logic-based diagnostic path.
-\end{itemize}
+In the vision-logic synthesis stage, GPT-4o processes the core dataset of 50 images alongside structured metadata (breed, age, weight) to generate silver labels. The teacher model leverages this metadata to compensate for visual obstructions such as breed-specific fur, bridging the gap between visual cues and clinical standards. Using chain-of-thought (CoT) prompting, the teacher identifies specific markers---such as whether ribs are visible from above or an abdominal tuck is present---before assigning a final score, providing the student model with a logic-based diagnostic path.
 
 \subsection{Step 2: Data Formatting and Validation}
-
-\begin{itemize}
-    \item \textbf{JSONL Integration:} Synthetic examples are converted into a standardized JSONL format pairing original images with the teacher's visual-logic reasoning and final BCS label.
-    \item \textbf{Critic System:} A secondary critic pass (or human verification of a subset) filters out inconsistent generations to ensure training data accurately reflects expert-level reasoning.
-\end{itemize}
+Synthetic examples are converted into a standardized JSONL format, pairing each original image with the teacher's visual-logic reasoning chain and final BCS label. A secondary critic pass, supplemented by human verification of a subset, filters out inconsistent generations to ensure the training data accurately reflects expert-level reasoning.
 
 \subsection{Step 3: SLM Fine-Tuning}
-
-\begin{itemize}
-    \item \textbf{LoRA Optimization:} Using Low-Rank Adaptation (LoRA), we fine-tune the Qwen3-VL-4B model on GPT-4o-generated Vision-Logic reasoning chains.
-    \item \textbf{Scenario Targeting:} This allows the SLM to internalize the diagnostic accuracy of the teacher model while remaining significantly faster and more cost-effective for local deployment.
-    \item \textbf{Value of the Fusion:} By focusing on this fusion, a 4B parameter model can learn to perform specialized clinical assessments that would otherwise require a much larger model.
-\end{itemize}
+Using Low-Rank Adaptation (LoRA), we fine-tune the Qwen3-VL-4B model on the GPT-4o-generated Vision-Logic reasoning chains. This approach allows the SLM to internalize the diagnostic accuracy of the teacher model while remaining significantly faster and more cost-effective for local deployment. By focusing on this fusion strategy, a 4B parameter model can learn to perform specialized clinical assessments that would otherwise require a much larger model.
 
 \section{Experiments and Results}
 
@@ -102,13 +93,9 @@ InternVL3\_5:8b           & 1.2800 \\
 \label{tab:results}
 \end{table}
 
-Table~\ref{tab:results} summarizes the mean deviation from ground truth for each evaluator. Key findings include:
+Table~\ref{tab:results} summarizes the mean deviation from ground truth for each evaluator. 
 
-\begin{itemize}
-    \item \textbf{Expert Calibration:} Experienced human clinicians maintain the highest precision ($\sim$0.28), providing the gold standard target for AI alignment.
-    \item \textbf{Fine-Tuning Advantage:} The fine-tuned GPT-4o model achieved a mean deviation of 0.3571, significantly outperforming the standard GPT-4o and surpassing the average veterinary student ($\sim$0.45).
-    \item \textbf{SLM Performance Gap:} Base SLMs like Qwen3-VL-4B ($\sim$0.86) lag behind expert benchmarks, highlighting the need for specialized training.
-\end{itemize}
+Key findings include the following. Experienced human clinicians maintain the highest precision ($\sim$0.28), providing the gold standard target for AI alignment. The fine-tuned GPT-4o model achieved a mean deviation of 0.3571, significantly outperforming the standard GPT-4o and surpassing the average veterinary student ($\sim$0.45). Base SLMs such as Qwen3-VL-4B ($\sim$0.86) lag behind expert benchmarks, highlighting the need for specialized training.
 
 \subsection{Fine-Tuning Analysis for Qwen3-VL-4B}
 
@@ -119,68 +106,240 @@ Table~\ref{tab:results} summarizes the mean deviation from ground truth for each
     \label{fig:finetune}
 \end{figure}
 
-Based on the comparative analysis of the Qwen3-VL-4B base model and fine-tuned results (Figure~\ref{fig:finetune}), we draw the following conclusions:
+Based on the comparative analysis of the Qwen3-VL-4B base model and fine-tuned results (Figure~\ref{fig:finetune}), we draw the following conclusions.
 
-\begin{enumerate}
-    \item \textbf{Observable Optimization:} Fine-tuning reduced the model's mean deviation from 1.0200 to 0.9200, an improvement of approximately 9.8\%. This demonstrates the efficacy of task-specific adaptation, achieved by maintaining 4-bit quantization while adjusting weights in the projector layers or LoRA adapters.
-    \item \textbf{Remaining Gap:} Despite progress, a substantial gap remains compared to human experts (0.3776, $\sim$2.4$\times$ lower) and GPT-4o (0.4286, $\sim$0.5 deviation difference), suggesting that the model's base parameter scale or current fine-tuning strategies remain insufficient for tasks requiring high visual precision.
-    \item \textbf{Optimization Path:} Current results likely stem from lightweight training modes (\texttt{projector} or \texttt{lora}). The more aggressive \texttt{vit+projector} mode, which unfreezes the last few ViT blocks, may further unlock the model's potential and narrow the gap with top-tier models.
-\end{enumerate}
+In terms of observable optimization, fine-tuning reduced the model's mean deviation from 1.0200 to 0.9200, an improvement of approximately 9.8\%, demonstrating the efficacy of task-specific adaptation achieved by maintaining 4-bit quantization while adjusting weights in the projector layers or LoRA adapters.
 
-\section{Future Work}
+Regarding the remaining gap, despite this progress, a substantial difference persists compared to human experts (0.3776, $\sim$2.4$\times$ lower) and GPT-4o (0.4286, $\sim$0.5 deviation difference), suggesting that the model's base parameter scale or current fine-tuning strategies remain insufficient for tasks requiring high visual precision.
 
-Building on the initial benchmarking results and the developed pipeline, our objectives include:
+As for the optimization path forward, current results likely stem from lightweight training modes (\texttt{projector} or \texttt{lora}), and the more aggressive \texttt{vit+projector} mode, which unfreezes the last few ViT blocks, may further unlock the model's potential and narrow the gap with top-tier models.
 
-\begin{itemize}
-    \item \textbf{Vision-Logic Fusion Training:} Complete the full fine-tuning cycle for Qwen3-VL-4B using the GPT-4o generated CoT dataset, evaluating robustness for edge cases such as all-black or long-haired cats.
-    \item \textbf{Ablation Study:} Compare SLM performance with image-only vs.\ image + metadata inputs to quantify the impact of the LLM logic layer on reducing MAE.
-    \item \textbf{Performance Benchmarking:} Validate if the fine-tuned SLM can bridge the performance gap, aiming to bring its MAE ($\sim$0.86) closer to GPT-4o ($\sim$0.55) and human experts ($\sim$0.33).
-    \item \textbf{Consistency Validation:} Utilize repeat image pairs (e.g., cats 2/50 and 5/47) to ensure stable, reproducible scores across sessions.
-    \item \textbf{Real-World Deployment:} Integrate the fine-tuned SLM into a pet health application for beta testing by pet owners and shelter staff.
-\end{itemize}
+\section{Experiments and Results}
+
+\subsection{Experiment 1: Prompt Pipeline Tuning}
+
+\subsubsection{Dataset Description}
+
+Our evaluation uses a curated dataset of 50 cat photographs \cite{visionbcs2026}, with each image labeled on the standard BCS 1--9 scale. The samples are distributed across the score range to ensure a comprehensive assessment of model accuracy from underweight to obese categories.
+
+\subsubsection{Methodology}
+
+While prior work explored prompt tuning for improving accuracy, using an LLM as a single-step inference engine limits its capacity for self-correction. At this stage, we adopt a \textbf{Prompt Pipeline} architecture that decomposes the reasoning process into discrete, trackable steps, enabling iterative refinement of the model's inference.
+
+Our methodology is to execute a set of prompt pipelines for each model against a subset of our dataset and compare their mean absolute deviation (MAD) against a single-step inference baseline. We then narrow down effective pipelines for full-dataset evaluation and iterate on prompt design and pipeline architecture to seek higher accuracy.
+
+We constructed seven distinct sequential prompt pipelines. (1) Appearance Assessment V1 (AAV1) describes the cat's visual appearance, assesses it against BCS guidelines, then assigns a final score based solely on the resulting text. (2) Appearance Assessment V2 (AAV2) follows the same structure but additionally provides the original image as reference at the final scoring step. (3) Coarse Fine performs a coarse range selection, followed by fine-grained scoring and a final visual confirmation. (4) Majority of 5 runs five independent assessments and determines the final score by majority vote. (5) Per Score poses a series of Yes/No questions for each BCS level from 1 through 9 and selects the score accordingly. (6) Debate V1 begins with an initial assessment, argues for an alternative score, then adjudicates based on the reasoning. (7) Debate V2 follows the same structure as V1 with additional argumentation stages.
+
+We selected five models spanning a broad range of open, closed, and edge deployments. The large models evaluated are GPT-4o, Gemini 3.1, Qwen3-VL-235B, and Qwen2.5-VL-72B. Qwen2.5-VL-3B serves as the small model representative.
+
+
+\subsubsection{Results and Analysis}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=\columnwidth]{prompt_pipeline_tuning_results_1.jpg}
+    \caption{Pipeline evaluation results on the dataset subset.}
+    \label{fig:prompt_pipeline1}
+\end{figure}
+
+All seven pipelines demonstrated general improvement over the single-step baseline on the dataset subset. Per Score and Coarse Fine were subsequently dropped, as both underperformed the baseline on at least one model. Debate V2 was also eliminated, as it offered no meaningful advantage over V1.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=\columnwidth]{prompt_pipeline_tuning_results_2.png}
+    \caption{Pipeline evaluation results on the full dataset.}
+    \label{fig:prompt_pipeline2}
+\end{figure}
+
+On the full dataset, Majority of 5 and Appearance Assessment V2 led consistently across models, while AAV1 fell below baseline --- suggesting it overfit to subset characteristics.
+
+Pipeline effectiveness varied substantially by model: GPT-4o responded strongly to all pipelines, while Qwen models showed limited or negative responsiveness, with smaller models most susceptible to performance degradation.
+
+Overall, prompt pipelines offer meaningful accuracy gains for frontier closed models but are unreliable or counterproductive for open-weight models, particularly smaller ones. Future work will explore pipeline designs better suited to open-weight architectures and investigate why structured prompting amplifies errors in smaller models.
+
+\subsection{Experiment 2: LoRA Fine-Tuning with Distilled Labels}
+
+\subsubsection{Dataset}
+
+We constructed the \texttt{cat\_bcs\_10k} dataset \cite{catbcs10k2026}, comprising 10{,}000 cat photographs sourced from open repositories. Images were preprocessed using a two-stage pipeline: YOLO11 for object detection to crop individual cats, followed by ViTPose (pretrained on AP-10K) for pose estimation to filter images where the body and at least three legs are visible---ensuring sufficient anatomical information for BCS assessment. BCS annotations were generated by Gemini~3.1~Pro via the OpenRouter API. Each annotation includes the predicted primary and secondary BCS scores (1--9), free-text reasoning, confidence rating (1--9), confidence detractors, and breed identification. All 10{,}000 images yielded valid annotations. The dataset was split 95/5 for training and evaluation.
+
+\subsubsection{Methodology}
+
+We fine-tune Qwen2.5-VL-3B-Instruct using 4-bit NF4 quantization with LoRA (rank~16, $\alpha$=32) applied to all attention and MLP projection layers of the language model. The vision encoder remains frozen. Training uses SFTTrainer with completion-only loss masking---labels are set to $-100$ for all system, user, and image tokens so that the cross-entropy loss flows exclusively through the assistant's JSON response. Key hyperparameters: learning rate $10^{-4}$ with cosine decay, effective batch size 8 (gradient accumulation), bf16 mixed precision.
+
+To study data scaling and overfitting, we run two configurations: (1)~500 samples for up to 6 epochs, and (2)~the full 9{,}500 training samples for up to 3~epochs.
+
+\subsubsection{Results}
+
+\paragraph{In-Domain Evaluation.}
+
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=\columnwidth]{lora_indomain_eval.png}
+    \caption{In-domain MAE on the cat\_10k held-out eval set (500 samples). Red bars: 500-sample training subset; blue bars: full 9{,}500-sample training set. Data scale dominates training duration.}
+    \label{fig:lora_indomain}
+\end{figure}
+
+Figure~\ref{fig:lora_indomain} summarizes the in-domain results. The base Qwen2.5-VL-3B model achieves an MAE of 1.56. With 500 training samples, MAE drops rapidly to 0.70 after 2 epochs but plateaus at $\sim$0.62 despite training for 6 epochs---a clear overfitting signal. Scaling to 9{,}500 training samples breaks through this plateau: MAE reaches 0.480 after just 1 epoch, improving to 0.454 at epoch~2 and 0.428 at epoch~3, a 73\% overall reduction from the base model.
+
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=\columnwidth]{lora_scaling_and_essay.png}
+    \caption{(a) MAE trajectories for 500-sample vs.\ 9{,}500-sample training, showing data-limited overfitting vs.\ continued improvement. (b) Cross-domain evaluation on the Essay benchmark comparing our fine-tuned model against frontier LMMs and base SLMs.}
+    \label{fig:lora_scaling_essay}
+\end{figure}
+
+Figure~\ref{fig:lora_scaling_essay}(a) contrasts the two training regimes. The 500-sample curve flattens after epoch~2 while training loss continues to decrease---the hallmark of overfitting to a small dataset. The 9{,}500-sample curve shows sustained improvement with no sign of plateau at epoch~3.
+
+\paragraph{Cross-Domain Evaluation.}
+
+To assess generalization, we evaluate on the Essay benchmark (49 human-labeled feline images from Graff et al.), which was not seen during training. Results are shown in Figure~\ref{fig:lora_scaling_essay}(b) and Table~\ref{tab:lora_essay}.
+
+\begin{table}[t]
+\centering
+\small
+\begin{tabular}{@{}lcc@{}}
+\toprule
+\textbf{Model} & \textbf{Essay MAE} & \textbf{cat\_10k MAE} \\
+\midrule
+Human Experts (best)        & 0.235 & --- \\
+Gemini 3.1 Pro              & 0.571 & --- \\
+GPT-4o (avg)                & 1.095 & --- \\
+\midrule
+Qwen2.5-VL-3B (base)       & 1.497 & 1.56 \\
+\quad + LoRA ep2            & 1.102 & 0.454 \\
+\quad + LoRA ep3            & \textbf{0.980} & \textbf{0.428} \\
+\midrule
+Qwen3-VL-4B (base)         & 1.163 & --- \\
+\bottomrule
+\end{tabular}
+\caption{Comparison of Essay benchmark and cat\_10k eval MAE. LoRA fine-tuning on Gemini-labeled data reduces the base model's Essay MAE by 35\%.}
+\label{tab:lora_essay}
+\end{table}
+
+The fine-tuned model (epoch~3) achieves an Essay MAE of 0.980, a 35\% reduction from the base model (1.497) and competitive with GPT-4o (1.095). Notably, both in-domain and cross-domain MAE improve from epoch~2 to epoch~3, suggesting the model is acquiring generalizable features rather than merely memorizing training examples.
+
+\subsubsection{Discussion}
+
+Three findings emerge from this experiment:
+
+\textbf{Data scale dominates training duration.} The 500-sample experiment hits a ceiling (MAE~0.62) that no amount of additional training can break, while a single epoch on 9{,}500 samples surpasses it (MAE~0.48). This confirms that the teacher's knowledge transfer is limited by the diversity of the training distribution, not by model capacity.
+
+\textbf{Teacher style leaks into the student.} The fine-tuned model inherits the teacher's scoring biases. On the Essay benchmark, its error pattern (center regression toward BCS~5) mirrors Gemini~3.1~Pro's known tendency to under-predict extreme scores. This is consistent with the distillation paradigm: the student learns the teacher's policy, not the ground truth.
+
+\textbf{Domain shift remains the primary bottleneck.} The gap between in-domain MAE (0.428) and cross-domain Essay MAE (0.980) is $2.3\times$. On the synthetic Purina~3D benchmark (3D-rendered cats), the model's MAE rises to 1.88, with 90\% of predictions collapsing to BCS~5. This indicates that LoRA adaptation to natural photographs does not generalize to synthetic imagery, and underscores the need for multi-domain training data.
+
+\section{Conclusion and Future Work}
+
+Building on the initial benchmarking results and the developed pipeline, our objectives include the following.
+
+\textit{Vision-Logic Fusion Training.} We aim to complete the full fine-tuning cycle for Qwen3-VL-4B using the GPT-4o-generated CoT dataset, evaluating robustness for edge cases such as all-black or long-haired cats.
+
+\textit{Ablation Study.} We will compare SLM performance with image-only versus image-plus-metadata inputs to quantify the impact of the LLM logic layer on reducing MAE.
+
+\textit{Performance Benchmarking.} We will validate whether the fine-tuned SLM can bridge the performance gap, aiming to bring its MAE ($\sim$0.86) closer to GPT-4o ($\sim$0.43) and human experts ($\sim$0.33).
+
+\textit{Consistency Validation.} Repeat image pairs (e.g., cats 2/50 and 5/47) will be used to ensure stable, reproducible scores across sessions.
+
+\textit{Real-World Deployment.} Finally, we plan to integrate the fine-tuned SLM into a pet health application for beta testing by pet owners and shelter staff.
 
 \bibliographystyle{plainnat}
 \begin{thebibliography}{10}
 
 \bibitem[Graff et~al.(2025)]{graff2025}
-Graff, E. et~al. (2025).
-\newblock Inter-evaluator bias in feline body condition score visual assessments.
-\newblock \emph{Journal of Veterinary Internal Medicine}.
+Graff, E.~C. et~al. (2025).
+\newblock Inter-evaluator bias and applicability of feline body condition score
+  from visual assessment.
+\newblock \emph{Frontiers in Veterinary Science}, 12:1604557.
+\newblock \doi{10.3389/fvets.2025.1604557}
 
-\bibitem[Liu et~al.(2024)]{liu2024}
-Liu, H. et~al. (2024).
-\newblock Large multimodal models for specialized domain reasoning.
-\newblock In \emph{NeurIPS 2024}.
+\bibitem[Li et~al.(2024)]{li2024clipfit}
+Li, M., Zhong, J., Li, C., Li, L., Lin, N., and Sugiyama, M. (2024).
+\newblock Vision-language model fine-tuning via simple parameter-efficient
+  modification.
+\newblock In \emph{Proceedings of the 2024 Conference on Empirical Methods in
+  Natural Language Processing (EMNLP)}, pages 14394--14410, Miami, FL.
+\newblock Association for Computational Linguistics.
 
-\bibitem[Smith et~al.(2023)]{smith2023}
-Smith, J. et~al. (2023).
-\newblock De-fluffing: Estimating body mass under heavy fur occlusion.
-\newblock In \emph{CVPR 2023}.
+\bibitem[Jiang et~al.(2025)]{jiang2025curriculum}
+Jiang, W., Lu, Y., Lin, H., Han, X., and Sun, L. (2025).
+\newblock Teach small models to reason by curriculum distillation.
+\newblock In \emph{Proceedings of the 2025 Conference on Empirical Methods in
+  Natural Language Processing (EMNLP)}, pages 7412--7422, Suzhou, China.
+\newblock Association for Computational Linguistics.
 
-\bibitem[Wang et~al.(2023)]{wang2023}
-Wang, Y. et~al. (2023).
-\newblock Small language model distillation from large teachers.
-\newblock In \emph{ICML 2023}.
+\bibitem[Lee et~al.(2025)]{lee2025customkd}
+Lee, J., Das, D., Hayat, M., Choi, S., Hwang, K., and Porikli, F. (2025).
+\newblock {CustomKD}: Customizing large vision foundation models for edge model
+  improvement via knowledge distillation.
+\newblock \emph{arXiv preprint arXiv:2503.18244}.
 
-\bibitem[Chen et~al.(2024)]{chen2024}
-Chen, X. et~al. (2024).
-\newblock RAG-enhanced multimodal agents for diagnostic reasoning.
-\newblock In \emph{EMNLP 2024}.
+\bibitem[Zhang and Kanjo(2025)]{zhang2025tinyml}
+Zhang, Q. and Kanjo, E. (2025).
+\newblock A multicore and edge {TPU}-accelerated multimodal {TinyML} system
+  for livestock behavior recognition.
+\newblock \emph{arXiv preprint arXiv:2504.11467}.
 
-\bibitem[Zhang et~al.(2022)]{zhang2022}
-Zhang, L. et~al. (2022).
-\newblock Zero-shot animal pose estimation.
-\newblock In \emph{AAAI 2022}.
+\bibitem[Walczak et~al.(2025)]{walczak2025bitmedvit}
+Walczak, M., Kallakuri, U., Humes, E., Lin, X., and Mohsenin, T. (2025).
+\newblock {BitMedViT}: Ternary-quantized vision transformer for medical {AI}
+  assistants on the edge.
+\newblock \emph{arXiv preprint arXiv:2510.13760}.
 
-\bibitem[Brown et~al.(2023)]{brown2023}
-Brown, T. et~al. (2023).
-\newblock Generative data augmentation for veterinary medicine.
-\newblock In \emph{IJCAI 2023}.
+\bibitem[Shao et~al.(2024)]{shao2024visualcot}
+Shao, H. et~al. (2024).
+\newblock {Visual CoT}: Advancing multi-modal language models with a
+  comprehensive dataset and benchmark for chain-of-thought reasoning.
+\newblock \emph{arXiv preprint arXiv:2403.16999}.
 
-\bibitem[Lee et~al.(2024)]{lee2024}
-Lee, S. et~al. (2024).
-\newblock Aligning multimodal models with expert rubrics via chain-of-thought prompting.
-\newblock In \emph{ACL 2024}.
+\bibitem[Deng et~al.(2024)]{deng2024ape}
+Deng, Q. et~al. (2024).
+\newblock Towards multi-modal animal pose estimation: A survey and in-depth
+  analysis.
+\newblock \emph{arXiv preprint arXiv:2410.09312}.
+
+\bibitem[Jang et~al.(2025)]{jang2025vl2lite}
+Jang, J., Ma, C., and Lee, B. (2025).
+\newblock {VL2Lite}: Task-specific knowledge distillation from large
+  vision-language models to lightweight networks.
+\newblock In \emph{Proceedings of the IEEE/CVF Conference on Computer Vision
+  and Pattern Recognition (CVPR)}, pages 30073--30083.
+\newblock \doi{10.1109/CVPR52734.2025.02799}
+
+\bibitem[Yu et~al.(2025)]{cotcd2025}
+Yu, X., Huo, Y., Cai, L., and Luo, X. (2025).
+\newblock Chain-of-thought curriculum distillation.
+\newblock In \emph{Proceedings of the 2nd International Symposium on
+  Artificial Intelligence for Education (ISAI4E)}.
+\newblock \doi{10.1145/3775073.3775200}
+
+\bibitem[Kaya~G{\"u}la{\u{g}}{\i}z(2025)]{kaya2025promptml}
+Kaya~G{\"u}la{\u{g}}{\i}z, F. (2025).
+\newblock Large language models for machine learning design assistance:
+  Prompt-driven algorithm selection and optimization in diverse supervised
+  learning tasks.
+\newblock \emph{Applied Sciences}, 15\penalty0 (20):\penalty0 10968.
+\newblock \doi{10.3390/app152010968}
+
+\bibitem[Shrivastava et~al.(2025)]{shrivastava2025mllmprompt}
+Shrivastava, et~al. (2025).
+\newblock Advancing multimodal large language models: Optimizing prompt
+  engineering strategies for enhanced performance.
+\newblock \emph{Applied Sciences}, 15\penalty0 (7):\penalty0 3992.
+\newblock \doi{10.3390/app15073992}
+
+\bibitem[{Cat BCS 10k Dataset}(2026)]{catbcs10k2026}
+{Vision BCS Project Contributors} (2026).
+\newblock Cat {BCS} 10k: A dataset of 10{,}000 cat photographs with {Gemini}-generated body condition score annotations.
+\newblock \url{https://huggingface.co/datasets/vhboyr/cat_bcs_10k}.
+\newblock Accessed: 2026.
+
+\bibitem[{Vision BCS Dataset}(2026)]{visionbcs2026}
+{Vision BCS Project Contributors} (2026).
+\newblock Vision {BCS} dataset: Cat photographs with body condition score
+  labels.
+\newblock \url{https://github.com/zboyr/vision_bcs/tree/prompt-tunning/datasets/essay}.
+\newblock Accessed: 2026.
 
 \end{thebibliography}
 
