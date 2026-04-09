@@ -7,7 +7,5 @@ request_timeout: 60
 output_mode: simple
 
 models:
-  - name: openai/gpt-4o
-    provider: openrouter
   - name: google/gemini-3.1-pro-preview
     provider: openrouter

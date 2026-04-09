@@ -56,13 +56,13 @@
   2. **Verifier Agent**: 接收图片 + Scorer 的输出，独立判断是否同意，若不同意则给出修正分数
 - 最终取 Verifier 的分数（若 Verifier 同意则保留 Scorer 分数）
 
-### P6: Agent-as-a-Verifier v2 (AAV2)
+### P6: Visual Few-Shot (视觉参考图 Prompt)
 
-- 三阶段流程：
-  1. **Scorer Agent**: 使用 P3 (Reasoning Mode) 评分
-  2. **Critic Agent**: 针对 Scorer 的 reasoning 提出反驳/质疑
-  3. **Final Judge**: 综合 Scorer 和 Critic 的意见，给出最终 BCS
-- 更强的自我纠错机制
+- 在 prompt 中附带 **BCS 参考图集**（从已标注数据中选取 BCS 1/3/5/7/9 各一张典型猫图）
+- 多图输入：参考图（带 BCS 标签）+ 待评图，共 6 张图片
+- System prompt: 简洁 BCS 量表描述 + "以下是不同 BCS 等级的参考图片"
+- User prompt: "参考以上示例图片的体型特征，评估最后一张图片的 BCS。输出 JSON: `{bcs, reasoning}`"
+- 研究问题：**视觉参考（而非纯文字描述）能否提升 VLM 的 BCS 评分准确度？**
 
 ### P7: Debate v1
 
@@ -77,7 +77,7 @@
 
 ## Experiment Matrix
 
-|  | P1 Direct | P2 JSON | P3 Reasoning | P4 BO5 | P5 AAV1 | P6 AAV2 | P7 Debate |
+|  | P1 Direct | P2 JSON | P3 Reasoning | P4 BO5 | P5 AAV1 | P6 VFewShot | P7 Debate |
 |--|-----------|---------|-------------|--------|---------|---------|-----------|
 | **M1** Qwen2.5-3B | x3 | x3 | x3 | x3 | x3 | x3 | x3 |
 | **M2** Qwen2.5-3B-FT | x3 | x3 | x3 | x3 | x3 | x3 | x3 |
@@ -120,7 +120,7 @@
 1. 扩展 `llm_scoring.py` 支持新 output_mode:
    - `bo5`: Best-of-5 majority vote
    - `aav1`: Agent-as-a-Verifier v1
-   - `aav2`: Agent-as-a-Verifier v2
+   - `vfewshot`: Visual Few-Shot (多图参考)
    - `debate`: Debate v1
 2. 为每种 prompt 策略编写对应的 system/user prompt
 3. 创建 7 x 7 = 49 个 YAML 配置文件（或支持 batch config）
@@ -169,7 +169,8 @@ results/
 ## Research Questions
 
 1. **Prompt 策略对评分准确度的影响有多大？** P1 (最简) vs P2 (JSON) vs P3 (Reasoning) 的差距是否显著？
-2. **Multi-agent 策略 (P5-P7) 是否优于 single-call 策略 (P1-P3)?** 额外的 API 成本是否值得？
+2. **Multi-agent 策略 (P5/P7) 是否优于 single-call 策略 (P1-P3)?** 额外的 API 成本是否值得？
 3. **BO5 majority vote 能否有效降低 variance?**
-4. **Fine-tuning 小模型能否追上甚至超过大型 proprietary 模型？** M2 vs M5/M6/M7
-5. **模型大小与 Prompt 复杂度是否有交互效应？** 小模型是否更受益于简单 prompt？大模型是否更能利用复杂 prompt？
+4. **Visual Few-Shot (P6) 是否优于纯文字描述 (P2/P3)?** 视觉参考能否帮助模型建立更准确的 BCS 体型映射？
+5. **Fine-tuning 小模型能否追上甚至超过大型 proprietary 模型？** M2 vs M5/M6/M7
+6. **模型大小与 Prompt 复杂度是否有交互效应？** 小模型是否更受益于简单 prompt？大模型是否更能利用复杂 prompt？
