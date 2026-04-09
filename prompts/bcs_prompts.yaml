@@ -1,0 +1,53 @@
+## BCS (Body Condition Score) Prompt Components
+## 可拆分引用：bcs_scale, confidence_guide, role, breed_ids
+
+role: >
+  You are an expert veterinarian specializing in animal nutrition and body condition assessment.
+  You have extensive experience with the 9-point Body Condition Score (BCS) system for cats and dogs.
+
+bcs_scale: |
+  BCS Scale Reference (applies to both cats and dogs):
+    1 - Emaciated: Ribs, spine, and pelvic bones are easily visible. No palpable fat. Severe muscle wasting.
+    2 - Very Thin: Ribs, spine, and pelvic bones easily visible. Minimal fat. Obvious waist and abdominal tuck.
+    3 - Thin: Ribs easily palpable with minimal fat covering. Lumbar vertebrae obvious. Obvious waist.
+    4 - Underweight: Ribs palpable with minimal fat covering. Noticeable waist when viewed from above. Slight abdominal tuck.
+    5 - Ideal: Well-proportioned. Ribs palpable without excess fat. Waist observed behind ribs when viewed from above. Abdominal tuck present.
+    6 - Slightly Overweight: Ribs palpable with slight excess fat. Waist discernible but not prominent. Slight abdominal fat pad.
+    7 - Overweight: Ribs palpable with difficulty; heavy fat covering. Fat deposits over lumbar area and face. Waist barely visible. Obvious rounding of abdomen.
+    8 - Obese: Ribs not palpable under heavy fat. Heavy fat deposits over lumbar area, face, and limbs. No waist. Obvious abdominal distension.
+    9 - Severely Obese: Massive fat deposits over thorax, spine, and limbs. No waist, no abdominal tuck. Obvious abdominal distension.
+
+confidence_guide: |
+  Confidence Scale (1-9) — based on body and limb visibility:
+    9: Full body clearly visible (torso + 4 limbs). Standing side/top view, short fur, all BCS landmarks (ribs, waist, abdomen) clearly assessable.
+    8: Full body visible (torso + 3-4 limbs). Good pose, short-to-medium fur. Minor occlusion but all key landmarks assessable.
+    7: Torso + 3 limbs visible. Slight fur or posture interference, but body shape and fat distribution are evident.
+    6: Torso + 2 limbs visible. Medium fur or partially curled pose obscures some details, but overall shape is informative. BCS uncertain by ±1.
+    5: Torso visible but only 1-2 limbs. Sitting/crouching pose hides waist or abdomen. Assessment uncertain by ±1.
+    4: Partial torso visible, 1 limb at most. Long fur, curled/loaf pose, or partial occlusion hides key features. Assessment uncertain by ±1-2.
+    3: Minimal body visible. Most torso landmarks hidden by fur, pose, or occlusion. Relying on limited visible cues (e.g., back width, face roundness).
+    2: Almost no body visible. Only head/face and possibly shoulders. Largely guessing BCS from face shape and visible fur condition.
+    1: No body visible. Only face or extreme occlusion. Pure guess based on face alone or image too poor to assess.
+
+breed_ids: |
+  Cat Breed IDs:
+    1: Domestic Shorthair (DSH)
+    2: Domestic Longhair (DLH)
+    3: Siamese
+    4: Persian
+    5: Maine Coon
+    6: Ragdoll
+    7: Bengal
+    8: Abyssinian
+    9: British Shorthair
+    10: Sphynx
+    11: Russian Blue
+    12: Bombay
+    13: Birman
+    14: Egyptian Mau
+    15: Munchkin
+    16: Scottish Fold
+    17: Norwegian Forest Cat
+    18: Turkish Angora
+    19: American Shorthair
+    20: Other / Unknown
