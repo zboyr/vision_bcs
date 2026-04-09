@@ -7,6 +7,7 @@ import os
 import random
 import re
 from dataclasses import dataclass
+from datetime import datetime
 from typing import Any
 
 import torch
@@ -182,23 +183,39 @@ def run_eval(
 
 
 class EpochEvalCallback(TrainerCallback):
-    def __init__(self, eval_set, processor, max_new_tokens, system_msg):
-        self.eval_set = eval_set
+    def __init__(self, split_eval_set, held_out_eval_set, processor, max_new_tokens, system_msg, adapter_dir):
+        self.split_eval_set = split_eval_set
+        self.held_out_eval_set = held_out_eval_set
         self.processor = processor
         self.max_new_tokens = max_new_tokens
         self.system_msg = system_msg
+        self.adapter_dir = adapter_dir
         self.history: list[dict[str, Any]] = []
 
     def on_epoch_end(self, args, state, control, model=None, **kwargs):
-        if model is None or not self.eval_set:
+        if model is None:
             return
+        epoch = round(state.epoch) if state.epoch is not None else 0
         was_training = model.training
+
+        # save adapter checkpoint
+        ckpt_dir = os.path.join(self.adapter_dir, f"epoch_{epoch}")
+        os.makedirs(ckpt_dir, exist_ok=True)
+        model.save_pretrained(ckpt_dir)
+        self.processor.save_pretrained(ckpt_dir)
+        print(f"[epoch {epoch}] saved checkpoint to {ckpt_dir}")
+
+        # eval on both sets
         model.eval()
         device = next(model.parameters()).device
-        m = run_eval(model, self.processor, self.eval_set, device, self.max_new_tokens, self.system_msg)
-        m["epoch"] = round(state.epoch, 3) if state.epoch is not None else None
+        m = {"epoch": round(state.epoch, 3) if state.epoch is not None else None}
+        for name, eset in [("split", self.split_eval_set), ("held_out", self.held_out_eval_set)]:
+            if not eset:
+                continue
+            r = run_eval(model, self.processor, eset, device, self.max_new_tokens, self.system_msg)
+            print(f"[epoch {epoch}] {name}: mae={r['mae']:.3f} coverage={r['coverage']:.2f} parsed={r['parsed']}/{r['eval_count']}")
+            m[name] = r
         self.history.append(m)
-        print(f"[epoch {m['epoch']}] eval: mae={m['mae']:.3f} coverage={m['coverage']:.2f} parsed={m['parsed']}/{m['eval_count']}")
         if was_training:
             model.train()
         torch.cuda.empty_cache()
@@ -207,6 +224,8 @@ class EpochEvalCallback(TrainerCallback):
 def main() -> int:
     parser = argparse.ArgumentParser(description="LoRA fine-tune Qwen3-VL-4B on local BCS dataset")
     parser.add_argument("--dataset", default="datasets/cat_10k/train.csv")
+    parser.add_argument("--eval-dataset", default="datasets/cat_10k/eval.csv",
+                        help="Dedicated eval CSV. Overrides train/eval split when provided.")
     parser.add_argument("--model-id", default="Qwen/Qwen2.5-VL-3B-Instruct")
     parser.add_argument("--max-samples", type=int, default=0,
                         help="Cap total samples loaded (0=all). Useful for smoke tests.")
@@ -237,6 +256,7 @@ def main() -> int:
     prompt_path = os.path.join(base_dir, args.system_prompt) if not os.path.isabs(args.system_prompt) else args.system_prompt
     system_msg = load_system_prompt(prompt_path)
     print(f"Loaded system prompt from: {prompt_path} ({len(system_msg)} chars)")
+    args.output_dir = args.output_dir + "_" + datetime.now().strftime("%m%d_%H%M")
     os.makedirs(os.path.join(base_dir, args.output_dir), exist_ok=True)
 
     samples = load_samples(base_dir, args.dataset)
@@ -245,10 +265,12 @@ def main() -> int:
     random.shuffle(samples)
     if args.max_samples > 0:
         samples = samples[:args.max_samples]
+
     train_size = int(len(samples) * (args.train_size / 100))
     train_set = samples[:train_size]
-    eval_set = samples[train_size:]
-    print(f"samples: total={len(samples)}, train={len(train_set)}, eval={len(eval_set)}")
+    split_eval_set = samples[train_size:]
+    held_out_eval_set = load_samples(base_dir, args.eval_dataset) if args.eval_dataset else []
+    print(f"samples: train={len(train_set)}, split_eval={len(split_eval_set)}, held_out_eval={len(held_out_eval_set)}")
 
     model_id = args.model_id
     bnb = BitsAndBytesConfig(
@@ -283,12 +305,17 @@ def main() -> int:
         model = get_peft_model(model, lora_cfg)
 
     baseline_metrics = None
-    if args.baseline_eval and eval_set:
+    if args.baseline_eval and (split_eval_set or held_out_eval_set):
         print("Running baseline eval (pre-training)...")
         model.eval()
         device = next(model.parameters()).device
-        baseline_metrics = run_eval(model, processor, eval_set, device, args.max_new_tokens, system_msg)
-        print(f"baseline: {baseline_metrics}")
+        baseline_metrics = {}
+        for name, eset in [("split", split_eval_set), ("held_out", held_out_eval_set)]:
+            if not eset:
+                continue
+            r = run_eval(model, processor, eset, device, args.max_new_tokens, system_msg)
+            baseline_metrics[name] = r
+            print(f"baseline {name}: {r}")
 
     model.train()
 
@@ -318,7 +345,7 @@ def main() -> int:
         fp16=not bf16_ok,
         dataset_kwargs={"skip_prepare_dataset": True},
     )
-    epoch_eval_cb = EpochEvalCallback(eval_set, processor, args.max_new_tokens, system_msg)
+    epoch_eval_cb = EpochEvalCallback(split_eval_set, held_out_eval_set, processor, args.max_new_tokens, system_msg, adapter_dir)
     trainer = SFTTrainer(
         model=model,
         args=sft_args,
@@ -334,10 +361,11 @@ def main() -> int:
 
     model.eval()
     device = next(model.parameters()).device
-    metrics = run_eval(model, processor, eval_set, device, args.max_new_tokens, system_msg)
-    metrics["train_size"] = len(train_set)
-    metrics["model_id"] = model_id
-    if baseline_metrics is not None:
+    metrics = {"train_size": len(train_set), "model_id": model_id}
+    for name, eset in [("split", split_eval_set), ("held_out", held_out_eval_set)]:
+        if eset:
+            metrics[f"final_{name}"] = run_eval(model, processor, eset, device, args.max_new_tokens, system_msg)
+    if baseline_metrics:
         metrics["baseline"] = baseline_metrics
     metrics["epoch_history"] = epoch_eval_cb.history
     metrics_path = os.path.join(adapter_dir, "metrics.json")
