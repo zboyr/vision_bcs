@@ -11,3 +11,6 @@ nul
 datasets/cat_10k/raw_images/
 datasets/cat_10k/images/
 *.safetensors
+node_modules/
+package-lock.json
+package.json
