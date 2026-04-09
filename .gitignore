@@ -4,13 +4,15 @@ __pycache__/
 logs/
 nul
 *.pt
+*.safetensors
 .DS_Store
 .venv/
 .claude/
 .vscode/settings.json
 datasets/cat_10k/raw_images/
 datasets/cat_10k/images/
-*.safetensors
+results/report/
+*.bak*
 node_modules/
 package-lock.json
 package.json
