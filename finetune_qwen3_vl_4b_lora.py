@@ -22,7 +22,7 @@ from transformers import (
 from trl import SFTConfig, SFTTrainer
 
 
-DEFAULT_SYSTEM_PROMPT = "prompts/bcs_system_prompt.txt"
+DEFAULT_SYSTEM_PROMPT = "prompts/bcs_prompts.yaml"
 USER_MSG = "Assess this cat's Body Condition Score. Examine the visible body shape, waist definition, abdominal profile, rib coverage, and overall fat/muscle distribution. Respond with JSON only."
 
 
@@ -92,8 +92,10 @@ def target_json_from_row(r: dict[str, Any]) -> str:
 
 
 def load_system_prompt(path: str) -> str:
+    import yaml
     with open(path, "r", encoding="utf-8") as f:
-        return f.read().strip()
+        p = yaml.safe_load(f)
+    return f"{p['role'].strip()}\n\n{p['bcs_scale'].strip()}\n\n{p['confidence_guide'].strip()}"
 
 
 def make_messages(image_path: str, answer_json: str | None, system_msg: str) -> list[dict[str, Any]]:

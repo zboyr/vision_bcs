@@ -56,6 +56,7 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 DEFAULT_OUTPUT = os.path.join(BASE_DIR, "datasets", "cat_10k")
 
 COCO_CAT_CLASS_ID = 15
+COCO_DOG_CLASS_ID = 16
 IMAGE_EXTENSIONS = {".jpg", ".jpeg", ".png", ".webp", ".bmp"}
 
 # ViTPose AP-10K
@@ -147,6 +148,7 @@ def process_directory(
     target_count: int = 0,
     ignore_files: set | None = None,
     verify: bool = True,
+    species: str = "cat",
 ) -> dict:
     images_dir = os.path.join(output_dir, "images")
     raw_dir = os.path.join(output_dir, "raw_images")
@@ -185,7 +187,8 @@ def process_directory(
         print(f"在 {input_dir} 中未找到图片")
         return {"kept": 0, "skipped": 0, "rejected": 0, "total": existing_count}
 
-    print(f"找到 {len(image_files)} 张图片, verify={verify}")
+    yolo_class_id = COCO_DOG_CLASS_ID if species == "dog" else COCO_CAT_CLASS_ID
+    print(f"找到 {len(image_files)} 张图片, verify={verify}, species={species}, yolo_class={yolo_class_id}")
 
     kept = 0
     skipped = 0
@@ -208,7 +211,7 @@ def process_directory(
         try:
             results = yolo_model(
                 str(img_path), conf=conf_threshold,
-                classes=[COCO_CAT_CLASS_ID],
+                classes=[yolo_class_id],
                 device=device if device else None, verbose=False,
             )
         except Exception as e:
@@ -228,7 +231,7 @@ def process_directory(
 
         boxes = result.boxes
         cat_indices = [i for i in range(len(boxes))
-                       if int(boxes.cls[i]) == COCO_CAT_CLASS_ID]
+                       if int(boxes.cls[i]) == yolo_class_id]
         if not cat_indices:
             rejected_yolo += 1
             rejected_md5s.add(md5)
@@ -272,20 +275,17 @@ def process_directory(
         crop_dest = os.path.join(images_dir, f"{md5}.jpg")
         crop.save(crop_dest, "JPEG", quality=95)
 
-        limb_info = estimate_limb_visibility(best_box, img_w, img_h)
         record = {
+            "original_md5": md5,
+            "status": "active",
             "md5": md5,
-            "original_name": img_path.name,
-            "source_dir": str(input_dir),
-            "body_confidence": round(best_conf, 4),
-            "limb_confidence": round(best_conf * limb_info["limb_score"], 4),
-            "limb_score": limb_info["limb_score"],
-            "all_limbs_visible": limb_info["all_limbs_visible"],
-            "area_ratio": limb_info["area_ratio"],
-            "bbox": [int(x1), int(y1), int(x2), int(y2)],
-            "crop_bbox": [cx1, cy1, cx2, cy2],
-            "image_size": [img_w, img_h],
-            "crop_size": [cx2 - cx1, cy2 - cy1],
+            "species": species,
+            "llm_tag": {
+                "bcs": None,
+                "reasoning": "",
+                "confidence": None,
+                "pre_bcs": None,
+            },
         }
         db.insert(record)
         kept += 1
@@ -324,6 +324,8 @@ def main() -> int:
     parser.add_argument("--ignore", nargs="*", default=[])
     parser.add_argument("--no-verify", action="store_true",
                         help="跳过 ViTPose 验证")
+    parser.add_argument("--species", default="cat", choices=["cat", "dog"],
+                        help="物种 (默认: cat)")
     args = parser.parse_args()
 
     if not os.path.isdir(args.input_dir):
@@ -339,6 +341,7 @@ def main() -> int:
         target_count=args.target,
         ignore_files=set(args.ignore) if args.ignore else None,
         verify=not args.no_verify,
+        species=args.species,
     )
     return 0
 

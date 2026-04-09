@@ -64,7 +64,7 @@ def main():
                         help="Directory for basename fallback lookup.")
     parser.add_argument("--image-col", default="path",
                         help="CSV column with image filename/path (e.g. 'path' or 'filename').")
-    parser.add_argument("--system-prompt", default="prompts/bcs_system_prompt.txt")
+    parser.add_argument("--system-prompt", default="prompts/bcs_prompts.yaml")
     parser.add_argument("--max-new-tokens", type=int, default=200)
     parser.add_argument("--max-pixels", type=int, default=401408)
     parser.add_argument("--source-name", default="Qwen/Qwen2.5-VL-3B-Instruct (lora-cat_10k-full)")
@@ -92,8 +92,11 @@ def main():
         raise FileNotFoundError(f"image not found: {csv_path}")
 
     # Load system prompt
-    with open(os.path.join(base_dir, args.system_prompt), "r", encoding="utf-8") as f:
-        system_msg = f.read().strip()
+    import yaml
+    prompt_path = os.path.join(base_dir, args.system_prompt)
+    with open(prompt_path, "r", encoding="utf-8") as f:
+        p = yaml.safe_load(f)
+    system_msg = f"{p['role'].strip()}\n\n{p['bcs_scale'].strip()}\n\n{p['confidence_guide'].strip()}"
 
     # Load model + LoRA
     print(f"Loading base model: {args.model_id}")

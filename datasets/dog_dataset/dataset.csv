@@ -1,0 +1,380 @@
+id,path,species,hint
+1,datasets/dog_dataset/underweight_dogs/0221df47f249444135480b6e41ba5ab2.jpg,dog,This dog is classified as underweight (BCS likely 1-4).
+2,datasets/dog_dataset/underweight_dogs/0244e6bc94ddce0131e38e42759a9df3.jpg,dog,This dog is classified as underweight (BCS likely 1-4).
+3,datasets/dog_dataset/underweight_dogs/0248efe02876ec3994b6a1664049ad3a.jpg,dog,This dog is classified as underweight (BCS likely 1-4).
+4,datasets/dog_dataset/underweight_dogs/0410e86376c35e37d77e8a533f34628b.jpg,dog,This dog is classified as underweight (BCS likely 1-4).
+5,datasets/dog_dataset/underweight_dogs/06a4e6bdf5de8457ed87da97e14183b2.jpg,dog,This dog is classified as underweight (BCS likely 1-4).
+6,datasets/dog_dataset/underweight_dogs/079328ca4eb9f0188e38c1107cd716c3.jpg,dog,This dog is classified as underweight (BCS likely 1-4).
+7,datasets/dog_dataset/underweight_dogs/096b7d37a8430f32b6c4dcc8844f34e2.jpg,dog,This dog is classified as underweight (BCS likely 1-4).
+8,datasets/dog_dataset/underweight_dogs/09d3c1fba8cfb43d29413a8b1bf4d608.jpg,dog,This dog is classified as underweight (BCS likely 1-4).
+9,datasets/dog_dataset/underweight_dogs/0ce3e44c9f2729410a718f5289c9c171.jpg,dog,This dog is classified as underweight (BCS likely 1-4).
+10,datasets/dog_dataset/underweight_dogs/0e6c756260b7f04e6ef304bd3678c8cf.jpg,dog,This dog is classified as underweight (BCS likely 1-4).
+11,datasets/dog_dataset/underweight_dogs/11a12180d17717fd9605142a08da5c84.jpg,dog,This dog is classified as underweight (BCS likely 1-4).
+12,datasets/dog_dataset/underweight_dogs/1243f7628699f2713488ca9c984bc819.jpg,dog,This dog is classified as underweight (BCS likely 1-4).
+13,datasets/dog_dataset/underweight_dogs/135a17ab85e7f1195eee338641e5f50b.jpg,dog,This dog is classified as underweight (BCS likely 1-4).
+14,datasets/dog_dataset/underweight_dogs/154c5b8f4644685fb68bc955cb45bb7c.jpg,dog,This dog is classified as underweight (BCS likely 1-4).
+15,datasets/dog_dataset/underweight_dogs/18b675c10b664060fb54eb60a6a4f5b6.jpg,dog,This dog is classified as underweight (BCS likely 1-4).
+16,datasets/dog_dataset/underweight_dogs/1978843462cb1aaac9eb3ac77f378bcd.jpg,dog,This dog is classified as underweight (BCS likely 1-4).
+17,datasets/dog_dataset/underweight_dogs/1a24b41ac1a8034b6d2782fbb1cba05e.jpg,dog,This dog is classified as underweight (BCS likely 1-4).
+18,datasets/dog_dataset/underweight_dogs/1a77b9cf8f2014a7bd34cf58be2e3fb2.jpg,dog,This dog is classified as underweight (BCS likely 1-4).
+19,datasets/dog_dataset/underweight_dogs/20231d10c0b1390177c2adaf9e7f3010.jpg,dog,This dog is classified as underweight (BCS likely 1-4).
+20,datasets/dog_dataset/underweight_dogs/222f680e2d83037689bf08d8ccd29538.jpg,dog,This dog is classified as underweight (BCS likely 1-4).
+21,datasets/dog_dataset/underweight_dogs/25d3f42d7165f81a4f97e4a71ffe574c.jpg,dog,This dog is classified as underweight (BCS likely 1-4).
+22,datasets/dog_dataset/underweight_dogs/280b4acb90b6a0b40c977064753c9ac0.jpg,dog,This dog is classified as underweight (BCS likely 1-4).
+23,datasets/dog_dataset/underweight_dogs/29cf1d631abf7283cff40016b47c367a.jpg,dog,This dog is classified as underweight (BCS likely 1-4).
+24,datasets/dog_dataset/underweight_dogs/29f0f8459ab5623dd20852610a11b64e.jpg,dog,This dog is classified as underweight (BCS likely 1-4).
+25,datasets/dog_dataset/underweight_dogs/2a093f332b2db0c7a8d9630fc305ad94.jpg,dog,This dog is classified as underweight (BCS likely 1-4).
+26,datasets/dog_dataset/underweight_dogs/2a3a5a91238f98eb4e345e94d3a73824.jpg,dog,This dog is classified as underweight (BCS likely 1-4).
+27,datasets/dog_dataset/underweight_dogs/2aaf1fafb5c675f36e2e0205006cfb2b.jpg,dog,This dog is classified as underweight (BCS likely 1-4).
+28,datasets/dog_dataset/underweight_dogs/2b5199ffdea30a1c3a87d16d2de09d85.jpg,dog,This dog is classified as underweight (BCS likely 1-4).
+29,datasets/dog_dataset/underweight_dogs/2e4ea820abcdd0e2ef998cf4984638f2.jpg,dog,This dog is classified as underweight (BCS likely 1-4).
+30,datasets/dog_dataset/underweight_dogs/2f9f5c6596596c637520783b7277ee66.jpg,dog,This dog is classified as underweight (BCS likely 1-4).
+31,datasets/dog_dataset/underweight_dogs/3051647b614f3a532e19ad0c26db4317.jpg,dog,This dog is classified as underweight (BCS likely 1-4).
+32,datasets/dog_dataset/underweight_dogs/3199f817b57c4aae81cef855225f876e.jpg,dog,This dog is classified as underweight (BCS likely 1-4).
+33,datasets/dog_dataset/underweight_dogs/357d219e67d8609882edffcf06a76e1c.jpg,dog,This dog is classified as underweight (BCS likely 1-4).
+34,datasets/dog_dataset/underweight_dogs/364490ac7c1c8a25f812a36606f608fb.jpg,dog,This dog is classified as underweight (BCS likely 1-4).
+35,datasets/dog_dataset/underweight_dogs/372042d66ab3f192eadf319ea3b9aa82.jpg,dog,This dog is classified as underweight (BCS likely 1-4).
+36,datasets/dog_dataset/underweight_dogs/38e8221e6ab86d0703d6f3072fa8fd62.jpg,dog,This dog is classified as underweight (BCS likely 1-4).
+37,datasets/dog_dataset/underweight_dogs/3922038144243b665c26f4bae5aa2c2c.jpg,dog,This dog is classified as underweight (BCS likely 1-4).
+38,datasets/dog_dataset/underweight_dogs/3958f3d49bde36e35841d66096cb2b6f.jpg,dog,This dog is classified as underweight (BCS likely 1-4).
+39,datasets/dog_dataset/underweight_dogs/396609d77071222a3c6cdd0620829c9f.jpg,dog,This dog is classified as underweight (BCS likely 1-4).
+40,datasets/dog_dataset/underweight_dogs/3a2882d6ab250a415a169b24aa2b5009.jpg,dog,This dog is classified as underweight (BCS likely 1-4).
+41,datasets/dog_dataset/underweight_dogs/3cd5f5dbf7a0cce4fe866d143d496a88.jpg,dog,This dog is classified as underweight (BCS likely 1-4).
+42,datasets/dog_dataset/underweight_dogs/3e1adcad5f090135a8888b153ea86f28.jpg,dog,This dog is classified as underweight (BCS likely 1-4).
+43,datasets/dog_dataset/underweight_dogs/3e6de48e7ebb7436368cc3d035c5ec01.jpg,dog,This dog is classified as underweight (BCS likely 1-4).
+44,datasets/dog_dataset/underweight_dogs/401cfa415bc9d85ebb7a4f3b8f709838.jpg,dog,This dog is classified as underweight (BCS likely 1-4).
+45,datasets/dog_dataset/underweight_dogs/43a24c092b07a7dd0f4a89cae9173831.jpg,dog,This dog is classified as underweight (BCS likely 1-4).
+46,datasets/dog_dataset/underweight_dogs/448e9374f10c6cfa9e021f4ead3f8aeb.jpg,dog,This dog is classified as underweight (BCS likely 1-4).
+47,datasets/dog_dataset/underweight_dogs/44e7a4e5899c2e2a491891bba00aeff7.jpg,dog,This dog is classified as underweight (BCS likely 1-4).
+48,datasets/dog_dataset/underweight_dogs/472c560daac917263f5d09a44dd1fe91.jpg,dog,This dog is classified as underweight (BCS likely 1-4).
+49,datasets/dog_dataset/underweight_dogs/480e71338f6c6bb219a71d24327c1be2.jpg,dog,This dog is classified as underweight (BCS likely 1-4).
+50,datasets/dog_dataset/underweight_dogs/49339af6ee41096aa54a282ddee456e8.jpg,dog,This dog is classified as underweight (BCS likely 1-4).
+51,datasets/dog_dataset/underweight_dogs/4974f4b85a6b700aa9ec3d825da744ba.jpg,dog,This dog is classified as underweight (BCS likely 1-4).
+52,datasets/dog_dataset/underweight_dogs/4d082687b59027d6eb03adf889bdb0f7.jpg,dog,This dog is classified as underweight (BCS likely 1-4).
+53,datasets/dog_dataset/underweight_dogs/4fee972abfb3a1e9d0fe59832564fe64.jpg,dog,This dog is classified as underweight (BCS likely 1-4).
+54,datasets/dog_dataset/underweight_dogs/51ac9b1d6bed8e164d220ad74660e041.jpg,dog,This dog is classified as underweight (BCS likely 1-4).
+55,datasets/dog_dataset/underweight_dogs/54e1248bf0089545fdd46e4c405fe3d2.jpg,dog,This dog is classified as underweight (BCS likely 1-4).
+56,datasets/dog_dataset/underweight_dogs/57d2da949f9ea257425ff2d7abb2a6bd.jpg,dog,This dog is classified as underweight (BCS likely 1-4).
+57,datasets/dog_dataset/underweight_dogs/592cb3a675f4b42591a62d6634770b4d.jpg,dog,This dog is classified as underweight (BCS likely 1-4).
+58,datasets/dog_dataset/underweight_dogs/594079be8eb4c86e25872efb15ad9612.jpg,dog,This dog is classified as underweight (BCS likely 1-4).
+59,datasets/dog_dataset/underweight_dogs/599e0b50add9f4a77d46f38aa01e986e.jpg,dog,This dog is classified as underweight (BCS likely 1-4).
+60,datasets/dog_dataset/underweight_dogs/5add8414cea658bb2c0619e5205cb38e.jpg,dog,This dog is classified as underweight (BCS likely 1-4).
+61,datasets/dog_dataset/underweight_dogs/5cade8ecae549b0d9782e70e4db62d6c.jpg,dog,This dog is classified as underweight (BCS likely 1-4).
+62,datasets/dog_dataset/underweight_dogs/5e45fcace91a90f6df8f091ea0a32657.jpg,dog,This dog is classified as underweight (BCS likely 1-4).
+63,datasets/dog_dataset/underweight_dogs/5fb24e6c741c281add139b0b9fb86fd5.jpg,dog,This dog is classified as underweight (BCS likely 1-4).
+64,datasets/dog_dataset/underweight_dogs/609a7e05e699807b78a934bdfecefbba.jpg,dog,This dog is classified as underweight (BCS likely 1-4).
+65,datasets/dog_dataset/underweight_dogs/68b5945d082a8275aedd850a17876311.jpg,dog,This dog is classified as underweight (BCS likely 1-4).
+66,datasets/dog_dataset/underweight_dogs/6c8a6c8a05bcca8b8b65e85009239e09.jpg,dog,This dog is classified as underweight (BCS likely 1-4).
+67,datasets/dog_dataset/underweight_dogs/6d1d147386b07be3fcfda9fe07dbd229.jpg,dog,This dog is classified as underweight (BCS likely 1-4).
+68,datasets/dog_dataset/underweight_dogs/6d24ec68a8d8fabf8921bfe04c58df13.jpg,dog,This dog is classified as underweight (BCS likely 1-4).
+69,datasets/dog_dataset/underweight_dogs/6e08e2cdcb9803bdc2093394372e6bb1.jpg,dog,This dog is classified as underweight (BCS likely 1-4).
+70,datasets/dog_dataset/underweight_dogs/6efd397350a6b4870b0507bee3344a3b.jpg,dog,This dog is classified as underweight (BCS likely 1-4).
+71,datasets/dog_dataset/underweight_dogs/7089099206c82ebe6c9fd9f65eab5e05.jpg,dog,This dog is classified as underweight (BCS likely 1-4).
+72,datasets/dog_dataset/underweight_dogs/76791c80ba341c487bff06a86de21bc2.jpg,dog,This dog is classified as underweight (BCS likely 1-4).
+73,datasets/dog_dataset/underweight_dogs/7825cb618eb5a65e50aaf4ef484f030a.jpg,dog,This dog is classified as underweight (BCS likely 1-4).
+74,datasets/dog_dataset/underweight_dogs/7897cf686d3ee8c9cef8ff7c0dc563e1.jpg,dog,This dog is classified as underweight (BCS likely 1-4).
+75,datasets/dog_dataset/underweight_dogs/78d1894122efbe607b704b9c818b690f.jpg,dog,This dog is classified as underweight (BCS likely 1-4).
+76,datasets/dog_dataset/underweight_dogs/792f20b972595d5f06e6fbbc47481247.jpg,dog,This dog is classified as underweight (BCS likely 1-4).
+77,datasets/dog_dataset/underweight_dogs/79bd890c24df53aaa215d625911d6551.jpg,dog,This dog is classified as underweight (BCS likely 1-4).
+78,datasets/dog_dataset/underweight_dogs/7aaf5dfb7a3ea740e26ffc620b9728c2.jpg,dog,This dog is classified as underweight (BCS likely 1-4).
+79,datasets/dog_dataset/underweight_dogs/7b44bff4190119b4ac5bc24099b9c109.jpg,dog,This dog is classified as underweight (BCS likely 1-4).
+80,datasets/dog_dataset/underweight_dogs/7c72de749577ba74804a27b5352af369.jpg,dog,This dog is classified as underweight (BCS likely 1-4).
+81,datasets/dog_dataset/underweight_dogs/7c96cb1f42a20c3d6937ba19d86b9f21.jpg,dog,This dog is classified as underweight (BCS likely 1-4).
+82,datasets/dog_dataset/underweight_dogs/80ed0f6398e9b203f71d1facba6d4b75.jpg,dog,This dog is classified as underweight (BCS likely 1-4).
+83,datasets/dog_dataset/underweight_dogs/85372f5da849086e55affca14bd8cf28.jpg,dog,This dog is classified as underweight (BCS likely 1-4).
+84,datasets/dog_dataset/underweight_dogs/856e4f536c49547936c00ae3f2e90d18.jpg,dog,This dog is classified as underweight (BCS likely 1-4).
+85,datasets/dog_dataset/underweight_dogs/8736b660d0574a2378a5f802e6aeb241.jpg,dog,This dog is classified as underweight (BCS likely 1-4).
+86,datasets/dog_dataset/underweight_dogs/8902e71864dc3281c4cb30bb63b5af51.jpg,dog,This dog is classified as underweight (BCS likely 1-4).
+87,datasets/dog_dataset/underweight_dogs/90294b1b46d32b54a5638e3d6208d882.jpg,dog,This dog is classified as underweight (BCS likely 1-4).
+88,datasets/dog_dataset/underweight_dogs/908044a94f5b1afea52aa4c339b8d1f0.jpg,dog,This dog is classified as underweight (BCS likely 1-4).
+89,datasets/dog_dataset/underweight_dogs/9228c860b6a50b2b0fc90a452969cb56.jpg,dog,This dog is classified as underweight (BCS likely 1-4).
+90,datasets/dog_dataset/underweight_dogs/95bc70e6045a349b0d055c11c6961b54.jpg,dog,This dog is classified as underweight (BCS likely 1-4).
+91,datasets/dog_dataset/underweight_dogs/9b0bd5d1c2a8ac9d8bf3cba6a6a6697a.jpg,dog,This dog is classified as underweight (BCS likely 1-4).
+92,datasets/dog_dataset/underweight_dogs/9b670677a87cd66656f3aa0607145c2c.jpg,dog,This dog is classified as underweight (BCS likely 1-4).
+93,datasets/dog_dataset/underweight_dogs/9bc922e45c9e9df665245054ac4fdcd2.jpg,dog,This dog is classified as underweight (BCS likely 1-4).
+94,datasets/dog_dataset/underweight_dogs/9e8b6fb8c5014d252495b11e1b01caa1.jpg,dog,This dog is classified as underweight (BCS likely 1-4).
+95,datasets/dog_dataset/underweight_dogs/a3cd68fc8c949a80d5fb52864470af00.jpg,dog,This dog is classified as underweight (BCS likely 1-4).
+96,datasets/dog_dataset/underweight_dogs/a50645dd00aaa6b8dc36b6953c1a4c5a.jpg,dog,This dog is classified as underweight (BCS likely 1-4).
+97,datasets/dog_dataset/underweight_dogs/a51ff1325ad1ace3dc021351e19402c0.jpg,dog,This dog is classified as underweight (BCS likely 1-4).
+98,datasets/dog_dataset/underweight_dogs/a662bfaa2200dfab82944d4db4f1b831.jpg,dog,This dog is classified as underweight (BCS likely 1-4).
+99,datasets/dog_dataset/underweight_dogs/a68acb77359f318e1d3d50deaf6c0eac.jpg,dog,This dog is classified as underweight (BCS likely 1-4).
+100,datasets/dog_dataset/underweight_dogs/a862812c26b991f27f620639bfdc3f53.jpg,dog,This dog is classified as underweight (BCS likely 1-4).
+101,datasets/dog_dataset/underweight_dogs/a923181bced811edf7342f9041e00516.jpg,dog,This dog is classified as underweight (BCS likely 1-4).
+102,datasets/dog_dataset/underweight_dogs/aa2e9529ca39f49172f41feb23be7380.jpg,dog,This dog is classified as underweight (BCS likely 1-4).
+103,datasets/dog_dataset/underweight_dogs/acec8c4958ccb78a534e3045dcf5d825.jpg,dog,This dog is classified as underweight (BCS likely 1-4).
+104,datasets/dog_dataset/underweight_dogs/adc436652283ad1e1e3b497fe1237998.jpg,dog,This dog is classified as underweight (BCS likely 1-4).
+105,datasets/dog_dataset/underweight_dogs/ae171dc21d46deefd84844cddeb34afe.jpg,dog,This dog is classified as underweight (BCS likely 1-4).
+106,datasets/dog_dataset/underweight_dogs/b5bd712853fcd23b419a63a0e2d71b1f.jpg,dog,This dog is classified as underweight (BCS likely 1-4).
+107,datasets/dog_dataset/underweight_dogs/b5dd59475e76451ab67ca492550d827e.jpg,dog,This dog is classified as underweight (BCS likely 1-4).
+108,datasets/dog_dataset/underweight_dogs/b935c1e0e9804be7ead8f9cf144aa0b3.jpg,dog,This dog is classified as underweight (BCS likely 1-4).
+109,datasets/dog_dataset/underweight_dogs/ba731575340101a7c291684a8bbeae9f.jpg,dog,This dog is classified as underweight (BCS likely 1-4).
+110,datasets/dog_dataset/underweight_dogs/c04badd360f0d87feaf4b5fc8f62011a.jpg,dog,This dog is classified as underweight (BCS likely 1-4).
+111,datasets/dog_dataset/underweight_dogs/c241daf4947c69dc9e54c8ce088c0b7e.jpg,dog,This dog is classified as underweight (BCS likely 1-4).
+112,datasets/dog_dataset/underweight_dogs/c4ea63e8e8a4e30698c0ec0dc6f41c1b.jpg,dog,This dog is classified as underweight (BCS likely 1-4).
+113,datasets/dog_dataset/underweight_dogs/c6748d5b7831eebf6127f32a199024a0.jpg,dog,This dog is classified as underweight (BCS likely 1-4).
+114,datasets/dog_dataset/underweight_dogs/c8673060d5fbf7799475ca9681ccad06.jpg,dog,This dog is classified as underweight (BCS likely 1-4).
+115,datasets/dog_dataset/underweight_dogs/cb0e6382d1ad5e1146d80e47fd617a85.jpg,dog,This dog is classified as underweight (BCS likely 1-4).
+116,datasets/dog_dataset/underweight_dogs/cd004b88891b70cf6906a1f5ad9d387f.jpg,dog,This dog is classified as underweight (BCS likely 1-4).
+117,datasets/dog_dataset/underweight_dogs/ced79f5ed9d17448ea563dc9a7dc53f9.jpg,dog,This dog is classified as underweight (BCS likely 1-4).
+118,datasets/dog_dataset/underweight_dogs/cf130d3a835a7838f31aa808b9f2c628.jpg,dog,This dog is classified as underweight (BCS likely 1-4).
+119,datasets/dog_dataset/underweight_dogs/cfff3fc9dc382f752a3c13c47e57c39f.jpg,dog,This dog is classified as underweight (BCS likely 1-4).
+120,datasets/dog_dataset/underweight_dogs/d6319039f56d1300467bd27f50581ffd.jpg,dog,This dog is classified as underweight (BCS likely 1-4).
+121,datasets/dog_dataset/underweight_dogs/d7f1aed8200bf4b6b0eeb555bedc77e0.jpg,dog,This dog is classified as underweight (BCS likely 1-4).
+122,datasets/dog_dataset/underweight_dogs/d8d7ead0d5596e9c510bff4134aaaff9.jpg,dog,This dog is classified as underweight (BCS likely 1-4).
+123,datasets/dog_dataset/underweight_dogs/d97dc8fa67355b896b79b5167b712c54.jpg,dog,This dog is classified as underweight (BCS likely 1-4).
+124,datasets/dog_dataset/underweight_dogs/da2aebab724310c84cc7bd6a88ea8182.jpg,dog,This dog is classified as underweight (BCS likely 1-4).
+125,datasets/dog_dataset/underweight_dogs/e5a9f387df8ae1226899388c5f20cf80.jpg,dog,This dog is classified as underweight (BCS likely 1-4).
+126,datasets/dog_dataset/underweight_dogs/e60eb98838b58ba1c9ddf4738febafd1.jpg,dog,This dog is classified as underweight (BCS likely 1-4).
+127,datasets/dog_dataset/underweight_dogs/e61cef70973d2a17f112f0a3c2c0ae82.jpg,dog,This dog is classified as underweight (BCS likely 1-4).
+128,datasets/dog_dataset/underweight_dogs/e65ffd80160ac62404201ec90d901f72.jpg,dog,This dog is classified as underweight (BCS likely 1-4).
+129,datasets/dog_dataset/underweight_dogs/e9a1cb086f6659c108958ac9127c4306.jpg,dog,This dog is classified as underweight (BCS likely 1-4).
+130,datasets/dog_dataset/underweight_dogs/f142e8293c150d8a304005d34b63546d.jpg,dog,This dog is classified as underweight (BCS likely 1-4).
+131,datasets/dog_dataset/underweight_dogs/f29f8f5c963d410cfac1336dc454c849.jpg,dog,This dog is classified as underweight (BCS likely 1-4).
+132,datasets/dog_dataset/underweight_dogs/f41e2d49539607708ecc06402b3b530e.jpg,dog,This dog is classified as underweight (BCS likely 1-4).
+133,datasets/dog_dataset/underweight_dogs/f449cc6d3a9c4a1f026a83f06e7d0c6f.jpg,dog,This dog is classified as underweight (BCS likely 1-4).
+134,datasets/dog_dataset/underweight_dogs/f550f3569f8d86aa3df3b1b3313e801a.jpg,dog,This dog is classified as underweight (BCS likely 1-4).
+135,datasets/dog_dataset/underweight_dogs/f59a15a42dfe69bfb463ad45506a596b.jpg,dog,This dog is classified as underweight (BCS likely 1-4).
+136,datasets/dog_dataset/underweight_dogs/fed0b33590976a95afeb0da9af490a30.jpg,dog,This dog is classified as underweight (BCS likely 1-4).
+137,datasets/dog_dataset/normal_dogs/american_bulldog_109.jpg,dog,This dog is classified as normal weight (BCS likely 5).
+138,datasets/dog_dataset/normal_dogs/american_bulldog_164.jpg,dog,This dog is classified as normal weight (BCS likely 5).
+139,datasets/dog_dataset/normal_dogs/american_bulldog_33.jpg,dog,This dog is classified as normal weight (BCS likely 5).
+140,datasets/dog_dataset/normal_dogs/american_bulldog_38.jpg,dog,This dog is classified as normal weight (BCS likely 5).
+141,datasets/dog_dataset/normal_dogs/american_bulldog_5.jpg,dog,This dog is classified as normal weight (BCS likely 5).
+142,datasets/dog_dataset/normal_dogs/american_bulldog_82.jpg,dog,This dog is classified as normal weight (BCS likely 5).
+143,datasets/dog_dataset/normal_dogs/american_pit_bull_terrier_125.jpg,dog,This dog is classified as normal weight (BCS likely 5).
+144,datasets/dog_dataset/normal_dogs/american_pit_bull_terrier_142.jpg,dog,This dog is classified as normal weight (BCS likely 5).
+145,datasets/dog_dataset/normal_dogs/american_pit_bull_terrier_15.jpg,dog,This dog is classified as normal weight (BCS likely 5).
+146,datasets/dog_dataset/normal_dogs/american_pit_bull_terrier_161.jpg,dog,This dog is classified as normal weight (BCS likely 5).
+147,datasets/dog_dataset/normal_dogs/basset_hound_75.jpg,dog,This dog is classified as normal weight (BCS likely 5).
+148,datasets/dog_dataset/normal_dogs/basset_hound_84.jpg,dog,This dog is classified as normal weight (BCS likely 5).
+149,datasets/dog_dataset/normal_dogs/basset_hound_9.jpg,dog,This dog is classified as normal weight (BCS likely 5).
+150,datasets/dog_dataset/normal_dogs/beagle_122.jpg,dog,This dog is classified as normal weight (BCS likely 5).
+151,datasets/dog_dataset/normal_dogs/beagle_64.jpg,dog,This dog is classified as normal weight (BCS likely 5).
+152,datasets/dog_dataset/normal_dogs/beagle_95.jpg,dog,This dog is classified as normal weight (BCS likely 5).
+153,datasets/dog_dataset/normal_dogs/boxer_118.jpg,dog,This dog is classified as normal weight (BCS likely 5).
+154,datasets/dog_dataset/normal_dogs/boxer_160.jpg,dog,This dog is classified as normal weight (BCS likely 5).
+155,datasets/dog_dataset/normal_dogs/boxer_166.jpg,dog,This dog is classified as normal weight (BCS likely 5).
+156,datasets/dog_dataset/normal_dogs/boxer_41.jpg,dog,This dog is classified as normal weight (BCS likely 5).
+157,datasets/dog_dataset/normal_dogs/chihuahua_12.jpg,dog,This dog is classified as normal weight (BCS likely 5).
+158,datasets/dog_dataset/normal_dogs/chihuahua_132.jpg,dog,This dog is classified as normal weight (BCS likely 5).
+159,datasets/dog_dataset/normal_dogs/chihuahua_142.jpg,dog,This dog is classified as normal weight (BCS likely 5).
+160,datasets/dog_dataset/normal_dogs/chihuahua_147.jpg,dog,This dog is classified as normal weight (BCS likely 5).
+161,datasets/dog_dataset/normal_dogs/chihuahua_150.jpg,dog,This dog is classified as normal weight (BCS likely 5).
+162,datasets/dog_dataset/normal_dogs/chihuahua_152.jpg,dog,This dog is classified as normal weight (BCS likely 5).
+163,datasets/dog_dataset/normal_dogs/chihuahua_174.jpg,dog,This dog is classified as normal weight (BCS likely 5).
+164,datasets/dog_dataset/normal_dogs/chihuahua_24.jpg,dog,This dog is classified as normal weight (BCS likely 5).
+165,datasets/dog_dataset/normal_dogs/english_cocker_spaniel_131.jpg,dog,This dog is classified as normal weight (BCS likely 5).
+166,datasets/dog_dataset/normal_dogs/english_setter_146.jpg,dog,This dog is classified as normal weight (BCS likely 5).
+167,datasets/dog_dataset/normal_dogs/english_setter_161.jpg,dog,This dog is classified as normal weight (BCS likely 5).
+168,datasets/dog_dataset/normal_dogs/english_setter_163.jpg,dog,This dog is classified as normal weight (BCS likely 5).
+169,datasets/dog_dataset/normal_dogs/german_shorthaired_125.jpg,dog,This dog is classified as normal weight (BCS likely 5).
+170,datasets/dog_dataset/normal_dogs/german_shorthaired_127.jpg,dog,This dog is classified as normal weight (BCS likely 5).
+171,datasets/dog_dataset/normal_dogs/german_shorthaired_128.jpg,dog,This dog is classified as normal weight (BCS likely 5).
+172,datasets/dog_dataset/normal_dogs/german_shorthaired_39.jpg,dog,This dog is classified as normal weight (BCS likely 5).
+173,datasets/dog_dataset/normal_dogs/german_shorthaired_98.jpg,dog,This dog is classified as normal weight (BCS likely 5).
+174,datasets/dog_dataset/normal_dogs/great_pyrenees_123.jpg,dog,This dog is classified as normal weight (BCS likely 5).
+175,datasets/dog_dataset/normal_dogs/great_pyrenees_125.jpg,dog,This dog is classified as normal weight (BCS likely 5).
+176,datasets/dog_dataset/normal_dogs/great_pyrenees_147.jpg,dog,This dog is classified as normal weight (BCS likely 5).
+177,datasets/dog_dataset/normal_dogs/great_pyrenees_160.jpg,dog,This dog is classified as normal weight (BCS likely 5).
+178,datasets/dog_dataset/normal_dogs/great_pyrenees_168.jpg,dog,This dog is classified as normal weight (BCS likely 5).
+179,datasets/dog_dataset/normal_dogs/great_pyrenees_180.jpg,dog,This dog is classified as normal weight (BCS likely 5).
+180,datasets/dog_dataset/normal_dogs/great_pyrenees_81.jpg,dog,This dog is classified as normal weight (BCS likely 5).
+181,datasets/dog_dataset/normal_dogs/great_pyrenees_89.jpg,dog,This dog is classified as normal weight (BCS likely 5).
+182,datasets/dog_dataset/normal_dogs/havanese_19.jpg,dog,This dog is classified as normal weight (BCS likely 5).
+183,datasets/dog_dataset/normal_dogs/havanese_32.jpg,dog,This dog is classified as normal weight (BCS likely 5).
+184,datasets/dog_dataset/normal_dogs/havanese_4.jpg,dog,This dog is classified as normal weight (BCS likely 5).
+185,datasets/dog_dataset/normal_dogs/havanese_47.jpg,dog,This dog is classified as normal weight (BCS likely 5).
+186,datasets/dog_dataset/normal_dogs/havanese_87.jpg,dog,This dog is classified as normal weight (BCS likely 5).
+187,datasets/dog_dataset/normal_dogs/japanese_chin_106.jpg,dog,This dog is classified as normal weight (BCS likely 5).
+188,datasets/dog_dataset/normal_dogs/japanese_chin_125.jpg,dog,This dog is classified as normal weight (BCS likely 5).
+189,datasets/dog_dataset/normal_dogs/japanese_chin_41.jpg,dog,This dog is classified as normal weight (BCS likely 5).
+190,datasets/dog_dataset/normal_dogs/japanese_chin_43.jpg,dog,This dog is classified as normal weight (BCS likely 5).
+191,datasets/dog_dataset/normal_dogs/japanese_chin_69.jpg,dog,This dog is classified as normal weight (BCS likely 5).
+192,datasets/dog_dataset/normal_dogs/japanese_chin_96.jpg,dog,This dog is classified as normal weight (BCS likely 5).
+193,datasets/dog_dataset/normal_dogs/leonberger_125.jpg,dog,This dog is classified as normal weight (BCS likely 5).
+194,datasets/dog_dataset/normal_dogs/leonberger_130.jpg,dog,This dog is classified as normal weight (BCS likely 5).
+195,datasets/dog_dataset/normal_dogs/leonberger_64.jpg,dog,This dog is classified as normal weight (BCS likely 5).
+196,datasets/dog_dataset/normal_dogs/leonberger_81.jpg,dog,This dog is classified as normal weight (BCS likely 5).
+197,datasets/dog_dataset/normal_dogs/miniature_pinscher_100.jpg,dog,This dog is classified as normal weight (BCS likely 5).
+198,datasets/dog_dataset/normal_dogs/miniature_pinscher_18.jpg,dog,This dog is classified as normal weight (BCS likely 5).
+199,datasets/dog_dataset/normal_dogs/miniature_pinscher_37.jpg,dog,This dog is classified as normal weight (BCS likely 5).
+200,datasets/dog_dataset/normal_dogs/miniature_pinscher_4.jpg,dog,This dog is classified as normal weight (BCS likely 5).
+201,datasets/dog_dataset/normal_dogs/newfoundland_161.jpg,dog,This dog is classified as normal weight (BCS likely 5).
+202,datasets/dog_dataset/normal_dogs/newfoundland_94.jpg,dog,This dog is classified as normal weight (BCS likely 5).
+203,datasets/dog_dataset/normal_dogs/pomeranian_30.jpg,dog,This dog is classified as normal weight (BCS likely 5).
+204,datasets/dog_dataset/normal_dogs/pug_106.jpg,dog,This dog is classified as normal weight (BCS likely 5).
+205,datasets/dog_dataset/normal_dogs/pug_123.jpg,dog,This dog is classified as normal weight (BCS likely 5).
+206,datasets/dog_dataset/normal_dogs/pug_133.jpg,dog,This dog is classified as normal weight (BCS likely 5).
+207,datasets/dog_dataset/normal_dogs/pug_142.jpg,dog,This dog is classified as normal weight (BCS likely 5).
+208,datasets/dog_dataset/normal_dogs/pug_160.jpg,dog,This dog is classified as normal weight (BCS likely 5).
+209,datasets/dog_dataset/normal_dogs/pug_194.jpg,dog,This dog is classified as normal weight (BCS likely 5).
+210,datasets/dog_dataset/normal_dogs/pug_20.jpg,dog,This dog is classified as normal weight (BCS likely 5).
+211,datasets/dog_dataset/normal_dogs/pug_42.jpg,dog,This dog is classified as normal weight (BCS likely 5).
+212,datasets/dog_dataset/normal_dogs/saint_bernard_107.jpg,dog,This dog is classified as normal weight (BCS likely 5).
+213,datasets/dog_dataset/normal_dogs/saint_bernard_180.jpg,dog,This dog is classified as normal weight (BCS likely 5).
+214,datasets/dog_dataset/normal_dogs/saint_bernard_194.jpg,dog,This dog is classified as normal weight (BCS likely 5).
+215,datasets/dog_dataset/normal_dogs/saint_bernard_36.jpg,dog,This dog is classified as normal weight (BCS likely 5).
+216,datasets/dog_dataset/normal_dogs/saint_bernard_63.jpg,dog,This dog is classified as normal weight (BCS likely 5).
+217,datasets/dog_dataset/normal_dogs/saint_bernard_72.jpg,dog,This dog is classified as normal weight (BCS likely 5).
+218,datasets/dog_dataset/normal_dogs/saint_bernard_73.jpg,dog,This dog is classified as normal weight (BCS likely 5).
+219,datasets/dog_dataset/normal_dogs/samoyed_12.jpg,dog,This dog is classified as normal weight (BCS likely 5).
+220,datasets/dog_dataset/normal_dogs/samoyed_27.jpg,dog,This dog is classified as normal weight (BCS likely 5).
+221,datasets/dog_dataset/normal_dogs/samoyed_49.jpg,dog,This dog is classified as normal weight (BCS likely 5).
+222,datasets/dog_dataset/normal_dogs/scottish_terrier_115.jpg,dog,This dog is classified as normal weight (BCS likely 5).
+223,datasets/dog_dataset/normal_dogs/shiba_inu_118.jpg,dog,This dog is classified as normal weight (BCS likely 5).
+224,datasets/dog_dataset/normal_dogs/shiba_inu_127.jpg,dog,This dog is classified as normal weight (BCS likely 5).
+225,datasets/dog_dataset/normal_dogs/shiba_inu_146.jpg,dog,This dog is classified as normal weight (BCS likely 5).
+226,datasets/dog_dataset/normal_dogs/shiba_inu_183.jpg,dog,This dog is classified as normal weight (BCS likely 5).
+227,datasets/dog_dataset/normal_dogs/shiba_inu_3.jpg,dog,This dog is classified as normal weight (BCS likely 5).
+228,datasets/dog_dataset/normal_dogs/shiba_inu_32.jpg,dog,This dog is classified as normal weight (BCS likely 5).
+229,datasets/dog_dataset/normal_dogs/shiba_inu_49.jpg,dog,This dog is classified as normal weight (BCS likely 5).
+230,datasets/dog_dataset/normal_dogs/shiba_inu_60.jpg,dog,This dog is classified as normal weight (BCS likely 5).
+231,datasets/dog_dataset/normal_dogs/shiba_inu_62.jpg,dog,This dog is classified as normal weight (BCS likely 5).
+232,datasets/dog_dataset/normal_dogs/shiba_inu_7.jpg,dog,This dog is classified as normal weight (BCS likely 5).
+233,datasets/dog_dataset/normal_dogs/staffordshire_bull_terrier_129.jpg,dog,This dog is classified as normal weight (BCS likely 5).
+234,datasets/dog_dataset/normal_dogs/staffordshire_bull_terrier_166.jpg,dog,This dog is classified as normal weight (BCS likely 5).
+235,datasets/dog_dataset/normal_dogs/staffordshire_bull_terrier_179.jpg,dog,This dog is classified as normal weight (BCS likely 5).
+236,datasets/dog_dataset/normal_dogs/staffordshire_bull_terrier_194.jpg,dog,This dog is classified as normal weight (BCS likely 5).
+237,datasets/dog_dataset/normal_dogs/staffordshire_bull_terrier_63.jpg,dog,This dog is classified as normal weight (BCS likely 5).
+238,datasets/dog_dataset/normal_dogs/wheaten_terrier_111.jpg,dog,This dog is classified as normal weight (BCS likely 5).
+239,datasets/dog_dataset/normal_dogs/wheaten_terrier_159.jpg,dog,This dog is classified as normal weight (BCS likely 5).
+240,datasets/dog_dataset/normal_dogs/wheaten_terrier_8.jpg,dog,This dog is classified as normal weight (BCS likely 5).
+241,datasets/dog_dataset/normal_dogs/yorkshire_terrier_193.jpg,dog,This dog is classified as normal weight (BCS likely 5).
+242,datasets/dog_dataset/overweight_dogs/03f8701b6845bc4ec17b038ebaf424dc.jpg,dog,This dog is classified as overweight (BCS likely 6-9).
+243,datasets/dog_dataset/overweight_dogs/041492ef3e7d2e4143361f041ecfe103.jpg,dog,This dog is classified as overweight (BCS likely 6-9).
+244,datasets/dog_dataset/overweight_dogs/060573cfb116000d976061c5adfbaedd.jpg,dog,This dog is classified as overweight (BCS likely 6-9).
+245,datasets/dog_dataset/overweight_dogs/062de7b29395ad097c291472172d2bab.jpg,dog,This dog is classified as overweight (BCS likely 6-9).
+246,datasets/dog_dataset/overweight_dogs/097fee4752fbcf39be5bb602f1ae96f7.jpg,dog,This dog is classified as overweight (BCS likely 6-9).
+247,datasets/dog_dataset/overweight_dogs/0a65aabf48776433d47b11a09d1b58dd.jpg,dog,This dog is classified as overweight (BCS likely 6-9).
+248,datasets/dog_dataset/overweight_dogs/0df79df0a83ea1a696ddaa3ed47a41c2.jpg,dog,This dog is classified as overweight (BCS likely 6-9).
+249,datasets/dog_dataset/overweight_dogs/0e8a7c68802716c550bfc35112f63ea9.jpg,dog,This dog is classified as overweight (BCS likely 6-9).
+250,datasets/dog_dataset/overweight_dogs/0f010d14dcde0597c2f032d3eb623d25.jpg,dog,This dog is classified as overweight (BCS likely 6-9).
+251,datasets/dog_dataset/overweight_dogs/11ce4eab5b571abc9cf72a0921ba24eb.jpg,dog,This dog is classified as overweight (BCS likely 6-9).
+252,datasets/dog_dataset/overweight_dogs/11da4cfe9473d5d516b42bc3396028c2.jpg,dog,This dog is classified as overweight (BCS likely 6-9).
+253,datasets/dog_dataset/overweight_dogs/142e8baa9b805878b7c761514f57dc02.jpg,dog,This dog is classified as overweight (BCS likely 6-9).
+254,datasets/dog_dataset/overweight_dogs/14c356066db59d24cb17d2c8b504d246.jpg,dog,This dog is classified as overweight (BCS likely 6-9).
+255,datasets/dog_dataset/overweight_dogs/16e8ab11826d852c0cdf2a2d55db02fe.jpg,dog,This dog is classified as overweight (BCS likely 6-9).
+256,datasets/dog_dataset/overweight_dogs/17d9d76439806fa5983fbe772527bf4a.jpg,dog,This dog is classified as overweight (BCS likely 6-9).
+257,datasets/dog_dataset/overweight_dogs/1b02e6fe44aa273c7b1afd9a9298b0d7.jpg,dog,This dog is classified as overweight (BCS likely 6-9).
+258,datasets/dog_dataset/overweight_dogs/1fb9c3742fac51c59b36eaf552533e58.jpg,dog,This dog is classified as overweight (BCS likely 6-9).
+259,datasets/dog_dataset/overweight_dogs/21d6bf9da5908d813d9e2b62cfe0e3e8.jpg,dog,This dog is classified as overweight (BCS likely 6-9).
+260,datasets/dog_dataset/overweight_dogs/246875936286e1ad89770f9c343ee433.jpg,dog,This dog is classified as overweight (BCS likely 6-9).
+261,datasets/dog_dataset/overweight_dogs/24b8c40bb5474dc6a2ea02a92914f77b.jpg,dog,This dog is classified as overweight (BCS likely 6-9).
+262,datasets/dog_dataset/overweight_dogs/266cdb56ca4d44bed677fe16860cc641.jpg,dog,This dog is classified as overweight (BCS likely 6-9).
+263,datasets/dog_dataset/overweight_dogs/26c679a9e5ad50b4d5221b67f2ef9d56.jpg,dog,This dog is classified as overweight (BCS likely 6-9).
+264,datasets/dog_dataset/overweight_dogs/2b6fb7271affac55969179f68f0200ef.jpg,dog,This dog is classified as overweight (BCS likely 6-9).
+265,datasets/dog_dataset/overweight_dogs/2bf93b024144abed8dd42d22ab486f3c.jpg,dog,This dog is classified as overweight (BCS likely 6-9).
+266,datasets/dog_dataset/overweight_dogs/3030eb59fa4dee1a40c7e0cef567914a.jpg,dog,This dog is classified as overweight (BCS likely 6-9).
+267,datasets/dog_dataset/overweight_dogs/305136e6e27f68f392e4eb079168aa8d.jpg,dog,This dog is classified as overweight (BCS likely 6-9).
+268,datasets/dog_dataset/overweight_dogs/32d409becdfaed370ac5643ff61c6ea0.jpg,dog,This dog is classified as overweight (BCS likely 6-9).
+269,datasets/dog_dataset/overweight_dogs/32ea239a9ed467532bb3bd1b9c256c91.jpg,dog,This dog is classified as overweight (BCS likely 6-9).
+270,datasets/dog_dataset/overweight_dogs/33eaecce5290b49890027ec2e81b8888.jpg,dog,This dog is classified as overweight (BCS likely 6-9).
+271,datasets/dog_dataset/overweight_dogs/3d5c5a8aa23f33b24b359a03e6ca1b0e.jpg,dog,This dog is classified as overweight (BCS likely 6-9).
+272,datasets/dog_dataset/overweight_dogs/3e4214142290e03bb68b0d8b6102022b.jpg,dog,This dog is classified as overweight (BCS likely 6-9).
+273,datasets/dog_dataset/overweight_dogs/41135ae7db6e6450b042f1fad200d203.jpg,dog,This dog is classified as overweight (BCS likely 6-9).
+274,datasets/dog_dataset/overweight_dogs/41a4dbb83535e6e91c7e15ed5b253eb3.jpg,dog,This dog is classified as overweight (BCS likely 6-9).
+275,datasets/dog_dataset/overweight_dogs/41fcf2ecbffbc21932866134ffcbcb4e.jpg,dog,This dog is classified as overweight (BCS likely 6-9).
+276,datasets/dog_dataset/overweight_dogs/47d3e8c28c84d02ddd422c994ea9d063.jpg,dog,This dog is classified as overweight (BCS likely 6-9).
+277,datasets/dog_dataset/overweight_dogs/482a522e65bd2c79412f314eda7a7683.jpg,dog,This dog is classified as overweight (BCS likely 6-9).
+278,datasets/dog_dataset/overweight_dogs/4878ce6442772eaccb3d5ed25fb5cc97.jpg,dog,This dog is classified as overweight (BCS likely 6-9).
+279,datasets/dog_dataset/overweight_dogs/487a031b245b08e4b78457f209524e8f.jpg,dog,This dog is classified as overweight (BCS likely 6-9).
+280,datasets/dog_dataset/overweight_dogs/4c73499290d7c261efe566e441ce2c0d.jpg,dog,This dog is classified as overweight (BCS likely 6-9).
+281,datasets/dog_dataset/overweight_dogs/51034e3e27db403f0fa1718cb0feefb1.jpg,dog,This dog is classified as overweight (BCS likely 6-9).
+282,datasets/dog_dataset/overweight_dogs/518150a50fdb0f5ca0335d89f79b3d45.jpg,dog,This dog is classified as overweight (BCS likely 6-9).
+283,datasets/dog_dataset/overweight_dogs/56ebeb4a2a88e8c74a7d3288480ecb93.jpg,dog,This dog is classified as overweight (BCS likely 6-9).
+284,datasets/dog_dataset/overweight_dogs/57575ead08930f31a4f4216aa3e957a3.jpg,dog,This dog is classified as overweight (BCS likely 6-9).
+285,datasets/dog_dataset/overweight_dogs/592bb57f4a41114f54624fa8a07a9401.jpg,dog,This dog is classified as overweight (BCS likely 6-9).
+286,datasets/dog_dataset/overweight_dogs/5a73f7338404702c4450559d2387d40d.jpg,dog,This dog is classified as overweight (BCS likely 6-9).
+287,datasets/dog_dataset/overweight_dogs/5d5911924877950603e6130ba7fc802d.jpg,dog,This dog is classified as overweight (BCS likely 6-9).
+288,datasets/dog_dataset/overweight_dogs/60d10fc0625c26f8176a065c5906ae56.jpg,dog,This dog is classified as overweight (BCS likely 6-9).
+289,datasets/dog_dataset/overweight_dogs/62be445bd9cc645138d5ced2f805e2dc.jpg,dog,This dog is classified as overweight (BCS likely 6-9).
+290,datasets/dog_dataset/overweight_dogs/658226f9790ebe3feb790de7298dfa96.jpg,dog,This dog is classified as overweight (BCS likely 6-9).
+291,datasets/dog_dataset/overweight_dogs/6598b3a18f35468e9a8672d9497f9b5a.jpg,dog,This dog is classified as overweight (BCS likely 6-9).
+292,datasets/dog_dataset/overweight_dogs/659ef15b88044ba8067dbcfea4bffd0f.jpg,dog,This dog is classified as overweight (BCS likely 6-9).
+293,datasets/dog_dataset/overweight_dogs/65eaf633f0c7cb831b1dfd06acbcc39c.jpg,dog,This dog is classified as overweight (BCS likely 6-9).
+294,datasets/dog_dataset/overweight_dogs/663ed8fe9236b98a6eb2dfeb86817e6b.jpg,dog,This dog is classified as overweight (BCS likely 6-9).
+295,datasets/dog_dataset/overweight_dogs/6764e63a15ff311b2696cc95827bf005.jpg,dog,This dog is classified as overweight (BCS likely 6-9).
+296,datasets/dog_dataset/overweight_dogs/68f7386a3f5ebb0c5df0c2302fdd52d5.jpg,dog,This dog is classified as overweight (BCS likely 6-9).
+297,datasets/dog_dataset/overweight_dogs/6a8a731bfca1c97435be2e05e7ae68ed.jpg,dog,This dog is classified as overweight (BCS likely 6-9).
+298,datasets/dog_dataset/overweight_dogs/6af19e92317dd061171317e5d005ef84.jpg,dog,This dog is classified as overweight (BCS likely 6-9).
+299,datasets/dog_dataset/overweight_dogs/6b662ad7d4cdef1050f8ee17e82b41f4.jpg,dog,This dog is classified as overweight (BCS likely 6-9).
+300,datasets/dog_dataset/overweight_dogs/6d760a576daa3e87431318c05ec2f25e.jpg,dog,This dog is classified as overweight (BCS likely 6-9).
+301,datasets/dog_dataset/overweight_dogs/734a7b3d54c0b12ce5e919353b0ccc3c.jpg,dog,This dog is classified as overweight (BCS likely 6-9).
+302,datasets/dog_dataset/overweight_dogs/73cfcab393bf7f7a76856fd1f83d427e.jpg,dog,This dog is classified as overweight (BCS likely 6-9).
+303,datasets/dog_dataset/overweight_dogs/7463733e81d8745c171158242918ea8a.jpg,dog,This dog is classified as overweight (BCS likely 6-9).
+304,datasets/dog_dataset/overweight_dogs/7531ce96038c69470deb927006b77f29.jpg,dog,This dog is classified as overweight (BCS likely 6-9).
+305,datasets/dog_dataset/overweight_dogs/75c8e3d80c8d5f5eb9b44afbbece6432.jpg,dog,This dog is classified as overweight (BCS likely 6-9).
+306,datasets/dog_dataset/overweight_dogs/7685aacf32a2856a622ca0417e3cf2f4.jpg,dog,This dog is classified as overweight (BCS likely 6-9).
+307,datasets/dog_dataset/overweight_dogs/768d356d172dcb6ed3bf598b91ed6d7e.jpg,dog,This dog is classified as overweight (BCS likely 6-9).
+308,datasets/dog_dataset/overweight_dogs/79af675eb03ba7f1f9dba38b7a224a73.jpg,dog,This dog is classified as overweight (BCS likely 6-9).
+309,datasets/dog_dataset/overweight_dogs/7a77fc873750a59369dfb1bc02e9e525.jpg,dog,This dog is classified as overweight (BCS likely 6-9).
+310,datasets/dog_dataset/overweight_dogs/7b02729e84418bff8b433a7aea328c66.jpg,dog,This dog is classified as overweight (BCS likely 6-9).
+311,datasets/dog_dataset/overweight_dogs/7c212e6a560bccb056b269732ddca03a.jpg,dog,This dog is classified as overweight (BCS likely 6-9).
+312,datasets/dog_dataset/overweight_dogs/7d2dd1b042a2f15a04e5d1737b5ce340.jpg,dog,This dog is classified as overweight (BCS likely 6-9).
+313,datasets/dog_dataset/overweight_dogs/801defee35e698d072d8e825bd8d2783.jpg,dog,This dog is classified as overweight (BCS likely 6-9).
+314,datasets/dog_dataset/overweight_dogs/81decc15f5e293f48bbd5bb3b2ecb754.jpg,dog,This dog is classified as overweight (BCS likely 6-9).
+315,datasets/dog_dataset/overweight_dogs/826447d8065ff22d01a29503e05ee5e2.jpg,dog,This dog is classified as overweight (BCS likely 6-9).
+316,datasets/dog_dataset/overweight_dogs/831d4cf30594617c4da2144e050c38da.jpg,dog,This dog is classified as overweight (BCS likely 6-9).
+317,datasets/dog_dataset/overweight_dogs/840c8e8e8673e644dca4ffb235a4d2a4.jpg,dog,This dog is classified as overweight (BCS likely 6-9).
+318,datasets/dog_dataset/overweight_dogs/84f7d8cef7422f6c7303c3d3e1f070a9.jpg,dog,This dog is classified as overweight (BCS likely 6-9).
+319,datasets/dog_dataset/overweight_dogs/851d2c0026bcb23af881f4333a8bf49a.jpg,dog,This dog is classified as overweight (BCS likely 6-9).
+320,datasets/dog_dataset/overweight_dogs/8632781b5ad50f9a010c1034f078d48c.jpg,dog,This dog is classified as overweight (BCS likely 6-9).
+321,datasets/dog_dataset/overweight_dogs/893816282d7254b0e3a470072c64c128.jpg,dog,This dog is classified as overweight (BCS likely 6-9).
+322,datasets/dog_dataset/overweight_dogs/8c1bc8cd47db83e3bac47a8ecb0cb01a.jpg,dog,This dog is classified as overweight (BCS likely 6-9).
+323,datasets/dog_dataset/overweight_dogs/8f52c8837e049f9e2bcf79d296d52bb4.jpg,dog,This dog is classified as overweight (BCS likely 6-9).
+324,datasets/dog_dataset/overweight_dogs/8f82071ea37748025d9040895249a1b9.jpg,dog,This dog is classified as overweight (BCS likely 6-9).
+325,datasets/dog_dataset/overweight_dogs/8fd4be91279e07b40ab57f7f5f4bb923.jpg,dog,This dog is classified as overweight (BCS likely 6-9).
+326,datasets/dog_dataset/overweight_dogs/9040aa08b1ec946d82d4bc04a2921cc9.jpg,dog,This dog is classified as overweight (BCS likely 6-9).
+327,datasets/dog_dataset/overweight_dogs/90e959b303b101fb8fdbe8bdc6638fbb.jpg,dog,This dog is classified as overweight (BCS likely 6-9).
+328,datasets/dog_dataset/overweight_dogs/9468768c4ed42b21b00c5769cd79b80a.jpg,dog,This dog is classified as overweight (BCS likely 6-9).
+329,datasets/dog_dataset/overweight_dogs/993ce9b304a3dd4eabddd0f4cda3c43e.jpg,dog,This dog is classified as overweight (BCS likely 6-9).
+330,datasets/dog_dataset/overweight_dogs/99daf70f9892bd8b62cb74fe9a722c58.jpg,dog,This dog is classified as overweight (BCS likely 6-9).
+331,datasets/dog_dataset/overweight_dogs/9cf7d09417e539137872392433ecf2e8.jpg,dog,This dog is classified as overweight (BCS likely 6-9).
+332,datasets/dog_dataset/overweight_dogs/9d5e8e0d8c020b02778a1448fee5de5a.jpg,dog,This dog is classified as overweight (BCS likely 6-9).
+333,datasets/dog_dataset/overweight_dogs/9d8802a961eabbcde09789a7e94b2ded.jpg,dog,This dog is classified as overweight (BCS likely 6-9).
+334,datasets/dog_dataset/overweight_dogs/9da3db636a55e5fb650801ef4b3ae6f1.jpg,dog,This dog is classified as overweight (BCS likely 6-9).
+335,datasets/dog_dataset/overweight_dogs/9dec549f780022a6c596f8ba2ec63e41.jpg,dog,This dog is classified as overweight (BCS likely 6-9).
+336,datasets/dog_dataset/overweight_dogs/a0a2ddf7e170b7d20896ef2396cd105c.jpg,dog,This dog is classified as overweight (BCS likely 6-9).
+337,datasets/dog_dataset/overweight_dogs/a239544708fa7fa59e31a303013c11c6.jpg,dog,This dog is classified as overweight (BCS likely 6-9).
+338,datasets/dog_dataset/overweight_dogs/a39e3e1ccd389dd392e1bb209ef74744.jpg,dog,This dog is classified as overweight (BCS likely 6-9).
+339,datasets/dog_dataset/overweight_dogs/a69b11d6f747fbc681e63729e61762b8.jpg,dog,This dog is classified as overweight (BCS likely 6-9).
+340,datasets/dog_dataset/overweight_dogs/a718061058e0e3e9a788fd17d68e9662.jpg,dog,This dog is classified as overweight (BCS likely 6-9).
+341,datasets/dog_dataset/overweight_dogs/a71c6c19a19cbd65940f09f88b9d5358.jpg,dog,This dog is classified as overweight (BCS likely 6-9).
+342,datasets/dog_dataset/overweight_dogs/abcc75fc5287c2ab00f513e9665bd50b.jpg,dog,This dog is classified as overweight (BCS likely 6-9).
+343,datasets/dog_dataset/overweight_dogs/acc0b810bd30f940d882db3430dfd74e.jpg,dog,This dog is classified as overweight (BCS likely 6-9).
+344,datasets/dog_dataset/overweight_dogs/adb3f8c864f49ea51d1d60c1a8d9aa69.jpg,dog,This dog is classified as overweight (BCS likely 6-9).
+345,datasets/dog_dataset/overweight_dogs/af6a687bf889236ad2defa2f9b025640.jpg,dog,This dog is classified as overweight (BCS likely 6-9).
+346,datasets/dog_dataset/overweight_dogs/b042aaffc5c8209a73ef037a0f92bf8e.jpg,dog,This dog is classified as overweight (BCS likely 6-9).
+347,datasets/dog_dataset/overweight_dogs/b2d5a97486630fa8ebce17ea66ce553f.jpg,dog,This dog is classified as overweight (BCS likely 6-9).
+348,datasets/dog_dataset/overweight_dogs/b52d2b53535d337a2fee6ac8ff87e655.jpg,dog,This dog is classified as overweight (BCS likely 6-9).
+349,datasets/dog_dataset/overweight_dogs/b53687363fe5d993589599aaa746ed41.jpg,dog,This dog is classified as overweight (BCS likely 6-9).
+350,datasets/dog_dataset/overweight_dogs/b7b8576e8532d0d42f087c92e6028607.jpg,dog,This dog is classified as overweight (BCS likely 6-9).
+351,datasets/dog_dataset/overweight_dogs/b958063767080a8cc923677ad5f2d8de.jpg,dog,This dog is classified as overweight (BCS likely 6-9).
+352,datasets/dog_dataset/overweight_dogs/bd9b5bcaff7c7523b8e5401875761fa8.jpg,dog,This dog is classified as overweight (BCS likely 6-9).
+353,datasets/dog_dataset/overweight_dogs/c0963a67a141b18d87c830e38f00187c.jpg,dog,This dog is classified as overweight (BCS likely 6-9).
+354,datasets/dog_dataset/overweight_dogs/c59c9c7aada206f6770593b160505ea6.jpg,dog,This dog is classified as overweight (BCS likely 6-9).
+355,datasets/dog_dataset/overweight_dogs/cbb7f1e09b08fed17afe93bc410c01f9.jpg,dog,This dog is classified as overweight (BCS likely 6-9).
+356,datasets/dog_dataset/overweight_dogs/ccebae9606428265e382eda5bbfb14f8.jpg,dog,This dog is classified as overweight (BCS likely 6-9).
+357,datasets/dog_dataset/overweight_dogs/d19277e5372787438042295d11bba063.jpg,dog,This dog is classified as overweight (BCS likely 6-9).
+358,datasets/dog_dataset/overweight_dogs/d4b3b677cddd6803c9debbea278fdbe5.jpg,dog,This dog is classified as overweight (BCS likely 6-9).
+359,datasets/dog_dataset/overweight_dogs/d5b6595d87fdaf0224c586c1bf775ce5.jpg,dog,This dog is classified as overweight (BCS likely 6-9).
+360,datasets/dog_dataset/overweight_dogs/d5caae4c698fff39d2d32a00b6252a9e.jpg,dog,This dog is classified as overweight (BCS likely 6-9).
+361,datasets/dog_dataset/overweight_dogs/d8128204944dabf2d117f0d73ff72363.jpg,dog,This dog is classified as overweight (BCS likely 6-9).
+362,datasets/dog_dataset/overweight_dogs/da63a826303367f30a0d455fa3b51e90.jpg,dog,This dog is classified as overweight (BCS likely 6-9).
+363,datasets/dog_dataset/overweight_dogs/e1a54ac28efee95e0143489b84dec667.jpg,dog,This dog is classified as overweight (BCS likely 6-9).
+364,datasets/dog_dataset/overweight_dogs/e2fd5acee4c4244d7c85a6ae50ba9ae5.jpg,dog,This dog is classified as overweight (BCS likely 6-9).
+365,datasets/dog_dataset/overweight_dogs/e38107aff2b4a011ae1b6a0fcded5fd5.jpg,dog,This dog is classified as overweight (BCS likely 6-9).
+366,datasets/dog_dataset/overweight_dogs/e4f1886803f80708ffabb65e49ff07be.jpg,dog,This dog is classified as overweight (BCS likely 6-9).
+367,datasets/dog_dataset/overweight_dogs/e9f72626ccb083874450b577dc49e6d5.jpg,dog,This dog is classified as overweight (BCS likely 6-9).
+368,datasets/dog_dataset/overweight_dogs/effa29bcfc66a2104d97b353d220f18c.jpg,dog,This dog is classified as overweight (BCS likely 6-9).
+369,datasets/dog_dataset/overweight_dogs/f165a7e37aedc02b612598b9a61b6418.jpg,dog,This dog is classified as overweight (BCS likely 6-9).
+370,datasets/dog_dataset/overweight_dogs/f1966db45bb61772e00fe063edf69f0e.jpg,dog,This dog is classified as overweight (BCS likely 6-9).
+371,datasets/dog_dataset/overweight_dogs/f2e9a036caec86f9c9fc5895de7b27e2.jpg,dog,This dog is classified as overweight (BCS likely 6-9).
+372,datasets/dog_dataset/overweight_dogs/f379fb9f689a26d13f5b4c763f3ef2af.jpg,dog,This dog is classified as overweight (BCS likely 6-9).
+373,datasets/dog_dataset/overweight_dogs/f44b3bf36a09119268830b2dad11d73e.jpg,dog,This dog is classified as overweight (BCS likely 6-9).
+374,datasets/dog_dataset/overweight_dogs/f6d951755d52995762b10909da6856b3.jpg,dog,This dog is classified as overweight (BCS likely 6-9).
+375,datasets/dog_dataset/overweight_dogs/f879e77ac0116035386cac513371c329.jpg,dog,This dog is classified as overweight (BCS likely 6-9).
+376,datasets/dog_dataset/overweight_dogs/f9ff00c0397daaff4bfd49113e017cf7.jpg,dog,This dog is classified as overweight (BCS likely 6-9).
+377,datasets/dog_dataset/overweight_dogs/fb5a769dd16e32273d1acdff1424a54f.jpg,dog,This dog is classified as overweight (BCS likely 6-9).
+378,datasets/dog_dataset/overweight_dogs/ff649571e923236b46d627cdd98e8dc5.jpg,dog,This dog is classified as overweight (BCS likely 6-9).
+379,datasets/dog_dataset/overweight_dogs/ff98c6ec20288a5a1a51141108ba5d55.jpg,dog,This dog is classified as overweight (BCS likely 6-9).
