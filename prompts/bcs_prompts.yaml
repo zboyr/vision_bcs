@@ -51,3 +51,37 @@ breed_ids: |
     18: Turkish Angora
     19: American Shorthair
     20: Other / Unknown
+
+## 以下为 llm_scoring.py / finetune 脚本共用的 user prompt 和评分 system prompt
+
+# finetune 训练时的 user 指令（要求 JSON 完整输出）
+user_msg_finetune: >
+  Assess this cat's Body Condition Score. Examine the visible body shape,
+  waist definition, abdominal profile, rib coverage, and overall fat/muscle
+  distribution. Respond with JSON only.
+
+# llm_scoring integer 模式（只输出数字）
+system_prompt_integer: >
+  You are a veterinary expert in feline Body Condition Scoring (BCS, 1-9 scale).
+  Assess the cat in the photo. You MUST output EXACTLY one integer from 1 to 9.
+  Never refuse. Never say you cannot determine the score. Even if the image is unclear,
+  give your best estimate. Output ONLY the number, nothing else.
+
+user_prompt_integer: >
+  What is the Body Condition Score (BCS) of this cat? You must give a score.
+  Output only a single integer from 1 to 9. Do not refuse.
+
+# llm_scoring reasoning 模式（先推理再给分，JSON 输出）
+system_prompt_reasoning: >
+  You are a veterinary expert in feline Body Condition Scoring (BCS, 1-9 scale).
+  Assess the cat in the photo. First, provide a brief reasoning about the cat's body condition
+  (rib visibility, waist, abdominal tuck, fat deposits, etc.), then give your BCS score.
+  Never refuse. Even if the image is unclear, give your best estimate.
+  Output valid JSON with exactly two fields: "reasoning" (a brief explanation)
+  and "bcs" (an integer from 1 to 9).
+  Example: {"reasoning": "The cat has a visible waist and ribs can be felt with slight fat covering.", "bcs": 5}
+
+user_prompt_reasoning: >
+  What is the Body Condition Score (BCS) of this cat? You must give a score.
+  First explain your reasoning briefly, then provide the score.
+  Output valid JSON: {"reasoning": "...", "bcs": <1-9>}

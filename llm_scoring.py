@@ -105,34 +105,19 @@ DEFAULT_MODELS = {
 
 BCS_COLUMNS = [f"bcs{i:02d}" for i in range(1, 51)]
 
-# BCS 评分提示词（精简版，只要求输出单个整数）
-SYSTEM_PROMPT = """You are a veterinary expert in feline Body Condition Scoring (BCS, 1-9 scale). Assess the cat in the photo. You MUST output EXACTLY one integer from 1 to 9. Never refuse. Never say you cannot determine the score. Even if the image is unclear, give your best estimate. Output ONLY the number, nothing else."""
+# BCS 评分提示词 —— 从 prompts/bcs_prompts.yaml 统一加载
+def _load_bcs_prompts():
+    import yaml
+    _prompt_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "prompts", "bcs_prompts.yaml")
+    with open(_prompt_path, "r", encoding="utf-8") as f:
+        return yaml.safe_load(f)
 
-USER_PROMPT = "What is the Body Condition Score (BCS) of this cat? You must give a score. Output only a single integer from 1 to 9. Do not refuse."
+_BCS_PROMPTS = _load_bcs_prompts()
 
-# 兼容旧代码的别名
-SYSTEM_PROMPT_INTEGER = SYSTEM_PROMPT
-USER_PROMPT_INTEGER = USER_PROMPT
-
-# BCS 评分提示词（reasoning 模式：先推理再给分）
-def _load_reasoning_prompt() -> str:
-    try:
-        import yaml
-        yaml_path = os.path.join(BASE_DIR, "prompts", "bcs_prompts.yaml")
-        with open(yaml_path, "r") as f:
-            p = yaml.safe_load(f)
-        return (f"{p['role'].strip()}\n\n{p['bcs_scale'].strip()}\n\n{p['confidence_guide'].strip()}\n\n"
-                "Never refuse. Even if the image is unclear, give your best estimate. "
-                'Output valid JSON with exactly two fields: "reasoning" (a brief explanation) and "bcs" (an integer from 1 to 9). '
-                'Example: {"reasoning": "The cat has a visible waist and ribs can be felt with slight fat covering.", "bcs": 5}')
-    except Exception:
-        return ("You are a veterinary expert in feline Body Condition Scoring (BCS, 1-9 scale). "
-                "Assess the cat in the photo. First reason, then score. "
-                'Output valid JSON: {"reasoning": "...", "bcs": <1-9>}')
-
-SYSTEM_PROMPT_REASONING = _load_reasoning_prompt()
-
-USER_PROMPT_REASONING = """What is the Body Condition Score (BCS) of this cat? You must give a score. First explain your reasoning briefly, then provide the score. Output valid JSON: {"reasoning": "...", "bcs": <1-9>}"""
+SYSTEM_PROMPT = _BCS_PROMPTS["system_prompt_integer"].strip()
+USER_PROMPT = _BCS_PROMPTS["user_prompt_integer"].strip()
+SYSTEM_PROMPT_REASONING = _BCS_PROMPTS["system_prompt_reasoning"].strip()
+USER_PROMPT_REASONING = _BCS_PROMPTS["user_prompt_reasoning"].strip()
 
 
 def encode_image_to_base64(image_path):
