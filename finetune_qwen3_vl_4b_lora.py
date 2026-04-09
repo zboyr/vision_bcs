@@ -22,19 +22,25 @@ from transformers import (
 from trl import SFTConfig, SFTTrainer
 
 
-DEFAULT_SYSTEM_PROMPT = "prompts/bcs_prompts.yaml"
-USER_MSG = "Assess this cat's Body Condition Score. Examine the visible body shape, waist definition, abdominal profile, rib coverage, and overall fat/muscle distribution. Respond with JSON only."
+DEFAULT_PROMPTS_YAML = "prompts/bcs_prompts.yaml"
+
+
+def _load_prompts_yaml():
+    import yaml
+    path = os.path.join(os.path.dirname(os.path.abspath(__file__)), DEFAULT_PROMPTS_YAML)
+    with open(path, "r", encoding="utf-8") as f:
+        return yaml.safe_load(f)
+
+
+_PROMPTS = _load_prompts_yaml()
+USER_MSG = _PROMPTS["user_prompt_reasoning"].strip()
 
 
 @dataclass
 class Sample:
     image_path: str
     bcs_primary: int
-    bcs_secondary: int
     reasoning: str
-    confidence: int
-    confidence_detractors: str
-    breed_id: int
 
 
 def try_load_file(expected_filepath, dataset_csv_filepath):
@@ -65,12 +71,8 @@ def load_samples(base_dir: str, dataset_csv: str) -> list[Sample]:
                 rows.append(
                     Sample(
                         image_path=corrected_path,
-                        bcs_primary=int(r["bcs_primary"]),
-                        bcs_secondary=int(r["bcs_secondary"]),
+                        bcs_primary=int(r.get("bcs") or r.get("bcs_primary")),
                         reasoning=r.get("reasoning", ""),
-                        confidence=int(r["confidence"]),
-                        confidence_detractors=r.get("confidence_detractors", ""),
-                        breed_id=int(r["breed_id"]),
                     )
                 )
             except (KeyError, ValueError) as e:
@@ -81,12 +83,8 @@ def load_samples(base_dir: str, dataset_csv: str) -> list[Sample]:
 
 def target_json_from_row(r: dict[str, Any]) -> str:
     obj = {
-        "bcs_primary": int(r["bcs_primary"]),
-        "bcs_secondary": int(r["bcs_secondary"]),
         "reasoning": r.get("reasoning", "") or "",
-        "confidence": int(r["confidence"]),
-        "confidence_detractors": r.get("confidence_detractors", "") or "",
-        "breed_id": int(r["breed_id"]),
+        "bcs": int(r["bcs_primary"]),
     }
     return json.dumps(obj, ensure_ascii=False)
 
@@ -95,7 +93,7 @@ def load_system_prompt(path: str) -> str:
     import yaml
     with open(path, "r", encoding="utf-8") as f:
         p = yaml.safe_load(f)
-    return f"{p['role'].strip()}\n\n{p['bcs_scale'].strip()}\n\n{p['confidence_guide'].strip()}"
+    return p["system_prompt_reasoning"].strip()
 
 
 def make_messages(image_path: str, answer_json: str | None, system_msg: str) -> list[dict[str, Any]]:
@@ -146,7 +144,7 @@ def parse_bcs(output_text: str) -> int | None:
         return None
     try:
         obj = json.loads(match.group(0))
-        value = int(obj.get("bcs_primary"))
+        value = int(obj.get("bcs"))
         if 1 <= value <= 9:
             return value
         return None
@@ -208,7 +206,7 @@ class EpochEvalCallback(TrainerCallback):
 
 def main() -> int:
     parser = argparse.ArgumentParser(description="LoRA fine-tune Qwen3-VL-4B on local BCS dataset")
-    parser.add_argument("--dataset", default="datasets/cat_10k/bcs_annotations.csv")
+    parser.add_argument("--dataset", default="datasets/cat_10k/train.csv")
     parser.add_argument("--model-id", default="Qwen/Qwen2.5-VL-3B-Instruct")
     parser.add_argument("--max-samples", type=int, default=0,
                         help="Cap total samples loaded (0=all). Useful for smoke tests.")
@@ -228,8 +226,8 @@ def main() -> int:
                         help="Processor max_pixels (512*28*28=401408). Caps visual tokens per image.")
     parser.add_argument("--resume-adapter", default="",
                         help="Path to existing LoRA adapter to continue training from (instead of fresh init).")
-    parser.add_argument("--system-prompt", default=DEFAULT_SYSTEM_PROMPT,
-                        help="Path to system prompt text file")
+    parser.add_argument("--system-prompt", default=DEFAULT_PROMPTS_YAML,
+                        help="Path to prompts YAML file")
     args = parser.parse_args()
 
     random.seed(args.seed)
@@ -298,11 +296,7 @@ def main() -> int:
         {
             "image_path": s.image_path,
             "bcs_primary": s.bcs_primary,
-            "bcs_secondary": s.bcs_secondary,
             "reasoning": s.reasoning,
-            "confidence": s.confidence,
-            "confidence_detractors": s.confidence_detractors,
-            "breed_id": s.breed_id,
         }
         for s in train_set
     ]
