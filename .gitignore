@@ -9,7 +9,11 @@ nul
 .venv/
 .claude/
 .vscode/settings.json
-datasets/
+datasets/*
+!datasets/cat_10k/
+datasets/cat_10k/*
+!datasets/cat_10k/eval.csv
+!datasets/cat_10k/train.csv
 results/report/
 *.bak*
 node_modules/

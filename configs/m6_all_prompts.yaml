@@ -1,0 +1,26 @@
+# M6 Gemini Flash — all 7 prompts
+dataset: datasets/cat_10k/eval.csv
+output_dir: responses/next_study
+repeats: 1
+delay: 0.5
+max_retries: 3
+request_timeout: 60
+concurrency: 10
+
+p6_reference_images:
+  - prompts/cat_bcs.jpg
+  - prompts/dog_bcs.jpg
+
+models:
+  M6:
+    name: google/gemini-3.1-flash-image-preview
+    provider: openrouter
+
+prompts:
+  - P1
+  - P2
+  - P3
+  - P4
+  - P5
+  - P6
+  - P7
