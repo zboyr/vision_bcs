@@ -21,6 +21,7 @@
     "<|video_pad|>"
   ],
   "is_local": false,
+  "max_pixels": 401408,
   "model_max_length": 131072,
   "pad_token": "<|endoftext|>",
   "processor_class": "Qwen2_5_VLProcessor",

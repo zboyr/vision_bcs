@@ -19,12 +19,11 @@ from typing import Any
 
 import torch
 from datasets import Dataset
-from peft import LoraConfig, PeftModel, get_peft_model, prepare_model_for_kbit_training
+from peft import LoraConfig, PeftModel, get_peft_model
 from PIL import Image
 from transformers import (
     AutoModelForMultimodalLM,
     AutoProcessor,
-    BitsAndBytesConfig,
     TrainerCallback,
 )
 from trl import SFTConfig, SFTTrainer
@@ -136,15 +135,16 @@ def extract_images(messages: list[dict[str, Any]]) -> list[Image.Image]:
 
 def collate_train(processor: Any, batch: list[dict[str, Any]], system_msg: str) -> dict[str, Any]:
     full_msgs = [make_messages(x["image_path"], target_json_from_row(x), system_msg) for x in batch]
-    prompt_msgs = [m[:-1] for m in full_msgs]  # drop assistant turn
+    prompt_msgs = [m[:-1] for m in full_msgs]
 
-    full_texts = [processor.apply_chat_template(m, tokenize=False, add_generation_prompt=False) for m in full_msgs]
-    prompt_texts = [processor.apply_chat_template(m, tokenize=False, add_generation_prompt=True) for m in prompt_msgs]
-
-    image_inputs: list[Any] = [extract_images(m)[0] for m in full_msgs]
-
-    enc = processor(text=full_texts, images=image_inputs, return_tensors="pt", padding=True)
-    prompt_enc = processor(text=prompt_texts, images=image_inputs, return_tensors="pt", padding=True)
+    enc = processor.apply_chat_template(
+        full_msgs, tokenize=True, return_dict=True, return_tensors="pt",
+        padding=True, add_generation_prompt=False,
+    )
+    prompt_enc = processor.apply_chat_template(
+        prompt_msgs, tokenize=True, return_dict=True, return_tensors="pt",
+        padding=True, add_generation_prompt=True,
+    )
 
     pad_id = processor.tokenizer.pad_token_id
     prompt_lens = (prompt_enc["input_ids"] != pad_id).sum(dim=1).tolist()
@@ -154,7 +154,7 @@ def collate_train(processor: Any, batch: list[dict[str, Any]], system_msg: str) 
     for i, pl in enumerate(prompt_lens):
         labels[i, :pl] = -100
     enc["labels"] = labels
-    return enc
+    return dict(enc)
 
 
 def parse_bcs(output_text: str) -> int | None:
@@ -178,25 +178,39 @@ def run_eval(
     device: torch.device,
     max_new_tokens: int,
     system_msg: str,
+    log_path: str | None = None,
 ) -> dict[str, Any]:
     abs_errors: list[float] = []
     parsed = 0
+    records: list[dict[str, Any]] = []
+    model_dtype = next(model.parameters()).dtype
     for sample in eval_set:
         messages = make_messages(sample.image_path, None, system_msg)
-        text = processor.apply_chat_template(messages, tokenize=False, add_generation_prompt=True)
-        imgs = extract_images(messages)
-        inputs = processor(text=[text], images=imgs, return_tensors="pt", padding=True)
-        inputs = {k: v.to(device) if hasattr(v, "to") else v for k, v in inputs.items()}
+        inputs = processor.apply_chat_template(
+            [messages], tokenize=True, return_dict=True, return_tensors="pt",
+            padding=True, add_generation_prompt=True,
+        )
+        inputs = inputs.to(device, dtype=model_dtype)
         with torch.no_grad():
             generated = model.generate(**inputs, max_new_tokens=max_new_tokens, do_sample=False)
         output = processor.batch_decode(generated[:, inputs["input_ids"].shape[1]:], skip_special_tokens=True)[0]
         pred = parse_bcs(output)
+        records.append({
+            "image_path": sample.image_path,
+            "gt": sample.bcs_primary,
+            "pred": pred,
+            "output": output,
+        })
         if pred is None:
             continue
         parsed += 1
         abs_errors.append(abs(float(pred) - float(sample.bcs_primary)))
     coverage = parsed / len(eval_set) if eval_set else 0.0
     mae = sum(abs_errors) / len(abs_errors) if abs_errors else float("nan")
+    if log_path:
+        with open(log_path, "w", encoding="utf-8") as f:
+            json.dump(records, f, ensure_ascii=False, indent=2)
+        print(f"  raw outputs logged to {log_path}")
     return {"eval_count": len(eval_set), "parsed": parsed, "coverage": coverage, "mae": mae}
 
 
@@ -228,7 +242,8 @@ class EpochEvalCallback(TrainerCallback):
         for name, eset in [("split", self.split_eval_set), ("held_out", self.held_out_eval_set)]:
             if not eset:
                 continue
-            r = run_eval(model, self.processor, eset, device, self.max_new_tokens, self.system_msg)
+            log_path = os.path.join(self.adapter_dir, f"eval_outputs_epoch{epoch}_{name}.json")
+            r = run_eval(model, self.processor, eset, device, self.max_new_tokens, self.system_msg, log_path=log_path)
             print(f"[epoch {epoch}] {name}: mae={r['mae']:.3f} coverage={r['coverage']:.2f} parsed={r['parsed']}/{r['eval_count']}")
             m[name] = r
         self.history.append(m)
@@ -242,19 +257,23 @@ def main() -> int:
     parser.add_argument("--dataset", default="datasets/cat_10k/train.csv")
     parser.add_argument("--eval-dataset", default="datasets/cat_10k/eval.csv",
                         help="Dedicated eval CSV for held-out evaluation.")
-    parser.add_argument("--model-id", default="google/gemma-4-E4B-it")
+    parser.add_argument("--no-held-out-eval", action="store_true",
+                        help="Skip held-out eval (much faster smoke tests).")
+    parser.add_argument("--model-id", default="google/gemma-4-E2B-it")
     parser.add_argument("--max-samples", type=int, default=0,
                         help="Cap total samples loaded (0=all). Useful for smoke tests.")
     parser.add_argument("--baseline-eval", action="store_true",
                         help="Run eval before training to get a baseline MAE.")
-    parser.add_argument("--output-dir", default="outputs/gemma4_e4b_lora_bcs")
+    parser.add_argument("--output-dir", default="outputs/gemma4_e2b_lora_bcs")
     parser.add_argument("--epochs", type=int, default=1)
-    parser.add_argument("--lr", type=float, default=1e-4)
+    parser.add_argument("--lr", type=float, default=5e-5)
     parser.add_argument("--batch-size", type=int, default=1)
     parser.add_argument("--grad-accum", type=int, default=4)
     parser.add_argument("--seed", type=int, default=42)
     parser.add_argument("--train-size", type=int, default=80)
-    parser.add_argument("--max-new-tokens", type=int, default=200)
+    parser.add_argument("--max-new-tokens", type=int, default=150)
+    parser.add_argument("--image-tokens", type=int, default=140,
+                        help="Visual token budget per image (Gemma 4 supports 70/140/280/560/1120). Lower=less VRAM.")
     parser.add_argument("--resume-adapter", default="")
     parser.add_argument("--system-prompt", default=DEFAULT_PROMPTS_YAML)
     args = parser.parse_args()
@@ -279,39 +298,52 @@ def main() -> int:
     train_size = int(len(samples) * (args.train_size / 100))
     train_set = samples[:train_size]
     split_eval_set = samples[train_size:]
-    held_out_eval_set = load_samples(base_dir, args.eval_dataset) if args.eval_dataset else []
+    held_out_eval_set = load_samples(base_dir, args.eval_dataset) if (args.eval_dataset and not args.no_held_out_eval) else []
     print(f"samples: train={len(train_set)}, split_eval={len(split_eval_set)}, held_out_eval={len(held_out_eval_set)}")
 
     model_id = args.model_id
-    bnb = BitsAndBytesConfig(
-        load_in_4bit=True,
-        bnb_4bit_quant_type="nf4",
-        bnb_4bit_use_double_quant=True,
-        bnb_4bit_compute_dtype=torch.bfloat16,
-    )
     processor = AutoProcessor.from_pretrained(model_id, trust_remote_code=True)
+    # Lower visual token budget to reduce LLM context and KV cache memory.
+    processor.image_processor.image_seq_length = args.image_tokens
+    processor.image_processor.max_soft_tokens = args.image_tokens
+    print(f"Set Gemma 4 visual token budget to {args.image_tokens} per image")
+    # Note: 4bit quantization breaks Gemma 4 vision tower (Gemma4ClippableLinear).
+    # Load in bf16 instead.
     model = AutoModelForMultimodalLM.from_pretrained(
         model_id,
         trust_remote_code=True,
-        quantization_config=bnb,
+        dtype=torch.bfloat16,
         device_map="auto",
     )
-    model = prepare_model_for_kbit_training(model)
+    # Freeze base params; LoRA will add trainable adapters.
+    for p in model.parameters():
+        p.requires_grad = False
+
+    # Drop unused audio tower to free ~150 MB (BCS only needs vision).
+    if hasattr(model.model, "audio_tower"):
+        del model.model.audio_tower
+        if hasattr(model.model, "embed_audio"):
+            del model.model.embed_audio
+        torch.cuda.empty_cache()
+        print("Dropped audio_tower / embed_audio (unused for BCS).")
     if args.resume_adapter:
         resume_path = os.path.join(base_dir, args.resume_adapter) if not os.path.isabs(args.resume_adapter) else args.resume_adapter
         print(f"Resuming from LoRA adapter: {resume_path}")
         model = PeftModel.from_pretrained(model, resume_path, is_trainable=True)
     else:
+        # Regex restricts LoRA to language_model layers only.
+        # Vision tower uses Gemma4ClippableLinear which PEFT does not support.
         lora_cfg = LoraConfig(
             r=16,
             lora_alpha=32,
             lora_dropout=0.05,
             bias="none",
             task_type="CAUSAL_LM",
-            target_modules=["q_proj", "k_proj", "v_proj", "o_proj", "up_proj", "down_proj", "gate_proj"],
+            target_modules=r".*language_model\.layers\.\d+\.(self_attn\.[qkvo]_proj|mlp\.(gate|up|down)_proj|per_layer_input_gate|per_layer_projection)$",
         )
         model = get_peft_model(model, lora_cfg)
 
+    adapter_dir = os.path.join(base_dir, args.output_dir)
     baseline_metrics = None
     if args.baseline_eval and (split_eval_set or held_out_eval_set):
         print("Running baseline eval (pre-training)...")
@@ -321,7 +353,8 @@ def main() -> int:
         for name, eset in [("split", split_eval_set), ("held_out", held_out_eval_set)]:
             if not eset:
                 continue
-            r = run_eval(model, processor, eset, device, args.max_new_tokens, system_msg)
+            log_path = os.path.join(adapter_dir, f"eval_outputs_baseline_{name}.json")
+            r = run_eval(model, processor, eset, device, args.max_new_tokens, system_msg, log_path=log_path)
             baseline_metrics[name] = r
             print(f"baseline {name}: {r}")
 
@@ -337,7 +370,6 @@ def main() -> int:
     ]
     train_dataset = Dataset.from_list(train_records)
 
-    adapter_dir = os.path.join(base_dir, args.output_dir)
     bf16_ok = torch.cuda.is_available() and torch.cuda.is_bf16_supported()
     sft_args = SFTConfig(
         output_dir=adapter_dir,
@@ -351,6 +383,9 @@ def main() -> int:
         remove_unused_columns=False,
         bf16=bf16_ok,
         fp16=not bf16_ok,
+        optim="adamw_torch",
+        dataloader_num_workers=2,
+        dataloader_persistent_workers=True,
         dataset_kwargs={"skip_prepare_dataset": True},
     )
     epoch_eval_cb = EpochEvalCallback(split_eval_set, held_out_eval_set, processor, args.max_new_tokens, system_msg, adapter_dir)
@@ -372,7 +407,8 @@ def main() -> int:
     metrics = {"train_size": len(train_set), "model_id": model_id}
     for name, eset in [("split", split_eval_set), ("held_out", held_out_eval_set)]:
         if eset:
-            metrics[f"final_{name}"] = run_eval(model, processor, eset, device, args.max_new_tokens, system_msg)
+            log_path = os.path.join(adapter_dir, f"eval_outputs_final_{name}.json")
+            metrics[f"final_{name}"] = run_eval(model, processor, eset, device, args.max_new_tokens, system_msg, log_path=log_path)
     if baseline_metrics:
         metrics["baseline"] = baseline_metrics
     metrics["epoch_history"] = epoch_eval_cb.history

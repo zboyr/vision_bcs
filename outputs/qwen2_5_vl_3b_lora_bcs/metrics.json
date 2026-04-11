@@ -1,14 +1,23 @@
 {
-  "eval_count": 10,
-  "parsed": 7,
-  "coverage": 0.7,
-  "mae": 1.1428571428571428,
-  "train_size": 40,
+  "eval_count": 20,
+  "parsed": 20,
+  "coverage": 1.0,
+  "mae": 1.5,
+  "train_size": 80,
   "model_id": "Qwen/Qwen2.5-VL-3B-Instruct",
   "baseline": {
-    "eval_count": 10,
-    "parsed": 9,
-    "coverage": 0.9,
-    "mae": 1.2222222222222223
-  }
+    "eval_count": 20,
+    "parsed": 20,
+    "coverage": 1.0,
+    "mae": 1.65
+  },
+  "epoch_history": [
+    {
+      "eval_count": 20,
+      "parsed": 20,
+      "coverage": 1.0,
+      "mae": 1.5,
+      "epoch": 1.0
+    }
+  ]
 }

@@ -1,0 +1,122 @@
+[
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/9f91104bed1ea66e81ce97540e5ec19b.jpg",
+    "gt": 5,
+    "pred": 4,
+    "output": "```json\n{\n  \"reasoning\": \"The cat appears to have a moderate amount of body fat, with a visible waist and smooth contours, suggesting a healthy weight but not overly thin or obese.\",\n  \"bcs\": 4\n}\n```"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/8337d69e36e6ee6db2842d83540d3a95.jpg",
+    "gt": 4,
+    "pred": 4,
+    "output": "```json\n{\n  \"reasoning\": \"The cat appears to have a moderate amount of body fat, with a visible waist and a relatively tucked abdomen, but the ribs are not sharply visible. It falls into the healthy to slightly overweight range.\",\n  \"bcs\": 4\n}\n```"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/ecd82b75791edff8e7e40eec4a303b3b.jpg",
+    "gt": 8,
+    "pred": 4,
+    "output": "```json\n{\n  \"reasoning\": \"The cat appears to have a moderate amount of body fat, with a visible waist and a relatively smooth abdomen. Ribs are not easily visible, suggesting a healthy but not underweight condition.\",\n  \"bcs\": 4\n}\n```"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/c09b94b459aee93ffa9dea62034b81e4.jpg",
+    "gt": 3,
+    "pred": 4,
+    "output": "```json\n{\n  \"reasoning\": \"The cat appears to have a lean to medium build. The ribs are not prominently visible, and there is some moderate fat cover, suggesting a healthy weight.\",\n  \"bcs\": 4\n}\n```"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/0dab81809a38bca9a0bfe1233a5921d6.jpg",
+    "gt": 8,
+    "pred": 4,
+    "output": "```json\n{\n  \"reasoning\": \"The cat appears to have a healthy weight with good muscle tone, though there is some visible abdominal softness. Ribs are not easily visible, and the waist is not overly pronounced. The overall appearance suggests a healthy, well-conditioned cat.\",\n  \"bcs\": 4\n}\n```"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/83a3bf71fba4f9df7e91e1bc0ace190f.jpg",
+    "gt": 9,
+    "pred": 8,
+    "output": "```json\n{\n  \"reasoning\": \"The cat appears to have a very full body condition with significant abdominal fat deposits, making ribs not easily visible. The waist is not clearly defined, suggesting a higher body weight.\",\n  \"bcs\": 8\n}\n```"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/0ce8837768343f50aa4514e56362dc7d.jpg",
+    "gt": 5,
+    "pred": 4,
+    "output": "```json\n{\n  \"reasoning\": \"The cat appears to have a muscular build with a visible waist and moderate fat deposits, suggesting a healthy weight. Ribs are not prominently visible, and the abdomen is not overly distended.\",\n  \"bcs\": 4\n}\n```"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/a21923c0f00c6659bdd91adfcbdd9a5f.jpg",
+    "gt": 5,
+    "pred": 4,
+    "output": "```json\n{\n  \"reasoning\": \"The cat appears to have a moderate amount of body fat, with a visible waist and a relatively smooth abdominal area. Ribs are not prominently visible, suggesting a healthy but not overly thin condition.\",\n  \"bcs\": 4\n}\n```"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/1fb3348073fff6fe851929c017b9d90d.jpg",
+    "gt": 5,
+    "pred": 4,
+    "output": "```json\n{\n  \"reasoning\": \"The cat appears to have a moderate amount of body fat, with a visible waist and a relatively smooth abdomen. Ribs are not prominently visible, suggesting a healthy but not overly thin condition.\",\n  \"bcs\": 4\n}\n```"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/4ddc759d849a1505ee6af4657fa16ba2.jpg",
+    "gt": 5,
+    "pred": 4,
+    "output": "```json\n{\n  \"reasoning\": \"The cat appears to have a moderate amount of body fat, with a visible waist and a relatively rounded abdomen, but ribs are not easily visible. It falls into the healthy to slightly overweight range.\",\n  \"bcs\": 4\n}\n```"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/8ffa21538dcc251c06d307932757e8d9.jpg",
+    "gt": 4,
+    "pred": 4,
+    "output": "```json\n{\n  \"reasoning\": \"The dog appears to have a lean build with visible ribs and a relatively tucked abdomen, suggesting a lower body fat percentage. It is not overly thin but is certainly not obese.\",\n  \"bcs\": 4\n}\n```"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/e6b8b3f94b4487230000f47850d79aeb.jpg",
+    "gt": 5,
+    "pred": 4,
+    "output": "```json\n{\n  \"reasoning\": \"The cat appears to have a moderate amount of body fat, with a visible waist but not overly rounded. Ribs are not clearly visible, suggesting a healthy but not underweight condition.\",\n  \"bcs\": 4\n}\n```"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/d9963423fbb3314a539be8c77c39cc01.jpg",
+    "gt": 4,
+    "pred": 4,
+    "output": "```json\n{\n  \"reasoning\": \"The cat appears to have a lean body condition with visible ribs and a relatively tucked abdomen, suggesting a lower end of the healthy range.\",\n  \"bcs\": 4\n}\n```"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/5877d0b871a78e2aca0b9768285ed6d6.jpg",
+    "gt": 9,
+    "pred": 4,
+    "output": "```json\n{\n  \"reasoning\": \"The cat appears to have a moderate amount of body fat, with a visible waist and a relatively smooth abdominal area, suggesting a healthy weight but not overly thin or obese.\",\n  \"bcs\": 4\n}\n```"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/4f282518cd525aaf2fc8cf5619f32fda.jpg",
+    "gt": 5,
+    "pred": 4,
+    "output": "```json\n{\n  \"reasoning\": \"The cat appears to have a moderate amount of body fat, with a visible waist and a relatively smooth abdomen. Ribs are not prominently visible, suggesting a healthy but not underweight condition.\",\n  \"bcs\": 4\n}\n```"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/4bb3f5f079033afec017c53740a6c36b.jpg",
+    "gt": 5,
+    "pred": 4,
+    "output": "```json\n{\n  \"reasoning\": \"The cat appears to have a moderate amount of body fat, with a visible waist and a relatively smooth abdominal area, suggesting a healthy weight but not overly thin or obese.\",\n  \"bcs\": 4\n}\n```"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/2ffc6598440f14e50c6f4579d9b2ff25.jpg",
+    "gt": 8,
+    "pred": 4,
+    "output": "```json\n{\n  \"reasoning\": \"The cat appears to have a moderate amount of body fat, with a visible waist and smooth contours, suggesting a healthy weight but not overly thin or obese.\",\n  \"bcs\": 4\n}\n```"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/794f89883ad628abcad300efa49a974e.jpg",
+    "gt": 3,
+    "pred": 4,
+    "output": "```json\n{\n  \"reasoning\": \"The cat appears to have a lean body condition with visible ribs and a relatively tucked abdomen, suggesting a lower end of the healthy range.\",\n  \"bcs\": 4\n}\n```"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/bbb797a624639246fed4d6237b55aeab.jpg",
+    "gt": 8,
+    "pred": 4,
+    "output": "```json\n{\n  \"reasoning\": \"The cat appears to have a moderate amount of body fat, with a visible waist and a relatively smooth abdomen. Ribs are not prominently visible, suggesting a healthy but not underweight condition.\",\n  \"bcs\": 4\n}\n```"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/2eda00407e727d1bc6a44f51cf098788.jpg",
+    "gt": 8,
+    "pred": 4,
+    "output": "```json\n{\n  \"reasoning\": \"The cat appears to have a moderate amount of body fat, with a visible waist and a relatively smooth abdomen, suggesting a healthy weight but not overly thin or obese.\",\n  \"bcs\": 4\n}\n```"
+  }
+]

@@ -1,0 +1,48 @@
+{
+  "train_size": 9940,
+  "model_id": "Qwen/Qwen2.5-VL-3B-Instruct",
+  "final_split": {
+    "eval_count": 524,
+    "parsed": 524,
+    "coverage": 1.0,
+    "mae": 0.7824427480916031
+  },
+  "final_held_out": {
+    "eval_count": 278,
+    "parsed": 277,
+    "coverage": 0.9964028776978417,
+    "mae": 0.9819494584837545
+  },
+  "epoch_history": [
+    {
+      "epoch": 1.0,
+      "split": {
+        "eval_count": 524,
+        "parsed": 523,
+        "coverage": 0.9980916030534351,
+        "mae": 0.847036328871893
+      },
+      "held_out": {
+        "eval_count": 278,
+        "parsed": 278,
+        "coverage": 1.0,
+        "mae": 0.9964028776978417
+      }
+    },
+    {
+      "epoch": 2.0,
+      "split": {
+        "eval_count": 524,
+        "parsed": 524,
+        "coverage": 1.0,
+        "mae": 0.7824427480916031
+      },
+      "held_out": {
+        "eval_count": 278,
+        "parsed": 277,
+        "coverage": 0.9964028776978417,
+        "mae": 0.9819494584837545
+      }
+    }
+  ]
+}

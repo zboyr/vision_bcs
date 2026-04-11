@@ -1,0 +1,47 @@
+{
+  "train_size": 80,
+  "model_id": "google/gemma-4-E2B-it",
+  "final_split": {
+    "eval_count": 20,
+    "parsed": 20,
+    "coverage": 1.0,
+    "mae": 1.6
+  },
+  "final_held_out": {
+    "eval_count": 278,
+    "parsed": 277,
+    "coverage": 0.9964028776978417,
+    "mae": 2.5054151624548737
+  },
+  "baseline": {
+    "split": {
+      "eval_count": 20,
+      "parsed": 20,
+      "coverage": 1.0,
+      "mae": 1.8
+    },
+    "held_out": {
+      "eval_count": 278,
+      "parsed": 278,
+      "coverage": 1.0,
+      "mae": 2.176258992805755
+    }
+  },
+  "epoch_history": [
+    {
+      "epoch": 1.0,
+      "split": {
+        "eval_count": 20,
+        "parsed": 20,
+        "coverage": 1.0,
+        "mae": 1.6
+      },
+      "held_out": {
+        "eval_count": 278,
+        "parsed": 277,
+        "coverage": 0.9964028776978417,
+        "mae": 2.5054151624548737
+      }
+    }
+  ]
+}

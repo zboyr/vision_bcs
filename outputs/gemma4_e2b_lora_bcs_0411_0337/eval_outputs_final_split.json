@@ -1,0 +1,122 @@
+[
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/9f91104bed1ea66e81ce97540e5ec19b.jpg",
+    "gt": 5,
+    "pred": 1,
+    "output": "{\"reasoning\": \"The cat is lying on its side, which is a common position for assessment. The visible body shows a clear, deep abdominal tuck, indicating a very low body fat percentage. The ribs are clearly visible along the spine, and the overall body mass is extremely low, suggesting severe emaciation.\", \"bcs\": 1}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/8337d69e36e6ee6db2842d83540d3a95.jpg",
+    "gt": 4,
+    "pred": 5,
+    "output": "{\"reasoning\": \"The cat is lying in a relaxed, prone position, which is common for assessment. The visible body shows a clear, well-defined waist and a distinct abdominal tuck. The ribs are not visible, but the overall body shape suggests a moderate amount of fat covering the body, consistent with a healthy, well-fed cat.\", \"bcs\": 5}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/ecd82b75791edff8e7e40eec4a303b3b.jpg",
+    "gt": 8,
+    "pred": 5,
+    "output": "{\"reasoning\": \"The cat is lying in a relaxed, slightly stretched position. The abdominal area is clearly visible, showing a distinct waist and a slight abdominal tuck. The overall body shape is well-proportioned, with no obvious fat deposits or ribs visible through the skin.\", \"bcs\": 5}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/c09b94b459aee93ffa9dea62034b81e4.jpg",
+    "gt": 3,
+    "pred": 2,
+    "output": "{\"reasoning\": \"The cat is lying on its side, which is a common position for assessment. The visible abdominal area shows a clear, deep abdominal tuck, indicating a very low body fat score. The ribs are not visible, but the overall body shape is extremely thin and narrow, suggesting a very low score.\", \"bcs\": 2}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/0dab81809a38bca9a0bfe1233a5921d6.jpg",
+    "gt": 8,
+    "pred": 2,
+    "output": "{\"reasoning\": \"The cat has a very pronounced abdominal tuck and a visible waist, indicating a very low body fat percentage. The ribs are clearly visible beneath the abdominal wall, and the overall body shape is extremely thin and gaunt.\", \"bcs\": 2}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/83a3bf71fba4f9df7e91e1bc0ace190f.jpg",
+    "gt": 9,
+    "pred": 2,
+    "output": "{\"reasoning\": \"The cat has a very pronounced abdominal tuck and a visible waist, indicating a very low body fat percentage. The ribs are clearly visible beneath the abdominal wall, and the overall body shape is extremely thin and gaunt.\", \"bcs\": 2}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/0ce8837768343f50aa4514e56362dc7d.jpg",
+    "gt": 5,
+    "pred": 2,
+    "output": "{\"reasoning\": \"The cat has a very pronounced abdominal tuck and a visible waist, indicating a very lean body condition. The ribs are clearly visible beneath the skin, and the overall body shape is extremely thin.\", \"bcs\": 2}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/a21923c0f00c6659bdd91adfcbdd9a5f.jpg",
+    "gt": 5,
+    "pred": 2,
+    "output": "{\"reasoning\": \"The cat has a very pronounced abdominal tuck and a visible waist, indicating a very low body fat percentage. The ribs are clearly visible beneath the abdominal wall, and the overall body shape is extremely thin and gaunt.\", \"bcs\": 2}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/1fb3348073fff6fe851929c017b9d90d.jpg",
+    "gt": 5,
+    "pred": 1,
+    "output": "{\"reasoning\": \"The cat has a very pronounced abdominal tuck and a visible waist, indicating a very low body fat percentage. The ribs are clearly visible beneath the skin, and the overall body shape is extremely thin and gaunt.\", \"bcs\": 1}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/4ddc759d849a1505ee6af4657fa16ba2.jpg",
+    "gt": 5,
+    "pred": 9,
+    "output": "{\"reasoning\": \"The cat has a very short, thick neck and a very short, thick body, suggesting a very high degree of fat covering. The abdominal tuck is not visible, and the overall body shape is very round and heavy. The ribs are not visible, and the waist is not discernible due to the thick fat layer.\", \"bcs\": 9}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/8ffa21538dcc251c06d307932757e8d9.jpg",
+    "gt": 4,
+    "pred": 2,
+    "output": "{\"reasoning\": \"The cat exhibits a very pronounced abdominal tuck and a visible waist, indicating a very lean body condition. The ribs are clearly visible beneath the skin, and the overall body shape is extremely thin.\", \"bcs\": 2}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/e6b8b3f94b4487230000f47850d79aeb.jpg",
+    "gt": 5,
+    "pred": 5,
+    "output": "{\"reasoning\": \"The cat is lying in a relaxed, slightly stretched position. The abdominal area is clearly visible, showing a distinct waist and a slight abdominal tuck. The overall body shape is well-proportioned, with no obvious fat deposits or ribs visible through the skin.\", \"bcs\": 5}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/d9963423fbb3314a539be8c77c39cc01.jpg",
+    "gt": 4,
+    "pred": 1,
+    "output": "{\"reasoning\": \"The cat has a very pronounced, deep abdominal tuck and a visible waist, indicating a very low body fat percentage. The ribs are clearly visible beneath the skin, and the overall body shape is extremely thin and gaunt.\", \"bcs\": 1}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/5877d0b871a78e2aca0b9768285ed6d6.jpg",
+    "gt": 9,
+    "pred": 2,
+    "output": "{\"reasoning\": \"The cat has a very pronounced abdominal tuck and a visible waist, indicating a very low body fat percentage. The ribs are clearly visible beneath the skin, and the overall body shape is extremely thin and gaunt.\", \"bcs\": 2}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/4f282518cd525aaf2fc8cf5619f32fda.jpg",
+    "gt": 5,
+    "pred": 2,
+    "output": "{\"reasoning\": \"The cat is lying in a relaxed, slightly curled position. The visible body parts suggest a very low level of fat covering, with a clear waist and abdominal tuck visible. The overall body shape is very slender and lean, with no visible fat deposits on the flanks or neck.\", \"bcs\": 2}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/4bb3f5f079033afec017c53740a6c36b.jpg",
+    "gt": 5,
+    "pred": 2,
+    "output": "{\"reasoning\": \"The cat has a very pronounced abdominal tuck and a visible waist, indicating a very lean body condition. The ribs are clearly visible beneath the skin, and the overall body shape is extremely thin.\", \"bcs\": 2}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/2ffc6598440f14e50c6f4579d9b2ff25.jpg",
+    "gt": 8,
+    "pred": 1,
+    "output": "{\"reasoning\": \"The cat is lying on its side, which is a common position for BCS assessment. The visible profile shows a very pronounced, deep abdominal tuck, indicating a very low body fat percentage. The ribs are clearly visible along the spine, and the overall body mass is extremely low, suggesting a severe underweight condition.\", \"bcs\": 1}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/794f89883ad628abcad300efa49a974e.jpg",
+    "gt": 3,
+    "pred": 2,
+    "output": "{\"reasoning\": \"The cat has a very pronounced abdominal tuck and a visible waist, indicating a very low body fat percentage. The ribs are clearly visible beneath the abdominal fold, and the overall body shape is extremely thin.\", \"bcs\": 2}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/bbb797a624639246fed4d6237b55aeab.jpg",
+    "gt": 8,
+    "pred": 5,
+    "output": "{\"reasoning\": \"The cat is lying in a relaxed, slightly stretched position. The abdominal area is clearly visible, showing a distinct waist and a slight abdominal tuck. The ribs are not visible, but the overall body shape suggests a moderate amount of fat covering the body.\", \"bcs\": 5}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/2eda00407e727d1bc6a44f51cf098788.jpg",
+    "gt": 8,
+    "pred": 2,
+    "output": "{\"reasoning\": \"The cat has a very pronounced abdominal tuck and a visible waist, indicating a very lean body condition. The ribs are clearly visible beneath the skin, and the overall body shape is extremely thin.\", \"bcs\": 2}"
+  }
+]

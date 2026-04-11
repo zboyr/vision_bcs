@@ -1,0 +1,122 @@
+[
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/9f91104bed1ea66e81ce97540e5ec19b.jpg",
+    "gt": 5,
+    "pred": 2,
+    "output": "{\"reasoning\": \"The cat exhibits a very slender, elongated body shape with a distinct, narrow waist. The abdominal area is clearly tucked under the ribs, and the overall body mass is extremely low, suggesting a severe underweight condition.\", \"bcs\": 2}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/8337d69e36e6ee6db2842d83540d3a95.jpg",
+    "gt": 4,
+    "pred": 3,
+    "output": "{\"reasoning\": \"The dog exhibits a clear, well-defined waist and a distinct abdominal tuck, indicating a very lean body condition with no fat deposits visible on the flanks or neck.\", \"bcs\": 3}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/ecd82b75791edff8e7e40eec4a303b3b.jpg",
+    "gt": 8,
+    "pred": 5,
+    "output": "{\"reasoning\": \"The cat is lying down in a relaxed, slightly stretched posture. The body appears well-proportioned with no visible ribs, waist, or abdominal tuck. The overall body shape is round and well-proportioned, indicating a healthy, ideal body condition.\", \"bcs\": 5}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/c09b94b459aee93ffa9dea62034b81e4.jpg",
+    "gt": 3,
+    "pred": 2,
+    "output": "{\"reasoning\": \"The dog exhibits a very low body condition score. The ribs are clearly visible along the side of the torso, and the abdominal tuck is pronounced, indicating severe emaciation and a very thin frame.\", \"bcs\": 2}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/0dab81809a38bca9a0bfe1233a5921d6.jpg",
+    "gt": 8,
+    "pred": 2,
+    "output": "{\"reasoning\": \"The cat is lying down with a very pronounced, deep abdominal tuck, indicating a very low body condition. The visible fat deposits on the flanks and the overall lack of muscle mass suggest severe emaciation.\", \"bcs\": 2}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/83a3bf71fba4f9df7e91e1bc0ace190f.jpg",
+    "gt": 9,
+    "pred": 9,
+    "output": "{\"reasoning\": \"The cat exhibits a very wide, rounded body shape with no discernible waist or abdominal tuck. The overall silhouette is extremely obese, with significant fat deposits covering the entire body, making rib visibility impossible to assess.\", \"bcs\": 9}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/0ce8837768343f50aa4514e56362dc7d.jpg",
+    "gt": 5,
+    "pred": 9,
+    "output": "{\"reasoning\": \"The dog has a very broad chest and a deep, heavy body mass, indicating a very high fat covering over the ribs and abdomen. The overall body shape is very heavy and dense.\", \"bcs\": 9}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/a21923c0f00c6659bdd91adfcbdd9a5f.jpg",
+    "gt": 5,
+    "pred": 2,
+    "output": "{\"reasoning\": \"The cat exhibits a very narrow waist and a clear abdominal tuck, indicating a very low body fat percentage. The ribs are clearly visible along the side of the torso, and the overall body shape is extremely thin.\", \"bcs\": 2}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/1fb3348073fff6fe851929c017b9d90d.jpg",
+    "gt": 5,
+    "pred": 2,
+    "output": "{\"reasoning\": \"The cat exhibits a very short, stubby body shape with no discernible waist or abdominal tuck. The body is extremely thin, with the ribs clearly visible along the side of the torso, and the spine is visible through the thin coat. The overall body mass is severely lacking.\", \"bcs\": 2}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/4ddc759d849a1505ee6af4657fa16ba2.jpg",
+    "gt": 5,
+    "pred": 3,
+    "output": "{\"reasoning\": \"The cat exhibits a very pronounced, deep abdominal tuck and a very narrow waist, indicating a severe lack of fat covering. The ribs are clearly visible along the sides of the torso, and the overall body shape is extremely thin and angular.\", \"bcs\": 3}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/8ffa21538dcc251c06d307932757e8d9.jpg",
+    "gt": 4,
+    "pred": 2,
+    "output": "{\"reasoning\": \"The dog exhibits a very thin, almost emaciated body condition. The ribs are clearly visible along the side, and the spine is highly prominent. There is no abdominal tuck, and the overall body mass is severely lacking.\", \"bcs\": 2}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/e6b8b3f94b4487230000f47850d79aeb.jpg",
+    "gt": 5,
+    "pred": 2,
+    "output": "{\"reasoning\": \"The cat is in a side profile, but the overall body shape suggests a very thin frame. The spine is clearly visible, and the ribs are easily palpable beneath the skin, indicating a severe lack of fat covering. The abdominal tuck is pronounced, and there is no visible waist or fat deposits.\", \"bcs\": 2}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/d9963423fbb3314a539be8c77c39cc01.jpg",
+    "gt": 4,
+    "pred": 6,
+    "output": "{\"reasoning\": \"The cat is being held in a way that obscures the abdominal tuck and waist. However, the overall body shape suggests a slight rounding of the abdomen, which is typical for a cat being held. The visible body mass appears to be slightly above the ideal for a lean cat.\", \"bcs\": 6}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/5877d0b871a78e2aca0b9768285ed6d6.jpg",
+    "gt": 9,
+    "pred": 2,
+    "output": "{\"reasoning\": \"The cat exhibits a very pronounced, deep abdominal tuck, indicating a very low body condition. The ribs are clearly visible beneath the skin, and the overall body mass is extremely low, suggesting severe emaciation.\", \"bcs\": 2}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/4f282518cd525aaf2fc8cf5619f32fda.jpg",
+    "gt": 5,
+    "pred": 2,
+    "output": "{\"reasoning\": \"The cat is lying down with a very short, thick body, indicating a very low body fat percentage. The abdominal area is extremely tucked, and the overall body shape is very thin, with no visible fat deposits on the flanks or neck.\", \"bcs\": 2}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/4bb3f5f079033afec017c53740a6c36b.jpg",
+    "gt": 5,
+    "pred": 9,
+    "output": "{\"reasoning\": \"The cat exhibits a very pronounced, thick, and rounded body shape with no visible waist or abdominal tuck. The fat deposits are extensive, covering the entire body mass, which is characteristic of severe obesity.\", \"bcs\": 9}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/2ffc6598440f14e50c6f4579d9b2ff25.jpg",
+    "gt": 8,
+    "pred": 2,
+    "output": "{\"reasoning\": \"The cat exhibits a very pronounced, deep abdominal tuck, indicating a very low body condition. The ribs are clearly visible along the side of the torso, and the overall body mass is extremely low, suggesting severe emaciation.\", \"bcs\": 2}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/794f89883ad628abcad300efa49a974e.jpg",
+    "gt": 3,
+    "pred": 5,
+    "output": "{\"reasoning\": \"The cat is standing in a lateral view, which is ideal for BCS assessment. The body shows a clear, distinct waist, and the abdominal tuck is well-defined. There is no visible fat covering the ribs or spine, and the overall body shape is well-proportioned with no obvious fat deposits on the flanks or hindquarters. The cat is in a lean, athletic condition.\", \"bcs\": 5}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/bbb797a624639246fed4d6237b55aeab.jpg",
+    "gt": 8,
+    "pred": 5,
+    "output": "{\"reasoning\": \"The cat is lying on its side, which obscures the abdominal tuck and waist. However, the overall body shape appears well-proportioned, and there is no visible fat covering over the ribs or spine. The cat is lying in a relaxed, natural posture.\", \"bcs\": 5}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/2eda00407e727d1bc6a44f51cf098788.jpg",
+    "gt": 8,
+    "pred": 6,
+    "output": "{\"reasoning\": \"The cat is lying in a relaxed, slightly curled position, which obscures the abdominal tuck and waist. However, the overall body shape suggests a slight rounding of the abdomen and a lack of clear rib visibility, indicating a slight fat covering.\", \"bcs\": 6}"
+  }
+]

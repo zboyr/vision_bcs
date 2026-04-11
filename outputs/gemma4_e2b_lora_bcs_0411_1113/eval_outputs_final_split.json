@@ -1,0 +1,122 @@
+[
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/9f91104bed1ea66e81ce97540e5ec19b.jpg",
+    "gt": 5,
+    "pred": 9,
+    "output": "{\"reasoning\": \"The cat exhibits a very rounded, obese body shape. The abdomen is significantly distended, and the waist is completely obscured by fat deposits. Ribs are not visible, and the overall body contour is extremely heavy.\", \"bcs\": 9}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/8337d69e36e6ee6db2842d83540d3a95.jpg",
+    "gt": 4,
+    "pred": 2,
+    "output": "{\"reasoning\": \"The cat exhibits a very pronounced, deep abdominal tuck, and the ribs are clearly visible along the side of the torso. The waist is extremely narrow, and there is no visible fat covering the abdomen or flanks. This indicates severe emaciation.\", \"bcs\": 2}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/ecd82b75791edff8e7e40eec4a303b3b.jpg",
+    "gt": 8,
+    "pred": 9,
+    "output": "{\"reasoning\": \"The cat exhibits a very rounded, obese body shape. The abdomen is completely obscured by excess fat, and the overall silhouette is very broad and heavy. There is no visible waist or rib structure.\", \"bcs\": 9}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/c09b94b459aee93ffa9dea62034b81e4.jpg",
+    "gt": 3,
+    "pred": null,
+    "output": "{\"reasoning\": \"The dog is a Labrador Retriever, not a cat. Body Condition Scoring (BCS) is a specific assessment tool for cats. Therefore, I cannot provide a valid BCS score for this animal.\", \"bcs\": 0}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/0dab81809a38bca9a0bfe1233a5921d6.jpg",
+    "gt": 8,
+    "pred": 8,
+    "output": "{\"reasoning\": \"The cat is lying down with its front legs extended and its body appears very rounded and plump, obscuring the ribs and waist. The abdomen is full, and there is no visible tuck. This indicates significant fat accumulation over the entire body.\", \"bcs\": 8}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/83a3bf71fba4f9df7e91e1bc0ace190f.jpg",
+    "gt": 9,
+    "pred": 9,
+    "output": "{\"reasoning\": \"The cat exhibits a very rounded, obese body shape. The abdomen is completely obscured by excess fat, and there is no visible waist or rib structure. The overall silhouette is very heavy and distended.\", \"bcs\": 9}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/0ce8837768343f50aa4514e56362dc7d.jpg",
+    "gt": 5,
+    "pred": null,
+    "output": "{\"reasoning\": \"The image provided is of a dog, not a cat. Therefore, a feline Body Condition Score (BCS) cannot be accurately assessed.\", \"bcs\": 0}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/a21923c0f00c6659bdd91adfcbdd9a5f.jpg",
+    "gt": 5,
+    "pred": 9,
+    "output": "{\"reasoning\": \"The cat exhibits a very rounded, obese body shape. The abdomen is completely obscured by excess fat, and there is no visible waist or rib structure. The overall silhouette is very broad and heavy.\", \"bcs\": 9}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/1fb3348073fff6fe851929c017b9d90d.jpg",
+    "gt": 5,
+    "pred": 3,
+    "output": "{\"reasoning\": \"The cat exhibits a very slender build. The ribs are clearly visible along the side, and the abdominal tuck is deep, indicating a lack of fat covering. The overall body contour is very thin.\", \"bcs\": 3}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/4ddc759d849a1505ee6af4657fa16ba2.jpg",
+    "gt": 5,
+    "pred": 3,
+    "output": "{\"reasoning\": \"The cat exhibits a very pronounced abdominal tuck, a deep indentation where the abdomen meets the chest, and a very prominent, deep waistline. The chest and abdomen are clearly visible, and the fat deposits are minimal, indicating a very thin body condition.\", \"bcs\": 3}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/8ffa21538dcc251c06d307932757e8d9.jpg",
+    "gt": 4,
+    "pred": null,
+    "output": "{\"reasoning\": \"The image provided is of a dog, not a cat. Therefore, a feline Body Condition Score (BCS) cannot be accurately assessed.\", \"bcs\": 0}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/e6b8b3f94b4487230000f47850d79aeb.jpg",
+    "gt": 5,
+    "pred": 8,
+    "output": "{\"reasoning\": \"The cat exhibits a very dense, dark coat that completely obscures the underlying body contours. There is no visible waist, abdominal tuck, or rib visibility. The overall silhouette suggests a very rounded, obese body shape, consistent with a high score.\", \"bcs\": 8}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/d9963423fbb3314a539be8c77c39cc01.jpg",
+    "gt": 4,
+    "pred": 7,
+    "output": "{\"reasoning\": \"The cat is being held, which obscures the true posture and abdominal tuck. However, the visible portion of the torso suggests a lack of definition around the ribs and a lack of a visible waist. The overall appearance suggests a significant amount of fat covering the body.\", \"bcs\": 7}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/5877d0b871a78e2aca0b9768285ed6d6.jpg",
+    "gt": 9,
+    "pred": 9,
+    "output": "{\"reasoning\": \"The cat exhibits a very pronounced, rounded abdominal profile with no visible waist or tuck. The flanks are very full, and the overall silhouette is extremely obese, with no discernible rib cage or spine structure visible beneath the fat deposits.\", \"bcs\": 9}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/4f282518cd525aaf2fc8cf5619f32fda.jpg",
+    "gt": 5,
+    "pred": 2,
+    "output": "{\"reasoning\": \"The cat is lying down, and the body contour is obscured by the posture. However, the visible parts suggest a very thin frame with no discernible waist or abdominal tuck. The overall appearance is extremely thin, suggesting ribs are likely visible or easily palpable beneath the coat.\", \"bcs\": 2}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/4bb3f5f079033afec017c53740a6c36b.jpg",
+    "gt": 5,
+    "pred": 2,
+    "output": "{\"reasoning\": \"The cat exhibits a very pronounced, deep abdominal tuck, and the spine/ribs are clearly visible along the side of the torso. There is no visible waist, and the fat deposits are minimal, indicating severe emaciation.\", \"bcs\": 2}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/2ffc6598440f14e50c6f4579d9b2ff25.jpg",
+    "gt": 8,
+    "pred": 9,
+    "output": "{\"reasoning\": \"The cat exhibits a very rounded, obese body shape. The abdomen is completely obscured by excess fat, and there is no visible waist or rib definition. The overall body contour is extremely distended.\", \"bcs\": 9}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/794f89883ad628abcad300efa49a974e.jpg",
+    "gt": 3,
+    "pred": 1,
+    "output": "{\"reasoning\": \"The image provided is of a dog, not a cat. Therefore, a feline Body Condition Score (BCS) cannot be accurately assessed.\", \"bcs\": 1}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/bbb797a624639246fed4d6237b55aeab.jpg",
+    "gt": 8,
+    "pred": 9,
+    "output": "{\"reasoning\": \"The cat exhibits a very rounded, obese body shape. The abdomen is completely obscured by excess fat, and there is no visible waist or rib definition. The overall body contour is extremely distended.\", \"bcs\": 9}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/2eda00407e727d1bc6a44f51cf098788.jpg",
+    "gt": 8,
+    "pred": 8,
+    "output": "{\"reasoning\": \"The cat is lying down, and the visible portion of the body shows a significant amount of fat covering the torso, obscuring the ribs and waist. The overall shape suggests a very rounded profile, consistent with a high fat layer.\", \"bcs\": 8}"
+  }
+]

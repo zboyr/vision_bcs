@@ -1,0 +1,122 @@
+[
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/9f91104bed1ea66e81ce97540e5ec19b.jpg",
+    "gt": 5,
+    "pred": 3,
+    "output": "```json\n{\n  \"reasoning\": \"The image provided is almost entirely grey and lacks any discernible features of a cat, making it impossible to assess body condition. Therefore, a score cannot be accurately determined.\",\n  \"bcs\": 3\n}\n```"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/8337d69e36e6ee6db2842d83540d3a95.jpg",
+    "gt": 4,
+    "pred": 3,
+    "output": "```json\n{\n  \"reasoning\": \"The image provided is too blurry and lacks sufficient detail to accurately assess the cat's body condition. Therefore, a definitive score cannot be assigned.\",\n  \"bcs\": 3\n}\n```"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/ecd82b75791edff8e7e40eec4a303b3b.jpg",
+    "gt": 8,
+    "pred": 3,
+    "output": "```json\n{\n  \"reasoning\": \"The image provided is almost entirely grey and lacks any discernible features of a cat, making it impossible to assess body condition. Therefore, a score cannot be accurately determined.\",\n  \"bcs\": 3\n}\n```"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/c09b94b459aee93ffa9dea62034b81e4.jpg",
+    "gt": 3,
+    "pred": 1,
+    "output": "```json\n{\n  \"reasoning\": \"The image provided is completely black and does not show any part of a cat, making it impossible to assess body condition. Therefore, a score cannot be assigned.\",\n  \"bcs\": 1\n}\n```"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/0dab81809a38bca9a0bfe1233a5921d6.jpg",
+    "gt": 8,
+    "pred": 3,
+    "output": "```json\n{\n  \"reasoning\": \"The image provided is heavily obscured and appears to be a collage or heavily pixelated image, making it impossible to accurately assess the cat's body condition. Therefore, a definitive score cannot be assigned.\",\n  \"bcs\": 3\n}\n```"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/83a3bf71fba4f9df7e91e1bc0ace190f.jpg",
+    "gt": 9,
+    "pred": 3,
+    "output": "```json\n{\n  \"reasoning\": \"The image provided is heavily distorted and unclear, making it impossible to accurately assess the cat's body condition. Therefore, I cannot provide a reliable BCS score.\",\n  \"bcs\": 3\n}\n```"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/0ce8837768343f50aa4514e56362dc7d.jpg",
+    "gt": 5,
+    "pred": 1,
+    "output": "```json\n{\n  \"reasoning\": \"The image provided is a solid grey color and does not show any discernible cat or body condition. Therefore, a score cannot be assigned.\",\n  \"bcs\": 1\n}\n```"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/a21923c0f00c6659bdd91adfcbdd9a5f.jpg",
+    "gt": 5,
+    "pred": 1,
+    "output": "```json\n{\n  \"reasoning\": \"The image provided is a placeholder or a blank image, not a picture of a cat. Therefore, I cannot assess the body condition.\",\n  \"bcs\": 1\n}\n```"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/1fb3348073fff6fe851929c017b9d90d.jpg",
+    "gt": 5,
+    "pred": 1,
+    "output": "```json\n{\n  \"reasoning\": \"The image provided is a placeholder/blank image, not a cat. Therefore, a BCS assessment cannot be performed.\",\n  \"bcs\": 1\n}\n```"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/4ddc759d849a1505ee6af4657fa16ba2.jpg",
+    "gt": 5,
+    "pred": 1,
+    "output": "```json\n{\n  \"reasoning\": \"The image provided is a placeholder/blank and does not contain a cat. Therefore, I cannot assess any body condition.\",\n  \"bcs\": 1\n}\n```"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/8ffa21538dcc251c06d307932757e8d9.jpg",
+    "gt": 4,
+    "pred": null,
+    "output": "```json\n{\n  \"reasoning\": \"The image provided is a placeholder/blank and does not contain a cat. Therefore, I cannot assess any body condition. However, as per instructions, I must provide a score. Since no visual data is present, I will default to a neutral or unassessable state, but to adhere strictly to the format, I will choose a score that reflects an inability to assess, or I will state the impossibility. Given the strict requirement to output a score, I will assume a hypothetical, average state if no image is present, but this is a violation of the core task. Since I cannot see a cat, I will state the impossibility in the reasoning and assign a neutral score, though this is"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/e6b8b3f94b4487230000f47850d79aeb.jpg",
+    "gt": 5,
+    "pred": 1,
+    "output": "```json\n{\n  \"reasoning\": \"The image provided is completely blank/grey and does not contain any visible cat. Therefore, a BCS assessment cannot be performed.\",\n  \"bcs\": 1\n}\n```"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/d9963423fbb3314a539be8c77c39cc01.jpg",
+    "gt": 4,
+    "pred": 1,
+    "output": "```json\n{\n  \"reasoning\": \"The image provided is a placeholder/blank and does not contain a cat. Therefore, I cannot assess any body condition.\",\n  \"bcs\": 1\n}\n```"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/5877d0b871a78e2aca0b9768285ed6d6.jpg",
+    "gt": 9,
+    "pred": null,
+    "output": "Please provide an image of the cat you would like me to assess."
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/4f282518cd525aaf2fc8cf5619f32fda.jpg",
+    "gt": 5,
+    "pred": 1,
+    "output": "```json\n{\n  \"reasoning\": \"The image provided is completely black and does not show any part of a cat, making it impossible to assess body condition.\",\n  \"bcs\": 1\n}\n```"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/4bb3f5f079033afec017c53740a6c36b.jpg",
+    "gt": 5,
+    "pred": 3,
+    "output": "```json\n{\n  \"reasoning\": \"The image provided is a collage of multiple cat faces, not a single cat, making it impossible to assess a single body condition. Therefore, a score cannot be assigned.\",\n  \"bcs\": 3\n}\n```"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/2ffc6598440f14e50c6f4579d9b2ff25.jpg",
+    "gt": 8,
+    "pred": 1,
+    "output": "```json\n{\n  \"reasoning\": \"The image provided is completely blank and does not contain any cat. Therefore, a BCS assessment cannot be performed.\",\n  \"bcs\": 1\n}\n```"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/794f89883ad628abcad300efa49a974e.jpg",
+    "gt": 3,
+    "pred": 1,
+    "output": "```json\n{\n  \"reasoning\": \"The image is completely black, so no cat is visible. Therefore, a BCS cannot be assessed.\",\n  \"bcs\": 1\n}\n```"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/bbb797a624639246fed4d6237b55aeab.jpg",
+    "gt": 8,
+    "pred": 1,
+    "output": "```json\n{\n  \"reasoning\": \"The image provided is completely grey and lacks any discernible features of a cat, making it impossible to assess body condition.\",\n  \"bcs\": 1\n}\n```"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/2eda00407e727d1bc6a44f51cf098788.jpg",
+    "gt": 8,
+    "pred": 3,
+    "output": "```json\n{\n  \"reasoning\": \"The image provided is a heavily pixelated and low-resolution image, making it impossible to accurately assess the cat's body condition. Therefore, a definitive score cannot be assigned.\",\n  \"bcs\": 3\n}\n```"
+  }
+]
