@@ -132,34 +132,48 @@ def p3_reasoning(client, model, image_path, *, max_retries=3, delay=1.0, **_kw):
     return _fail(f"parse_fail: {content[:100]}", raw=content)
 
 
-# ── P4: Best-of-5 Majority Vote ─────────────────────────────────────
+# ── P4: Best-of-N Majority Vote (from other prompts' results) ────────
+
+_P4_SOURCE_PROMPTS = ["P1", "P2", "P3", "P5", "P6", "P7"]
+
 
 @_register("P4")
-def p4_bo5(client, model, image_path, *, max_retries=3, delay=1.0, **_kw):
-    sys_p, usr_p = p1_prompts()
-    votes, raws, errors = [], [], []
+def p4_bo5(client, model, image_path, *, max_retries=3, delay=1.0,
+           _image_id: int | None = None, **_kw):
+    """Aggregate BCS scores from all other prompts via majority vote.
 
-    for i in range(5):
-        if i > 0:
-            time.sleep(delay * 0.3)
-        content, err = call_llm(client, model, sys_p, usr_p, image_path,
-                                max_retries=max_retries, temperature=0.7)
-        if err:
-            errors.append(f"call{i+1}: {err}")
-            continue
-        raws.append(content)
-        bcs = parse_integer(content)
-        if bcs is not None:
-            votes.append(bcs)
-        else:
-            errors.append(f"parse{i+1}: {content[:50]}")
+    Falls back to P1-style generation if fewer than 3 votes are available.
+    """
+    votes, sources = [], []
+
+    if _image_id is not None:
+        for pid in _P4_SOURCE_PROMPTS:
+            cached = _load_existing_results(pid)
+            rec = cached.get(_image_id)
+            if rec and rec.get("bcs") is not None:
+                votes.append(int(rec["bcs"]))
+                sources.append(pid)
+
+    # Fallback: if not enough cached votes, generate via P1
+    if len(votes) < 3:
+        sys_p, usr_p = p1_prompts()
+        for i in range(5 - len(votes)):
+            if i > 0:
+                time.sleep(delay * 0.3)
+            content, err = call_llm(client, model, sys_p, usr_p, image_path,
+                                    max_retries=max_retries, temperature=0.7)
+            if err:
+                continue
+            bcs = parse_integer(content)
+            if bcs is not None:
+                votes.append(bcs)
+                sources.append(f"gen{i+1}")
 
     if not votes:
-        return _fail("; ".join(errors), votes=[], raws=raws, vote_errors=errors)
+        return _fail("no votes from any source", votes=[], sources=[])
 
     majority = Counter(votes).most_common(1)[0][0]
-    return _ok(majority, votes=votes, raws=raws,
-               vote_errors=errors if errors else None)
+    return _ok(majority, votes=votes, sources=sources)
 
 
 # ── P5: Agent-as-a-Verifier v1 (Scorer → Verifier) ──────────────────
