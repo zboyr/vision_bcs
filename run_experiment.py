@@ -35,7 +35,7 @@ import yaml
 
 from scoring.client import create_client, check_local_endpoint, load_dotenv
 from scoring.dataset import load_dataset, build_ground_truth_map
-from scoring.pipelines import get_pipeline, PIPELINES, PIPELINE_LABELS
+from scoring.pipelines import get_pipeline, PIPELINES, PIPELINE_LABELS, set_reuse_context
 from scoring.checkpoint import (
     get_log_dir, get_run_path, load_completed, save_result,
     compute_run_mae, get_failed_ids,
@@ -90,7 +90,7 @@ def run_cell(client, model_name, pipeline_fn, records, gt_map,
 
         result = pipeline_fn(client, model_name, rec["image_path"],
                              max_retries=max_retries, delay=delay,
-                             **extra_kw)
+                             _image_id=img_id, **extra_kw)
         bcs = result.get("bcs")
 
         with lock:
@@ -235,6 +235,9 @@ def main() -> int:
         except ValueError as e:
             print(f"  SKIP: {e}\n")
             continue
+
+        # Allow P5/P7 to reuse P2/P3 results from this model's logs
+        set_reuse_context(log_dir, mid)
 
         for pid in run_prompt_ids:
             pipeline_fn = get_pipeline(pid)

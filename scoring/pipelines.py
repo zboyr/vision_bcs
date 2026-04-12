@@ -8,10 +8,12 @@ The returned dict always contains ``bcs`` (int | None) and ``error`` (str | None
 Additional keys are pipeline-specific and will be persisted in the JSONL log.
 """
 
+import os
 import time
 from collections import Counter
 from typing import Any, Dict
 
+from .checkpoint import get_log_dir, get_run_path, load_completed
 from .client import call_llm, call_llm_raw, build_image_part
 from .parsers import parse_integer, parse_json_bcs, extract_bcs
 from .prompts import (
@@ -19,6 +21,24 @@ from .prompts import (
     p5_verifier_prompts, p6_vfewshot_prompts,
     p7_debate_prompts,
 )
+
+# Set by run_experiment.py before scoring starts; used by P5/P7 to reuse data.
+_LOG_DIR: str | None = None
+_CURRENT_MODEL_ID: str | None = None
+
+
+def set_reuse_context(log_dir: str, model_id: str) -> None:
+    global _LOG_DIR, _CURRENT_MODEL_ID
+    _LOG_DIR, _CURRENT_MODEL_ID = log_dir, model_id
+
+
+def _load_existing_results(prompt_id: str) -> Dict[int, Dict[str, Any]]:
+    """Load completed results for the current model + given prompt from logs."""
+    if not _LOG_DIR or not _CURRENT_MODEL_ID:
+        return {}
+    cell_dir = get_log_dir(_LOG_DIR, _CURRENT_MODEL_ID, prompt_id)
+    run_path = get_run_path(cell_dir, 1)
+    return load_completed(run_path)
 
 # ── Registry ─────────────────────────────────────────────────────────
 
@@ -62,7 +82,7 @@ def _ok(bcs: int, **extra) -> Dict[str, Any]:
 # ── P1: Direct Integer ──────────────────────────────────────────────
 
 @_register("P1")
-def p1_direct(client, model, image_path, *, max_retries=3, delay=1.0):
+def p1_direct(client, model, image_path, *, max_retries=3, delay=1.0, **_kw):
     sys_p, usr_p = p1_prompts()
     content, err = call_llm(client, model, sys_p, usr_p, image_path,
                             max_retries=max_retries, temperature=0.1)
@@ -77,7 +97,7 @@ def p1_direct(client, model, image_path, *, max_retries=3, delay=1.0):
 # ── P2: JSON Mode ───────────────────────────────────────────────────
 
 @_register("P2")
-def p2_json(client, model, image_path, *, max_retries=3, delay=1.0):
+def p2_json(client, model, image_path, *, max_retries=3, delay=1.0, **_kw):
     sys_p, usr_p = p2_prompts()
     content, err = call_llm(client, model, sys_p, usr_p, image_path,
                             max_retries=max_retries, temperature=0.1)
@@ -96,7 +116,7 @@ def p2_json(client, model, image_path, *, max_retries=3, delay=1.0):
 # ── P3: Reasoning Mode ──────────────────────────────────────────────
 
 @_register("P3")
-def p3_reasoning(client, model, image_path, *, max_retries=3, delay=1.0):
+def p3_reasoning(client, model, image_path, *, max_retries=3, delay=1.0, **_kw):
     sys_p, usr_p = p3_prompts()
     content, err = call_llm(client, model, sys_p, usr_p, image_path,
                             max_retries=max_retries, temperature=0.1)
@@ -115,7 +135,7 @@ def p3_reasoning(client, model, image_path, *, max_retries=3, delay=1.0):
 # ── P4: Best-of-5 Majority Vote ─────────────────────────────────────
 
 @_register("P4")
-def p4_bo5(client, model, image_path, *, max_retries=3, delay=1.0):
+def p4_bo5(client, model, image_path, *, max_retries=3, delay=1.0, **_kw):
     sys_p, usr_p = p1_prompts()
     votes, raws, errors = [], [], []
 
@@ -145,18 +165,28 @@ def p4_bo5(client, model, image_path, *, max_retries=3, delay=1.0):
 # ── P5: Agent-as-a-Verifier v1 (Scorer → Verifier) ──────────────────
 
 @_register("P5")
-def p5_aav1(client, model, image_path, *, max_retries=3, delay=1.0):
-    # Stage 1: Scorer (P2)
-    scorer = p2_json(client, model, image_path,
-                     max_retries=max_retries, delay=delay)
+def p5_aav1(client, model, image_path, *, max_retries=3, delay=1.0,
+            _image_id: int | None = None):
+    # Stage 1: Try reusing P2 result for scorer
+    scorer = None
+    if _image_id is not None:
+        p2_data = _load_existing_results("P2")
+        cached = p2_data.get(_image_id)
+        if cached and cached.get("bcs") is not None:
+            scorer = {"bcs": int(cached["bcs"]),
+                      "reasoning": cached.get("reasoning", "N/A"),
+                      "raw": cached.get("raw", "")}
+
+    if scorer is None:
+        scorer = p2_json(client, model, image_path,
+                         max_retries=max_retries, delay=delay)
+
     if scorer["bcs"] is None:
         return _fail(f"scorer: {scorer.get('error')}", stage="scorer",
                      scorer_raw=scorer.get("raw", ""))
 
     scorer_bcs = scorer["bcs"]
     scorer_reasoning = scorer.get("reasoning", "N/A")
-
-    time.sleep(delay * 0.5)
 
     # Stage 2: Verifier
     sys_p, usr_p = p5_verifier_prompts(scorer_bcs, scorer_reasoning)
@@ -231,10 +261,22 @@ def p6_vfewshot(client, model, image_path, *, max_retries=3, delay=1.0,
 # ── P7: Debate v1 (A + B → debate round if disagree → average) ──────
 
 @_register("P7")
-def p7_debate(client, model, image_path, *, max_retries=3, delay=1.0):
-    # Stage 1: Agent A (P3, low temperature)
-    agent_a = p3_reasoning(client, model, image_path,
-                           max_retries=max_retries, delay=delay)
+def p7_debate(client, model, image_path, *, max_retries=3, delay=1.0,
+              _image_id: int | None = None):
+    # Stage 1: Agent A — reuse P3 result if available
+    agent_a = None
+    if _image_id is not None:
+        p3_data = _load_existing_results("P3")
+        cached = p3_data.get(_image_id)
+        if cached and cached.get("bcs") is not None:
+            agent_a = {"bcs": int(cached["bcs"]),
+                       "reasoning": cached.get("reasoning", ""),
+                       "raw": cached.get("raw", "")}
+
+    if agent_a is None:
+        agent_a = p3_reasoning(client, model, image_path,
+                               max_retries=max_retries, delay=delay)
+
     if agent_a["bcs"] is None:
         return _fail(f"agent_a: {agent_a.get('error')}", stage="agent_a",
                      raw=agent_a.get("raw", ""))
