@@ -218,6 +218,9 @@ def main() -> int:
 
         print(f"=== {mid}: {model_name} ({provider}) ===")
 
+        # Transformers inference is single-threaded on GPU
+        model_concurrency = 1 if provider == "transformers" else concurrency
+
         if provider == "local":
             url = base_url or "http://127.0.0.1:8000/v1"
             ok, msg = check_local_endpoint(url)
@@ -274,7 +277,7 @@ def main() -> int:
                     records, gt_map,
                     log_dir, mid, pid, run_idx,
                     max_retries=max_retries, delay=delay,
-                    concurrency=concurrency,
+                    concurrency=model_concurrency,
                     pipeline_kwargs=p_kwargs,
                     retry_ids=r_ids,
                 )
