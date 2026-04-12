@@ -271,7 +271,7 @@ def main() -> int:
     parser.add_argument("--grad-accum", type=int, default=4)
     parser.add_argument("--seed", type=int, default=42)
     parser.add_argument("--train-size", type=int, default=80)
-    parser.add_argument("--max-new-tokens", type=int, default=150)
+    parser.add_argument("--max-new-tokens", type=int, default=300)
     parser.add_argument("--image-tokens", type=int, default=140,
                         help="Visual token budget per image (Gemma 4 supports 70/140/280/560/1120). Lower=less VRAM.")
     parser.add_argument("--resume-adapter", default="")
