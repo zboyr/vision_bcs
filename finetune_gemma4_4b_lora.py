@@ -138,12 +138,14 @@ def collate_train(processor: Any, batch: list[dict[str, Any]], system_msg: str) 
     prompt_msgs = [m[:-1] for m in full_msgs]
 
     enc = processor.apply_chat_template(
-        full_msgs, tokenize=True, return_dict=True, return_tensors="pt",
-        padding=True, add_generation_prompt=False,
+        full_msgs, tokenize=True, return_dict=True,
+        add_generation_prompt=False,
+        processor_kwargs={"return_tensors": "pt", "padding": True},
     )
     prompt_enc = processor.apply_chat_template(
-        prompt_msgs, tokenize=True, return_dict=True, return_tensors="pt",
-        padding=True, add_generation_prompt=True,
+        prompt_msgs, tokenize=True, return_dict=True,
+        add_generation_prompt=True,
+        processor_kwargs={"return_tensors": "pt", "padding": True},
     )
 
     pad_id = processor.tokenizer.pad_token_id
@@ -187,8 +189,9 @@ def run_eval(
     for sample in eval_set:
         messages = make_messages(sample.image_path, None, system_msg)
         inputs = processor.apply_chat_template(
-            [messages], tokenize=True, return_dict=True, return_tensors="pt",
-            padding=True, add_generation_prompt=True,
+            [messages], tokenize=True, return_dict=True,
+            add_generation_prompt=True,
+            processor_kwargs={"return_tensors": "pt", "padding": True},
         )
         inputs = inputs.to(device, dtype=model_dtype)
         with torch.no_grad():

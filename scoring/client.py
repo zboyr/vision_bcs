@@ -180,7 +180,8 @@ class TransformersClient:
         if self._is_gemma:
             inputs = self._processor.apply_chat_template(
                 [native_msgs], tokenize=True, return_dict=True,
-                return_tensors="pt", padding=True, add_generation_prompt=True,
+                add_generation_prompt=True,
+                processor_kwargs={"return_tensors": "pt", "padding": True},
             )
             inputs = inputs.to(self._device, dtype=self._dtype)
         else:
