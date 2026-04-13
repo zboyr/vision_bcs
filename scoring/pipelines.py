@@ -134,7 +134,7 @@ def p3_reasoning(client, model, image_path, *, max_retries=3, delay=1.0, **_kw):
 
 # ── P4: Best-of-N Majority Vote (from other prompts' results) ────────
 
-_P4_SOURCE_PROMPTS = ["P1", "P2", "P3", "P5", "P6", "P7"]
+_P4_SOURCE_PROMPTS = ["P1", "P2", "P3", "P5", "P7"]
 
 
 @_register("P4")

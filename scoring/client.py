@@ -151,15 +151,11 @@ class TransformersClient:
                     del model.model.embed_audio
                 torch.cuda.empty_cache()
         else:
-            from transformers import AutoModelForImageTextToText, BitsAndBytesConfig
-            bnb = BitsAndBytesConfig(
-                load_in_4bit=True, bnb_4bit_quant_type="nf4",
-                bnb_4bit_use_double_quant=True,
-                bnb_4bit_compute_dtype=torch.bfloat16,
-            )
+            from transformers import AutoModelForImageTextToText
+            # bf16 instead of 4bit for speed (VRAM has headroom for 3B model)
             model = AutoModelForImageTextToText.from_pretrained(
                 self._model_id, trust_remote_code=True,
-                quantization_config=bnb, device_map="auto",
+                dtype=torch.bfloat16, device_map="auto",
             )
 
         if self._adapter:
