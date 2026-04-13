@@ -2,7 +2,7 @@
 
 ## Overview
 
-在 Essay 猫 BCS 数据集上，使用 **7 个模型** 与 **7 种 Prompt 策略** 的全组合（7 x 7 = 49 组实验），每组重复 3 次，系统比较不同模型能力与 Prompt 工程对 BCS 评分准确度的影响。
+在 Essay 猫 BCS 数据集上，使用 **6 个 VLM × 7 种 Prompt 策略**，加上 **1 个纯视觉 CNN 基线**（仅 P1），共 **6 × 7 + 1 = 43 组实验**，系统比较不同模型能力与 Prompt 工程对 BCS 评分准确度的影响。
 
 ---
 
@@ -79,16 +79,15 @@
 
 |  | P1 Direct | P2 JSON | P3 Reasoning | P4 BO5 | P5 AAV1 | P6 VFewShot | P7 Debate |
 |--|-----------|---------|-------------|--------|---------|---------|-----------|
-| **M1** Qwen2.5-3B | x3 | x3 | x3 | x3 | x3 | x3 | x3 |
-| **M2** Qwen2.5-3B-FT | x3 | x3 | x3 | x3 | x3 | x3 | x3 |
-| **M3** Gemma 4 | x3 | x3 | x3 | x3 | x3 | x3 | x3 |
-| **M4** Gemma 4-FT | x3 | x3 | x3 | x3 | x3 | x3 | x3 |
-| **M5** Gemini-3.1-Pro | x3 | x3 | x3 | x3 | x3 | x3 | x3 |
-| **M6** Gemini-3.1-Flash | x3 | x3 | x3 | x3 | x3 | x3 | x3 |
-| **M7** ConvNeXt-Small+CORAL | x3 | — | — | — | — | — | — |
+| **M1** Qwen2.5-3B | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
+| **M2** Qwen2.5-3B-FT | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
+| **M3** Gemma 4 | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
+| **M4** Gemma 4-FT | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
+| **M5** Gemini-3.1-Pro | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
+| **M6** Gemini-3.1-Flash | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
+| **M7** ConvNeXt-Small+CORAL | ✓ | — | — | — | — | — | — |
 
-- 每格 x3 = 3 次重复运行
-- 共 7 x 7 x 3 = **147 轮评分**
+- M1–M6 × P1–P7 = 6 × 7 = 42 组；M7 仅适用 P1 = 1 组；共 **6 × 7 + 1 = 43 组实验**
 - P4 (BO5) 每轮内部 5 次调用 → 实际 API 调用更多
 - P5-P7 每轮内部多次调用 → 实际 API 调用量倍增
 
@@ -108,7 +107,6 @@
 | **Mean Deviation** | `mean(abs(predicted - ground_truth))`，越低越好 |
 | **Exact Match Rate** | 预测 == ground truth 的比例 |
 | **Within-1 Accuracy** | `abs(predicted - ground_truth) <= 1` 的比例 |
-| **Run Variance** | 3 次重复间的标准差，衡量稳定性 |
 | **Cohen's Kappa** | 与 ground truth 的一致性系数 |
 
 ---
@@ -123,7 +121,7 @@
    - `vfewshot`: Visual Few-Shot (多图参考)
    - `debate`: Debate v1
 2. 为每种 prompt 策略编写对应的 system/user prompt
-3. 创建 7 x 7 = 49 个 YAML 配置文件（或支持 batch config）
+3. 创建 43 个 YAML 配置文件（或支持 batch config）
 
 ### Phase 2: Fine-tuning
 
@@ -140,7 +138,7 @@
 
 ### Phase 4: Analysis
 
-1. 汇总所有 49 组实验结果
+1. 汇总所有 43 组实验结果
 2. 按模型维度分析：哪些模型整体最优
 3. 按 Prompt 维度分析：哪种策略整体最优
 4. 交互效应分析：特定 model-prompt 组合是否有惊喜
@@ -161,7 +159,6 @@ results/
     figures/                 # 生成图表
       heatmap_model_prompt.png
       bar_mean_deviation.png
-      box_run_variance.png
 ```
 
 ---
