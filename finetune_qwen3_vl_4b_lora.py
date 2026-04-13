@@ -1,12 +1,8 @@
-
 #!/usr/bin/env python3
 import argparse
-import csv
 import json
 import os
 import random
-import re
-from dataclasses import dataclass
 from datetime import datetime
 from typing import Any
 
@@ -18,103 +14,54 @@ from transformers import (
     AutoModelForImageTextToText,
     AutoProcessor,
     BitsAndBytesConfig,
-    TrainerCallback,
 )
 from trl import SFTConfig, SFTTrainer
 
-
-DEFAULT_PROMPTS_YAML = "prompts/bcs_prompts.yaml"
-
-
-def _load_prompts_yaml():
-    import yaml
-    path = os.path.join(os.path.dirname(os.path.abspath(__file__)), DEFAULT_PROMPTS_YAML)
-    with open(path, "r", encoding="utf-8") as f:
-        return yaml.safe_load(f)
-
-
-_PROMPTS = _load_prompts_yaml()
-USER_MSG = _PROMPTS["user_prompt_reasoning"].strip()
+from finetune_common import (
+    SYSTEM_MSG,
+    USER_MSG,
+    EpochEvalCallback,
+    load_samples,
+    run_eval,
+    target_json_from_row,
+)
+from scoring.prompts import p8_vfewshot_prompts
 
 
-@dataclass
-class Sample:
-    image_path: str
-    bcs_primary: int
-    reasoning: str
-
-
-def try_load_file(expected_filepath, dataset_csv_filepath):
-    # the working directory of this script sometimes different, so if
-    # dataset only record relative path of it's current location, it will
-    # fail. this func normalizes the path by either try to load the
-    # file as it is, or try to normalize path to where dataset is
-    # if both are not there, error
-    if (os.path.exists(expected_filepath)):
-        return expected_filepath
-    recoverePath = os.path.join(os.path.dirname(dataset_csv_filepath), os.path.basename(expected_filepath))
-    if (os.path.exists(recoverePath)):
-        return recoverePath
-    raise ValueError(f"{expected_filepath} or {recoverePath} don't exist, check your dataset.csv")
-
-def load_samples(base_dir: str, dataset_csv: str) -> list[Sample]:
-    path = os.path.join(base_dir, dataset_csv)
-    rows: list[Sample] = []
-    print(path)
-    with open(path, "r", encoding="utf-8", newline="") as f:
-        reader = csv.DictReader(f)
-        for r in reader:
-            try:
-                if r.get("error"):
-                    continue
-                img_path = os.path.join(base_dir, r["path"])
-                corrected_path = try_load_file(img_path, dataset_csv)
-                rows.append(
-                    Sample(
-                        image_path=corrected_path,
-                        bcs_primary=int(r.get("bcs") or r.get("bcs_primary")),
-                        reasoning=r.get("reasoning", ""),
-                    )
-                )
-            except (KeyError, ValueError) as e:
-                print(f"skip row id={r.get('id')} err={e}")
-                continue
-    return rows
-
-
-def target_json_from_row(r: dict[str, Any]) -> str:
-    obj = {
-        "reasoning": r.get("reasoning", "") or "",
-        "bcs": int(r["bcs_primary"]),
-    }
-    return json.dumps(obj, ensure_ascii=False)
-
-
-def load_system_prompt(path: str) -> str:
-    import yaml
-    with open(path, "r", encoding="utf-8") as f:
-        p = yaml.safe_load(f)
-    return p["system_prompt_reasoning"].strip()
-
-
-def make_messages(image_path: str, answer_json: str | None, system_msg: str) -> list[dict[str, Any]]:
+def make_messages(
+    image_path: str,
+    answer_json: str | None,
+    system_msg: str,
+    user_msg: str,
+    reference_image_paths: list[str] | None = None,
+) -> list[dict[str, Any]]:
+    user_content: list[dict[str, Any]] = []
+    for ref in reference_image_paths or []:
+        user_content.append({"type": "image", "image": ref})
+    user_content.append({"type": "image", "image": image_path})
+    user_content.append({"type": "text", "text": user_msg})
     messages: list[dict[str, Any]] = [
         {"role": "system", "content": [{"type": "text", "text": system_msg}]},
-        {
-            "role": "user",
-            "content": [
-                {"type": "image", "image": image_path},
-                {"type": "text", "text": USER_MSG},
-            ],
-        },
+        {"role": "user", "content": user_content},
     ]
     if answer_json is not None:
         messages.append({"role": "assistant", "content": [{"type": "text", "text": answer_json}]})
     return messages
 
 
-def collate_train(processor: Any, batch: list[dict[str, Any]], system_msg: str) -> dict[str, Any]:
-    full_msgs = [make_messages(x["image_path"], target_json_from_row(x), system_msg) for x in batch]
+def collate_train(
+    processor: Any,
+    batch: list[dict[str, Any]],
+    system_msg: str,
+    user_msg: str,
+    reference_image_paths: list[str] | None = None,
+) -> dict[str, Any]:
+    full_msgs = [
+        make_messages(
+            x["image_path"], target_json_from_row(x), system_msg, user_msg, reference_image_paths
+        )
+        for x in batch
+    ]
     prompt_msgs = [m[:-1] for m in full_msgs]  # drop assistant turn
 
     full_texts = [processor.apply_chat_template(m, tokenize=False, add_generation_prompt=False) for m in full_msgs]
@@ -123,7 +70,7 @@ def collate_train(processor: Any, batch: list[dict[str, Any]], system_msg: str) 
     image_inputs: list[Any] = []
     for m in full_msgs:
         imgs, _ = process_vision_info(m)
-        image_inputs.append(imgs[0])
+        image_inputs.extend(imgs)
 
     enc = processor(text=full_texts, images=image_inputs, return_tensors="pt", padding=True)
     prompt_enc = processor(text=prompt_texts, images=image_inputs, return_tensors="pt", padding=True)
@@ -139,86 +86,18 @@ def collate_train(processor: Any, batch: list[dict[str, Any]], system_msg: str) 
     return enc
 
 
-def parse_bcs(output_text: str) -> int | None:
-    match = re.search(r"\{.*\}", output_text, flags=re.DOTALL)
-    if not match:
-        return None
-    try:
-        obj = json.loads(match.group(0))
-        value = int(obj.get("bcs"))
-        if 1 <= value <= 9:
-            return value
-        return None
-    except Exception:
-        return None
-
-
-def run_eval(
-    model: Any,
-    processor: Any,
-    eval_set: list[Sample],
-    device: torch.device,
-    max_new_tokens: int,
-    system_msg: str,
-) -> dict[str, Any]:
-    abs_errors: list[float] = []
-    parsed = 0
-    for sample in eval_set:
-        messages = make_messages(sample.image_path, None, system_msg)
+def make_prepare_inputs(user_msg: str, reference_image_paths: list[str] | None):
+    """Build a per-sample generation inputs callback bound to user_msg + ref images."""
+    def _prepare(processor, sample, system_msg, device, model_dtype):
+        del model_dtype  # unused; Qwen processor handles dtype internally
+        messages = make_messages(
+            sample.image_path, None, system_msg, user_msg, reference_image_paths
+        )
         text = processor.apply_chat_template(messages, tokenize=False, add_generation_prompt=True)
         imgs, vids = process_vision_info(messages)
         inputs = processor(text=[text], images=imgs, videos=vids, return_tensors="pt", padding=True)
-        inputs = {k: v.to(device) if hasattr(v, "to") else v for k, v in inputs.items()}
-        with torch.no_grad():
-            generated = model.generate(**inputs, max_new_tokens=max_new_tokens, do_sample=False)
-        output = processor.batch_decode(generated[:, inputs["input_ids"].shape[1]:], skip_special_tokens=True)[0]
-        pred = parse_bcs(output)
-        if pred is None:
-            continue
-        parsed += 1
-        abs_errors.append(abs(float(pred) - float(sample.bcs_primary)))
-    coverage = parsed / len(eval_set) if eval_set else 0.0
-    mae = sum(abs_errors) / len(abs_errors) if abs_errors else float("nan")
-    return {"eval_count": len(eval_set), "parsed": parsed, "coverage": coverage, "mae": mae}
-
-
-class EpochEvalCallback(TrainerCallback):
-    def __init__(self, split_eval_set, held_out_eval_set, processor, max_new_tokens, system_msg, adapter_dir):
-        self.split_eval_set = split_eval_set
-        self.held_out_eval_set = held_out_eval_set
-        self.processor = processor
-        self.max_new_tokens = max_new_tokens
-        self.system_msg = system_msg
-        self.adapter_dir = adapter_dir
-        self.history: list[dict[str, Any]] = []
-
-    def on_epoch_end(self, args, state, control, model=None, **kwargs):
-        if model is None:
-            return
-        epoch = round(state.epoch) if state.epoch is not None else 0
-        was_training = model.training
-
-        # save adapter checkpoint
-        ckpt_dir = os.path.join(self.adapter_dir, f"epoch_{epoch}")
-        os.makedirs(ckpt_dir, exist_ok=True)
-        model.save_pretrained(ckpt_dir)
-        self.processor.save_pretrained(ckpt_dir)
-        print(f"[epoch {epoch}] saved checkpoint to {ckpt_dir}")
-
-        # eval on both sets
-        model.eval()
-        device = next(model.parameters()).device
-        m = {"epoch": round(state.epoch, 3) if state.epoch is not None else None}
-        for name, eset in [("split", self.split_eval_set), ("held_out", self.held_out_eval_set)]:
-            if not eset:
-                continue
-            r = run_eval(model, self.processor, eset, device, self.max_new_tokens, self.system_msg)
-            print(f"[epoch {epoch}] {name}: mae={r['mae']:.3f} coverage={r['coverage']:.2f} parsed={r['parsed']}/{r['eval_count']}")
-            m[name] = r
-        self.history.append(m)
-        if was_training:
-            model.train()
-        torch.cuda.empty_cache()
+        return {k: v.to(device) if hasattr(v, "to") else v for k, v in inputs.items()}
+    return _prepare
 
 
 def main() -> int:
@@ -226,6 +105,14 @@ def main() -> int:
     parser.add_argument("--dataset", default="datasets/cat_10k/train.csv")
     parser.add_argument("--eval-dataset", default="datasets/cat_10k/eval.csv",
                         help="Dedicated eval CSV. Overrides train/eval split when provided.")
+    parser.add_argument("--no-held-out-eval", action="store_true",
+                        help="Skip held-out eval (much faster smoke tests).")
+    parser.add_argument("--prompt-mode", choices=["p3", "p8"], default="p3",
+                        help="p3: single-image reasoning. p8: dual-species visual few-shot "
+                             "(prepends cat+dog reference charts before target).")
+    parser.add_argument("--reference-images", nargs="+",
+                        default=["prompts/cat_bcs.jpg", "prompts/dog_bcs.jpg"],
+                        help="Reference images prepended in p8 mode (ignored in p3 mode).")
     parser.add_argument("--model-id", default="Qwen/Qwen2.5-VL-3B-Instruct")
     parser.add_argument("--max-samples", type=int, default=0,
                         help="Cap total samples loaded (0=all). Useful for smoke tests.")
@@ -238,24 +125,34 @@ def main() -> int:
     parser.add_argument("--grad-accum", type=int, default=4)
     parser.add_argument("--seed", type=int, default=42)
     # this is now percentage
-    parser.add_argument("--train-size", type=int, default=80)
+    parser.add_argument("--train-size", type=int, default=95)
     parser.add_argument("--max-new-tokens", type=int, default=200,
                         help="Generation cap. Target JSON length p99=145, max=174 in cat_10k annotations.")
     parser.add_argument("--max-pixels", type=int, default=401408,
                         help="Processor max_pixels (512*28*28=401408). Caps visual tokens per image.")
     parser.add_argument("--resume-adapter", default="",
                         help="Path to existing LoRA adapter to continue training from (instead of fresh init).")
-    parser.add_argument("--system-prompt", default=DEFAULT_PROMPTS_YAML,
-                        help="Path to prompts YAML file")
     args = parser.parse_args()
 
     random.seed(args.seed)
     torch.manual_seed(args.seed)
 
     base_dir = os.path.dirname(os.path.abspath(__file__))
-    prompt_path = os.path.join(base_dir, args.system_prompt) if not os.path.isabs(args.system_prompt) else args.system_prompt
-    system_msg = load_system_prompt(prompt_path)
-    print(f"Loaded system prompt from: {prompt_path} ({len(system_msg)} chars)")
+    if args.prompt_mode == "p8":
+        system_msg, user_msg = p8_vfewshot_prompts()
+        reference_image_paths = [
+            p if os.path.isabs(p) else os.path.join(base_dir, p)
+            for p in args.reference_images
+        ]
+        for p in reference_image_paths:
+            if not os.path.exists(p):
+                raise FileNotFoundError(f"reference image not found: {p}")
+        print(f"Loaded P8 dual-species visual few-shot prompts ({len(system_msg)} sys chars, "
+              f"{len(reference_image_paths)} reference images)")
+    else:
+        system_msg, user_msg = SYSTEM_MSG, USER_MSG
+        reference_image_paths = None
+        print(f"Loaded P3 reasoning prompts from scoring.prompts ({len(system_msg)} chars)")
     args.output_dir = args.output_dir + "_" + datetime.now().strftime("%m%d_%H%M")
     os.makedirs(os.path.join(base_dir, args.output_dir), exist_ok=True)
 
@@ -269,7 +166,11 @@ def main() -> int:
     train_size = int(len(samples) * (args.train_size / 100))
     train_set = samples[:train_size]
     split_eval_set = samples[train_size:]
-    held_out_eval_set = load_samples(base_dir, args.eval_dataset) if args.eval_dataset else []
+    held_out_eval_set = (
+        load_samples(base_dir, args.eval_dataset)
+        if (args.eval_dataset and not args.no_held_out_eval)
+        else []
+    )
     print(f"samples: train={len(train_set)}, split_eval={len(split_eval_set)}, held_out_eval={len(held_out_eval_set)}")
 
     model_id = args.model_id
@@ -304,6 +205,9 @@ def main() -> int:
         )
         model = get_peft_model(model, lora_cfg)
 
+    prepare_inputs = make_prepare_inputs(user_msg, reference_image_paths)
+
+    adapter_dir = os.path.join(base_dir, args.output_dir)
     baseline_metrics = None
     if args.baseline_eval and (split_eval_set or held_out_eval_set):
         print("Running baseline eval (pre-training)...")
@@ -313,7 +217,11 @@ def main() -> int:
         for name, eset in [("split", split_eval_set), ("held_out", held_out_eval_set)]:
             if not eset:
                 continue
-            r = run_eval(model, processor, eset, device, args.max_new_tokens, system_msg)
+            log_path = os.path.join(adapter_dir, f"eval_outputs_baseline_{name}.json")
+            r = run_eval(
+                model, processor, eset, device, args.max_new_tokens, system_msg,
+                prepare_inputs_fn=prepare_inputs, log_path=log_path,
+            )
             baseline_metrics[name] = r
             print(f"baseline {name}: {r}")
 
@@ -329,7 +237,6 @@ def main() -> int:
     ]
     train_dataset = Dataset.from_list(train_records)
 
-    adapter_dir = os.path.join(base_dir, args.output_dir)
     bf16_ok = torch.cuda.is_available() and torch.cuda.is_bf16_supported()
     sft_args = SFTConfig(
         output_dir=adapter_dir,
@@ -345,12 +252,17 @@ def main() -> int:
         fp16=not bf16_ok,
         dataset_kwargs={"skip_prepare_dataset": True},
     )
-    epoch_eval_cb = EpochEvalCallback(split_eval_set, held_out_eval_set, processor, args.max_new_tokens, system_msg, adapter_dir)
+    epoch_eval_cb = EpochEvalCallback(
+        split_eval_set, held_out_eval_set, processor, args.max_new_tokens, system_msg,
+        adapter_dir, prepare_inputs_fn=prepare_inputs,
+    )
     trainer = SFTTrainer(
         model=model,
         args=sft_args,
         train_dataset=train_dataset,
-        data_collator=lambda b: collate_train(processor, b, system_msg),
+        data_collator=lambda b: collate_train(
+            processor, b, system_msg, user_msg, reference_image_paths
+        ),
         processing_class=processor,
         callbacks=[epoch_eval_cb],
     )
@@ -359,12 +271,7 @@ def main() -> int:
     model.save_pretrained(adapter_dir)
     processor.save_pretrained(adapter_dir)
 
-    model.eval()
-    device = next(model.parameters()).device
-    metrics = {"train_size": len(train_set), "model_id": model_id}
-    for name, eset in [("split", split_eval_set), ("held_out", held_out_eval_set)]:
-        if eset:
-            metrics[f"final_{name}"] = run_eval(model, processor, eset, device, args.max_new_tokens, system_msg)
+    metrics: dict[str, Any] = {"train_size": len(train_set), "model_id": model_id}
     if baseline_metrics:
         metrics["baseline"] = baseline_metrics
     metrics["epoch_history"] = epoch_eval_cb.history
