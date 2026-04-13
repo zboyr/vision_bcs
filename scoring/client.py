@@ -122,12 +122,19 @@ class TransformersClient:
         from transformers import AutoProcessor
 
         print(f"[TransformersClient] Loading {self._model_id}...")
-        self._processor = AutoProcessor.from_pretrained(
-            self._model_id, trust_remote_code=True)
 
         # Detect model type
         is_gemma = "gemma" in self._model_id.lower()
         is_qwen = "qwen" in self._model_id.lower()
+
+        if is_qwen:
+            # Match training config: max_pixels=512*28*28=401408 keeps visual
+            # token count consistent with what the LoRA was trained on.
+            self._processor = AutoProcessor.from_pretrained(
+                self._model_id, trust_remote_code=True, max_pixels=401408)
+        else:
+            self._processor = AutoProcessor.from_pretrained(
+                self._model_id, trust_remote_code=True)
 
         if is_gemma:
             from transformers import AutoModelForMultimodalLM
@@ -196,7 +203,10 @@ class TransformersClient:
             inputs = {k: v.to(self._device) if hasattr(v, "to") else v
                       for k, v in inputs.items()}
 
-        do_sample = temperature > 0.01
+        # Match training eval: temperature <= 0.2 uses greedy (matches OpenAI
+        # near-deterministic semantics). Only true sampling for P4 BO5 (0.7)
+        # or P7 Agent B (0.5).
+        do_sample = temperature >= 0.3
         with torch.no_grad():
             out = self._model.generate(
                 **inputs, max_new_tokens=max_tokens,
