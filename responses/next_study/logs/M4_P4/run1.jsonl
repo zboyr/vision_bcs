@@ -1,0 +1,278 @@
+{"image_id": 1, "bcs": 5, "ground_truth": 1.0, "timestamp": "2026-04-13T01:27:32.622453", "error": null, "votes": [5, 5, 3, 5, 4, 3], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 2, "bcs": 5, "ground_truth": 1.0, "timestamp": "2026-04-13T01:27:32.622480", "error": null, "votes": [5, 5, 3, 5, 4, 3], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 3, "bcs": 5, "ground_truth": 1.0, "timestamp": "2026-04-13T01:27:32.622491", "error": null, "votes": [5, 5, 3, 5, 4, 2], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 4, "bcs": 4, "ground_truth": 1.0, "timestamp": "2026-04-13T01:27:32.622498", "error": null, "votes": [4, 5, 3, 5, 4, 2], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 5, "bcs": 5, "ground_truth": 1.0, "timestamp": "2026-04-13T01:27:32.622504", "error": null, "votes": [5, 5, 4, 5, 4, 4], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 6, "bcs": 4, "ground_truth": 1.0, "timestamp": "2026-04-13T01:27:32.622510", "error": null, "votes": [4, 4, 2, 3, 4, 2], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 7, "bcs": 2, "ground_truth": 1.0, "timestamp": "2026-04-13T01:27:32.622515", "error": null, "votes": [5, 8, 2, 4, 6, 2], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 8, "bcs": 5, "ground_truth": 1.0, "timestamp": "2026-04-13T01:27:32.622520", "error": null, "votes": [5, 5, 5, 5, 5, 4], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 9, "bcs": 5, "ground_truth": 1.0, "timestamp": "2026-04-13T01:27:32.622525", "error": null, "votes": [5, 5, 2, 5, 5, 2], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 10, "bcs": 5, "ground_truth": 1.0, "timestamp": "2026-04-13T01:27:32.622533", "error": null, "votes": [5, 5, 3, 5, 5, 3], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 11, "bcs": 4, "ground_truth": 1.0, "timestamp": "2026-04-13T01:27:32.622538", "error": null, "votes": [3, 3, 4, 5, 4, 4], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 12, "bcs": 5, "ground_truth": 1.0, "timestamp": "2026-04-13T01:27:32.622543", "error": null, "votes": [5, 5, 3, 5, 4, 3], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 13, "bcs": 5, "ground_truth": 2.0, "timestamp": "2026-04-13T01:27:32.622547", "error": null, "votes": [5, 5, 2, 7, 6, 2], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 14, "bcs": 5, "ground_truth": 2.0, "timestamp": "2026-04-13T01:27:32.622552", "error": null, "votes": [5, 5, 3, 5, 5, 3], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 15, "bcs": 5, "ground_truth": 2.0, "timestamp": "2026-04-13T01:27:32.622557", "error": null, "votes": [5, 7, 4, 5, 6, 2], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 16, "bcs": 4, "ground_truth": 2.0, "timestamp": "2026-04-13T01:27:32.622561", "error": null, "votes": [4, 5, 3, 5, 4, 3], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 17, "bcs": 5, "ground_truth": 2.0, "timestamp": "2026-04-13T01:27:32.622566", "error": null, "votes": [5, 5, 3, 5, 4, 2], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 18, "bcs": 5, "ground_truth": 2.0, "timestamp": "2026-04-13T01:27:32.622570", "error": null, "votes": [5, 5, 2, 5, 4, 3], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 19, "bcs": 5, "ground_truth": 2.0, "timestamp": "2026-04-13T01:27:32.622575", "error": null, "votes": [5, 5, 5, 5, 5, 5], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 20, "bcs": 5, "ground_truth": 2.0, "timestamp": "2026-04-13T01:27:32.622580", "error": null, "votes": [5, 5, 3, 5, 5, 3], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 21, "bcs": 5, "ground_truth": 2.0, "timestamp": "2026-04-13T01:27:32.622584", "error": null, "votes": [5, 5, 2, 5, 4, 2], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 22, "bcs": 5, "ground_truth": 2.0, "timestamp": "2026-04-13T01:27:32.622589", "error": null, "votes": [5, 5, 3, 5, 4, 2], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 23, "bcs": 5, "ground_truth": 3.0, "timestamp": "2026-04-13T01:27:32.622593", "error": null, "votes": [5, 5, 3, 5, 5, 3], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 24, "bcs": 5, "ground_truth": 3.0, "timestamp": "2026-04-13T01:27:32.622598", "error": null, "votes": [5, 5, 6, 5, 5, 4], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 25, "bcs": 7, "ground_truth": 3.0, "timestamp": "2026-04-13T01:27:32.622605", "error": null, "votes": [5, 7, 2, 7, 7, 4], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 26, "bcs": 5, "ground_truth": 3.0, "timestamp": "2026-04-13T01:27:32.622610", "error": null, "votes": [5, 5, 3, 5, 5, 4], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 27, "bcs": 5, "ground_truth": 3.0, "timestamp": "2026-04-13T01:27:32.622614", "error": null, "votes": [5, 5, 5, 5, 4, 4], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 28, "bcs": 5, "ground_truth": 3.0, "timestamp": "2026-04-13T01:27:32.622619", "error": null, "votes": [5, 5, 3, 5, 4, 2], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 29, "bcs": 2, "ground_truth": 3.0, "timestamp": "2026-04-13T01:27:32.622624", "error": null, "votes": [6, 8, 2, 4, 5, 2], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 30, "bcs": 4, "ground_truth": 3.0, "timestamp": "2026-04-13T01:27:32.622628", "error": null, "votes": [4, 4, 3, 7, 4, 2], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 31, "bcs": 5, "ground_truth": 3.0, "timestamp": "2026-04-13T01:27:32.622633", "error": null, "votes": [5, 5, 5, 5, 4, 5], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 32, "bcs": 5, "ground_truth": 3.0, "timestamp": "2026-04-13T01:27:32.622637", "error": null, "votes": [5, 5, 5, 5, 5, 4], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 33, "bcs": 5, "ground_truth": 3.0, "timestamp": "2026-04-13T01:27:32.622642", "error": null, "votes": [5, 6, 3, 6, 5, 3], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 34, "bcs": 4, "ground_truth": 4.0, "timestamp": "2026-04-13T01:27:32.622647", "error": null, "votes": [4, 5, 2, 5, 4, 2], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 35, "bcs": 5, "ground_truth": 4.0, "timestamp": "2026-04-13T01:27:32.622651", "error": null, "votes": [5, 5, 2, 5, 4, 2], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 36, "bcs": 2, "ground_truth": 4.0, "timestamp": "2026-04-13T01:27:32.622656", "error": null, "votes": [5, 2, 2, 2, 5, 2], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 37, "bcs": 4, "ground_truth": 4.0, "timestamp": "2026-04-13T01:27:32.622661", "error": null, "votes": [4, 5, 3, 5, 4, 3], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 38, "bcs": 5, "ground_truth": 4.0, "timestamp": "2026-04-13T01:27:32.622665", "error": null, "votes": [5, 5, 6, 5, 6, 6], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 39, "bcs": 3, "ground_truth": 4.0, "timestamp": "2026-04-13T01:27:32.622669", "error": null, "votes": [3, 4, 3, 3, 4, 4], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 40, "bcs": 2, "ground_truth": 4.0, "timestamp": "2026-04-13T01:27:32.622674", "error": null, "votes": [4, 5, 2, 3, 7, 2], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 41, "bcs": 5, "ground_truth": 4.0, "timestamp": "2026-04-13T01:27:32.622679", "error": null, "votes": [5, 5, 6, 5, 5, 4], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 42, "bcs": 5, "ground_truth": 4.0, "timestamp": "2026-04-13T01:27:32.622683", "error": null, "votes": [4, 5, 2, 5, 5, 2], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 43, "bcs": 5, "ground_truth": 4.0, "timestamp": "2026-04-13T01:27:32.622690", "error": null, "votes": [5, 7, 3, 5, 5, 4], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 44, "bcs": 5, "ground_truth": 4.0, "timestamp": "2026-04-13T01:27:32.622695", "error": null, "votes": [5, 5, 4, 5, 5, 4], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 45, "bcs": 5, "ground_truth": 4.0, "timestamp": "2026-04-13T01:27:32.622700", "error": null, "votes": [5, 5, 5, 5, 4, 4], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 46, "bcs": 5, "ground_truth": 4.0, "timestamp": "2026-04-13T01:27:32.622731", "error": null, "votes": [5, 5, 3, 5, 4, 3], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 47, "bcs": 5, "ground_truth": 4.0, "timestamp": "2026-04-13T01:27:32.622736", "error": null, "votes": [5, 5, 5, 5, 5, 5], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 48, "bcs": 5, "ground_truth": 4.0, "timestamp": "2026-04-13T01:27:32.622741", "error": null, "votes": [5, 5, 5, 5, 5, 5], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 49, "bcs": 5, "ground_truth": 4.0, "timestamp": "2026-04-13T01:27:32.622745", "error": null, "votes": [5, 5, 3, 5, 4, 4], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 50, "bcs": 3, "ground_truth": 4.0, "timestamp": "2026-04-13T01:27:32.622750", "error": null, "votes": [4, 5, 3, 3, 7, 2], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 51, "bcs": 5, "ground_truth": 4.0, "timestamp": "2026-04-13T01:27:32.622755", "error": null, "votes": [5, 5, 3, 5, 5, 4], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 52, "bcs": 4, "ground_truth": 4.0, "timestamp": "2026-04-13T01:27:32.622759", "error": null, "votes": [4, 4, 4, 4, 3, 4], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 53, "bcs": 4, "ground_truth": 5.0, "timestamp": "2026-04-13T01:27:32.622764", "error": null, "votes": [4, 4, 3, 4, 6, 3], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 54, "bcs": 4, "ground_truth": 5.0, "timestamp": "2026-04-13T01:27:32.622769", "error": null, "votes": [4, 5, 4, 4, 4, 4], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 55, "bcs": 5, "ground_truth": 5.0, "timestamp": "2026-04-13T01:27:32.622773", "error": null, "votes": [5, 5, 3, 5, 4, 4], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 56, "bcs": 5, "ground_truth": 5.0, "timestamp": "2026-04-13T01:27:32.622778", "error": null, "votes": [5, 5, 5, 5, 4, 5], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 57, "bcs": 5, "ground_truth": 5.0, "timestamp": "2026-04-13T01:27:32.622783", "error": null, "votes": [5, 5, 6, 5, 6, 6], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 58, "bcs": 5, "ground_truth": 5.0, "timestamp": "2026-04-13T01:27:32.622788", "error": null, "votes": [5, 5, 3, 5, 4, 4], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 59, "bcs": 5, "ground_truth": 5.0, "timestamp": "2026-04-13T01:27:32.622793", "error": null, "votes": [4, 6, 5, 6, 5, 5], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 60, "bcs": 5, "ground_truth": 5.0, "timestamp": "2026-04-13T01:27:32.622798", "error": null, "votes": [5, 5, 5, 5, 5, 3], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 61, "bcs": 5, "ground_truth": 5.0, "timestamp": "2026-04-13T01:27:32.622802", "error": null, "votes": [5, 5, 5, 5, 5, 5], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 62, "bcs": 5, "ground_truth": 5.0, "timestamp": "2026-04-13T01:27:32.622807", "error": null, "votes": [5, 5, 5, 5, 4, 5], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 63, "bcs": 7, "ground_truth": 5.0, "timestamp": "2026-04-13T01:27:32.622812", "error": null, "votes": [7, 7, 8, 7, 6, 7], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 64, "bcs": 5, "ground_truth": 5.0, "timestamp": "2026-04-13T01:27:32.622816", "error": null, "votes": [5, 5, 5, 5, 5, 5], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 65, "bcs": 7, "ground_truth": 5.0, "timestamp": "2026-04-13T01:27:32.622821", "error": null, "votes": [4, 7, 3, 7, 6, 3], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 66, "bcs": 5, "ground_truth": 5.0, "timestamp": "2026-04-13T01:27:32.622826", "error": null, "votes": [5, 5, 3, 7, 5, 2], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 67, "bcs": 7, "ground_truth": 5.0, "timestamp": "2026-04-13T01:27:32.622830", "error": null, "votes": [6, 7, 7, 5, 6, 7], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 68, "bcs": 5, "ground_truth": 5.0, "timestamp": "2026-04-13T01:27:32.622835", "error": null, "votes": [5, 5, 5, 5, 4, 5], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 69, "bcs": 5, "ground_truth": 5.0, "timestamp": "2026-04-13T01:27:32.622839", "error": null, "votes": [5, 5, 5, 5, 4, 4], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 70, "bcs": 7, "ground_truth": 5.0, "timestamp": "2026-04-13T01:27:32.622844", "error": null, "votes": [5, 7, 2, 7, 7, 3], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 71, "bcs": 5, "ground_truth": 5.0, "timestamp": "2026-04-13T01:27:32.622848", "error": null, "votes": [4, 5, 5, 5, 4, 5], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 72, "bcs": 5, "ground_truth": 5.0, "timestamp": "2026-04-13T01:27:32.622853", "error": null, "votes": [5, 5, 3, 5, 6, 3], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 73, "bcs": 5, "ground_truth": 5.0, "timestamp": "2026-04-13T01:27:32.622858", "error": null, "votes": [5, 2, 3, 2, 5, 3], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 74, "bcs": 6, "ground_truth": 6.0, "timestamp": "2026-04-13T01:27:32.622862", "error": null, "votes": [6, 6, 7, 6, 7, 7], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 75, "bcs": 5, "ground_truth": 6.0, "timestamp": "2026-04-13T01:27:32.622867", "error": null, "votes": [5, 7, 2, 5, 6, 2], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 76, "bcs": 4, "ground_truth": 6.0, "timestamp": "2026-04-13T01:27:32.622872", "error": null, "votes": [4, 5, 3, 4, 5, 3], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 77, "bcs": 5, "ground_truth": 6.0, "timestamp": "2026-04-13T01:27:32.622876", "error": null, "votes": [5, 5, 5, 5, 4, 5], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 78, "bcs": 5, "ground_truth": 6.0, "timestamp": "2026-04-13T01:27:32.622881", "error": null, "votes": [5, 5, 5, 5, 5, 5], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 79, "bcs": 7, "ground_truth": 6.0, "timestamp": "2026-04-13T01:27:32.622885", "error": null, "votes": [7, 7, 8, 7, 7, 8], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 80, "bcs": 5, "ground_truth": 6.0, "timestamp": "2026-04-13T01:27:32.622890", "error": null, "votes": [5, 5, 5, 5, 5, 6], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 81, "bcs": 5, "ground_truth": 6.0, "timestamp": "2026-04-13T01:27:32.622894", "error": null, "votes": [5, 5, 5, 5, 4, 4], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 82, "bcs": 5, "ground_truth": 6.0, "timestamp": "2026-04-13T01:27:32.622899", "error": null, "votes": [5, 5, 2, 5, 4, 2], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 83, "bcs": 7, "ground_truth": 6.0, "timestamp": "2026-04-13T01:27:32.622903", "error": null, "votes": [7, 6, 7, 6, 7, 6], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 84, "bcs": 5, "ground_truth": 6.0, "timestamp": "2026-04-13T01:27:32.622908", "error": null, "votes": [5, 5, 5, 5, 5, 5], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 85, "bcs": 5, "ground_truth": 6.0, "timestamp": "2026-04-13T01:27:32.622913", "error": null, "votes": [5, 5, 5, 5, 4, 5], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 86, "bcs": 7, "ground_truth": 6.0, "timestamp": "2026-04-13T01:27:32.622917", "error": null, "votes": [7, 7, 7, 7, 7, 8], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 87, "bcs": 4, "ground_truth": 6.0, "timestamp": "2026-04-13T01:27:32.622922", "error": null, "votes": [6, 5, 4, 7, 4, 4], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 88, "bcs": 7, "ground_truth": 7.0, "timestamp": "2026-04-13T01:27:32.622926", "error": null, "votes": [6, 7, 7, 7, 7, 7], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 89, "bcs": 7, "ground_truth": 7.0, "timestamp": "2026-04-13T01:27:32.622931", "error": null, "votes": [7, 2, 7, 4, 7, 7], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 90, "bcs": 5, "ground_truth": 7.0, "timestamp": "2026-04-13T01:27:32.622946", "error": null, "votes": [5, 5, 5, 5, 5, 5], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 91, "bcs": 5, "ground_truth": 7.0, "timestamp": "2026-04-13T01:27:32.622952", "error": null, "votes": [5, 5, 5, 5, 6, 5], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 92, "bcs": 7, "ground_truth": 7.0, "timestamp": "2026-04-13T01:27:32.622956", "error": null, "votes": [4, 7, 3, 7, 7, 2], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 93, "bcs": 6, "ground_truth": 7.0, "timestamp": "2026-04-13T01:27:32.622961", "error": null, "votes": [6, 5, 7, 6, 6, 8], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 94, "bcs": 6, "ground_truth": 7.0, "timestamp": "2026-04-13T01:27:32.622966", "error": null, "votes": [6, 6, 8, 6, 6, 6], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 95, "bcs": 5, "ground_truth": 7.0, "timestamp": "2026-04-13T01:27:32.622970", "error": null, "votes": [5, 5, 5, 5, 5, 5], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 96, "bcs": 5, "ground_truth": 7.0, "timestamp": "2026-04-13T01:27:32.622975", "error": null, "votes": [5, 5, 7, 5, 6, 6], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 97, "bcs": 6, "ground_truth": 7.0, "timestamp": "2026-04-13T01:27:32.622980", "error": null, "votes": [6, 6, 8, 6, 7, 8], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 98, "bcs": 7, "ground_truth": 7.0, "timestamp": "2026-04-13T01:27:32.622984", "error": null, "votes": [6, 5, 7, 7, 7, 6], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 99, "bcs": 6, "ground_truth": 7.0, "timestamp": "2026-04-13T01:27:32.622989", "error": null, "votes": [7, 6, 8, 6, 7, 6], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 100, "bcs": 4, "ground_truth": 7.0, "timestamp": "2026-04-13T01:27:32.622994", "error": null, "votes": [4, 5, 4, 5, 4, 4], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 101, "bcs": 7, "ground_truth": 7.0, "timestamp": "2026-04-13T01:27:32.622998", "error": null, "votes": [7, 7, 8, 7, 7, 8], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 102, "bcs": 6, "ground_truth": 7.0, "timestamp": "2026-04-13T01:27:32.623003", "error": null, "votes": [6, 6, 5, 6, 6, 5], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 103, "bcs": 7, "ground_truth": 7.0, "timestamp": "2026-04-13T01:27:32.623007", "error": null, "votes": [7, 6, 8, 7, 7, 8], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 104, "bcs": 7, "ground_truth": 7.0, "timestamp": "2026-04-13T01:27:32.623012", "error": null, "votes": [7, 6, 8, 6, 7, 8], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 105, "bcs": 6, "ground_truth": 7.0, "timestamp": "2026-04-13T01:27:32.623017", "error": null, "votes": [6, 6, 8, 6, 7, 8], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 106, "bcs": 7, "ground_truth": 7.0, "timestamp": "2026-04-13T01:27:32.623021", "error": null, "votes": [6, 7, 8, 7, 7, 8], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 107, "bcs": 7, "ground_truth": 8.0, "timestamp": "2026-04-13T01:27:32.623026", "error": null, "votes": [7, 6, 9, 7, 7, 8], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 108, "bcs": 6, "ground_truth": 8.0, "timestamp": "2026-04-13T01:27:32.623030", "error": null, "votes": [6, 6, 7, 6, 6, 7], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 109, "bcs": 7, "ground_truth": 8.0, "timestamp": "2026-04-13T01:27:32.623035", "error": null, "votes": [7, 5, 7, 6, 7, 8], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 110, "bcs": 7, "ground_truth": 8.0, "timestamp": "2026-04-13T01:27:32.623040", "error": null, "votes": [7, 7, 8, 7, 7, 9], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 111, "bcs": 7, "ground_truth": 8.0, "timestamp": "2026-04-13T01:27:32.623044", "error": null, "votes": [7, 8, 9, 8, 7, 9], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 112, "bcs": 5, "ground_truth": 8.0, "timestamp": "2026-04-13T01:27:32.623049", "error": null, "votes": [6, 5, 8, 5, 7, 8], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 113, "bcs": 7, "ground_truth": 8.0, "timestamp": "2026-04-13T01:27:32.623053", "error": null, "votes": [7, 7, 9, 8, 7, 8], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 114, "bcs": 7, "ground_truth": 8.0, "timestamp": "2026-04-13T01:27:32.623058", "error": null, "votes": [7, 5, 8, 6, 7, 7], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 115, "bcs": 6, "ground_truth": 8.0, "timestamp": "2026-04-13T01:27:32.623062", "error": null, "votes": [6, 6, 7, 6, 6, 6], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 116, "bcs": 7, "ground_truth": 8.0, "timestamp": "2026-04-13T01:27:32.623067", "error": null, "votes": [7, 7, 7, 7, 7, 8], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 117, "bcs": 7, "ground_truth": 8.0, "timestamp": "2026-04-13T01:27:32.623071", "error": null, "votes": [7, 6, 8, 6, 7, 8], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 118, "bcs": 6, "ground_truth": 8.0, "timestamp": "2026-04-13T01:27:32.623076", "error": null, "votes": [6, 6, 7, 6, 6, 8], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 119, "bcs": 7, "ground_truth": 8.0, "timestamp": "2026-04-13T01:27:32.623080", "error": null, "votes": [7, 6, 8, 6, 7, 9], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 120, "bcs": 7, "ground_truth": 8.0, "timestamp": "2026-04-13T01:27:32.623085", "error": null, "votes": [7, 6, 7, 7, 7, 8], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 121, "bcs": 7, "ground_truth": 8.0, "timestamp": "2026-04-13T01:27:32.623090", "error": null, "votes": [7, 7, 8, 7, 7, 8], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 122, "bcs": 7, "ground_truth": 9.0, "timestamp": "2026-04-13T01:27:32.623095", "error": null, "votes": [7, 7, 8, 7, 7, 8], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 123, "bcs": 7, "ground_truth": 9.0, "timestamp": "2026-04-13T01:27:32.623099", "error": null, "votes": [7, 7, 8, 7, 7, 8], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 124, "bcs": 8, "ground_truth": 9.0, "timestamp": "2026-04-13T01:27:32.623104", "error": null, "votes": [8, 7, 9, 8, 7, 9], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 125, "bcs": 8, "ground_truth": 9.0, "timestamp": "2026-04-13T01:27:32.623108", "error": null, "votes": [8, 8, 8, 7, 8, 8], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 126, "bcs": 7, "ground_truth": 9.0, "timestamp": "2026-04-13T01:27:32.623113", "error": null, "votes": [7, 7, 9, 7, 8, 9], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 127, "bcs": 7, "ground_truth": 9.0, "timestamp": "2026-04-13T01:27:32.623117", "error": null, "votes": [7, 7, 8, 8, 7, 7], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 128, "bcs": 8, "ground_truth": 9.0, "timestamp": "2026-04-13T01:27:32.623122", "error": null, "votes": [8, 8, 8, 8, 8, 9], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 129, "bcs": 7, "ground_truth": 9.0, "timestamp": "2026-04-13T01:27:32.623126", "error": null, "votes": [7, 7, 9, 7, 7, 9], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 130, "bcs": 7, "ground_truth": 9.0, "timestamp": "2026-04-13T01:27:32.623131", "error": null, "votes": [7, 7, 8, 8, 7, 8], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 131, "bcs": 8, "ground_truth": 9.0, "timestamp": "2026-04-13T01:27:32.623136", "error": null, "votes": [8, 5, 9, 7, 8, 9], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 132, "bcs": 8, "ground_truth": 9.0, "timestamp": "2026-04-13T01:27:32.623140", "error": null, "votes": [8, 8, 9, 8, 8, 9], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 133, "bcs": 6, "ground_truth": 9.0, "timestamp": "2026-04-13T01:27:32.623145", "error": null, "votes": [6, 5, 8, 6, 7, 8], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 134, "bcs": 8, "ground_truth": 9.0, "timestamp": "2026-04-13T01:27:32.623159", "error": null, "votes": [8, 8, 8, 9, 8, 8], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 135, "bcs": 6, "ground_truth": 9.0, "timestamp": "2026-04-13T01:27:32.623164", "error": null, "votes": [6, 6, 8, 6, 7, 6], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 136, "bcs": 8, "ground_truth": 9.0, "timestamp": "2026-04-13T01:27:32.623169", "error": null, "votes": [8, 8, 9, 8, 8, 9], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 137, "bcs": 8, "ground_truth": 9.0, "timestamp": "2026-04-13T01:27:32.623173", "error": null, "votes": [5, 8, 8, 6, 7, 8], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 138, "bcs": 7, "ground_truth": 9.0, "timestamp": "2026-04-13T01:27:32.623178", "error": null, "votes": [7, 7, 8, 7, 7, 8], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 139, "bcs": 8, "ground_truth": 9.0, "timestamp": "2026-04-13T01:27:32.623182", "error": null, "votes": [8, 8, 9, 9, 8, 8], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 140, "bcs": 4, "ground_truth": 1.0, "timestamp": "2026-04-13T01:27:32.623187", "error": null, "votes": [4, 4, 2, 3, 4, 2], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 141, "bcs": 2, "ground_truth": 1.0, "timestamp": "2026-04-13T01:27:32.623192", "error": null, "votes": [4, 5, 2, 3, 3, 7, 2], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 142, "bcs": 5, "ground_truth": 1.0, "timestamp": "2026-04-13T01:27:32.623196", "error": null, "votes": [5, 5, 1, 2, 5, 4, 2], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 143, "bcs": 4, "ground_truth": 1.0, "timestamp": "2026-04-13T01:27:32.623201", "error": null, "votes": [4, 4, 1, 2, 4, 4, 2], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 144, "bcs": 5, "ground_truth": 1.0, "timestamp": "2026-04-13T01:27:32.623206", "error": null, "votes": [5, 5, 3, 2, 5, 4, 2], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 145, "bcs": 5, "ground_truth": 1.0, "timestamp": "2026-04-13T01:27:32.623210", "error": null, "votes": [5, 5, 3, 4, 5, 4, 4], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 146, "bcs": 5, "ground_truth": 1.0, "timestamp": "2026-04-13T01:27:32.623215", "error": null, "votes": [5, 5, 2, 2, 5, 3, 1], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 147, "bcs": 4, "ground_truth": 1.0, "timestamp": "2026-04-13T01:27:32.623220", "error": null, "votes": [4, 4, 2, 3, 4, 4, 3], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 148, "bcs": 2, "ground_truth": 1.0, "timestamp": "2026-04-13T01:27:32.623224", "error": null, "votes": [4, 2, 3, 3, 2, 4, 2], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 149, "bcs": 8, "ground_truth": 1.0, "timestamp": "2026-04-13T01:27:32.623229", "error": null, "votes": [4, 8, 1, 2, 8, 5, 2], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 150, "bcs": 3, "ground_truth": 1.0, "timestamp": "2026-04-13T01:27:32.623233", "error": null, "votes": [3, 3, 2, 2, 3, 3, 1], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 151, "bcs": 5, "ground_truth": 1.0, "timestamp": "2026-04-13T01:27:32.623238", "error": null, "votes": [4, 5, 3, 2, 5, 5, 2], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 152, "bcs": 5, "ground_truth": 1.0, "timestamp": "2026-04-13T01:27:32.623243", "error": null, "votes": [5, 5, 1, 4, 5, 4, 3], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 153, "bcs": 4, "ground_truth": 1.0, "timestamp": "2026-04-13T01:27:32.623247", "error": null, "votes": [4, 5, 3, 3, 5, 4, 2], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 154, "bcs": 5, "ground_truth": 1.0, "timestamp": "2026-04-13T01:27:32.623252", "error": null, "votes": [4, 5, 2, 1, 5, 6, 1], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 155, "bcs": 5, "ground_truth": 2.0, "timestamp": "2026-04-13T01:27:32.623257", "error": null, "votes": [5, 5, 3, 2, 5, 4, 2], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 156, "bcs": 5, "ground_truth": 2.0, "timestamp": "2026-04-13T01:27:32.623261", "error": null, "votes": [5, 5, 3, 4, 5, 4, 4], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 157, "bcs": 4, "ground_truth": 2.0, "timestamp": "2026-04-13T01:27:32.623266", "error": null, "votes": [4, 4, 1, 2, 4, 4, 2], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 158, "bcs": 4, "ground_truth": 2.0, "timestamp": "2026-04-13T01:27:32.623271", "error": null, "votes": [4, 7, 1, 2, 7, 4, 3], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 159, "bcs": 3, "ground_truth": 2.0, "timestamp": "2026-04-13T01:27:32.623275", "error": null, "votes": [4, 5, 3, 3, 5, 4, 3], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 160, "bcs": 4, "ground_truth": 2.0, "timestamp": "2026-04-13T01:27:32.623280", "error": null, "votes": [4, 5, 3, 2, 5, 4, 2], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 161, "bcs": 2, "ground_truth": 2.0, "timestamp": "2026-04-13T01:27:32.623284", "error": null, "votes": [5, 1, 2, 2, 1, 6, 2], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 162, "bcs": 4, "ground_truth": 2.0, "timestamp": "2026-04-13T01:27:32.623289", "error": null, "votes": [4, 5, 1, 3, 5, 4, 4], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 163, "bcs": 4, "ground_truth": 2.0, "timestamp": "2026-04-13T01:27:32.623294", "error": null, "votes": [5, 4, 3, 3, 6, 4, 4], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 164, "bcs": 4, "ground_truth": 2.0, "timestamp": "2026-04-13T01:27:32.623299", "error": null, "votes": [4, 5, 1, 3, 5, 4, 2], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 165, "bcs": 2, "ground_truth": 3.0, "timestamp": "2026-04-13T01:27:32.623303", "error": null, "votes": [4, 5, 2, 2, 5, 4, 2], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 166, "bcs": 4, "ground_truth": 3.0, "timestamp": "2026-04-13T01:27:32.623308", "error": null, "votes": [4, 4, 2, 2, 4, 4, 2], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 167, "bcs": 5, "ground_truth": 3.0, "timestamp": "2026-04-13T01:27:32.623313", "error": null, "votes": [5, 5, 3, 3, 5, 4, 2], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 168, "bcs": 4, "ground_truth": 3.0, "timestamp": "2026-04-13T01:27:32.623317", "error": null, "votes": [4, 5, 4, 4, 5, 5, 4], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 169, "bcs": 5, "ground_truth": 3.0, "timestamp": "2026-04-13T01:27:32.623322", "error": null, "votes": [5, 5, 3, 3, 5, 4, 3], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 170, "bcs": 5, "ground_truth": 3.0, "timestamp": "2026-04-13T01:27:32.623326", "error": null, "votes": [5, 5, 1, 1, 7, 4, 2], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 171, "bcs": 5, "ground_truth": 3.0, "timestamp": "2026-04-13T01:27:32.623331", "error": null, "votes": [5, 5, 3, 3, 5, 4, 3], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 172, "bcs": 5, "ground_truth": 3.0, "timestamp": "2026-04-13T01:27:32.623336", "error": null, "votes": [5, 5, 2, 2, 5, 4, 2], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 173, "bcs": 1, "ground_truth": 3.0, "timestamp": "2026-04-13T01:27:32.623340", "error": null, "votes": [2, 1, 2, 3, 1, 3, 1], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 174, "bcs": 4, "ground_truth": 3.0, "timestamp": "2026-04-13T01:27:32.623345", "error": null, "votes": [4, 5, 3, 4, 5, 5, 4], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 175, "bcs": 5, "ground_truth": 3.0, "timestamp": "2026-04-13T01:27:32.623350", "error": null, "votes": [5, 5, 2, 2, 5, 4, 2], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 176, "bcs": 5, "ground_truth": 3.0, "timestamp": "2026-04-13T01:27:32.623354", "error": null, "votes": [5, 5, 5, 4, 5, 4, 4], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 177, "bcs": 5, "ground_truth": 3.0, "timestamp": "2026-04-13T01:27:32.623368", "error": null, "votes": [5, 5, 1, 3, 5, 4, 3], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 178, "bcs": 5, "ground_truth": 3.0, "timestamp": "2026-04-13T01:27:32.623373", "error": null, "votes": [5, 5, 2, 2, 5, 6, 2], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 179, "bcs": 5, "ground_truth": 3.0, "timestamp": "2026-04-13T01:27:32.623378", "error": null, "votes": [4, 5, 2, 2, 5, 5, 2], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 180, "bcs": 4, "ground_truth": 4.0, "timestamp": "2026-04-13T01:27:32.623383", "error": null, "votes": [4, 5, 1, 2, 5, 4, 2], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 181, "bcs": 5, "ground_truth": 4.0, "timestamp": "2026-04-13T01:27:32.623387", "error": null, "votes": [5, 5, 3, 4, 5, 4, 3], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 182, "bcs": 6, "ground_truth": 4.0, "timestamp": "2026-04-13T01:27:32.623392", "error": null, "votes": [5, 6, 1, 2, 6, 4, 2], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 183, "bcs": 3, "ground_truth": 4.0, "timestamp": "2026-04-13T01:27:32.623397", "error": null, "votes": [5, 5, 3, 3, 4, 4, 3], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 184, "bcs": 5, "ground_truth": 4.0, "timestamp": "2026-04-13T01:27:32.623401", "error": null, "votes": [5, 4, 2, 3, 5, 4, 1], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 185, "bcs": 5, "ground_truth": 4.0, "timestamp": "2026-04-13T01:27:32.623406", "error": null, "votes": [4, 5, 2, 1, 5, 6, 1], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 186, "bcs": 2, "ground_truth": 4.0, "timestamp": "2026-04-13T01:27:32.623411", "error": null, "votes": [5, 2, 3, 3, 2, 4, 4], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 187, "bcs": 5, "ground_truth": 4.0, "timestamp": "2026-04-13T01:27:32.623415", "error": null, "votes": [5, 5, 1, 2, 5, 4, 2], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 188, "bcs": 5, "ground_truth": 4.0, "timestamp": "2026-04-13T01:27:32.623420", "error": null, "votes": [5, 5, 1, 4, 5, 4, 2], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 189, "bcs": 5, "ground_truth": 4.0, "timestamp": "2026-04-13T01:27:32.623424", "error": null, "votes": [4, 5, 2, 2, 5, 5, 2], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 190, "bcs": 7, "ground_truth": 5.0, "timestamp": "2026-04-13T01:27:32.623429", "error": null, "votes": [7, 5, 5, 7, 5, 7, 6], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 191, "bcs": 7, "ground_truth": 5.0, "timestamp": "2026-04-13T01:27:32.623434", "error": null, "votes": [7, 7, 7, 8, 7, 7, 7], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 192, "bcs": 5, "ground_truth": 5.0, "timestamp": "2026-04-13T01:27:32.623438", "error": null, "votes": [5, 5, 5, 5, 5, 5, 5], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 193, "bcs": 5, "ground_truth": 5.0, "timestamp": "2026-04-13T01:27:32.623443", "error": null, "votes": [5, 5, 2, 2, 5, 4, 2], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 194, "bcs": 5, "ground_truth": 5.0, "timestamp": "2026-04-13T01:27:32.623447", "error": null, "votes": [5, 5, 5, 4, 5, 6, 4], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 195, "bcs": 5, "ground_truth": 5.0, "timestamp": "2026-04-13T01:27:32.623452", "error": null, "votes": [5, 5, 3, 5, 5, 5, 5], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 196, "bcs": 7, "ground_truth": 5.0, "timestamp": "2026-04-13T01:27:32.623456", "error": null, "votes": [7, 7, 8, 7, 7, 8], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 197, "bcs": 6, "ground_truth": 5.0, "timestamp": "2026-04-13T01:27:32.623461", "error": null, "votes": [6, 6, 5, 5, 6, 5], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 198, "bcs": 5, "ground_truth": 5.0, "timestamp": "2026-04-13T01:27:32.623465", "error": null, "votes": [5, 5, 2, 5, 4, 2], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 199, "bcs": 5, "ground_truth": 5.0, "timestamp": "2026-04-13T01:27:32.623470", "error": null, "votes": [5, 5, 3, 5, 6, 3], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 200, "bcs": 4, "ground_truth": 5.0, "timestamp": "2026-04-13T01:27:32.623474", "error": null, "votes": [4, 5, 2, 5, 4, 1], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 201, "bcs": 4, "ground_truth": 5.0, "timestamp": "2026-04-13T01:27:32.623479", "error": null, "votes": [4, 5, 2, 5, 4, 3], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 202, "bcs": 4, "ground_truth": 5.0, "timestamp": "2026-04-13T01:27:32.623484", "error": null, "votes": [5, 4, 1, 4, 4, 2], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 203, "bcs": 4, "ground_truth": 5.0, "timestamp": "2026-04-13T01:27:32.623488", "error": null, "votes": [4, 4, 5, 6, 6, 5], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 204, "bcs": 4, "ground_truth": 5.0, "timestamp": "2026-04-13T01:27:32.623493", "error": null, "votes": [5, 4, 3, 4, 6, 2], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 205, "bcs": 5, "ground_truth": 5.0, "timestamp": "2026-04-13T01:27:32.623497", "error": null, "votes": [5, 6, 5, 6, 5, 5], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 206, "bcs": 6, "ground_truth": 5.0, "timestamp": "2026-04-13T01:27:32.623502", "error": null, "votes": [6, 6, 5, 6, 7, 5], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 207, "bcs": 5, "ground_truth": 5.0, "timestamp": "2026-04-13T01:27:32.623506", "error": null, "votes": [4, 5, 5, 7, 4, 5], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 208, "bcs": 5, "ground_truth": 5.0, "timestamp": "2026-04-13T01:27:32.623511", "error": null, "votes": [5, 5, 3, 5, 4, 3], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 209, "bcs": 5, "ground_truth": 5.0, "timestamp": "2026-04-13T01:27:32.623517", "error": null, "votes": [5, 5, 5, 5, 4, 5], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 210, "bcs": 5, "ground_truth": 5.0, "timestamp": "2026-04-13T01:27:32.623524", "error": null, "votes": [5, 5, 3, 5, 4, 3], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 211, "bcs": 5, "ground_truth": 5.0, "timestamp": "2026-04-13T01:27:32.623529", "error": null, "votes": [5, 5, 3, 5, 4, 4], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 212, "bcs": 6, "ground_truth": 5.0, "timestamp": "2026-04-13T01:27:32.623533", "error": null, "votes": [6, 6, 5, 7, 7, 5], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 213, "bcs": 4, "ground_truth": 5.0, "timestamp": "2026-04-13T01:27:32.623538", "error": null, "votes": [4, 5, 2, 5, 4, 2], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 214, "bcs": 4, "ground_truth": 5.0, "timestamp": "2026-04-13T01:27:32.623542", "error": null, "votes": [4, 5, 3, 7, 4, 3], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 215, "bcs": 7, "ground_truth": 5.0, "timestamp": "2026-04-13T01:27:32.623547", "error": null, "votes": [7, 6, 5, 7, 7, 5], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 216, "bcs": 5, "ground_truth": 5.0, "timestamp": "2026-04-13T01:27:32.623551", "error": null, "votes": [5, 5, 5, 5, 4, 5], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 217, "bcs": 3, "ground_truth": 5.0, "timestamp": "2026-04-13T01:27:32.623556", "error": null, "votes": [3, 2, 1, 4, 3, 1], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 218, "bcs": 4, "ground_truth": 5.0, "timestamp": "2026-04-13T01:27:32.623561", "error": null, "votes": [4, 4, 2, 4, 4, 3], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 219, "bcs": 7, "ground_truth": 5.0, "timestamp": "2026-04-13T01:27:32.623565", "error": null, "votes": [7, 6, 5, 7, 7, 5], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 220, "bcs": 6, "ground_truth": 5.0, "timestamp": "2026-04-13T01:27:32.623579", "error": null, "votes": [7, 6, 6, 6, 7, 6], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 221, "bcs": 6, "ground_truth": 5.0, "timestamp": "2026-04-13T01:27:32.623584", "error": null, "votes": [5, 6, 6, 5, 6, 4], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 222, "bcs": 6, "ground_truth": 5.0, "timestamp": "2026-04-13T01:27:32.623589", "error": null, "votes": [6, 6, 5, 5, 6, 5], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 223, "bcs": 5, "ground_truth": 5.0, "timestamp": "2026-04-13T01:27:32.623593", "error": null, "votes": [5, 5, 5, 5, 6, 6], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 224, "bcs": 5, "ground_truth": 5.0, "timestamp": "2026-04-13T01:27:32.623598", "error": null, "votes": [5, 1, 5, 3, 4, 5], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 225, "bcs": 5, "ground_truth": 5.0, "timestamp": "2026-04-13T01:27:32.623603", "error": null, "votes": [5, 5, 5, 7, 7, 5], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 226, "bcs": 5, "ground_truth": 5.0, "timestamp": "2026-04-13T01:27:32.623607", "error": null, "votes": [5, 5, 1, 5, 4, 2], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 227, "bcs": 5, "ground_truth": 5.0, "timestamp": "2026-04-13T01:27:32.623612", "error": null, "votes": [7, 5, 5, 5, 7, 5], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 228, "bcs": 7, "ground_truth": 5.0, "timestamp": "2026-04-13T01:27:32.623616", "error": null, "votes": [7, 7, 7, 8, 8, 8], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 229, "bcs": 6, "ground_truth": 5.0, "timestamp": "2026-04-13T01:27:32.623621", "error": null, "votes": [6, 6, 5, 5, 6, 6], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 230, "bcs": 5, "ground_truth": 5.0, "timestamp": "2026-04-13T01:27:32.623625", "error": null, "votes": [6, 6, 5, 5, 7, 5], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 231, "bcs": 5, "ground_truth": 6.0, "timestamp": "2026-04-13T01:27:32.623630", "error": null, "votes": [5, 5, 2, 5, 7, 2], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 232, "bcs": 5, "ground_truth": 6.0, "timestamp": "2026-04-13T01:27:32.623634", "error": null, "votes": [5, 5, 3, 5, 5, 4], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 233, "bcs": 5, "ground_truth": 6.0, "timestamp": "2026-04-13T01:27:32.623639", "error": null, "votes": [5, 5, 3, 5, 7, 4], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 234, "bcs": 5, "ground_truth": 6.0, "timestamp": "2026-04-13T01:27:32.623644", "error": null, "votes": [5, 5, 5, 5, 4, 5], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 235, "bcs": 5, "ground_truth": 6.0, "timestamp": "2026-04-13T01:27:32.623648", "error": null, "votes": [5, 2, 5, 2, 4, 5], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 236, "bcs": 5, "ground_truth": 6.0, "timestamp": "2026-04-13T01:27:32.623653", "error": null, "votes": [5, 5, 8, 7, 6, 8], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 237, "bcs": 5, "ground_truth": 6.0, "timestamp": "2026-04-13T01:27:32.623657", "error": null, "votes": [5, 5, 3, 5, 5, 4], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 238, "bcs": 7, "ground_truth": 6.0, "timestamp": "2026-04-13T01:27:32.623662", "error": null, "votes": [5, 7, 1, 7, 6, 1], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 239, "bcs": 5, "ground_truth": 6.0, "timestamp": "2026-04-13T01:27:32.623666", "error": null, "votes": [5, 5, 3, 5, 6, 2], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 240, "bcs": 8, "ground_truth": 6.0, "timestamp": "2026-04-13T01:27:32.623671", "error": null, "votes": [5, 7, 8, 5, 8, 8], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 241, "bcs": 7, "ground_truth": 7.0, "timestamp": "2026-04-13T01:27:32.623675", "error": null, "votes": [7, 7, 5, 7, 7, 6], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 242, "bcs": 5, "ground_truth": 7.0, "timestamp": "2026-04-13T01:27:32.623680", "error": null, "votes": [5, 5, 5, 5, 6, 4], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 243, "bcs": 7, "ground_truth": 7.0, "timestamp": "2026-04-13T01:27:32.623684", "error": null, "votes": [7, 7, 9, 7, 7, 9], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 244, "bcs": 5, "ground_truth": 7.0, "timestamp": "2026-04-13T01:27:32.623689", "error": null, "votes": [5, 5, 3, 5, 6, 4], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 245, "bcs": 6, "ground_truth": 7.0, "timestamp": "2026-04-13T01:27:32.623693", "error": null, "votes": [6, 6, 6, 7, 7, 5], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 246, "bcs": 8, "ground_truth": 7.0, "timestamp": "2026-04-13T01:27:32.623698", "error": null, "votes": [5, 8, 8, 8, 6, 8], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 247, "bcs": 5, "ground_truth": 7.0, "timestamp": "2026-04-13T01:27:32.623703", "error": null, "votes": [5, 5, 6, 7, 6, 4], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 248, "bcs": 7, "ground_truth": 7.0, "timestamp": "2026-04-13T01:27:32.623707", "error": null, "votes": [7, 7, 5, 7, 6, 6], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 249, "bcs": 5, "ground_truth": 7.0, "timestamp": "2026-04-13T01:27:32.623712", "error": null, "votes": [5, 6, 5, 6, 5, 5], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 250, "bcs": 6, "ground_truth": 7.0, "timestamp": "2026-04-13T01:27:32.623716", "error": null, "votes": [6, 6, 8, 6, 7, 8], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 251, "bcs": 7, "ground_truth": 7.0, "timestamp": "2026-04-13T01:27:32.623721", "error": null, "votes": [7, 6, 7, 6, 7, 7], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 252, "bcs": 5, "ground_truth": 7.0, "timestamp": "2026-04-13T01:27:32.623725", "error": null, "votes": [5, 5, 6, 5, 7, 6], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 253, "bcs": 8, "ground_truth": 7.0, "timestamp": "2026-04-13T01:27:32.623730", "error": null, "votes": [5, 8, 8, 8, 8, 8], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 254, "bcs": 6, "ground_truth": 7.0, "timestamp": "2026-04-13T01:27:32.623734", "error": null, "votes": [5, 6, 8, 6, 6, 8], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 255, "bcs": 6, "ground_truth": 8.0, "timestamp": "2026-04-13T01:27:32.623739", "error": null, "votes": [5, 6, 8, 6, 6, 8], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 256, "bcs": 6, "ground_truth": 8.0, "timestamp": "2026-04-13T01:27:32.623743", "error": null, "votes": [6, 5, 8, 6, 7, 8], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 257, "bcs": 7, "ground_truth": 8.0, "timestamp": "2026-04-13T01:27:32.623748", "error": null, "votes": [7, 6, 8, 6, 7, 9], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 258, "bcs": 8, "ground_truth": 8.0, "timestamp": "2026-04-13T01:27:32.623753", "error": null, "votes": [8, 7, 9, 8, 8, 9], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 259, "bcs": 7, "ground_truth": 8.0, "timestamp": "2026-04-13T01:27:32.623757", "error": null, "votes": [6, 7, 8, 7, 7, 8], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 260, "bcs": 6, "ground_truth": 8.0, "timestamp": "2026-04-13T01:27:32.623762", "error": null, "votes": [5, 6, 8, 6, 7, 8], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 261, "bcs": 6, "ground_truth": 8.0, "timestamp": "2026-04-13T01:27:32.623766", "error": null, "votes": [6, 6, 7, 6, 7, 7], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 262, "bcs": 6, "ground_truth": 8.0, "timestamp": "2026-04-13T01:27:32.623771", "error": null, "votes": [6, 6, 8, 6, 7, 8], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 263, "bcs": 7, "ground_truth": 8.0, "timestamp": "2026-04-13T01:27:32.623775", "error": null, "votes": [7, 6, 8, 6, 7, 8], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 264, "bcs": 6, "ground_truth": 8.0, "timestamp": "2026-04-13T01:27:32.623801", "error": null, "votes": [6, 6, 6, 6, 7, 5], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 265, "bcs": 5, "ground_truth": 8.0, "timestamp": "2026-04-13T01:27:32.623805", "error": null, "votes": [5, 5, 6, 5, 7, 2], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 266, "bcs": 7, "ground_truth": 9.0, "timestamp": "2026-04-13T01:27:32.623810", "error": null, "votes": [7, 7, 7, 7, 7, 8], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 267, "bcs": 7, "ground_truth": 9.0, "timestamp": "2026-04-13T01:27:32.623815", "error": null, "votes": [7, 7, 7, 7, 7, 7], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 268, "bcs": 7, "ground_truth": 9.0, "timestamp": "2026-04-13T01:27:32.623819", "error": null, "votes": [7, 7, 8, 7, 7, 8], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 269, "bcs": 7, "ground_truth": 9.0, "timestamp": "2026-04-13T01:27:32.623824", "error": null, "votes": [7, 7, 9, 7, 7, 9], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 270, "bcs": 7, "ground_truth": 9.0, "timestamp": "2026-04-13T01:27:32.623828", "error": null, "votes": [7, 7, 8, 7, 7, 8], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 271, "bcs": 6, "ground_truth": 9.0, "timestamp": "2026-04-13T01:27:32.623833", "error": null, "votes": [6, 6, 8, 6, 7, 8], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 272, "bcs": 7, "ground_truth": 9.0, "timestamp": "2026-04-13T01:27:32.623837", "error": null, "votes": [7, 7, 9, 7, 7, 8], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 273, "bcs": 7, "ground_truth": 9.0, "timestamp": "2026-04-13T01:27:32.623842", "error": null, "votes": [7, 6, 9, 6, 7, 9], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 274, "bcs": 7, "ground_truth": 9.0, "timestamp": "2026-04-13T01:27:32.623846", "error": null, "votes": [7, 7, 9, 8, 7, 9], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 275, "bcs": 7, "ground_truth": 9.0, "timestamp": "2026-04-13T01:27:32.623851", "error": null, "votes": [7, 6, 9, 6, 7, 9], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 276, "bcs": 7, "ground_truth": 9.0, "timestamp": "2026-04-13T01:27:32.623855", "error": null, "votes": [7, 5, 8, 7, 7, 8], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 277, "bcs": 7, "ground_truth": 9.0, "timestamp": "2026-04-13T01:27:32.623860", "error": null, "votes": [7, 6, 8, 6, 7, 8], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
+{"image_id": 278, "bcs": 7, "ground_truth": 9.0, "timestamp": "2026-04-13T01:27:32.623864", "error": null, "votes": [7, 7, 9, 7, 7, 9], "sources": ["P1", "P2", "P3", "P5", "P6", "P7"]}
