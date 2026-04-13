@@ -1,0 +1,29 @@
+{
+  "train_size": 400,
+  "model_id": "google/gemma-4-E2B-it",
+  "final_split": {
+    "eval_count": 100,
+    "parsed": 100,
+    "coverage": 1.0,
+    "mae": 1.51
+  },
+  "baseline": {
+    "split": {
+      "eval_count": 100,
+      "parsed": 100,
+      "coverage": 1.0,
+      "mae": 1.58
+    }
+  },
+  "epoch_history": [
+    {
+      "epoch": 1.0,
+      "split": {
+        "eval_count": 100,
+        "parsed": 100,
+        "coverage": 1.0,
+        "mae": 1.51
+      }
+    }
+  ]
+}

@@ -25,7 +25,20 @@ import torch.nn.functional as F
 from PIL import Image
 from torch.utils.data import DataLoader, Dataset, WeightedRandomSampler
 from torchvision import transforms
-from torchvision.models import ConvNeXt_Tiny_Weights, convnext_tiny
+from torchvision.models import (
+    ConvNeXt_Base_Weights,
+    ConvNeXt_Small_Weights,
+    ConvNeXt_Tiny_Weights,
+    convnext_base,
+    convnext_small,
+    convnext_tiny,
+)
+
+CONVNEXT_VARIANTS = {
+    "tiny": (convnext_tiny, ConvNeXt_Tiny_Weights.IMAGENET1K_V1),
+    "small": (convnext_small, ConvNeXt_Small_Weights.IMAGENET1K_V1),
+    "base": (convnext_base, ConvNeXt_Base_Weights.IMAGENET1K_V1),
+}
 
 
 # ---------------------------------------------------------------------------
@@ -76,12 +89,21 @@ def coral_predict(logits: torch.Tensor) -> torch.Tensor:
 # ---------------------------------------------------------------------------
 
 class ConvNeXtCoral(nn.Module):
-    """ConvNeXt-Tiny backbone + CORAL head for ordinal BCS regression."""
+    """ConvNeXt backbone + CORAL head for ordinal BCS regression."""
 
-    def __init__(self, num_classes: int = 9, pretrained: bool = True, dropout: float = 0.2):
+    def __init__(
+        self,
+        num_classes: int = 9,
+        pretrained: bool = True,
+        dropout: float = 0.2,
+        variant: str = "tiny",
+    ):
         super().__init__()
-        weights = ConvNeXt_Tiny_Weights.IMAGENET1K_V1 if pretrained else None
-        backbone = convnext_tiny(weights=weights)
+        if variant not in CONVNEXT_VARIANTS:
+            raise ValueError(f"Unknown variant {variant}; expected one of {list(CONVNEXT_VARIANTS)}")
+        builder, weights_enum = CONVNEXT_VARIANTS[variant]
+        weights = weights_enum if pretrained else None
+        backbone = builder(weights=weights)
         # ConvNeXt classifier is Sequential(LayerNorm, Flatten, Linear).
         # Keep the LayerNorm + Flatten, replace the Linear.
         in_features = backbone.classifier[2].in_features
@@ -249,6 +271,8 @@ def main() -> int:
     parser.add_argument("--batch-size", type=int, default=32)
     parser.add_argument("--image-size", type=int, default=224)
     parser.add_argument("--dropout", type=float, default=0.2)
+    parser.add_argument("--backbone", choices=list(CONVNEXT_VARIANTS.keys()), default="tiny",
+                        help="ConvNeXt variant: tiny (~28M), small (~50M), base (~89M).")
     parser.add_argument("--weight-decay", type=float, default=1e-4)
     parser.add_argument("--seed", type=int, default=42)
     parser.add_argument("--train-size", type=int, default=80,
@@ -339,7 +363,14 @@ def main() -> int:
     # Model
     # ------------------------------------------------------------------
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-    model = ConvNeXtCoral(num_classes=NUM_CLASSES, pretrained=True, dropout=args.dropout)
+    model = ConvNeXtCoral(
+        num_classes=NUM_CLASSES,
+        pretrained=True,
+        dropout=args.dropout,
+        variant=args.backbone,
+    )
+    n_params = sum(p.numel() for p in model.parameters()) / 1e6
+    print(f"Model: ConvNeXt-{args.backbone} ({n_params:.1f}M params)")
 
     if args.resume:
         resume_path = os.path.join(base_dir, args.resume) if not os.path.isabs(args.resume) else args.resume

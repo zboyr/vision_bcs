@@ -1,0 +1,77 @@
+{
+  "train_size": 9940,
+  "model_id": "google/gemma-4-E2B-it",
+  "final_split": {
+    "eval_count": 524,
+    "parsed": 516,
+    "coverage": 0.9847328244274809,
+    "mae": 0.8895348837209303
+  },
+  "final_held_out": {
+    "eval_count": 278,
+    "parsed": 223,
+    "coverage": 0.802158273381295,
+    "mae": 1.188340807174888
+  },
+  "baseline": {
+    "split": {
+      "eval_count": 524,
+      "parsed": 524,
+      "coverage": 1.0,
+      "mae": 1.583969465648855
+    },
+    "held_out": {
+      "eval_count": 278,
+      "parsed": 278,
+      "coverage": 1.0,
+      "mae": 2.194244604316547
+    }
+  },
+  "epoch_history": [
+    {
+      "epoch": 1.0,
+      "split": {
+        "eval_count": 524,
+        "parsed": 522,
+        "coverage": 0.9961832061068703,
+        "mae": 0.9099616858237548
+      },
+      "held_out": {
+        "eval_count": 278,
+        "parsed": 271,
+        "coverage": 0.9748201438848921,
+        "mae": 1.6051660516605166
+      }
+    },
+    {
+      "epoch": 2.0,
+      "split": {
+        "eval_count": 524,
+        "parsed": 516,
+        "coverage": 0.9847328244274809,
+        "mae": 0.8875968992248062
+      },
+      "held_out": {
+        "eval_count": 278,
+        "parsed": 232,
+        "coverage": 0.8345323741007195,
+        "mae": 1.2327586206896552
+      }
+    },
+    {
+      "epoch": 3.0,
+      "split": {
+        "eval_count": 524,
+        "parsed": 516,
+        "coverage": 0.9847328244274809,
+        "mae": 0.8895348837209303
+      },
+      "held_out": {
+        "eval_count": 278,
+        "parsed": 223,
+        "coverage": 0.802158273381295,
+        "mae": 1.188340807174888
+      }
+    }
+  ]
+}

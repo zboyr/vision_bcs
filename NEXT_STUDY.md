@@ -16,7 +16,7 @@
 | M4 | Gemma 4 (fine-tuned) | Open-source (LoRA) | Local (vLLM) | BCS fine-tuned |
 | M5 | Gemini-3.1-Pro-Preview | Proprietary | OpenRouter | Google 旗舰 |
 | M6 | Gemini-3.1-Flash-Image-Preview | Proprietary | OpenRouter | Google 轻量多模态 |
-| M7 | GPT-5.4 | Proprietary | OpenAI / OpenRouter | OpenAI 最新 |
+| M7 | ConvNeXt-Small + CORAL | Open-source (49.5M, vision-only CNN) | Local (PyTorch) | ImageNet 预训练 + CORAL 序数回归微调，纯视觉分类器，不使用 prompt |
 
 ---
 
@@ -85,7 +85,7 @@
 | **M4** Gemma 4-FT | x3 | x3 | x3 | x3 | x3 | x3 | x3 |
 | **M5** Gemini-3.1-Pro | x3 | x3 | x3 | x3 | x3 | x3 | x3 |
 | **M6** Gemini-3.1-Flash | x3 | x3 | x3 | x3 | x3 | x3 | x3 |
-| **M7** GPT-5.4 | x3 | x3 | x3 | x3 | x3 | x3 | x3 |
+| **M7** ConvNeXt-Small+CORAL | x3 | — | — | — | — | — | — |
 
 - 每格 x3 = 3 次重复运行
 - 共 7 x 7 x 3 = **147 轮评分**

@@ -83,9 +83,25 @@ def update_matrix(csv_path: str, log_dir: str,
                   repeats: int,
                   model_labels: Optional[Dict[str, str]] = None,
                   prompt_labels: Optional[Dict[str, str]] = None) -> None:
-    """Regenerate the matrix CSV from checkpoint data."""
+    """Regenerate matrix CSV from logs, but PRESERVE existing values for
+    cells where no log data is available. Useful for keeping manually-entered
+    or externally-computed results (e.g. from earlier runs)."""
+    # Read existing CSV (if any)
+    existing: Dict[str, Dict[str, str]] = {}
+    if os.path.exists(csv_path):
+        with open(csv_path, "r", encoding="utf-8") as f:
+            reader = csv.DictReader(f)
+            for r in reader:
+                existing[r["model"]] = r
+
     col_names, rows = build_matrix(
         log_dir, model_ids, prompt_ids, repeats,
         model_labels=model_labels, prompt_labels=prompt_labels,
     )
+    # Merge: log-derived value wins; otherwise keep existing.
+    for row in rows:
+        prev = existing.get(row["model"], {})
+        for col in col_names:
+            if not row.get(col) and prev.get(col):
+                row[col] = prev[col]
     save_matrix(csv_path, col_names, rows)

@@ -1,0 +1,27 @@
+{
+  "train_size": 16,
+  "best_epoch": 1,
+  "best_mae": 4.75,
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 0.7292040288448334,
+      "split": {
+        "mae": 4.75,
+        "accuracy": 0.0,
+        "within_1": 0.25,
+        "count": 4
+      }
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.6963939219713211,
+      "split": {
+        "mae": 6.25,
+        "accuracy": 0.0,
+        "within_1": 0.0,
+        "count": 4
+      }
+    }
+  ]
+}

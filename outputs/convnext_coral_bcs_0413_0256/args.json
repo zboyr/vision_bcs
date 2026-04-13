@@ -1,0 +1,21 @@
+{
+  "dataset": "datasets/cat_10k/train.csv",
+  "eval_dataset": "datasets/cat_10k/eval.csv",
+  "no_held_out_eval": false,
+  "output_dir": "outputs/convnext_coral_bcs",
+  "max_samples": 0,
+  "epochs": 20,
+  "lr": 0.0001,
+  "backbone_lr": 1e-05,
+  "batch_size": 64,
+  "image_size": 224,
+  "dropout": 0.2,
+  "weight_decay": 0.0001,
+  "seed": 42,
+  "train_size": 95,
+  "num_workers": 4,
+  "no_weighted_sampler": false,
+  "baseline_eval": false,
+  "log_interval": 10,
+  "resume": ""
+}

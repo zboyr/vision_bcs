@@ -1,0 +1,1670 @@
+[
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/1976f7c2b5f3aa582709bd51ac20ae96.jpg",
+    "gt": 1,
+    "pred": 3,
+    "output": "{\"reasoning\": \"Based on the clear side profile, the cat exhibits a very pronounced and sharp abdominal tuck, with the ventral line sweeping steeply upward immediately behind the rib cage. The flank area is deeply hollowed out, indicating a complete lack of abdominal fat. The overall body shape is highly angular and slender, suggesting minimal fat covering over the ribs and spine, which would make them easily palpable with no excess fat. The pelvic region appears somewhat prominent, further supporting a thin body condition.\", \"bcs\": 3}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/228ca7596d804eec3a5bf175381f847f.jpg",
+    "gt": 1,
+    "pred": 3,
+    "output": "{\"reasoning\": \"The image displays a cat with a very pronounced abdominal tuck and a highly defined, narrow waist. The flank area is deeply hollowed out, and the pelvic bones appear prominent and angular, indicating minimal to no fat covering over the lumbar and pelvic regions. The overall silhouette is slender and angular, consistent with a thin body condition (BCS 3/9).\", \"bcs\": 3}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/2803b1a0d499d28b605ef3068bf39999.jpg",
+    "gt": 1,
+    "pred": 3,
+    "output": "{\"reasoning\": \"Based on the clear side profile, the cat exhibits a very pronounced and sharp abdominal tuck, with the ventral line sweeping steeply upward immediately behind the rib cage. The flank area is deeply hollowed out, indicating a complete lack of abdominal fat. The overall body shape is highly slender and angular, suggesting minimal fat covering over the ribs and spine, which would make them easily palpable with no excess fat. The pelvic bones and hindquarters appear somewhat prominent, further supporting a thin body condition.\", \"bcs\": 3}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/301165db081fe46710e3eda7ff3dc5bf.jpg",
+    "gt": 1,
+    "pred": 3,
+    "output": "{\"reasoning\": \"The image displays a cat with a very pronounced abdominal tuck and a highly visible, narrow waist. The flank area is deeply hollowed out, and the pelvic bones appear prominent and angular. The overall silhouette is slender with minimal fat covering, indicating a thin body condition.\", \"bcs\": 3}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/62fe1874c420c6e402caead62772797d.jpg",
+    "gt": 1,
+    "pred": 4,
+    "output": "{\"reasoning\": \"The image displays a cat with a very pronounced abdominal tuck and a highly defined, narrow waist. The flank area is deeply hollowed out, and the pelvic bones appear prominent, indicating minimal to no fat covering over the lumbar and pelvic regions. While the ribs are not starkly protruding, the overall slender profile and sharp tuck-up suggest a lean, slightly underweight condition.\", \"bcs\": 4}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/6d0c282d5fe581473cf78be1ee4641dc.jpg",
+    "gt": 1,
+    "pred": 2,
+    "output": "{\"reasoning\": \"The cat exhibits a severe abdominal tuck and deeply hollowed flanks. The spine and pelvic bones are prominent and easily visible despite the fur, indicating minimal fat covering and likely muscle wasting.\", \"bcs\": 2}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/6f3d39851ad0a791497341d9875a8d4a.jpg",
+    "gt": 1,
+    "pred": 2,
+    "output": "{\"reasoning\": \"Based on the rear-dorsal view of this cat, the most prominent feature supporting a BCS of 2 is the severe, exaggerated waistline. The body narrows dramatically behind the ribcage, creating a sharp, pinched appearance where the thorax meets the abdomen. The pelvic bones (ilium) are highly angular and protrude sharply, indicating a complete lack of fat covering over the lumbar and pelvic regions. The spine forms a distinct, visible ridge along the dorsal line, and the overall body shape is narrow and bony, suggesting that the ribs and lumbar vertebrae would be easily visible and palpable with minimal to no fat covering.\", \"bcs\": 2}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/a51a364472791082267d5bd68d8bb2f4.jpg",
+    "gt": 1,
+    "pred": 5,
+    "output": "{\"reasoning\": \"The image displays a cat with a well-proportioned, athletic build consistent with an ideal BCS of 5. The ribcage area is smooth with no visible ribs, indicating adequate coverage without excess fat. A clear abdominal tuck is visible from the side profile, with the belly line sloping upward toward the hindquarters. The waist is discernible behind the ribs, showing a slight narrowing before the hips. There are no visible fat deposits over the lumbar area, face, or limbs, and the overall muscle mass appears well-developed and balanced.\", \"bcs\": 5}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/bad3f0bda23ae8436ba9f0569d9139fc.jpg",
+    "gt": 1,
+    "pred": 2,
+    "output": "{\"reasoning\": \"The image displays a cat with a very pronounced abdominal tuck and a highly defined, narrow waist. The flank area is deeply hollowed out, indicating minimal to no fat covering over the ribs and abdomen. The pelvic bones (hips) are prominent and angular, and the spine forms a visible ridge along the back, suggesting a lack of fat and potential muscle wasting in the lumbar region. The overall silhouette is extremely slender and angular, consistent with a very thin body condition.\", \"bcs\": 2}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/d989337b6ea7071355f688dc557c2ef5.jpg",
+    "gt": 1,
+    "pred": 3,
+    "output": "{\"reasoning\": \"The image displays a cat with a very pronounced abdominal tuck and a highly defined, narrow waist. The flank area is deeply hollowed out, and the pelvic bones appear prominent and angular. The overall body shape is slender with minimal fat covering, indicating a thin condition.\", \"bcs\": 3}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/e39b16cf4e6af8e06e8ae74b81a27c3c.jpg",
+    "gt": 1,
+    "pred": 4,
+    "output": "{\"reasoning\": \"The cat is viewed from behind, which obscures key landmarks like the waist and abdominal tuck. However, the overall body shape appears narrow and somewhat angular, suggesting a lack of fat covering and a thin condition. The medium-length fur makes precise assessment difficult, but the silhouette indicates an underweight state.\", \"bcs\": 4}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/e7b8488fa2fa0f8ee78acb921c914b1b.jpg",
+    "gt": 1,
+    "pred": 3,
+    "output": "{\"reasoning\": \"Based on the clear side profile, the cat exhibits a very pronounced and sharp abdominal tuck, with the ventral line sweeping steeply upward immediately behind the rib cage. The flank area is deeply hollowed out, indicating a complete lack of abdominal fat. The overall body shape is highly angular and slender, suggesting minimal fat covering over the ribs and spine, which would make them easily palpable with no excess fat. The pelvic region appears somewhat prominent, further supporting the assessment of a thin body condition.\", \"bcs\": 3}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/0cc56ca2556166565f938c95866d4b44.jpg",
+    "gt": 2,
+    "pred": 2,
+    "output": "{\"reasoning\": \"Based on the rear-oblique view of this cat, the visual evidence strongly supports a BCS of 2/9 (Very Thin). The most prominent feature is the severe, sharp inward curve of the spine, which forms a distinct ridge along the back, indicating a complete lack of fat covering over the vertebrae. The pelvic bones (ilium) are highly angular and protrude sharply at the base of the tail, making them very obvious even from this angle. The hindquarters appear bony and sunken, suggesting significant muscle wasting in the gluteal and thigh regions. While the waist and abdominal tuck are not directly visible from this specific angle, the extreme narrowness of the lower abdomen and the overall gauntness of the hindquarters imply a severe abdominal tuck and a complete absence of fat deposits. The cat exhibits a highly prominent, bony silhouette consistent with an emaciated state.\", \"bcs\": 2}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/11d3dd4cd4bcf65857f042728686e033.jpg",
+    "gt": 2,
+    "pred": 3,
+    "output": "{\"reasoning\": \"Based on the clear side profile, the cat exhibits a very pronounced abdominal tuck, with the ventral line sweeping sharply upward immediately behind the rib cage. The flank area is deeply hollowed out, indicating a highly defined and narrow waist. The overall silhouette is lean and angular, suggesting minimal subcutaneous fat covering over the ribs and spine, which would likely be easily palpable. The pelvic bones appear slightly prominent, further supporting a thin body condition.\", \"bcs\": 3}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/129990a85e46c7d94d5d7bf1d55ab8a5.jpg",
+    "gt": 2,
+    "pred": 4,
+    "output": "{\"reasoning\": \"Based on the top-down perspective of this dog, the waist is clearly and significantly narrowed behind the ribcage, indicating a very pronounced waistline. The ribcage area appears somewhat angular, suggesting that the ribs would be easily palpable with minimal fat covering. The overall body shape is quite slender and lacks the smooth, rounded contours of an ideal weight, pointing towards a slightly underweight condition.\", \"bcs\": 4}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/1fc2749ff818132d76dc35c047921877.jpg",
+    "gt": 2,
+    "pred": 3,
+    "output": "{\"reasoning\": \"The image displays a cat with a very pronounced abdominal tuck and a highly visible, narrow waist. The flank area is deeply hollowed out, and the pelvic bones appear prominent and angular. The overall silhouette is slender with minimal fat covering, indicating a thin body condition.\", \"bcs\": 3}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/2ad0f02d75e44f9e599a4400722e27cf.jpg",
+    "gt": 2,
+    "pred": 3,
+    "output": "{\"reasoning\": \"The image displays a cat with a very pronounced abdominal tuck and a highly defined, narrow waist. The flank area is deeply hollowed out, and the pelvic bones appear prominent and angular. The overall body shape is slender with minimal fat covering, indicating a thin condition.\", \"bcs\": 3}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/67a1d029b7b461a3a8c32f9feb2da0ca.jpg",
+    "gt": 2,
+    "pred": 2,
+    "output": "{\"reasoning\": \"Based on the clear side profile of this short-haired cat, the visual evidence strongly supports a BCS of 2/9 (Very Thin). The most prominent feature is the severe, sharp abdominal tuck, with the belly line sweeping dramatically upward immediately behind the rib cage. The flank area is deeply hollowed out, indicating a complete lack of abdominal fat. The overall body shape is angular and narrow, suggesting minimal fat covering over the ribs and spine, which would be easily palpable. The pelvic bones and the angularity of the hindquarters are slightly visible, further supporting the 'Very Thin' classification where fat is depleted and muscle mass is not significantly atrophied.\", \"bcs\": 2}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/6c0519064e6333c8fd9fd94a3459b53b.jpg",
+    "gt": 2,
+    "pred": 5,
+    "output": "{\"reasoning\": \"The image displays a cat with a well-proportioned, athletic build consistent with an ideal BCS of 5/9. The ribcage area is smooth with no visible ribs, indicating a healthy, minimal fat covering where ribs would be easily palpable. A clear abdominal tuck is visible from the side profile, with the ventral line sloping upward toward the hindquarters. The waist is discernible behind the ribcage, showing a slight narrowing before the hips. There are no visible fat deposits over the lumbar area, face, or limbs, and the overall muscle mass appears well-developed and balanced.\", \"bcs\": 5}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/859178b4f23345d19e0056ac78866921.jpg",
+    "gt": 2,
+    "pred": 3,
+    "output": "{\"reasoning\": \"The image displays a cat with a very pronounced abdominal tuck and a highly defined, narrow waist. The flank area is deeply hollowed out, and the pelvic bones appear prominent and angular. The overall silhouette is slender with minimal fat covering, indicating a thin body condition.\", \"bcs\": 3}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/a00fb93b96c03a5a3e1986323b1dc036.jpg",
+    "gt": 2,
+    "pred": 2,
+    "output": "{\"reasoning\": \"Based on the rear-oblique view of this short-haired cat, the visual evidence strongly supports a BCS of 2/9 (Very Thin). The most prominent feature is the severe, sharp inward curve of the spine, which forms a distinct ridge along the back, indicating a complete lack of lumbar fat and significant muscle wasting in the dorsal region. From this angle, there is an extreme, exaggerated waistline behind the ribcage, with the flanks sweeping sharply inward before the pelvis. The pelvic bones (ilium) are highly angular and protrude noticeably, lacking any fat covering. The hindquarters appear bony and thin, suggesting severe muscle depletion. The overall body shape is narrow and angular, with no visible fat deposits, consistent with a very thin condition where skeletal structures are easily visible and prominent.\", \"bcs\": 2}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/af791be1603032072f6e168c8e51c555.jpg",
+    "gt": 2,
+    "pred": 3,
+    "output": "{\"reasoning\": \"Based on the clear side profile, the cat exhibits a very pronounced abdominal tuck, with the ventral line sweeping sharply upward immediately behind the rib cage. The flank area is deeply hollowed out, indicating a highly defined and narrow waist. The overall body shape is lean and slender, with minimal to no visible fat covering over the ribs, spine, or pelvic bones. The limbs and neck appear thin, suggesting a lack of fat deposits. While the image is a rendering, the extreme angularity of the waist and abdomen strongly supports a 'Thin' BCS 3/9 assessment.\", \"bcs\": 3}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/08aeeadb03029083f4a0acad4d2cffd3.jpg",
+    "gt": 3,
+    "pred": 3,
+    "output": "{\"reasoning\": \"The image displays a cat with a very pronounced abdominal tuck and a highly visible, narrow waist. The flank area is deeply hollowed out, and the pelvic bones appear prominent and angular. The overall silhouette is slender with minimal fat covering, indicating a thin body condition.\", \"bcs\": 3}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/4e11ce68a5fe40a93aa154542b8d5414.jpg",
+    "gt": 3,
+    "pred": 6,
+    "output": "{\"reasoning\": \"Based on the rear-oblique view of this cat, the visual evidence supports a BCS of 6/9. The cat exhibits a well-proportioned but slightly rounded body shape. The rib cage is smooth with no ribs visible, indicating a slight excess fat covering that would make them palpable but not prominent. The waist is discernible behind the ribs but is not sharply defined, appearing slightly filled in. The lumbar area and hips show a slight rounding, and there is a slight abdominal fat pad visible near the base of the tail, which softens the abdominal tuck. The overall silhouette is sturdy and slightly fleshy, consistent with a slightly overweight condition.\", \"bcs\": 6}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/59d83e18257dabc9d842e7de8a441163.jpg",
+    "gt": 3,
+    "pred": 2,
+    "output": "{\"reasoning\": \"Based on the top-down perspective of this dog, the most prominent feature supporting a BCS of 2 is the extreme, sharp narrowing of the body behind the ribcage, indicating a severe waist. The pelvic bones (hips) are highly angular and protrude significantly, forming sharp points that are clearly visible despite the fur. The spine forms a distinct, bumpy ridge along the back, and the shoulder blades appear prominent. There is a complete lack of lateral body width, suggesting that the ribs would be easily visible and palpable with minimal to no fat covering. The overall silhouette is highly angular and bony, consistent with a 'Very Thin' condition.\", \"bcs\": 2}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/6fb2545e5357ab5ed5aa6fbfed72a7d0.jpg",
+    "gt": 3,
+    "pred": 3,
+    "output": "{\"reasoning\": \"The image displays a cat with a very pronounced abdominal tuck and a highly defined, narrow waist. The flank area is deeply hollowed out, and the pelvic bones appear prominent and angular. The overall silhouette is slender with minimal fat covering, indicating a thin body condition.\", \"bcs\": 3}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/7d1a731a4bea19a3fc88e121bf08f20e.jpg",
+    "gt": 3,
+    "pred": 5,
+    "output": "{\"reasoning\": \"The image displays a cat with a well-proportioned, athletic build consistent with an ideal BCS of 5. The ribcage area is smooth with no visible bony prominences, suggesting the ribs are palpable without excess fat covering. A clear abdominal tuck is visible, with the ventral line sloping upward distinctly behind the ribcage toward the hindquarters. The waist is discernible behind the ribs, showing a slight narrowing before the hips. There are no visible fat deposits over the lumbar region, neck, or limbs, and the overall muscle mass appears well-developed and balanced.\", \"bcs\": 5}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/8f00a3dbfed04b95d83cd7ff802d7577.jpg",
+    "gt": 3,
+    "pred": 3,
+    "output": "{\"reasoning\": \"Based on the clear side profile, the cat exhibits a very pronounced and sharp abdominal tuck, with the ventral line sweeping steeply upward immediately behind the rib cage. The flank area is deeply hollowed out, indicating a severe lack of abdominal fat. The overall body shape is highly angular and slender, suggesting minimal fat covering over the ribs and spine, which would make them easily palpable with no excess fat. The pelvic region appears somewhat prominent, further supporting the assessment of a thin body condition.\", \"bcs\": 3}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/bb1b2b7aea808ca424f8f6bc223dc0ea.jpg",
+    "gt": 3,
+    "pred": 2,
+    "output": "{\"reasoning\": \"Based on the rear-oblique view of this cat, the visual evidence strongly supports a BCS of 2/9 (Very Thin). The most prominent feature is the severe, sharp inward curve of the spine, which forms a distinct ridge along the back, indicating a complete lack of fat covering over the vertebrae. The pelvic bones (ilium) are highly angular and protrude sharply, creating a very bony and uneven lumbar region. From this angle, there is an extreme, exaggerated waistline behind the ribs, with a complete absence of any lateral body width. The hindquarters appear sunken and bony, suggesting significant muscle wasting in the gluteal and thigh regions. The overall silhouette is narrow and angular, lacking any normal body fat padding.\", \"bcs\": 2}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/bd7e8766ac8b081c2c1c98dba2e3d492.jpg",
+    "gt": 3,
+    "pred": 3,
+    "output": "{\"reasoning\": \"From the top-down perspective, the cat exhibits a very pronounced, sharp waistline behind the ribs. The pelvic bones appear somewhat prominent, and the overall body shape is narrow, indicating minimal fat covering.\", \"bcs\": 3}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/be52cadcb57a1508dd0704d93e400ede.jpg",
+    "gt": 3,
+    "pred": 5,
+    "output": "{\"reasoning\": \"The image provides a clear, frontal view of a short-haired cat, allowing for a good assessment of its overall body shape. The cat has a well-proportioned, lean, and muscular build. There are no visible fat deposits on the chest, neck, or limbs. The shoulders and back appear smooth without protruding bones, suggesting an ideal fat covering. While the waist and abdominal tuck are not visible from this specific angle, the overall sleekness and lack of any bulging or rounding indicate a healthy, ideal body condition.\", \"bcs\": 5}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/eee29b30331a0a7820a869e4d7cd26dd.jpg",
+    "gt": 3,
+    "pred": 5,
+    "output": "{\"reasoning\": \"The image displays a cat with a well-proportioned, athletic build consistent with an ideal BCS of 5. The ribcage area is smooth with no visible ribs, indicating a healthy, minimal fat covering where ribs would be easily palpable. A clear abdominal tuck is visible from the side profile, with the belly line sloping upward toward the hindquarters. The waist is discernible behind the ribcage, showing a slight narrowing before the hips. There are no visible fat deposits over the lumbar area, face, or limbs, and the overall muscle mass appears well-developed and balanced.\", \"bcs\": 5}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/ff7a29a61de38b8100216aebace28c4e.jpg",
+    "gt": 3,
+    "pred": 3,
+    "output": "{\"reasoning\": \"The image displays a cat with a very pronounced abdominal tuck and a highly defined, narrow waist. The flank area is deeply hollowed out, and the pelvic bones appear prominent and angular. The overall silhouette is slender with minimal fat covering, indicating a thin body condition.\", \"bcs\": 3}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/08644cf15a7e677f0e605867e479e22e.jpg",
+    "gt": 4,
+    "pred": 2,
+    "output": "{\"reasoning\": \"Based on the rear-oblique view of this short-haired cat, the visual evidence strongly supports a BCS of 2/9 (Very Thin). The most prominent feature is the severe, sharp inward curve of the waistline, which is almost completely invisible from the side, indicating a complete lack of abdominal fat. The pelvic bones (ilium) are highly angular and protrude sharply, forming distinct, bony ridges that are easily visible even through the fur. The spine forms a visible ridge along the dorsal line, and the lumbar vertebrae are prominent. The hindquarters appear sunken, suggesting significant muscle wasting in the gluteal and thigh regions. The overall body shape is narrow and angular, lacking any smooth contour or fat covering, which is characteristic of a very thin body condition.\", \"bcs\": 2}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/158ff81a8f26d4fa6c50d5719a202413.jpg",
+    "gt": 4,
+    "pred": 2,
+    "output": "{\"reasoning\": \"Based on the rear-oblique view of this short-haired cat, the visual evidence strongly supports a BCS of 2/9 (Very Thin). The most prominent feature is the severe, sharp inward curve of the spine, which forms a distinct ridge along the back, indicating a complete lack of lumbar fat and significant muscle wasting in the dorsal region. From this angle, there is an extreme, exaggerated waistline behind the ribs, with a deep, sharp tuck before the pelvis. The pelvic bones (ilium) are highly angular and protrude noticeably, lacking any fat covering. The hindquarters appear bony and thin, and the overall body shape is narrow and angular, consistent with a very thin condition where ribs would be easily visible and palpable with minimal to no fat covering.\", \"bcs\": 2}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/1caa753947c9fb74d0a4963333584a51.jpg",
+    "gt": 4,
+    "pred": 2,
+    "output": "{\"reasoning\": \"Based on the rear-oblique view of this cat, the visual evidence strongly supports a BCS of 2/9 (Very Thin). The most prominent feature is the severe, sharp inward curve of the waistline, which is almost completely invisible from the side, indicating a complete lack of abdominal fat. The pelvic bones (ilium) are highly angular and protrude sharply, forming distinct, bony ridges that are easily visible even through the coat. The spine forms a visible ridge along the back, and the lumbar vertebrae are prominent. The hindquarters appear sunken, suggesting significant muscle wasting in the gluteal and thigh regions. The overall body shape is narrow and angular, lacking any smooth contour or fat covering, which is characteristic of a very thin body condition.\", \"bcs\": 2}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/272df7a2549eaf0f260914590086e501.jpg",
+    "gt": 4,
+    "pred": 3,
+    "output": "{\"reasoning\": \"The cat has a very pronounced abdominal tuck and a clearly defined waist. The pelvic bones are visible and prominent, and the spine appears somewhat bumpy along the back, indicating minimal fat covering.\", \"bcs\": 3}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/28336663619458c31437fe2415ade914.jpg",
+    "gt": 4,
+    "pred": 6,
+    "output": "{\"reasoning\": \"Based on the rear-oblique view of this cat, the visual evidence supports a BCS of 6/9. The cat exhibits a well-proportioned but slightly rounded silhouette. The rib cage area is smooth with no ribs visible, indicating a slight excess fat covering that would make the ribs palpable but not prominent. The waist is discernible behind the ribs but is not sharply defined, appearing slightly filled in. The lumbar region and hips show a slight rounding, suggesting a small fat pad over the lower back and pelvis. The abdominal tuck is present but shallow, with the ventral line appearing relatively straight rather than sloping upward toward the hind legs. Overall, the cat appears slightly fleshy and well-covered, consistent with being slightly overweight.\", \"bcs\": 6}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/3d2520819cfb0ca370dd965df5963fe4.jpg",
+    "gt": 4,
+    "pred": 3,
+    "output": "{\"reasoning\": \"The cat is viewed from the side in a standing position, revealing a very pronounced abdominal tuck and a hollowed flank. The pelvic bones appear somewhat prominent, and the overall silhouette is quite lean with minimal fat covering, indicating a thin body condition.\", \"bcs\": 3}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/428667f7d671003741cad2c1c9096e11.jpg",
+    "gt": 4,
+    "pred": 2,
+    "output": "{\"reasoning\": \"The cat exhibits a very pronounced abdominal tuck and a deep, sharp waistline. The pelvic bones (hips) are highly prominent and angular, and the spine forms a distinct ridge along the back. The overall lack of fat covering and the sharp skeletal features indicate a very thin condition.\", \"bcs\": 2}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/72af9f1b71de8edc7e90770603a540cf.jpg",
+    "gt": 4,
+    "pred": 6,
+    "output": "{\"reasoning\": \"Based on the rear-oblique view of this cat, the visual evidence supports a BCS of 6/9. The cat exhibits a well-proportioned but slightly rounded body shape. The ribs are not visible, indicating a slight excess fat covering, though the smooth contour of the back suggests they would be easily palpable without significant pressure. The waist is discernible but not prominent, lacking the sharp inward curve seen in an ideal 5/9. The lumbar region and hips appear slightly filled out with a slight fat pad, and the lower abdomen shows a gentle, slight rounding rather than a sharp abdominal tuck. The overall silhouette is solid and slightly fleshy, consistent with a slightly overweight condition.\", \"bcs\": 6}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/89b080ce5098e1643273778caad6783d.jpg",
+    "gt": 4,
+    "pred": 2,
+    "output": "{\"reasoning\": \"The cat exhibits a severe abdominal tuck and deeply hollowed flanks. The spine forms a sharp, prominent ridge along the back, and the pelvic bones are highly visible and angular. The overall lack of fat covering and prominent bony structures indicate a very thin condition.\", \"bcs\": 2}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/93a08da3e2e64662e6c999f2a6ec4ea3.jpg",
+    "gt": 4,
+    "pred": 3,
+    "output": "{\"reasoning\": \"Based on the clear side profile, the cat exhibits a very pronounced and sharp abdominal tuck, with the ventral line sweeping steeply upward immediately behind the rib cage. The flank area is deeply hollowed out, indicating a severe lack of abdominal fat. The overall body shape is highly angular and slender, suggesting minimal fat covering over the ribs and spine, which would make them easily palpable with no excess fat. The pelvic region appears somewhat prominent, further supporting the assessment of a thin body condition.\", \"bcs\": 3}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/97db21533e3f849902315bd7b69e8b4f.jpg",
+    "gt": 4,
+    "pred": 4,
+    "output": "{\"reasoning\": \"Based on the clear side profile, the cat exhibits a very pronounced abdominal tuck, with the ventral line sweeping sharply upward immediately behind the rib cage. The flank area is deeply hollowed out, indicating a highly defined and narrow waist. The overall body shape is lean and slender, with minimal to no visible fat covering over the ribs, spine, or pelvic bones. The limbs and shoulders appear well-muscled but lack any noticeable fat deposits, consistent with a lean, slightly underweight condition.\", \"bcs\": 4}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/af096dca44ff8b795fc99b64e4301718.jpg",
+    "gt": 4,
+    "pred": 5,
+    "output": "{\"reasoning\": \"The image displays a cat with a lean, well-proportioned, and athletic build consistent with an ideal BCS of 5. The chest and ribcage area are smooth with no visible bony prominences, suggesting the ribs would be easily palpable without excess fat covering. From this three-quarter angle, a clear waist is visible behind the ribcage, narrowing before the hips. The abdomen shows a slight, natural tuck, indicating no excess fat or abdominal distension. The overall muscle mass is well-defined, particularly in the shoulders and hindquarters, with no visible fat deposits over the lumbar area or limbs.\", \"bcs\": 5}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/b02099875a6437fd57e530a4ef489a69.jpg",
+    "gt": 4,
+    "pred": 3,
+    "output": "{\"reasoning\": \"The image displays a cat with a very pronounced abdominal tuck and a highly visible, narrow waist. The flank area is deeply hollowed out, and the pelvic bones appear prominent and angular. The overall silhouette is slender with minimal fat covering, indicating a thin body condition.\", \"bcs\": 3}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/c7ecfab470d67c976f107b3ecf037224.jpg",
+    "gt": 4,
+    "pred": 5,
+    "output": "{\"reasoning\": \"The image displays a cat with a well-proportioned, athletic build consistent with an ideal BCS of 5/9. The ribcage area is smooth with no visible ribs, indicating a healthy, minimal fat covering where ribs would be easily palpable. A clear abdominal tuck is visible from the side profile, with the ventral line sloping upward toward the hindquarters. The waist is discernible behind the ribcage, showing a slight narrowing before the hips. There are no visible fat deposits over the lumbar region, neck, or limbs, and the overall muscle mass appears well-developed and balanced.\", \"bcs\": 5}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/d4d304bcd4398761f075de39c6c48438.jpg",
+    "gt": 4,
+    "pred": 5,
+    "output": "{\"reasoning\": \"The cat has a sleek, well-proportioned body with a clear abdominal tuck visible from the side. There are no visible fat deposits, and the overall appearance is lean and muscular, consistent with an ideal body condition for this naturally slender breed.\", \"bcs\": 5}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/d7b5c234778108423eb39bfceab071e2.jpg",
+    "gt": 4,
+    "pred": 3,
+    "output": "{\"reasoning\": \"The cat has a very pronounced abdominal tuck and a highly visible waist. The pelvic bones are prominent and angular, and the spine forms a visible ridge along the back, indicating minimal fat covering and a thin body condition.\", \"bcs\": 3}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/ddc487b3cc048d8ff059f914c76ead99.jpg",
+    "gt": 4,
+    "pred": 3,
+    "output": "{\"reasoning\": \"The cat is standing in a side profile, revealing a very pronounced abdominal tuck and a hollowed flank area. The overall silhouette is quite slender, suggesting minimal fat covering over the ribs and spine, consistent with a thin body condition.\", \"bcs\": 3}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/e96e0e8a356478ae134a52d328dd9e60.jpg",
+    "gt": 4,
+    "pred": 3,
+    "output": "{\"reasoning\": \"The cat has a very pronounced abdominal tuck and a highly visible waist. The flank area is deeply hollowed out, and the pelvic bones appear prominent, indicating minimal fat covering.\", \"bcs\": 3}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/eba061d851c848ce22527dabe5a682c0.jpg",
+    "gt": 4,
+    "pred": 4,
+    "output": "{\"reasoning\": \"The cat is viewed from above in a stretched posture, which accentuates its length. A clear waist is visible behind the ribs, and the pelvic bones appear slightly prominent. The overall slender profile suggests minimal fat covering, consistent with a slightly underweight condition.\", \"bcs\": 4}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/02c27e807502125540bf002c1db52ab7.jpg",
+    "gt": 5,
+    "pred": 3,
+    "output": "{\"reasoning\": \"The cat has a very pronounced abdominal tuck and a clearly defined waist. The overall body shape is slender with minimal fat covering, and the pelvic area appears somewhat angular, indicating a thin condition.\", \"bcs\": 3}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/14c1b50e22bd329c44364b12169aeaf7.jpg",
+    "gt": 5,
+    "pred": 4,
+    "output": "{\"reasoning\": \"The cat has a very slender overall appearance with a narrow chest and thin neck. The body lacks bulk, suggesting minimal fat covering, though the exact waist definition is hard to see from this angle.\", \"bcs\": 4}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/204afd92763c48937b903b8f74df4b98.jpg",
+    "gt": 5,
+    "pred": 3,
+    "output": "{\"reasoning\": \"The image displays a cat with a very pronounced abdominal tuck and a highly defined, narrow waist. The flank area is deeply hollowed out, and the pelvic bones appear prominent and angular. The overall silhouette is slender with minimal fat covering, indicating a thin body condition.\", \"bcs\": 3}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/26075920c7989da7d837d80e425d8c37.jpg",
+    "gt": 5,
+    "pred": 5,
+    "output": "{\"reasoning\": \"The image displays a cat with a well-proportioned, athletic build consistent with an ideal BCS of 5. The ribcage area is smooth with no visible ribs, indicating a healthy, minimal fat covering where ribs would be easily palpable. A distinct waist is visible behind the ribcage, narrowing before the hips. From this side angle, a clear abdominal tuck is present, with the ventral line sloping upward toward the hindquarters. There are no visible fat deposits over the lumbar region, neck, or limbs, and the overall muscle mass appears well-developed and balanced.\", \"bcs\": 5}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/28a9ab556c124fd6309a88436ea4ed9b.jpg",
+    "gt": 5,
+    "pred": 6,
+    "output": "{\"reasoning\": \"Based on the rear-oblique view of this cat, the visual evidence supports a BCS of 6/9. The cat exhibits a well-proportioned but slightly rounded body shape. The ribs are not visible, indicating a slight excess fat covering, though the smooth contour of the thorax suggests they would be easily palpable without significant pressure. The waist is discernible behind the ribcage but is not prominent or sharply defined, appearing somewhat filled in. The lumbar region and hips show slight rounding, and there is a slight abdominal fat pad visible near the base of the tail, which softens the abdominal tuck. Overall, the cat is well-fleshed but lacks the obvious abdominal distension or heavy fat deposits characteristic of a higher score.\", \"bcs\": 6}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/3416e02901a5dfded9cb7af7b39d1e8c.jpg",
+    "gt": 5,
+    "pred": 3,
+    "output": "{\"reasoning\": \"Based on the clear side profile, the cat exhibits a very pronounced abdominal tuck, with the ventral line sweeping sharply upward immediately behind the rib cage. The flank area is deeply hollowed out, indicating a highly defined and narrow waist. The overall body shape is lean and slender, with minimal to no visible fat covering over the ribs, spine, or pelvic bones. The pelvic region appears slightly angular, suggesting slight muscle depletion in the hindquarters. While the image is a rendering and lacks the texture of fur, the sharp angles and lack of any ventral fat pad strongly support a BCS of 3/9 (Thin).\", \"bcs\": 3}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/38499ac8f756fd1986df8112ce886f0a.jpg",
+    "gt": 5,
+    "pred": 5,
+    "output": "{\"reasoning\": \"The cat is viewed from the side in a standing position, revealing a clear abdominal tuck. The body is well-proportioned with no visible ribs or spine, indicating adequate fat cover, yet there is no evidence of a sagging belly or excess fat deposits. The overall silhouette suggests an ideal body condition.\", \"bcs\": 5}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/3f1e19e381b06f8b4dd814ead83cd603.jpg",
+    "gt": 5,
+    "pred": 5,
+    "output": "{\"reasoning\": \"Based on the clear side profile, the cat exhibits a well-proportioned and athletic build consistent with an ideal BCS of 5/9. The ribcage area is smooth with no visible bony prominences, indicating a healthy, minimal fat covering where ribs would be easily palpable without excess. A distinct abdominal tuck is clearly visible, with the ventral line sloping upward smoothly from the chest to the hindquarters. The waist is discernible behind the ribcage, showing a slight narrowing before the hips, though it is not exaggerated. There are no visible fat deposits over the lumbar region, neck, or limbs, and the overall muscle mass appears well-developed and balanced, particularly in the hindquarters, which is typical for a healthy, ideal-weight cat.\", \"bcs\": 5}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/47d0657ceabc5eb982a6d4e57cdac30f.jpg",
+    "gt": 5,
+    "pred": 5,
+    "output": "{\"reasoning\": \"The cat exhibits a well-proportioned, athletic build with a clear abdominal tuck visible from the side profile. There are no obvious fat deposits, and the ribs are not visibly protruding, indicating an ideal body condition.\", \"bcs\": 5}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/534ed3dc54ac2f08f2d585bcd2bf0535.jpg",
+    "gt": 5,
+    "pred": 5,
+    "output": "{\"reasoning\": \"The cat has a well-proportioned, lean body with a clear abdominal tuck visible from the side. There are no obvious fat deposits, and the ribs are not visibly protruding, indicating an ideal body condition.\", \"bcs\": 5}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/5a15d0f2ed18f57c2ac615f6ea5fb4b3.jpg",
+    "gt": 5,
+    "pred": 8,
+    "output": "{\"reasoning\": \"The cat exhibits a thick, rounded body shape with no discernible waistline. The abdomen is obviously distended and bulges outward, indicating heavy fat deposits over the ribs and lumbar region.\", \"bcs\": 8}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/637be5ca4c11ddd00ca3a5976249598a.jpg",
+    "gt": 5,
+    "pred": 5,
+    "output": "{\"reasoning\": \"The image displays a cat with a well-proportioned, athletic build consistent with an ideal BCS of 5/9. The ribcage area is smooth with no visible ribs, indicating a healthy, minimal fat covering where ribs would be easily palpable. A distinct abdominal tuck is clearly visible, with the ventral line sloping upward from the chest to the hindquarters. The waist is discernible behind the ribcage, showing a slight narrowing before the hips. There are no visible fat deposits over the lumbar area, face, or limbs, and the overall muscle mass appears well-developed and balanced.\", \"bcs\": 5}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/904d08f12af96c0498282af4f76e8b4b.jpg",
+    "gt": 5,
+    "pred": 3,
+    "output": "{\"reasoning\": \"The cat exhibits a very slender overall profile with a pronounced abdominal tuck and hollowed flanks. The pelvic area appears somewhat prominent, indicating minimal fat covering.\", \"bcs\": 3}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/a15c610a6be7f68779412c65cf43c649.jpg",
+    "gt": 5,
+    "pred": 3,
+    "output": "{\"reasoning\": \"Based on the clear side profile, the cat exhibits a very pronounced abdominal tuck, with the ventral line sweeping sharply upward immediately behind the rib cage. The flank area is deeply hollowed out, indicating a highly defined and narrow waist. The overall body shape is lean and slender, with minimal to no visible fat covering over the ribs, spine, or pelvic bones. The pelvic bones are slightly prominent, and the hindquarters appear angular rather than rounded. While the fur pattern slightly obscures the exact visibility of the ribs, the extreme tuck and hollowed flanks strongly support a BCS of 3/9 (Thin).\", \"bcs\": 3}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/a7a8eb4251f33e67b6614ca69c32cdba.jpg",
+    "gt": 5,
+    "pred": 7,
+    "output": "{\"reasoning\": \"The cat is lying on its side, which obscures the abdominal tuck and waistline. However, the overall body shape is noticeably rounded and thick, with a broad back and no discernible waist, indicating a heavy fat covering consistent with an overweight condition.\", \"bcs\": 7}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/c0d761d52e211bee1dd09b826e65569e.jpg",
+    "gt": 5,
+    "pred": 5,
+    "output": "{\"reasoning\": \"The cat has a well-proportioned, athletic build with a clear abdominal tuck visible from the side profile. There are no obvious fat deposits, and the ribs are not visibly protruding, indicating an ideal body condition.\", \"bcs\": 5}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/d17035f2bdf93d2772d9d93a51e9959d.jpg",
+    "gt": 5,
+    "pred": 5,
+    "output": "{\"reasoning\": \"The dog is viewed from the side with short fur, allowing for clear assessment of body contours. There is a very pronounced abdominal tuck and a clearly defined waist. The ribs are not visibly protruding, indicating an appropriate, minimal fat covering over well-developed musculature. The overall appearance is lean, well-proportioned, and athletic, consistent with an ideal body condition.\", \"bcs\": 5}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/db47647cc7f0346f8bf149546ddc04c3.jpg",
+    "gt": 5,
+    "pred": 2,
+    "output": "{\"reasoning\": \"Based on the dorsal view of this cat, the spine is highly prominent, forming a sharp, continuous ridge along the back, which is a primary indicator of severe low body fat. The pelvic bones also appear angular and protruding at the hindquarters. There is a severe, exaggerated waistline visible behind the ribcage, with a deep indentation between the ribs and the hips, indicating a complete lack of fat covering in the lumbar and flank regions. The overall body shape is narrow and bony, consistent with a 'Very Thin' condition on the standard 9-point scale.\", \"bcs\": 2}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/e1b2d18b6a27ab742694e85873d2eb63.jpg",
+    "gt": 5,
+    "pred": 5,
+    "output": "{\"reasoning\": \"The cat has a well-proportioned, athletic build with a clear abdominal tuck visible from the side profile. There are no obvious fat deposits, and the ribs are not visibly protruding, indicating an ideal body condition.\", \"bcs\": 5}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/ef818f8954de6de6b542734b5bf3fc55.jpg",
+    "gt": 5,
+    "pred": 3,
+    "output": "{\"reasoning\": \"Based on the rear-oblique view of this short-haired cat, the visual evidence strongly supports a BCS of 3/9 (Thin). The most prominent feature is the highly visible, sharp, and angular pelvic bones (ilium), which protrude noticeably near the base of the tail and hips. The spine forms a distinct, sharp ridge along the dorsal line, indicating minimal fat covering over the lumbar vertebrae. From this angle, there is a very obvious, pinched waist behind the ribcage, and the flank area appears sunken. The overall body shape is narrow and lacks the smooth, rounded contours of an ideal weight, with the hindquarters appearing somewhat bony and the pelvic region looking hollowed out.\", \"bcs\": 3}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/f2ba15b863a121141f7db4b12a878060.jpg",
+    "gt": 5,
+    "pred": 3,
+    "output": "{\"reasoning\": \"The image displays a cat with a very pronounced abdominal tuck and a highly visible, sharp waistline behind the ribcage. The flank area is deeply hollowed out, indicating minimal to no fat covering over the ribs and lumbar region. The pelvic bones appear angular and prominent, and the overall silhouette is very slender and angular, consistent with a thin body condition (BCS 3/9).\", \"bcs\": 3}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/15b815b8f9bdac89f3011180fa4233d4.jpg",
+    "gt": 6,
+    "pred": 7,
+    "output": "{\"reasoning\": \"Based on the rear-oblique view of this cat, the visual evidence strongly supports a BCS of 7/9 (Overweight). The most prominent feature is the complete lack of a waistline; the body shape is straight to slightly rounded from the ribcage to the hips, indicating a heavy fat covering over the lumbar area. The ribcage is completely smooth with no visible skeletal definition, suggesting the ribs would be difficult to palpate. The lumbar region is broad and rounded, and there is obvious rounding and distension of the lower abdomen, with no abdominal tuck present. The overall body shape is thick and blocky, lacking the sleek proportions of an ideal weight.\", \"bcs\": 7}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/28d6b659cf996bce068bf91e49103036.jpg",
+    "gt": 6,
+    "pred": 2,
+    "output": "{\"reasoning\": \"Based on the rear-oblique view of this short-haired cat, the visual evidence strongly supports a BCS of 2/9 (Very Thin). The most prominent feature is the severe, sharp inward curve of the waistline, which is almost completely invisible from the side, indicating a complete lack of abdominal fat. The pelvic bones (hips) are highly angular and protrude noticeably, forming sharp points that are clearly visible even through the fur. The spine forms a distinct, bumpy ridge along the back, indicating minimal fat covering over the vertebrae. The hindquarters appear bony and sunken, and the overall body shape is narrow and angular, lacking any smooth contour or fat deposits. While the ribs are not starkly protruding from this angle, the extreme angularity of the hips and the severe lack of waist definition are sufficient to classify this cat as very thin.\", \"bcs\": 2}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/3506cd502720ffd5e9de2c8e80052253.jpg",
+    "gt": 6,
+    "pred": 3,
+    "output": "{\"reasoning\": \"The cat exhibits a very pronounced abdominal tuck and a highly visible, narrow waist. The flank area is deeply sunken, and the pelvic bones appear prominent, indicating minimal fat covering and a thin body condition.\", \"bcs\": 3}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/4c3b3f0382e691759e0051d3cc37aa50.jpg",
+    "gt": 6,
+    "pred": 5,
+    "output": "{\"reasoning\": \"The image displays a cat with a well-proportioned, athletic build consistent with an ideal BCS of 5. The ribcage area is smooth with no visible ribs, indicating a healthy, minimal fat covering where ribs would be easily palpable. A clear abdominal tuck is visible from the side profile, with the ventral line sloping upward toward the hindquarters. The waist is discernible behind the ribcage, showing a slight narrowing before the hips. There are no visible fat deposits over the lumbar region, face, or limbs, and the overall muscle mass appears well-developed and balanced.\", \"bcs\": 5}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/532c8826ef1c8de6c33483fcf05bc73c.jpg",
+    "gt": 6,
+    "pred": 5,
+    "output": "{\"reasoning\": \"The image displays a cat with a well-proportioned, athletic build consistent with an ideal BCS of 5. The ribcage area is smooth with no visible ribs, indicating a healthy, minimal fat covering where ribs would be easily palpable. A clear abdominal tuck is visible from the side profile, with the ventral line sloping upward toward the hindquarters. The waist is discernible behind the ribcage, showing a slight narrowing before the hips. There are no visible fat deposits over the lumbar region, face, or limbs, and the overall muscle mass appears well-developed and balanced.\", \"bcs\": 5}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/573d6ec5116f46e8bff2ac58f8b925f2.jpg",
+    "gt": 6,
+    "pred": 8,
+    "output": "{\"reasoning\": \"The image displays a cat with a heavily rounded, blocky silhouette consistent with a BCS of 8. The thorax is completely smooth with no visible skeletal definition, indicating a thick layer of fat covering the ribs and spine. From this rear-oblique angle, there is a complete absence of a waistline; the body maintains a thick, continuous width from the shoulders to the hips. The lumbar region and pelvic area are broad and heavily padded, showing no bony prominences. Furthermore, the abdomen is obviously distended and rounded, lacking any tuck, and appears to bulge outward significantly. The overall shape is heavy and cylindrical, with fat deposits clearly visible over the dorsal and lateral body surfaces.\", \"bcs\": 8}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/5dd237133ff12733f1c98d6bde4dd6a6.jpg",
+    "gt": 6,
+    "pred": 5,
+    "output": "{\"reasoning\": \"The image displays a cat with a well-proportioned, athletic build consistent with an ideal BCS of 5/9. The ribcage area is smooth with no visible bony prominences, suggesting the ribs are palpable without excess fat covering. A clear abdominal tuck is visible, with the ventral line sloping upward distinctly behind the ribcage toward the hindquarters. The waist is discernible behind the ribs, showing a slight narrowing before the hips. There are no visible fat deposits over the lumbar region, face, or limbs, and the overall muscle mass appears well-developed and balanced.\", \"bcs\": 5}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/5f81da2405827d8614b28a66b14cc7e0.jpg",
+    "gt": 6,
+    "pred": 5,
+    "output": "{\"reasoning\": \"The image displays a cat with a well-proportioned, athletic build consistent with an ideal BCS of 5/9. The ribcage area is smooth with no visible ribs, indicating a healthy, minimal fat covering where ribs would be easily palpable. A distinct abdominal tuck is clearly visible, with the ventral line sloping upward from the chest to the hindquarters. The waist is discernible behind the ribcage, showing a slight narrowing before the hips. There are no visible fat deposits over the lumbar region, neck, or limbs, and the overall muscle mass appears well-developed and balanced, particularly in the hindquarters, which is typical for a healthy, active cat of this breed type.\", \"bcs\": 5}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/89480970c8794031a7102c85b824f68a.jpg",
+    "gt": 6,
+    "pred": 2,
+    "output": "{\"reasoning\": \"Based on the rear-oblique view of this short-haired cat, the visual evidence strongly supports a BCS of 2/9 (Very Thin). The most prominent feature is the severe, sharp inward curve of the spine, which forms a distinct ridge along the back, indicating a complete lack of fat covering over the vertebrae. The pelvic bones (hips) are highly angular and protrude noticeably at the rear, pointing to significant muscle wasting and a complete absence of fat deposits in the lumbar and pelvic regions. The overall body shape is extremely narrow and frail, with a severe abdominal tuck visible from the side profile, suggesting a complete lack of abdominal fat. The hind limbs appear thin and bony, further supporting the assessment of a very thin body condition.\", \"bcs\": 2}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/9253ef0ec3950aec372daabf332692ad.jpg",
+    "gt": 6,
+    "pred": 7,
+    "output": "{\"reasoning\": \"The cat exhibits a thick, blocky body shape with no discernible waist from the side profile. There is a complete lack of an abdominal tuck, with the belly line appearing straight to slightly rounded. The overall appearance suggests a heavy fat covering over the ribs and lumbar area.\", \"bcs\": 7}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/96f5bcaffe3a3158a25c7bfe88e8a562.jpg",
+    "gt": 6,
+    "pred": 5,
+    "output": "{\"reasoning\": \"The cat has a well-proportioned, lean body with a clear abdominal tuck visible from the side profile. There are no obvious fat deposits, and the overall silhouette suggests an ideal weight.\", \"bcs\": 5}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/a564701dc596c7148567dd0a2000364d.jpg",
+    "gt": 6,
+    "pred": 5,
+    "output": "{\"reasoning\": \"The image displays a cat with a well-proportioned, lean, and muscular build consistent with an ideal BCS of 5. The chest and rib cage area are smooth with no visible bony prominences, indicating adequate fat cover without excess. The shoulders and back are well-defined, suggesting good muscle mass. While a top-down view is not available, the visible side profile shows a clear abdominal tuck and a discernible waist behind the ribs. There are no visible fat deposits on the face, neck, or limbs, and the overall silhouette is sleek and athletic.\", \"bcs\": 5}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/d577a326b159824a7376746fe9838f8f.jpg",
+    "gt": 6,
+    "pred": 7,
+    "output": "{\"reasoning\": \"The cat exhibits a thick, blocky body shape with no discernible waist from this side profile. There is a complete lack of an abdominal tuck, with the belly line appearing straight to slightly rounded. The overall appearance suggests a heavy fat covering over the ribs and lumbar area.\", \"bcs\": 7}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/e003ab9fe46e0f87dee456dc246c39d4.jpg",
+    "gt": 6,
+    "pred": 4,
+    "output": "{\"reasoning\": \"Based on the rear-oblique view of this cat, the visual evidence supports a BCS of 4/9. The cat exhibits a clearly defined waist behind the ribcage, with a noticeable narrowing before the hips. The pelvic bones (ilium) are slightly prominent and angular, indicating minimal fat covering in the lumbar region. The lumbar vertebrae and spine are not sharply protruding, which distinguishes this from a lower score (BCS 2-3), but the overall lack of fat padding over the lower back and hips is evident. The hindquarters and base of the tail appear lean and well-muscled, lacking any fat deposits. While the ribs are not directly visible from this angle, the overall slender profile and slight angularity of the hindquarters suggest they would be easily palpable with minimal fat covering.\", \"bcs\": 4}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/07c9254e78d04b87c95b95a488cbcf47.jpg",
+    "gt": 7,
+    "pred": 7,
+    "output": "{\"reasoning\": \"The cat exhibits a thick, blocky body shape with no discernible waist. There is obvious rounding of the abdomen and a prominent abdominal fat pad hanging down. The overall appearance suggests heavy fat covering over the ribs and spine.\", \"bcs\": 7}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/15bb7146af8fbc87b8bf0d9f68df10fa.jpg",
+    "gt": 7,
+    "pred": 7,
+    "output": "{\"reasoning\": \"Based on the rear-oblique view of this short-haired cat, the visual evidence strongly supports a BCS of 7/9 (Overweight). The most prominent feature is the complete lack of a waistline; the body shape is broad and cylindrical from the ribcage straight through to the hips, indicating significant fat deposits in the lumbar and abdominal regions. The ribcage area is completely smooth and rounded, suggesting a heavy fat covering that would make the ribs difficult to palpate. Furthermore, the ventral profile shows obvious abdominal distension with a complete absence of an abdominal tuck, resulting in a flat to slightly convex belly. The overall body shape is thick and blocky, with noticeable rounding over the lumbar spine and hips, which are classic visual indicators of excess weight on the standard 9-point scale.\", \"bcs\": 7}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/231dbc9f3b4556a77ca0c61629986fc1.jpg",
+    "gt": 7,
+    "pred": 5,
+    "output": "{\"reasoning\": \"The cat has a well-proportioned, lean body with a clear abdominal tuck visible from the side profile. There are no obvious fat deposits, and the ribs are not visibly protruding, suggesting an ideal body condition.\", \"bcs\": 5}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/28165d564c8197431d4e0d9e4b272fa0.jpg",
+    "gt": 7,
+    "pred": 5,
+    "output": "{\"reasoning\": \"The cat exhibits a well-proportioned, muscular build with a clear abdominal tuck visible from the side profile. There are no obvious fat deposits or abdominal sagging, indicating an ideal body condition.\", \"bcs\": 5}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/2ff5876c66c7332355a008fcd6e4385a.jpg",
+    "gt": 7,
+    "pred": 3,
+    "output": "{\"reasoning\": \"From this dorsal-lateral view, the cat exhibits a very pronounced, sharp waistline behind the ribcage, indicating minimal fat covering in the lumbar region. The pelvic bones appear somewhat prominent. The ribcage area is smooth with no visible bony prominences, suggesting the ribs are palpable with minimal fat. The overall body shape is slender and angular, consistent with a thin body condition.\", \"bcs\": 3}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/449ee7b6210c79631d3bb2ec1be89f25.jpg",
+    "gt": 7,
+    "pred": 7,
+    "output": "{\"reasoning\": \"Based on the side profile, the cat exhibits a thick, blocky overall body shape consistent with a BCS of 7. The rib cage area is completely smooth with no visible ribs, indicating a heavy fat covering that would make palpation difficult. There is a complete lack of an abdominal tuck; instead, the ventral line is flat to slightly rounded, showing obvious abdominal distension. The waist is barely visible, if present at all, as the body maintains a thick, straight profile from the shoulders to the hips. Additionally, there is noticeable rounding and slight distension in the lumbar region and along the ventral abdomen, suggesting fat deposits over the lower back and belly.\", \"bcs\": 7}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/4699557e526dfa782920ca659ae97d28.jpg",
+    "gt": 7,
+    "pred": 8,
+    "output": "{\"reasoning\": \"The cat exhibits a thick, blocky body shape with no discernible waist and a complete lack of an abdominal tuck. The abdomen is obviously rounded and distended, indicating heavy fat deposits over the ribs and lumbar area.\", \"bcs\": 8}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/4d701b96d3e55dab008ce9f071389489.jpg",
+    "gt": 7,
+    "pred": 5,
+    "output": "{\"reasoning\": \"The image displays a cat with a well-proportioned, athletic build consistent with an ideal BCS of 5. The chest and ribcage area are smooth with no visible bony prominences, suggesting the ribs would be easily palpable without excess fat covering. A clear waist is visible behind the ribcage, narrowing before the hips. The abdomen shows a slight, natural tuck, with no evidence of a sagging fat pad or distension. The overall body shape is lean and muscular, with no visible fat deposits on the face, limbs, or lumbar region.\", \"bcs\": 5}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/4eeb4f88177cc1438a6c08ed4985c910.jpg",
+    "gt": 7,
+    "pred": 7,
+    "output": "{\"reasoning\": \"The image displays a cat with a rounded, blocky body shape consistent with a BCS of 7. The thorax is smooth and heavily covered, indicating that the ribs would be difficult to palpate under the thick layer of fat. There is no discernible waist behind the ribs; instead, the body maintains a thick, cylindrical width from the shoulders to the hips. The ventral profile shows a complete lack of an abdominal tuck, with the abdomen appearing rounded and slightly distended. Additionally, there are noticeable fat deposits around the neck and shoulders, and the face is full and round, further supporting the assessment of an overweight condition with significant fat accumulation.\", \"bcs\": 7}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/56d44df30e696c5160767fb5a1f4bbfd.jpg",
+    "gt": 7,
+    "pred": 8,
+    "output": "{\"reasoning\": \"The image displays a cat with a heavily rounded, blocky silhouette consistent with a BCS of 8. The thorax is completely smooth with no visible ribs, indicating a thick layer of fat covering the ribcage. There is a complete absence of a waistline; the body maintains a thick, cylindrical shape from the shoulders to the hips. The ventral profile shows obvious abdominal distension with a prominent, low-hanging belly and no abdominal tuck. Additionally, there are noticeable fat deposits around the neck and shoulders, and the lumbar region appears broad and heavily padded.\", \"bcs\": 8}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/57ffa14b1baf05b0955fe1b9f3afe9d6.jpg",
+    "gt": 7,
+    "pred": 7,
+    "output": "{\"reasoning\": \"The cat exhibits a thick, blocky body shape with no discernible waist. There is obvious rounding of the abdomen and a complete lack of an abdominal tuck, indicating significant fat deposits.\", \"bcs\": 7}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/653e16409838120d5204eab718a57e40.jpg",
+    "gt": 7,
+    "pred": 8,
+    "output": "{\"reasoning\": \"The image displays a cat with a heavily rounded, blocky silhouette consistent with a BCS of 8. The rib cage is completely obscured by a thick layer of fat, showing no skeletal definition. There is a complete absence of an abdominal tuck; instead, the ventral line is flat and distended, indicating significant abdominal fat accumulation. The lumbar region is broad and heavily padded, suggesting fat deposits over the spine and hips. The overall body shape is thick and cylindrical, with no discernible waistline from this side profile, and the limbs appear somewhat thickened by fat.\", \"bcs\": 8}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/6623bcf1613843598f8f417b0f8f53ba.jpg",
+    "gt": 7,
+    "pred": 4,
+    "output": "{\"reasoning\": \"The cat is viewed from the side in a standing position, revealing a very pronounced abdominal tuck and a hollowed flank area. The overall silhouette is quite lean with minimal fat covering, indicating an underweight condition.\", \"bcs\": 4}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/6c2ea82434ec152e3aabce3671df2296.jpg",
+    "gt": 7,
+    "pred": 8,
+    "output": "{\"reasoning\": \"The cat exhibits a very rounded, bulky body shape with obvious abdominal distension. There is no discernible waist, and the overall volume suggests heavy fat deposits over the ribs and lumbar area.\", \"bcs\": 8}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/8ecb67a456d4373a16e34acad76962e7.jpg",
+    "gt": 7,
+    "pred": 5,
+    "output": "{\"reasoning\": \"The cat is viewed from the side in a walking posture, revealing a well-proportioned body. There is a clear abdominal tuck and no visible sagging belly or excess fat deposits. The ribs are not visible, suggesting an ideal fat covering, and the overall shape indicates a healthy, lean condition.\", \"bcs\": 5}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/b192be63d9b07260ec94373561716cc8.jpg",
+    "gt": 7,
+    "pred": 8,
+    "output": "{\"reasoning\": \"The cat exhibits a thick, rounded body shape with no discernible waist from this angle. There is obvious abdominal distension and a prominent, hanging belly, indicating heavy fat deposits over the ribs and abdomen.\", \"bcs\": 8}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/b49be36fc36667cf85af30f6b3b56d7c.jpg",
+    "gt": 7,
+    "pred": 8,
+    "output": "{\"reasoning\": \"The image displays a cat with a heavily rounded, blocky silhouette consistent with a BCS of 8. The ribcage area is completely smooth with no visible skeletal definition, indicating a thick layer of fat covering the thorax. From this rear-quarter angle, there is a complete absence of a waistline; the body maintains a thick, straight profile from the shoulders to the hips. The lumbar region and hips are broad and heavily padded, suggesting significant fat deposits over the spine and pelvic bones. Furthermore, the abdomen shows obvious distension and a complete lack of an abdominal tuck, with the belly hanging low and bulging outward. The overall body shape is heavy and rounded, lacking any definition between the limbs and the torso.\", \"bcs\": 8}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/df9b210ec5a801ef42645304b680decc.jpg",
+    "gt": 7,
+    "pred": 8,
+    "output": "{\"reasoning\": \"The image displays a cat with a heavily rounded, blocky silhouette consistent with a BCS of 8. The thorax is completely smooth with no visible rib definition, indicating a thick layer of fat covering the ribcage. From this rear-oblique angle, there is a complete absence of a waistline; the body maintains a thick, cylindrical shape from the shoulders to the hips. The lumbar region and hindquarters are broad and heavily padded, showing no bony prominences such as the spine or pelvic bones. Furthermore, the ventral profile reveals obvious abdominal distension with a complete lack of an abdominal tuck, resulting in a flat, rounded belly that hangs low. The overall heavy fat deposits over the neck, shoulders, and lumbar area strongly support the obese classification.\", \"bcs\": 8}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/edb76b8af9e99f92bb8ce262ec8bd821.jpg",
+    "gt": 7,
+    "pred": 8,
+    "output": "{\"reasoning\": \"The image displays a cat with a heavily rounded, blocky silhouette consistent with a BCS of 8. The thorax is completely smooth with no visible rib definition, indicating a thick layer of fat covering the ribcage. From this rear-oblique angle, there is a complete absence of a waistline; the body maintains a thick, continuous width from the shoulders to the hips. The lumbar region and hips are broad and heavily padded, showing no bony prominences. Furthermore, the abdomen is obviously distended and rounded, lacking any abdominal tuck, which is clearly visible even from behind. The overall shape is heavy and rounded, with significant fat deposits over the lumbar area and hindquarters.\", \"bcs\": 8}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/013225a2fbed257a17fe1de7a3b368bb.jpg",
+    "gt": 8,
+    "pred": 9,
+    "output": "{\"reasoning\": \"The image displays a cat with a massive, barrel-like body shape consistent with a BCS of 9/9. The thorax is completely smooth and rounded, indicating heavy fat deposits that would make the ribs impossible to palpate. There is a complete absence of a waistline; instead, the body bulges outward significantly from the ribcage to the hips. The abdomen is severely distended and pendulous, showing no abdominal tuck and obvious abdominal rounding. Heavy fat deposits are also visible over the lumbar region, neck, and face, giving the cat a blocky, heavily padded appearance. The overall lack of anatomical definition and extreme width-to-length ratio strongly support the obese classification.\", \"bcs\": 9}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/0da1c8d897e87b250e81c4028ed30e65.jpg",
+    "gt": 8,
+    "pred": 7,
+    "output": "{\"reasoning\": \"The image displays a cat with a rounded, blocky body shape consistent with a BCS of 7. The thorax is smooth and broad, indicating a heavy fat covering over the ribs that would make them difficult to palpate. There is no discernible waist behind the ribs; instead, the body maintains a thick, cylindrical shape from the shoulders to the hips. The ventral profile shows obvious abdominal distension with a complete lack of an abdominal tuck, presenting a convex, rounded belly. Additionally, there are noticeable fat deposits around the neck and shoulders, contributing to the overall heavy and rounded appearance.\", \"bcs\": 7}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/1377c29ab8383c5bbb9100eea4af2550.jpg",
+    "gt": 8,
+    "pred": 7,
+    "output": "{\"reasoning\": \"The cat exhibits a thick, blocky body shape with no discernible waist. There is obvious rounding of the abdomen and a complete lack of an abdominal tuck, indicating significant fat deposits.\", \"bcs\": 7}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/255a14ef145606407ee8ab7f76b383c3.jpg",
+    "gt": 8,
+    "pred": 8,
+    "output": "{\"reasoning\": \"The image displays a cat with a heavily rounded, blocky silhouette consistent with a BCS of 8. The thorax is completely smooth with no visible rib definition, indicating a thick layer of fat covering the ribcage. From this rear-quarter angle, there is a complete absence of a waistline; the body maintains a thick, straight to slightly bulging width from the shoulders to the hips. The lumbar region and hips are broad and heavily padded, showing no bony prominences. Furthermore, the abdomen is obviously distended and rounded, lacking any upward abdominal tuck and instead hanging low, which is characteristic of significant abdominal fat deposits. The overall body shape is heavy and cylindrical, with fat deposits visible over the lumbar area and hindquarters.\", \"bcs\": 8}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/303f065f4874d68ee928bd491b2b8307.jpg",
+    "gt": 8,
+    "pred": 9,
+    "output": "{\"reasoning\": \"The image displays a cat with a massive, barrel-like body shape consistent with a BCS of 9/9. The thorax is completely smooth and rounded, indicating heavy fat deposits that would make the ribs impossible to palpate. There is a complete absence of a waistline; the body maintains a thick, cylindrical width from the shoulders through the hips to the tail base. The abdomen is severely distended and pendulous, showing no abdominal tuck and obvious heavy fat accumulation. Additionally, thick fat rolls are visible around the neck, shoulders, and lumbar region, completely obscuring any skeletal definition.\", \"bcs\": 9}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/3f0675746947ef3f3d7170805f84cc86.jpg",
+    "gt": 8,
+    "pred": 8,
+    "output": "{\"reasoning\": \"From this rear-oblique angle, the cat exhibits a broad, rounded torso with no discernible waistline behind the ribs. The lumbar region is wide and flat, indicating significant fat deposits over the lower back and hips. The sides bulge outward, suggesting heavy fat covering over the ribs and abdomen, which is consistent with an obese body condition.\", \"bcs\": 8}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/407a56759d8b0b561e216cf734a4d4a8.jpg",
+    "gt": 8,
+    "pred": 9,
+    "output": "{\"reasoning\": \"The cat exhibits massive fat deposits over the entire body, including the thorax, spine, and limbs. There is severe abdominal distension with a complete lack of waist definition and no abdominal tuck. The overall shape is extremely rounded and bulky, indicating severe obesity.\", \"bcs\": 9}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/452222119ae8a357179db12e1a274980.jpg",
+    "gt": 8,
+    "pred": 8,
+    "output": "{\"reasoning\": \"The image displays a cat with a heavily rounded, blocky silhouette consistent with a BCS of 8. The thorax is completely smooth with no visible ribs, indicating a thick layer of fat covering the ribcage. There is a complete absence of a waistline; the body maintains a thick, straight profile from the shoulders to the hips. The ventral abdomen is obviously distended and rounded, showing no abdominal tuck and significant fat accumulation in the belly area. Additionally, there are noticeable fat deposits over the lumbar region and the base of the tail, giving the cat a heavy, blocky appearance overall.\", \"bcs\": 8}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/4f0ae956af0f94c9201c9786946dd098.jpg",
+    "gt": 8,
+    "pred": 7,
+    "output": "{\"reasoning\": \"The cat exhibits a thick, blocky body shape with no discernible waist from this angle. There is obvious rounding of the abdomen and a complete lack of an abdominal tuck, indicating a heavy fat covering over the ribs and lumbar area.\", \"bcs\": 7}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/872a4328ba6d46ab4bdb86ccfcd42534.jpg",
+    "gt": 8,
+    "pred": 7,
+    "output": "{\"reasoning\": \"Based on the side profile, the cat exhibits a thick, blocky body shape consistent with a BCS of 7. The rib cage area is completely smooth with no visible ribs, indicating a heavy fat covering that would make palpation difficult. There is a complete lack of an abdominal tuck; instead, the ventral line is flat to slightly rounded, showing obvious abdominal distension. The waist is barely visible, if present at all, as the body maintains a thick, cylindrical shape from the shoulders to the hips. Additionally, there is noticeable rounding and fullness in the lumbar region and along the ventral abdomen, suggesting significant fat deposits over the lower back and belly.\", \"bcs\": 7}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/9d58216f87262bb1bc8c999ad55d423a.jpg",
+    "gt": 8,
+    "pred": 8,
+    "output": "{\"reasoning\": \"The image displays a cat with a heavily rounded, blocky silhouette consistent with a BCS of 8. The thorax is completely smooth with no visible ribs, indicating a thick layer of fat covering the ribcage. There is a complete absence of a waistline; the body maintains a thick, cylindrical shape from the shoulders to the hips. The ventral profile shows obvious abdominal distension with a prominent, low-hanging belly and no abdominal tuck. Additionally, there are noticeable fat deposits around the neck and shoulders, and the lumbar region appears broad and heavily padded.\", \"bcs\": 8}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/bc1e747dbb717e05f55507fa8b0ac444.jpg",
+    "gt": 8,
+    "pred": 7,
+    "output": "{\"reasoning\": \"The cat exhibits a thick, blocky body shape with no discernible waist from this angle. There is obvious rounding of the abdomen and a complete lack of an abdominal tuck, indicating a heavy fat covering over the ribs and lumbar area.\", \"bcs\": 7}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/c97cdde2d3a5afecea549403b8482de1.jpg",
+    "gt": 8,
+    "pred": 8,
+    "output": "{\"reasoning\": \"The image displays a cat with a heavily rounded, blocky silhouette consistent with a BCS of 8. The thorax is completely smooth with no visible rib definition, indicating a thick layer of fat covering the ribcage. There is a complete absence of a waistline; the body maintains a thick, cylindrical shape from the shoulders through the hips. The ventral profile shows obvious abdominal distension with a prominent, low-hanging belly and no abdominal tuck. Additionally, there are noticeable fat deposits over the lumbar region, the base of the tail, and the neck, contributing to the overall bulky and rounded appearance.\", \"bcs\": 8}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/d8f72590f3b53124dc4f1adf6a814e7e.jpg",
+    "gt": 8,
+    "pred": 7,
+    "output": "{\"reasoning\": \"The cat is lying down, which obscures the waist and abdominal tuck. However, the visible torso is broad and rounded with no discernible waistline. The overall bulky shape suggests a heavy fat covering over the ribs and lumbar area, consistent with an overweight condition.\", \"bcs\": 7}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/dfb4df9ff7506d55bd54d05ad7902d19.jpg",
+    "gt": 8,
+    "pred": 8,
+    "output": "{\"reasoning\": \"The image displays a cat with a heavily rounded, blocky silhouette consistent with a BCS of 8. The thorax is completely smooth with no visible rib definition, indicating a thick layer of fat covering the ribcage. There is a complete absence of a waistline; the body maintains a thick, cylindrical shape from the shoulders through the hips. The ventral profile shows obvious abdominal distension with a prominent, low-hanging belly and no abdominal tuck. Additionally, there are noticeable fat deposits over the lumbar region, the base of the tail, and the neck, contributing to the overall heavy and rounded appearance.\", \"bcs\": 8}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/12e5f8610586a7ff68ea2d4eb0842270.jpg",
+    "gt": 9,
+    "pred": 8,
+    "output": "{\"reasoning\": \"The image displays a cat with a heavily rounded, blocky silhouette consistent with a BCS of 8. The thorax is completely smooth with no visible rib definition, indicating a thick layer of fat covering the ribcage. From this rear-oblique angle, there is a complete absence of a waistline; the body maintains a thick, cylindrical shape from the shoulders to the hips. The lumbar region and hips are broad and heavily padded, suggesting significant fat deposits over the lower back and pelvic bones. Furthermore, the abdomen is obviously distended and rounded, showing no evidence of an abdominal tuck, which is replaced by a prominent, sagging ventral profile. The overall mass and lack of anatomical definition strongly support the obese classification.\", \"bcs\": 8}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/238843acd7169f8d3df309c1d6e954c8.jpg",
+    "gt": 9,
+    "pred": 8,
+    "output": "{\"reasoning\": \"The image displays a cat with a heavily rounded, blocky silhouette consistent with a BCS of 8. The thoracic region is completely smooth and convex, indicating a thick layer of fat that would make the ribs impossible to palpate. There is a complete absence of a waistline; instead, the body bulges outward significantly from the ribcage to the hips. The lumbar area is broad and heavily padded, showing no definition between the spine and the base of the tail. From this rear-oblique angle, the abdomen is obviously distended and rounded, lacking any tuck and hanging low. The overall body shape is uniformly wide and bulky, with heavy fat deposits visible over the lumbar spine, hips, and hindquarters.\", \"bcs\": 8}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/47980255c1b9644136f63585d041d2bd.jpg",
+    "gt": 9,
+    "pred": 9,
+    "output": "{\"reasoning\": \"The cat exhibits massive fat deposits over the thorax and abdomen, resulting in severe abdominal distension and a completely rounded body shape. There is no discernible waist or abdominal tuck, and the overall bulk indicates severe obesity.\", \"bcs\": 9}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/5601e903c13634ed57e4b99d8ab059f9.jpg",
+    "gt": 9,
+    "pred": 8,
+    "output": "{\"reasoning\": \"The cat exhibits a very rounded, bulky body shape with obvious abdominal distension and no discernible waistline. Heavy fat deposits are visible over the thorax, lumbar region, and face, indicating significant obesity.\", \"bcs\": 8}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/5dad4f5c78bdd99e6448c60622f727a2.jpg",
+    "gt": 9,
+    "pred": 9,
+    "output": "{\"reasoning\": \"The image displays a cat with a massive, barrel-like body shape consistent with a BCS of 9/9. The thorax is completely smooth and rounded, indicating heavy fat deposits that would make the ribs impossible to palpate. There is a complete absence of a waistline; the body maintains a thick, cylindrical width from the shoulders through the hips to the hindquarters. The lumbar region is broad and heavily padded, showing no definition between the spine and the base of the tail. From this rear-oblique angle, the abdomen is obviously distended and hangs low, demonstrating a complete lack of an abdominal tuck. The overall silhouette is extremely bulky and rounded, with heavy fat deposits clearly visible over the neck, shoulders, and lumbar area.\", \"bcs\": 9}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/5f09c7870b6a9a68417dfc02c4a9d5bd.jpg",
+    "gt": 9,
+    "pred": 8,
+    "output": "{\"reasoning\": \"The cat exhibits a rounded body shape with no discernible waist from this angle. There is obvious abdominal distension and a prominent, hanging belly. The overall bulk suggests heavy fat deposits over the ribs and lumbar area.\", \"bcs\": 8}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/6df408fa0838c15c4bf8ff82758da823.jpg",
+    "gt": 9,
+    "pred": 8,
+    "output": "{\"reasoning\": \"The cat exhibits a very rounded, bulky body shape with obvious abdominal distension. There is no discernible waistline, and the overall volume suggests heavy fat deposits over the ribs and lumbar region.\", \"bcs\": 8}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/8b59284ec446835b7862c7dafcde5290.jpg",
+    "gt": 9,
+    "pred": 9,
+    "output": "{\"reasoning\": \"The image displays a cat with massive, generalized fat deposits consistent with severe obesity. The thorax is completely filled out with fat, completely obscuring the ribs and spine. There is a complete absence of a waistline; instead, the body bulges outward significantly from the ribcage to the hips. The abdomen is severely distended and pendulous, showing no abdominal tuck and obvious heavy fat accumulation. The lumbar region, neck, and face are also heavily padded, indicating extreme fat deposits.\", \"bcs\": 9}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/93fe31c58917cadff16767de63147f8c.jpg",
+    "gt": 9,
+    "pred": 8,
+    "output": "{\"reasoning\": \"The cat exhibits a very rounded, bulky body shape with no discernible waist. There is obvious abdominal distension and a prominent, hanging belly. The overall volume suggests heavy fat deposits over the ribs and lumbar area.\", \"bcs\": 8}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/98b1068c5c3b50258326d001dfc5fc6c.jpg",
+    "gt": 9,
+    "pred": 9,
+    "output": "{\"reasoning\": \"The cat exhibits massive fat deposits over the thorax and abdomen, resulting in extreme widening and a completely rounded body shape. There is no discernible waist, and the overall volume indicates severe obesity.\", \"bcs\": 9}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/9d08142c6d1f85a489d5afa8150d9912.jpg",
+    "gt": 9,
+    "pred": 9,
+    "output": "{\"reasoning\": \"The image displays a cat with massive, generalized fat deposits consistent with a BCS of 9/9. The thorax is heavily rounded and distended, indicating that the ribs would be impossible to palpate under the thick layer of fat. There is a complete absence of a waist; instead, the body bulges outward significantly from the ribcage to the hips. The abdomen is severely distended and pendulous, showing no abdominal tuck and obvious abdominal rounding. Heavy fat deposits are also visible over the lumbar region, neck, and face, giving the cat a blocky, barrel-like silhouette with no discernible skeletal definition.\", \"bcs\": 9}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/c11a894d5790f9a5d062a1d717338345.jpg",
+    "gt": 9,
+    "pred": 8,
+    "output": "{\"reasoning\": \"The image displays a cat with a heavily rounded, blocky silhouette consistent with a BCS of 8. The thorax is completely smooth with no visible rib definition, indicating a thick layer of fat covering the ribcage. From this rear-oblique angle, there is a complete absence of a waistline; the body maintains a thick, cylindrical shape from the shoulders through the hips to the base of the tail. The lumbar region and hips are broad and heavily padded, showing no bony prominences. Furthermore, the abdomen is obviously distended and rounded, bulging outward significantly beyond the width of the hindquarters, which completely eliminates any possibility of an abdominal tuck. The overall body shape is heavy and rounded, with fat deposits clearly visible over the lumbar area and hips.\", \"bcs\": 8}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/c70456618fe97f340a965cbd330b86e9.jpg",
+    "gt": 9,
+    "pred": 8,
+    "output": "{\"reasoning\": \"Viewed from above, the cat exhibits a completely rounded body shape with no discernible waist. The sides bulge outward significantly, indicating heavy fat deposits over the ribs and lumbar area.\", \"bcs\": 8}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/dea682ac32c0d80e40910034d819bbab.jpg",
+    "gt": 9,
+    "pred": 8,
+    "output": "{\"reasoning\": \"The image displays a cat with a heavily rounded, blocky body shape consistent with a BCS of 8. The thorax is completely smooth with no visible skeletal definition, indicating a thick layer of fat covering the ribs and spine. From this frontal-oblique angle, there is a complete absence of a waistline; the body bulges outward significantly behind the ribcage, creating a continuous, wide silhouette from the shoulders to the hips. The abdomen is obviously distended and rounded, showing no evidence of an abdominal tuck. Additionally, there are noticeable fat deposits around the neck and chest area, contributing to the overall heavy, rounded appearance.\", \"bcs\": 8}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/ed10c6c7dde2439bb7774ee6664fc1fe.jpg",
+    "gt": 9,
+    "pred": 9,
+    "output": "{\"reasoning\": \"The image displays a cat with massive, generalized fat deposits consistent with severe obesity. The thorax is completely filled out with fat, completely obscuring any skeletal structure, indicating ribs would be impossible to palpate. There is a complete absence of a waist; instead, the body bulges outward significantly from the ribcage to the hips. The abdomen is severely distended and pendulous, showing no abdominal tuck and obvious heavy fat accumulation. The lumbar region and neck are thick and rounded, further demonstrating massive fat deposits. The overall body shape is barrel-like and extremely wide, perfectly aligning with a BCS of 9/9.\", \"bcs\": 9}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/f7408b53266d84ee5c1ae51ce144aeaa.jpg",
+    "gt": 9,
+    "pred": 8,
+    "output": "{\"reasoning\": \"From this rear-oblique angle, the cat exhibits a very broad, rounded torso with no discernible waistline. The sides bulge outward significantly, indicating heavy fat deposits over the ribs, lumbar region, and abdomen. The lumbar area is wide and flat, suggesting a thick fat pad over the spine and pelvis. The overall body shape is barrel-like and distended, which is characteristic of obesity, even when accounting for the naturally rounded hindquarters of a sitting cat.\", \"bcs\": 8}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/f9d8b24ecbb23d049cf010a88e4bc3a6.jpg",
+    "gt": 9,
+    "pred": 8,
+    "output": "{\"reasoning\": \"The image displays a cat with a heavily rounded, blocky silhouette consistent with a BCS of 8. The thorax is completely smooth with no visible rib definition, indicating a thick layer of fat covering the ribcage. From this rear-oblique angle, there is a complete absence of a waistline; the body maintains a thick, cylindrical shape from the shoulders to the hips. The lumbar region and hips are broad and heavily padded, suggesting significant fat deposits over the lower back and pelvic area. Furthermore, the abdomen shows obvious distension and a complete lack of an abdominal tuck, with the belly line running straight and parallel to the ground. The overall body shape is heavy and rounded, lacking any definition between the limbs and the main torso.\", \"bcs\": 8}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/fb59d3b0bd6838b37097f4f5623af396.jpg",
+    "gt": 9,
+    "pred": 9,
+    "output": "{\"reasoning\": \"The cat exhibits massive overall body volume with severe abdominal distension and a completely rounded shape. There is no discernible waist, and the limbs and torso appear heavily padded with fat.\", \"bcs\": 9}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/046c4936df67885c19e0b75a88411d79.jpg",
+    "gt": 1,
+    "pred": 2,
+    "output": "{\"reasoning\": \"The dog is standing with all four limbs and torso clearly visible. The short coat allows for easy assessment of body contours. The ribs are visible along the side, and the pelvic bones are prominent. There is a severe abdominal tuck and an obvious waist, indicating minimal fat covering consistent with a very thin condition.\", \"bcs\": 2}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/0f38bf0228007c356795344494ee7745.jpg",
+    "gt": 1,
+    "pred": 2,
+    "output": "{\"reasoning\": \"The dog is viewed from the side with short fur, allowing for a clear assessment of its body shape. The ribs are easily visible along the thorax, and the pelvic bones are prominent. There is a severe abdominal tuck and an obvious waist, indicating minimal fat covering and a very thin condition.\", \"bcs\": 2}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/2ac781ff00cb01008890141890d0d747.jpg",
+    "gt": 1,
+    "pred": 1,
+    "output": "{\"reasoning\": \"The image displays a dog with a very thin, emaciated body condition, consistent with a BCS of 1/9. The most striking feature is the severe, sharp abdominal tuck, with the belly sweeping dramatically upward immediately behind the ribcage. The ribs are clearly visible along the thorax, indicating a complete lack of subcutaneous fat covering. The pelvic bones (ilium) are highly prominent and angular, protruding sharply at the hindquarters. The spine forms a distinct, visible ridge along the dorsal line. There is a complete absence of fat deposits over the lumbar region, neck, and limbs. The overall skeletal structure is starkly visible, confirming severe muscle wasting and zero body fat.\", \"bcs\": 1}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/2b277d92e1b4a0b5dcf7f5d3b7b6de70.jpg",
+    "gt": 1,
+    "pred": 1,
+    "output": "{\"reasoning\": \"The image displays a dog with a very thin, emaciated body condition, consistent with a BCS of 1/9. The most striking feature is the severe, sharp abdominal tuck, with the belly sweeping dramatically upward immediately behind the ribcage. The ribs are clearly visible along the thorax, indicating a complete lack of subcutaneous fat and a very thin fat covering. The pelvic bones (ilium) are highly prominent and angular, protruding sharply at the hindquarters. The spine forms a distinct, visible ridge along the dorsal line. There is a complete absence of fat deposits over the lumbar area, neck, and limbs, which appear bony and spindly. The overall skeletal structure is starkly visible, confirming severe muscle wasting and zero body fat.\", \"bcs\": 1}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/573247e6af672f6716dfffecad7e7ca3.jpg",
+    "gt": 1,
+    "pred": 3,
+    "output": "{\"reasoning\": \"The image displays a dog with a very pronounced and sharp abdominal tuck, a key indicator of a thin body condition. The rib cage is clearly defined with the outlines of the ribs visible along the thorax, suggesting minimal subcutaneous fat covering. The pelvic bones (ilium) are also prominent and easily visible. The overall silhouette is lean and angular, lacking the smooth contouring provided by healthy fat deposits, which aligns perfectly with a BCS of 3/9.\", \"bcs\": 3}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/583a6e53dc8d85b348a5f78734534b3e.jpg",
+    "gt": 1,
+    "pred": 3,
+    "output": "{\"reasoning\": \"The image displays a dog with a very pronounced and sharp abdominal tuck, a key indicator of a thin body condition. The rib cage is clearly defined with the outlines of the ribs visible along the thorax, suggesting minimal subcutaneous fat covering. The pelvic bones (ilium) are also prominent and angular, further supporting the assessment of a thin state. The overall silhouette is lean and bony, lacking any visible fat deposits over the lumbar area, neck, or limbs.\", \"bcs\": 3}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/60ae71965d89b7f7f6e679859a192c72.jpg",
+    "gt": 1,
+    "pred": 2,
+    "output": "{\"reasoning\": \"Based on the visual evidence, the dog exhibits a very thin body condition consistent with a BCS of 2/9. The most prominent feature is the severe, sharp abdominal tuck visible from this front-quarter angle, indicating a complete lack of abdominal fat. The overall body shape is highly angular and bony. The skeletal structure is clearly visible, particularly the sharp angles of the shoulders and the prominent sternum and clavicle. The limbs appear very thin, suggesting significant muscle wasting and a lack of fat covering over the bones. There is no evidence of fat deposits anywhere on the body, and the lack of tissue padding over the ribs and spine implies they would be easily visible and palpable with minimal to no fat covering.\", \"bcs\": 2}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/7e90ba121f10b5eaf8a2480a74588fa5.jpg",
+    "gt": 1,
+    "pred": 2,
+    "output": "{\"reasoning\": \"The dog is standing with a clear side view and short fur, allowing for excellent visibility of body contours. The ribs, spine, and pelvic bones are easily visible and prominent. There is a severe abdominal tuck and an obvious waist, indicating minimal fat covering and a very thin body condition.\", \"bcs\": 2}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/94c6a9b64e100c31edbbf7dd1971f151.jpg",
+    "gt": 1,
+    "pred": 3,
+    "output": "{\"reasoning\": \"The image displays a dog with a very pronounced and sharp abdominal tuck, a key indicator of a thin body condition. The rib cage is clearly defined with a visible outline of the ribs along the thorax, suggesting minimal subcutaneous fat covering. The pelvic bones (ilium) are also noticeable, though not severely protruding. The overall silhouette is lean and angular, lacking the smooth contouring provided by a healthy layer of fat, which aligns perfectly with a BCS of 3/9.\", \"bcs\": 3}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/95bbef252affaf7cdc054de715fa55a4.jpg",
+    "gt": 1,
+    "pred": 1,
+    "output": "{\"reasoning\": \"The image displays a dog with a severe, emaciated skeletal profile consistent with a BCS of 1/9. The ribs are starkly visible along the thorax, indicating a complete lack of subcutaneous fat and severe muscle wasting. The spine forms a sharp, prominent ridge along the back, and the pelvic bones (ilium) protrude significantly at the hindquarters. From this rear-oblique angle, there is an extreme, exaggerated waistline and a severe abdominal tuck, with the flank area deeply hollowed out. The hind limbs show severe atrophy, particularly in the thigh and calf regions, with prominent bony structures replacing muscle mass. The overall body shape is angular and skeletal, demonstrating zero fat covering and profound muscle depletion.\", \"bcs\": 1}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/9ef5b0997f28b38e9ba3c1f3d7d1f708.jpg",
+    "gt": 1,
+    "pred": 2,
+    "output": "{\"reasoning\": \"The dog has short fur, allowing for clear observation of its body shape. The ribs, spine, and pelvic bones are easily visible and prominent. There is a severe abdominal tuck and an extreme waist, indicating minimal to no fat covering and significant muscle wasting.\", \"bcs\": 2}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/c30c0e3cf47610296c1200b3342189fe.jpg",
+    "gt": 1,
+    "pred": 3,
+    "output": "{\"reasoning\": \"Based on the side profile, the dog exhibits a very pronounced abdominal tuck, with the underline sweeping sharply upward immediately behind the rib cage. The ribs are clearly visible along the thorax, indicating minimal fat covering. The pelvic bones (hips) are also prominent and easily visible. The overall silhouette is very lean with minimal fat deposits, consistent with a thin body condition.\", \"bcs\": 3}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/cc407e768c1d485b54b29f812d57ffe3.jpg",
+    "gt": 1,
+    "pred": 1,
+    "output": "{\"reasoning\": \"The image displays a dog with a very thin, emaciated body condition, consistent with a BCS of 1/9. The most striking feature is the severe abdominal tuck, with the belly sweeping sharply upward immediately behind the rib cage. The ribs are clearly visible along the thorax, indicating a complete lack of subcutaneous fat covering. The pelvic bones (ilium) are highly prominent and angular, protruding sharply at the hindquarters. The spine forms a distinct, sharp ridge along the dorsal line. There is a complete absence of fat deposits over the lumbar region, neck, and limbs. The overall skeletal structure is starkly visible, and the limbs appear thin and bony, pointing to severe muscle wasting and zero fat reserves.\", \"bcs\": 1}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/d747bd26f65037bb95229fd19b33db67.jpg",
+    "gt": 1,
+    "pred": 3,
+    "output": "{\"reasoning\": \"Based on the clear side profile, the dog exhibits a very pronounced abdominal tuck, with the underline sweeping sharply upward immediately behind the rib cage. The rib cage itself is clearly defined with a smooth, minimal fat covering, indicating the ribs would be easily palpable. The pelvic bones (ilium) are slightly prominent, and the lumbar area appears lean with minimal fat deposits. The overall silhouette is highly slender and athletic, consistent with a BCS of 3/9.\", \"bcs\": 3}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/ff9aeb2da1a6ed26f0d0f6c96e000518.jpg",
+    "gt": 1,
+    "pred": 2,
+    "output": "{\"reasoning\": \"Based on the rear-dorsal view of this dog, the visual evidence strongly supports a BCS of 2/9 (Very Thin). The most prominent feature is the severe, sharp waistline visible just behind the ribcage, indicating minimal to no fat covering in the lumbar region. The pelvic bones (ilium) are highly angular and protrude noticeably, lacking any fat padding. The spine forms a distinct, sharp ridge along the back, and the spinal vertebrae are clearly visible. The overall body shape is narrow and bony, with a pronounced abdominal tuck visible from this angle, and the hindquarters appear thin and lack muscle mass, consistent with a very thin body condition.\", \"bcs\": 2}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/013bfad66eaaef1ca35ed991abf2239e.jpg",
+    "gt": 2,
+    "pred": 3,
+    "output": "{\"reasoning\": \"The image displays a dog with a very pronounced and sharp abdominal tuck, a key indicator of a thin body condition. The rib cage is clearly defined with the outlines of the ribs visible, suggesting minimal subcutaneous fat covering. The pelvic bones (ilium) are also prominent and angular, further supporting the assessment of a thin state. The overall silhouette is lean and bony, lacking the smooth contours and slight fat padding typical of an ideal weight, yet it lacks the severe skeletal protrusions of emaciation.\", \"bcs\": 3}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/0c1f0ff8596fb85d151d5ebd5810c6d5.jpg",
+    "gt": 2,
+    "pred": 3,
+    "output": "{\"reasoning\": \"The image displays a dog with a very pronounced abdominal tuck and a highly defined waist. The rib cage is clearly visible with the outlines of the ribs discernible, indicating minimal subcutaneous fat covering. The pelvic bones (hips) are also prominent and angular. While this lean, athletic build is typical for sighthound breeds, on the standard 9-point scale, the visible bony landmarks and extreme tuck align with a thin condition.\", \"bcs\": 3}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/0f3eb99a69987b6d11f13c37bcc4b343.jpg",
+    "gt": 2,
+    "pred": 1,
+    "output": "{\"reasoning\": \"The image displays a dog with a severe, emaciated skeletal structure consistent with a BCS of 1/9. The ribs are starkly visible along the thorax, indicating a complete lack of subcutaneous fat and severe muscle wasting. The spine forms a sharp, prominent ridge along the back, and the pelvic bones protrude significantly at the hindquarters. From this three-quarter angle, there is an extreme, exaggerated waistline behind the ribcage and a severe abdominal tuck, with the belly drawn tightly upward. The limbs appear disproportionately thin, further emphasizing the complete absence of normal fat covering and severe muscle atrophy.\", \"bcs\": 1}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/1d6756ff99ec32e808d9cacc694510bb.jpg",
+    "gt": 2,
+    "pred": 1,
+    "output": "{\"reasoning\": \"The image displays a dog with a severe, emaciated skeletal profile consistent with a BCS of 1/9. The ribs are starkly visible along the thorax, indicating a complete lack of subcutaneous fat and severe muscle wasting. The spine forms a sharp, prominent ridge along the back, and the pelvic bones (ilium) protrude significantly at the hindquarters. From this rear-oblique angle, there is an extreme, exaggerated waistline and a severe abdominal tuck, with the flank area deeply hollowed out. The hind limbs appear disproportionately thin, further supporting the diagnosis of severe muscle wasting and zero fat reserves.\", \"bcs\": 1}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/2c15049ea87d40358c7da25c7df3cfbe.jpg",
+    "gt": 2,
+    "pred": 3,
+    "output": "{\"reasoning\": \"The image displays a dog with a very pronounced and sharp abdominal tuck, a key indicator of a thin body condition. The rib cage is clearly defined with a visible outline of the rib bones, suggesting minimal subcutaneous fat covering. The pelvic bones (hips) are also prominent and angular, further indicating a lack of fat deposits in the lumbar and hindquarter regions. The overall silhouette is lean and bony, with a noticeable waist narrowing behind the rib cage, consistent with a thin BCS of 3/9.\", \"bcs\": 3}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/99587ebff257deac019ef16ba51a8fe5.jpg",
+    "gt": 2,
+    "pred": 3,
+    "output": "{\"reasoning\": \"Based on the clear side profile, the dog exhibits a very pronounced abdominal tuck, with the underline sweeping sharply upward immediately behind the rib cage. The ribs are visible along the thorax, indicating minimal subcutaneous fat covering. The pelvic bones (ilium) are prominent and angular, and the lumbar spine forms a distinct ridge along the back, suggesting a lack of fat deposits over the lumbar region. The overall silhouette is very lean and bony, consistent with a thin body condition (BCS 3/9).\", \"bcs\": 3}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/a4af3d47f622f356e5afc1da3679341d.jpg",
+    "gt": 2,
+    "pred": 2,
+    "output": "{\"reasoning\": \"From this rear-facing perspective, the dog exhibits a very pronounced, sharp waistline that narrows dramatically behind the ribcage before widening again at the hips. The pelvic bones (ilium) are highly prominent and angular, protruding sharply near the base of the tail, indicating a complete lack of fat covering over the lumbar and pelvic regions. The overall body shape is narrow and bony, with a severe abdominal tuck visible from above, strongly supporting a 'Very Thin' BCS of 2/9.\", \"bcs\": 2}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/df1153a4841c07899d95e6a939e5b13f.jpg",
+    "gt": 2,
+    "pred": 1,
+    "output": "{\"reasoning\": \"The image displays a dog with a very thin, emaciated body condition, consistent with a BCS of 1/9. The most striking feature is the severe, sharp abdominal tuck, with the belly sweeping dramatically upward immediately behind the rib cage. The ribs are clearly visible along the thorax, indicating a complete lack of subcutaneous fat and a very thin fat covering. The pelvic bones (ilium) are highly prominent and angular, protruding sharply at the hindquarters. The spine forms a distinct, visible ridge along the dorsal line. There is a complete absence of fat deposits over the lumbar area, neck, or limbs, which appear bony and spindly. The overall skeletal structure is highly pronounced, and the lack of muscle mass contributes to a severe, gaunt appearance.\", \"bcs\": 1}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/ed41dddcea2e1a8f912171e24fd1b54b.jpg",
+    "gt": 2,
+    "pred": 3,
+    "output": "{\"reasoning\": \"From this direct frontal view, the dog exhibits a very pronounced, sharp waistline immediately behind the ribcage, indicating minimal to no fat covering in the lumbar region. The thoracic area appears narrow, suggesting the ribs would be easily palpable with minimal fat. The transition from the chest to the hindquarters is abrupt, and the overall body shape is highly slender and angular, lacking the smooth contours or slight rounding of a healthy weight. While the abdominal tuck is not visible from this angle, the extreme narrowness of the waist and the overall lean, somewhat bony appearance of the shoulders and neck strongly support a 'Thin' BCS 3 assessment.\", \"bcs\": 3}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/f7786852f11f7b779f8a8d52a5d4d6bb.jpg",
+    "gt": 2,
+    "pred": 1,
+    "output": "{\"reasoning\": \"The image displays a dog with a severe, emaciated skeletal profile consistent with a BCS of 1/9. The ribs are starkly visible along the thorax, indicating a complete lack of subcutaneous fat and severe muscle wasting. The dorsal spinous processes (spine) form a sharp, prominent ridge along the back, and the pelvic bones (ilium) protrude significantly at the hindquarters. There is an extreme abdominal tuck, with the ventral line sweeping sharply upward immediately behind the rib cage. The limbs appear very thin, and the overall body shape is angular and skeletal, demonstrating zero fat covering and profound muscle depletion.\", \"bcs\": 1}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/11d6229a9e5670007a2d9b8873d4a7fc.jpg",
+    "gt": 3,
+    "pred": 2,
+    "output": "{\"reasoning\": \"Based on the visual evidence, the dog exhibits a very thin body condition consistent with a BCS of 2/9. The most prominent feature is the severe abdominal tuck, with the belly line sweeping sharply upward immediately behind the rib cage. The ribs are clearly visible along the thorax, indicating minimal to no subcutaneous fat covering. The pelvic bones (hips) are sharply angular and protrude noticeably, lacking any fat padding. The overall skeletal structure is highly defined, and the limbs appear thin, suggesting significant muscle wasting alongside the lack of fat deposits.\", \"bcs\": 2}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/2821b2e80d1216914d340370f2d7e7eb.jpg",
+    "gt": 3,
+    "pred": 2,
+    "output": "{\"reasoning\": \"The dog has short fur, allowing for clear observation of its body shape. The ribs are easily visible along the side of the thorax, and the pelvic bones are prominent. There is a severe abdominal tuck and an obvious waist, indicating minimal fat covering and a very thin condition.\", \"bcs\": 2}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/2da0bb7c036eefc345d0f0d6a04e39fc.jpg",
+    "gt": 3,
+    "pred": 3,
+    "output": "{\"reasoning\": \"The image displays a dog with a very pronounced abdominal tuck and a highly defined waist, consistent with a BCS of 3. The rib cage is clearly visible with a slight, but noticeable, fat covering over the thorax, indicating that the ribs would be easily palpable. The pelvic bones (ilium) are slightly prominent, but not sharply protruding, and the spine is not visible. The dog has good muscle mass, particularly in the hindquarters, but lacks the smooth, slight fat deposits over the lumbar area and neck that would characterize a BCS of 4. The overall silhouette is lean and slightly angular, fitting the 'thin' criteria.\", \"bcs\": 3}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/475760590bd2aa38a69cb3a204e7f1f0.jpg",
+    "gt": 3,
+    "pred": 4,
+    "output": "{\"reasoning\": \"The image displays a dog in a standing side profile with a very pronounced abdominal tuck and a clearly defined waist. The ribs are faintly visible along the thorax, indicating minimal fat covering, but the spine and pelvic bones are not sharply protruding. The overall lean, well-muscled appearance with minimal fat is consistent with a lean or slightly underweight condition.\", \"bcs\": 4}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/6bd1f3eecb39efdde1939eb1982f4e62.jpg",
+    "gt": 3,
+    "pred": 3,
+    "output": "{\"reasoning\": \"The image displays a dog with a very pronounced and sharp abdominal tuck, a key indicator of a thin body condition. The rib cage is clearly defined with a visible outline of the ribs along the thorax, suggesting minimal subcutaneous fat covering. The pelvic bones (ilium) are also noticeable, though not severely protruding. The overall silhouette is lean and angular, lacking the smooth contouring provided by a healthy layer of fat, which aligns perfectly with a BCS of 3/9.\", \"bcs\": 3}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/8acb8eb33f9efdd6fce4cc6487cd1fdd.jpg",
+    "gt": 3,
+    "pred": 1,
+    "output": "{\"reasoning\": \"Based on the frontal perspective of this dog, the visual evidence strongly supports a BCS of 1/9 (Emaciated). The most prominent feature is the severe, sharp narrowing of the waist immediately behind the ribcage, indicating a complete lack of abdominal fat and a highly exaggerated waistline. The pelvic bones (hips) are sharply protruding and angular, forming distinct ridges that are easily visible despite the front-facing angle. The front limbs appear extremely thin with minimal muscle mass and no visible fat covering. Furthermore, the overall skeletal structure is highly visible, with the ribcage area appearing hollow and the spine forming a sharp, prominent ridge along the back. The lack of any visible fat deposits over the chest, shoulders, or neck further confirms a state of severe muscle wasting and profound emaciation.\", \"bcs\": 1}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/94ab6a15f9807679ee8b7306fe211720.jpg",
+    "gt": 3,
+    "pred": 3,
+    "output": "{\"reasoning\": \"The image displays a dog with a very pronounced abdominal tuck and a highly defined waist, consistent with a BCS of 3. The rib cage is clearly visible with a slight, but distinct, fat covering over the thorax, indicating that the ribs would be easily palpable without applying pressure. The pelvic bones (ilium) are slightly prominent, but not sharply protruding, which is typical for a lean, slightly underweight condition. The dog has good muscle mass, particularly in the hindquarters, but lacks the slight fat deposits over the lumbar area or the slight rounding of the abdomen that would be present in a BCS 2. The overall silhouette is lean and athletic, fitting the criteria for a BCS 3.\", \"bcs\": 3}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/b93dc1ea2a44b69cdfafd45eb1aa2ecb.jpg",
+    "gt": 3,
+    "pred": 2,
+    "output": "{\"reasoning\": \"Based on the rear-oblique view of this dog, the visual evidence strongly supports a BCS of 2/9 (Very Thin). The most prominent feature is the severe, sharp abdominal tuck, with the underline sweeping dramatically upward immediately behind the ribcage. The pelvic bones (ilium) are highly angular and protrude sharply, indicating a complete lack of fat covering over the lumbar and hip regions. The spine forms a distinct, visible ridge along the dorsal line, and the ribs are visible with minimal to no subcutaneous fat. The overall body shape is gaunt, with a pronounced waist and hollowed flanks, and the hindquarters appear bony and underdeveloped, consistent with significant muscle wasting and an emaciated state.\", \"bcs\": 2}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/bd34895edf38e7ad8efcfdc4b4e08835.jpg",
+    "gt": 3,
+    "pred": 2,
+    "output": "{\"reasoning\": \"The dog is viewed from the side, displaying a very pronounced abdominal tuck and a highly visible waist. The ribs are clearly visible along the flank, and the pelvic bones are prominent, indicating minimal fat covering and a very thin body condition.\", \"bcs\": 2}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/c0ffe352aa5b2800b2a9c6e684135851.jpg",
+    "gt": 3,
+    "pred": 3,
+    "output": "{\"reasoning\": \"The dog is viewed from the side with short fur, allowing for a clear assessment of its body shape. There is a very pronounced abdominal tuck and a clearly defined waist. The ribs are faintly visible along the thorax, and the pelvic bones are slightly prominent, indicating minimal fat covering consistent with a thin body condition.\", \"bcs\": 3}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/d5017e50088abf103ac406baeb2ea38d.jpg",
+    "gt": 3,
+    "pred": 2,
+    "output": "{\"reasoning\": \"Based on the visual evidence, the dog exhibits a very thin body condition consistent with a BCS of 2/9. The most prominent feature is the severe abdominal tuck, with the ventral line sweeping sharply upward immediately behind the rib cage. The ribs are clearly visible along the thorax, indicating minimal to no subcutaneous fat covering. The pelvic bones (ilium) are sharply protruding and easily visible, as is the spine along the dorsal line. The overall skeletal structure is highly pronounced, and there is a noticeable lack of muscle mass, particularly in the hindquarters and shoulders, which appear bony and underdeveloped. The neck and shoulders are thin, further supporting the assessment of a severely underweight state with minimal fat deposits.\", \"bcs\": 2}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/ddd4f037bd7ca54fecbcb7de93a56f83.jpg",
+    "gt": 3,
+    "pred": 5,
+    "output": "{\"reasoning\": \"The dog is viewed from the side with short fur, allowing for clear assessment of body contours. There is a very pronounced abdominal tuck and a clearly defined waist. The ribs are not visibly protruding, indicating an appropriate fat covering, and the dog appears well-muscled and well-proportioned overall.\", \"bcs\": 5}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/e36ee65ac3da0761befc1dfc8a20ee07.jpg",
+    "gt": 3,
+    "pred": 1,
+    "output": "{\"reasoning\": \"The image displays a dog with a very thin, emaciated body condition, consistent with a BCS of 1/9. The most striking feature is the severe, sharp abdominal tuck, with the belly sweeping dramatically upward immediately behind the rib cage. The ribs are starkly visible along the thorax, indicating a complete lack of subcutaneous fat and suggesting they would be easily visible and palpable. The pelvic bones (ilium) are highly prominent and angular, protruding sharply at the hindquarters. The spine forms a distinct, visible ridge along the dorsal line. There is a complete absence of fat deposits over the lumbar region, neck, and limbs. The overall skeletal appearance and extreme lack of body mass strongly support the 1/9 score.\", \"bcs\": 1}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/f0714c5d3309d2c5a4b2dd941b85a59c.jpg",
+    "gt": 3,
+    "pred": 2,
+    "output": "{\"reasoning\": \"Based on the rear-dorsal view of this dog, the visual evidence strongly supports a BCS of 2/9 (Very Thin). The most prominent feature is the severe, sharp narrowing of the waist, which is almost completely absent behind the ribcage, creating a highly pinched silhouette. The pelvic bones (ilium) are sharply protruding and easily visible, indicating a complete lack of fat covering over the lumbar and hip regions. The spine forms a distinct, bumpy ridge along the back, and the overall body shape is angular rather than smooth, suggesting the ribs would be easily visible and palpable with minimal to no fat covering. Furthermore, the hindquarters appear bony and sunken, and the limbs lack the normal muscle mass and fat padding, consistent with a very thin body condition.\", \"bcs\": 2}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/fd11351c742230b8c360e25bf60b23a0.jpg",
+    "gt": 3,
+    "pred": 2,
+    "output": "{\"reasoning\": \"Based on the clear side profile of this short-haired dog, the visual evidence strongly supports a BCS of 2/9 (Very Thin). The most prominent feature is the severe, sharp abdominal tuck, with the underline sweeping dramatically upward immediately behind the ribcage. The ribs are visible along the thorax, indicating minimal to no subcutaneous fat covering. The pelvic bones (ilium) are highly angular and protrude sharply at the hindquarters. The spine forms a distinct, visible ridge along the dorsal line, and the dorsal lumbar vertebrae are prominent. The overall body shape is narrow and angular, lacking any smooth contouring or fat deposits, which is characteristic of a very thin condition.\", \"bcs\": 2}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/8718e301ce766e439db4ccff258c3304.jpg",
+    "gt": 4,
+    "pred": 1,
+    "output": "{\"reasoning\": \"Based on the visual evidence, the dog exhibits a severe, emaciated body condition consistent with a BCS of 1/9. The most striking feature is the extreme prominence of the skeletal structure. The ribs are visible with sharp, distinct edges, indicating a complete lack of subcutaneous fat and severe muscle wasting. The spine forms a sharp, visible ridge along the back, and the pelvic bones protrude significantly at the hindquarters. From this front-oblique angle, there is a severe, exaggerated waistline behind the ribcage and a dramatic, sharp abdominal tuck. The limbs appear spindly and weak, lacking normal muscle mass, further supporting the diagnosis of severe muscle wasting and zero fat reserves.\", \"bcs\": 1}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/97baa3235ba5296fbb3d3ce3a90eafe6.jpg",
+    "gt": 4,
+    "pred": 3,
+    "output": "{\"reasoning\": \"Based on the clear side profile, the dog exhibits a very pronounced abdominal tuck, with the underline sweeping sharply upward immediately behind the rib cage. The rib cage itself is clearly defined with a smooth, minimal fat covering, indicating the ribs would be easily palpable with no excess fat. The pelvic bones (hips) are slightly prominent, and the lumbar area appears lean. The overall silhouette is highly slender and athletic, lacking any fat deposits over the lumbar region, neck, or limbs, which aligns perfectly with a BCS of 3/9 (Thin).\", \"bcs\": 3}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/a59f7ea52f541432821cd74126f23b6e.jpg",
+    "gt": 4,
+    "pred": 1,
+    "output": "{\"reasoning\": \"The image displays a dog with a very thin, emaciated body condition, consistent with a BCS of 1/9. The most striking feature is the severe, sharp abdominal tuck, with the belly sweeping dramatically upward immediately behind the rib cage. The pelvic bones (ilium) are highly prominent and angular, protruding sharply at the rear. The spine forms a distinct, visible ridge along the dorsal line, and the shoulder blades are sharply defined. There is a complete lack of visible fat covering over the ribs, lumbar area, and hindquarters. The limbs appear bony with minimal muscle mass, indicating severe muscle wasting and a complete absence of normal body fat.\", \"bcs\": 1}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/a5e8fda97b009a4439d6b22bdf382ff0.jpg",
+    "gt": 4,
+    "pred": 3,
+    "output": "{\"reasoning\": \"The image displays a dog with a very pronounced and sharp abdominal tuck, a key indicator of a thin body condition. The flank area is deeply hollowed out, suggesting minimal to no abdominal fat covering. The overall silhouette is lean and angular, with the pelvic bones appearing somewhat prominent, though the ribs and spine are not starkly protruding, which aligns with a thin rather than emaciated state. The lack of fat deposits over the chest, shoulders, and hindquarters further supports the assessment of a thin body condition.\", \"bcs\": 3}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/b88525c10c8fe11bec58874f53c3ef1f.jpg",
+    "gt": 4,
+    "pred": 2,
+    "output": "{\"reasoning\": \"From this direct frontal view, the dog exhibits a very narrow chest and a severe, exaggerated waistline that pinches sharply behind the ribcage. The transition from the broad chest to the narrow waist is abrupt, indicating minimal to no fat covering over the ribs and flanks. The overall body shape is highly angular and pinched, strongly suggesting a very thin condition with prominent skeletal features that would be easily visible if the dog were viewed from above or the side.\", \"bcs\": 2}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/be956726cb84054335bcee6f9e276871.jpg",
+    "gt": 4,
+    "pred": 2,
+    "output": "{\"reasoning\": \"Based on the rear-oblique view of this dog, the visual evidence strongly supports a BCS of 2/9 (Very Thin). The most prominent feature is the severe, sharp waistline visible behind the ribcage, indicating minimal to no fat covering in the lumbar region. The pelvic bones (ilium) are highly angular and protrude noticeably, lacking any fat padding. The spine forms a distinct, sharp ridge along the dorsal line, and the outline of the ribs is visible beneath the skin, suggesting they would be easily palpable with no fat covering. The overall body shape is narrow and bony, with a complete lack of abdominal fat or rounding, and the hindquarters appear thin and angular.\", \"bcs\": 2}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/c8a6917ac7b03f7e53e7ee140304f8d9.jpg",
+    "gt": 4,
+    "pred": 3,
+    "output": "{\"reasoning\": \"Based on the clear side profile, the dog exhibits a very pronounced and sharp abdominal tuck, with the underline sweeping dramatically upward immediately behind the rib cage. The rib cage itself is clearly defined with a smooth, minimal fat covering, indicating the ribs would be easily palpable with no excess fat. The pelvic bones (hips) are also slightly prominent, though not severely protruding. The overall silhouette is very lean and angular, lacking the slight rounding or fullness of a healthy lean condition, which strongly supports a BCS of 3/9 (Thin).\", \"bcs\": 3}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/c8cdfad328e96fd7c84e2da6e45d5837.jpg",
+    "gt": 4,
+    "pred": 1,
+    "output": "{\"reasoning\": \"The image displays a dog with a severe, emaciated skeletal structure consistent with a BCS of 1/9. The ribs are starkly visible along the thorax, indicating a complete lack of subcutaneous fat and severe muscle wasting. The spine forms a sharp, prominent ridge along the back, and the pelvic bones protrude significantly at the hindquarters. From this three-quarter angle, there is an extreme, exaggerated waistline behind the ribcage and a severe abdominal tuck, with the belly drawn tightly upward. The limbs appear disproportionately thin, further emphasizing the complete absence of normal fat covering and severe muscle atrophy.\", \"bcs\": 1}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/ce2e943b6cf59e6fd058446db03ba250.jpg",
+    "gt": 4,
+    "pred": 1,
+    "output": "{\"reasoning\": \"The image displays a dog with a very thin, emaciated body condition, consistent with a BCS of 1/9. The most striking feature is the severe, sharp abdominal tuck, with the belly line sweeping dramatically upward immediately behind the rib cage. The ribs are starkly visible along the thorax, indicating a complete lack of subcutaneous fat and suggesting they would be easily visible and palpable. The pelvic bones (ilium) are highly prominent and angular, protruding sharply at the hindquarters. There is a complete absence of fat deposits over the lumbar area, neck, and limbs. The overall skeletal structure is highly defined and easily visible, pointing to severe muscle wasting and zero fat reserves.\", \"bcs\": 1}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/de5c6b4d691c5de0314933c58f7ce2c2.jpg",
+    "gt": 4,
+    "pred": 2,
+    "output": "{\"reasoning\": \"Based on the clear side profile of this short-haired dog, the visual evidence strongly supports a BCS of 2/9 (Very Thin). The most prominent feature is the severe, sharp abdominal tuck, with the underline sweeping dramatically upward immediately behind the ribcage. The ribs are visible along the thorax, indicating minimal to no subcutaneous fat covering. The pelvic bones (ilium) are highly angular and protrude sharply at the hindquarters. The spine forms a distinct, visible ridge along the dorsal line, and the dorsal lumbar vertebrae are prominent. The overall body shape is narrow and angular, lacking any smooth contouring or fat deposits, which is characteristic of a very thin body condition.\", \"bcs\": 2}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/074b229ba77f566e3fc2095560a562a6.jpg",
+    "gt": 5,
+    "pred": 5,
+    "output": "{\"reasoning\": \"The dog is viewed from the side in a standing position, revealing a clear and distinct abdominal tuck. The overall body shape is well-proportioned without any visible sagging belly or excess fat deposits. While the medium-length black fur obscures fine details like rib visibility, the silhouette strongly indicates an ideal body condition.\", \"bcs\": 5}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/14b8f4c1281e78e91d0a0c4c57749787.jpg",
+    "gt": 5,
+    "pred": 7,
+    "output": "{\"reasoning\": \"The dog is in a sitting position, which obscures the waist and abdominal tuck, making a precise assessment difficult. However, the visible torso shows a thick, rounded shape with a broad chest and no visible ribs. The overall bulk and lack of definition suggest a heavy fat covering, indicating an overweight condition.\", \"bcs\": 7}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/2b5424e12359e252a396c4305be4734f.jpg",
+    "gt": 5,
+    "pred": 5,
+    "output": "{\"reasoning\": \"The dog is standing in a clear side profile, revealing a well-proportioned body. Despite the wiry coat, a distinct abdominal tuck is visible. The overall silhouette suggests a healthy weight without obvious fat deposits or skeletal prominence.\", \"bcs\": 5}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/39701a6d348db3ecc45264b7d278281e.jpg",
+    "gt": 5,
+    "pred": 2,
+    "output": "{\"reasoning\": \"Based on the provided image, the dog exhibits a very thin body condition consistent with a BCS of 2/9. The most prominent feature is the severe, sharp abdominal tuck visible from this front-quarter angle, with the belly line sweeping dramatically upward immediately behind the ribcage. The overall body shape is angular and narrow, indicating a complete lack of fat covering. The skeletal structure is highly visible; the ribs are discernible along the thorax, and the pelvic bones (hips) are sharply protruding and easily seen. The limbs appear thin with minimal muscle mass, particularly in the shoulders and hindquarters, further supporting the assessment of a very thin state with minimal to no fat deposits.\", \"bcs\": 2}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/3d72598f99c317049e888803b8ecba04.jpg",
+    "gt": 5,
+    "pred": 5,
+    "output": "{\"reasoning\": \"The dog is in a sitting pose, which obscures the waist and abdominal tuck. However, the visible chest, shoulders, and neck are well-proportioned without obvious fat deposits or prominent bones. The overall build appears healthy and ideal, though the pose limits a full assessment.\", \"bcs\": 5}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/3ddfab1238aeed3408ad2e4fe52692c2.jpg",
+    "gt": 5,
+    "pred": 3,
+    "output": "{\"reasoning\": \"The image displays a dog with a very pronounced and sharp abdominal tuck, a key indicator of a thin body condition. The rib cage is clearly defined with the outlines of the ribs visible along the thorax, suggesting minimal subcutaneous fat covering. The pelvic bones (hips) are also prominent and angular, further indicating a lack of fat deposits in the lumbar and hindquarter regions. The overall silhouette is lean and bony, with a noticeable waist narrowing behind the rib cage, consistent with a BCS of 3/9.\", \"bcs\": 3}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/3fbbb7cd234df5ce86b19aca8cc02f08.jpg",
+    "gt": 5,
+    "pred": 8,
+    "output": "{\"reasoning\": \"The dog is in a sitting position, which obscures the waist and abdominal tuck. However, the overall body shape is very round and bulky. There is no discernible waist, and the abdomen is obviously distended and rounded, indicating heavy fat deposits consistent with obesity.\", \"bcs\": 8}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/454947f26fa24e2f2141ae7cfaf73adb.jpg",
+    "gt": 5,
+    "pred": 5,
+    "output": "{\"reasoning\": \"The dog is in a sitting pose, which obscures the waist and abdominal tuck, making a full assessment difficult. However, the visible chest, shoulders, and front limbs appear well-proportioned without obvious bony prominences or excess fat deposits. The overall build suggests an ideal body condition, though the pose limits certainty.\", \"bcs\": 5}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/473f4e6057639dee30063bec3f5cf2c3.jpg",
+    "gt": 5,
+    "pred": 2,
+    "output": "{\"reasoning\": \"The image displays a dog with a very pronounced abdominal tuck and a highly defined waist, which is characteristic of a BCS 2. The rib cage is clearly visible with a slight, sharp ridge along the thorax, indicating minimal subcutaneous fat covering. The pelvic bones (ilium) are prominent and angular, and the lumbar vertebrae form a noticeable ridge along the spine. The dog exhibits a lack of fat deposits over the lumbar region, neck, and shoulders, with the overall body shape appearing bony and easily visible despite the smooth, well-muscled coat.\", \"bcs\": 2}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/498ed1eb2318e0c9cc60bef1edbfbfab.jpg",
+    "gt": 5,
+    "pred": 3,
+    "output": "{\"reasoning\": \"The dog is viewed from the side with short fur, allowing for a clear assessment of its body shape. There is a very pronounced abdominal tuck and an obvious waist. The ribs are visible along the flank, and the pelvic bones are prominent, indicating minimal fat covering consistent with a thin body condition.\", \"bcs\": 3}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/55d219bafde54f8f5f3aeee58774df57.jpg",
+    "gt": 5,
+    "pred": 2,
+    "output": "{\"reasoning\": \"Based on the rear-dorsal view of this dog, the visual evidence strongly supports a BCS of 2/9 (Very Thin). The most prominent feature is the severe, sharp narrowing of the waist behind the ribcage, creating a highly pinched silhouette. The pelvic bones (ilium) are sharply angular and protrude noticeably, indicating a complete lack of fat covering over the lumbar and hip regions. The spine forms a distinct, visible ridge along the back, and the overall body shape is narrow and bony, suggesting that the ribs and dorsal vertebrae would be easily visible and palpable with minimal to no fat covering. Furthermore, the hindquarters appear sunken, and the limbs are thin with minimal muscle mass, consistent with a very thin body condition.\", \"bcs\": 2}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/595eb85da2d4bf7b334dd369cc78aa9c.jpg",
+    "gt": 5,
+    "pred": 2,
+    "output": "{\"reasoning\": \"The dog has a short coat that clearly reveals its body contours. The ribs are easily visible along the thorax, and the pelvic bones are prominent. There is a severe abdominal tuck and an obvious waist, indicating minimal fat covering and a very thin condition.\", \"bcs\": 2}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/604c163ad2eaa7755ce486b9170da10c.jpg",
+    "gt": 5,
+    "pred": 1,
+    "output": "{\"reasoning\": \"The image displays a dog with a very thin, emaciated body condition, consistent with a BCS of 1/9. The most striking feature is the severe, sharp abdominal tuck, with the belly sweeping dramatically upward immediately behind the rib cage. The ribs are clearly visible along the thorax, indicating a complete lack of subcutaneous fat covering. The pelvic bones (hips) are highly prominent and angular, protruding sharply at the hindquarters. The spine forms a visible ridge along the back, and the dorsal vertebrae are easily seen. The limbs appear spindly and weak, suggesting severe muscle wasting. The overall skeletal appearance and extreme lack of fat deposits strongly support the 1/9 assessment.\", \"bcs\": 1}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/6311fdb1f52fb00281becfcd2536ec6a.jpg",
+    "gt": 5,
+    "pred": 5,
+    "output": "{\"reasoning\": \"The dog is sitting facing forward with medium, wavy fur that obscures key landmarks like the waistline and abdominal tuck. However, the overall body shape appears well-proportioned. There are no visible ribs or spine to suggest it is underweight, nor are there obvious fat deposits or excessive rounding to suggest it is overweight. The face and visible limbs appear normal, indicating a likely ideal body condition despite the challenging pose and coat.\", \"bcs\": 5}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/6622818acab535d20cc5e6ece3e7a846.jpg",
+    "gt": 5,
+    "pred": 3,
+    "output": "{\"reasoning\": \"The dog is viewed from the side with short fur, allowing for a clear assessment of its body shape. There is a very pronounced abdominal tuck and a clearly defined waist. The ribs are faintly visible along the thorax, and the pelvic bones are slightly prominent, indicating minimal fat covering consistent with a thin body condition.\", \"bcs\": 3}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/6b88ede760a3a011daf0b2b54fc7260d.jpg",
+    "gt": 5,
+    "pred": 5,
+    "output": "{\"reasoning\": \"The dog is viewed from the side in a standing position, revealing a well-proportioned and athletic build. There is a clear and distinct abdominal tuck. The ribs are not visibly protruding, suggesting an appropriate fat covering, and there are no signs of excess fat deposits or abdominal rounding. The overall silhouette indicates an ideal body condition.\", \"bcs\": 5}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/70f8777450e23807eb5bb83302776494.jpg",
+    "gt": 5,
+    "pred": 5,
+    "output": "{\"reasoning\": \"The dog is standing with its full body and all four limbs clearly visible. The short coat allows for easy assessment of body contours. There is a distinct abdominal tuck and a visible waist behind the rib cage. The ribs are not visible, indicating an appropriate fat covering, and the dog appears well-proportioned and muscular without any obvious excess fat deposits.\", \"bcs\": 5}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/7ab3af3a68c31d5bce8869f55972f590.jpg",
+    "gt": 5,
+    "pred": 5,
+    "output": "{\"reasoning\": \"The dog is standing, providing a clear view of its overall body shape. The short fur on the torso reveals a well-proportioned body with a distinct waist visible behind the ribs and a clear abdominal tuck. There are no visible ribs or excess fat deposits, indicating an ideal body condition.\", \"bcs\": 5}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/877d3a65b23019276a4f02c116b58be4.jpg",
+    "gt": 5,
+    "pred": 3,
+    "output": "{\"reasoning\": \"Based on the clear side profile, the dog exhibits a very pronounced abdominal tuck, with the underline sweeping sharply upward immediately behind the rib cage. The rib cage itself is clearly defined with a smooth, minimal fat covering, indicating the ribs would be easily palpable with no excess fat. The pelvic bones (hips) are slightly prominent, and the lumbar area appears lean. The overall silhouette is highly slender and athletic, lacking any fat deposits over the lumbar region, neck, or limbs, which is consistent with a BCS of 3/9.\", \"bcs\": 3}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/87e12cf75246e9759481f1ed2090c52e.jpg",
+    "gt": 5,
+    "pred": 5,
+    "output": "{\"reasoning\": \"The dog is viewed from the side with short fur, allowing for a clear assessment of its body shape. There is a very pronounced abdominal tuck and a clearly defined waist. The ribs are not visibly protruding, indicating an appropriate fat covering, and the dog appears well-muscled and well-proportioned overall.\", \"bcs\": 5}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/8af8b2ede407d14478d038cadd6f73f0.jpg",
+    "gt": 5,
+    "pred": 3,
+    "output": "{\"reasoning\": \"The image displays a dog with a very pronounced and sharp abdominal tuck, a key indicator of a thin body condition. The rib cage is clearly defined with a visible outline of the first few ribs, suggesting minimal subcutaneous fat covering. The pelvic bones (ilium) are also slightly prominent, though not severely protruding. The overall silhouette is lean and angular, lacking the smooth contouring provided by a healthy layer of fat, which aligns perfectly with a BCS of 3/9.\", \"bcs\": 3}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/8bc72df01cc88fa35d7a2b7141618a0f.jpg",
+    "gt": 5,
+    "pred": 3,
+    "output": "{\"reasoning\": \"The image displays a dog with a very pronounced and sharp abdominal tuck, a key indicator of a thin body condition. The rib cage is clearly defined with a visible outline of the ribs along the thorax, suggesting minimal subcutaneous fat covering. The pelvic bones (hips) are also slightly prominent, though not severely protruding. The overall silhouette is lean and angular, lacking the smooth contouring provided by a healthy layer of fat, which aligns perfectly with a BCS of 3/9.\", \"bcs\": 3}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/8d555694719b928ea105c8dc8895777e.jpg",
+    "gt": 5,
+    "pred": 5,
+    "output": "{\"reasoning\": \"The dog is standing with its full body and all four limbs clearly visible. The short coat allows for easy assessment of body contours. The dog has a well-proportioned, muscular build with a distinct abdominal tuck and a visible waist behind the rib cage. The ribs are not visible but the chest area is smooth, suggesting they are palpable without excess fat covering. This indicates an ideal body condition.\", \"bcs\": 5}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/8dd70f49def8d239017663f18ec5ec3f.jpg",
+    "gt": 5,
+    "pred": 2,
+    "output": "{\"reasoning\": \"The dog has a short coat that clearly reveals its body contours. The ribs are easily visible along the thorax, and the pelvic bones are prominent. There is a severe abdominal tuck and an obvious waist, indicating minimal fat covering and a very thin condition.\", \"bcs\": 2}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/8dfc5c4f64ac61697a9928f30b0a8c78.jpg",
+    "gt": 5,
+    "pred": 3,
+    "output": "{\"reasoning\": \"From this direct frontal view, the dog exhibits a very pronounced, sharp waistline immediately behind the ribcage, indicating minimal to no fat covering in the lumbar region. The thoracic area appears narrow, suggesting the ribs would be easily palpable with minimal fat. The overall body shape is highly slender and angular, lacking the smooth contours or slight rounding of the abdomen that would be present in an ideal weight. While the abdominal tuck is difficult to assess from this angle, the extreme narrowness of the waist and the overall lean appearance strongly support a 'Thin' BCS 3 assessment.\", \"bcs\": 3}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/91233f4e089fa37917ba0e724009c92d.jpg",
+    "gt": 5,
+    "pred": 5,
+    "output": "{\"reasoning\": \"The dog is standing with its full body visible, allowing for a clear assessment. The short coat reveals a well-proportioned body with a distinct abdominal tuck and a visible waist behind the ribs. The ribs are not visible, indicating an appropriate fat covering without excess. The overall shape is consistent with an ideal body condition.\", \"bcs\": 5}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/9e7a59fe859afe0dc6f3bb7c49520ee5.jpg",
+    "gt": 5,
+    "pred": 5,
+    "output": "{\"reasoning\": \"The dog is standing with short fur, allowing for a clear view of its body shape. There is a very pronounced abdominal tuck and a clearly defined waist. The ribs are not visibly protruding, indicating an appropriate fat covering, and the dog appears well-muscled and well-proportioned overall.\", \"bcs\": 5}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/a12e2c828c6994f8b2907f498e5ea9d5.jpg",
+    "gt": 5,
+    "pred": 1,
+    "output": "{\"reasoning\": \"The dog is severely emaciated. The ribs, spine, and pelvic bones are starkly visible and protruding with no apparent fat cover. There is extreme muscle wasting evident across the shoulders, back, and hindquarters, along with a severe abdominal tuck.\", \"bcs\": 1}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/a430e21a35018cd9fd91ff13000e1038.jpg",
+    "gt": 5,
+    "pred": 2,
+    "output": "{\"reasoning\": \"The dog is standing with a clear side view and short fur, allowing for excellent visibility of body contours. The ribs are easily visible along the thorax, and the pelvic bones are prominent. There is a severe abdominal tuck and an obvious waist, indicating minimal fat covering consistent with a very thin condition.\", \"bcs\": 2}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/c8747a82fd7448d5acb409d46ca53a9d.jpg",
+    "gt": 5,
+    "pred": 5,
+    "output": "{\"reasoning\": \"The dog is standing with its full body visible, allowing for a good assessment. The short coat reveals a well-proportioned body with a clear abdominal tuck. The ribs are not visible, indicating an appropriate fat covering, and there are no obvious signs of excess fat or muscle wasting. The overall appearance is of a healthy, ideal weight.\", \"bcs\": 5}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/c988b5ed1f5b275e5c5a6e6fdc09f20a.jpg",
+    "gt": 5,
+    "pred": 6,
+    "output": "{\"reasoning\": \"The dog is lying down, which obscures the waist and abdominal tuck, but the short coat allows for good visibility of the torso. The ribs are not visible and appear to have a slight excess fat covering. The body is somewhat thick and rounded, lacking the lean definition of an ideal weight, suggesting a slightly overweight condition.\", \"bcs\": 6}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/c98da192b273dbf2761d36da3b78c438.jpg",
+    "gt": 5,
+    "pred": 6,
+    "output": "{\"reasoning\": \"The dog is viewed from the side with short fur, allowing for a clear assessment. The ribs are not visible and appear to have a slight excess fat covering. The abdominal tuck is minimal, and the overall body shape is somewhat thick and blocky, indicating a slightly overweight condition.\", \"bcs\": 6}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/ca3b6075b90c3a8f0d7af9d2d87e2f70.jpg",
+    "gt": 5,
+    "pred": 5,
+    "output": "{\"reasoning\": \"The dog is viewed from the side with short fur, allowing for a clear assessment of its body shape. There is a distinct abdominal tuck and a visible waist behind the rib cage. The ribs are not visible, indicating an appropriate fat covering, and the overall body is well-proportioned without any obvious excess fat deposits.\", \"bcs\": 5}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/cbc4a98f875dfab8a7ddbb69b1b676df.jpg",
+    "gt": 5,
+    "pred": 5,
+    "output": "{\"reasoning\": \"The dog's thick, wiry coat and sitting posture obscure key landmarks such as the ribs, waistline, and abdominal tuck. However, the overall body shape appears well-proportioned without obvious signs of severe emaciation or excessive fat deposits, suggesting a near-ideal condition.\", \"bcs\": 5}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/d233772a2f422538acd0aff05555fae5.jpg",
+    "gt": 5,
+    "pred": 5,
+    "output": "{\"reasoning\": \"The dog is viewed from the side with short fur, allowing for a clear assessment. There is a very pronounced abdominal tuck and a clearly defined waist. The ribs are not visibly protruding, indicating an appropriate fat covering, and the dog appears well-muscled and well-proportioned overall.\", \"bcs\": 5}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/d87eec410e4426928644b7be967a1afd.jpg",
+    "gt": 5,
+    "pred": 5,
+    "output": "{\"reasoning\": \"The dog is lying down, which obscures the waist and abdominal tuck. However, the visible torso appears well-proportioned with no obvious bony prominences (ribs or spine) visible through the medium-length fur, nor are there any noticeable fat deposits. The overall shape suggests an ideal body condition.\", \"bcs\": 5}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/dbdbc7bd212194612a8350fe9d260332.jpg",
+    "gt": 5,
+    "pred": 1,
+    "output": "{\"reasoning\": \"The image displays a dog with a very thin, emaciated body condition, consistent with a BCS of 1/9. The most striking feature is the severe, sharp abdominal tuck, with the belly sweeping dramatically upward immediately behind the rib cage. The ribs are clearly visible along the thorax, indicating a complete lack of subcutaneous fat covering. The pelvic bones (ilium) are highly prominent and angular, protruding sharply at the hindquarters. The spine forms a distinct, visible ridge along the dorsal line. There is a complete absence of fat deposits over the lumbar area, neck, and limbs, giving the dog a gaunt, skeletal appearance.\", \"bcs\": 1}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/dceffae0eaa456ac1889eff737e36b5b.jpg",
+    "gt": 5,
+    "pred": 5,
+    "output": "{\"reasoning\": \"The dog is in a sitting position, which obscures the waist and abdominal tuck, making a precise assessment difficult. However, the visible chest, shoulders, and neck appear well-proportioned without obvious bony prominences or excessive fat deposits. The overall build suggests an ideal body condition, though the pose limits certainty.\", \"bcs\": 5}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/e1277bc938c8af4e60dffaa11a61b557.jpg",
+    "gt": 5,
+    "pred": 7,
+    "output": "{\"reasoning\": \"The dog is in a sitting position, which obscures the waist and abdominal tuck. However, the short coat reveals a very broad, rounded torso with no discernible waist. The ribs are not visible and appear to have a heavy fat covering. The overall blocky shape and lack of definition indicate an overweight condition.\", \"bcs\": 7}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/f31ab45b83a9d3d0c95ad887ed59d648.jpg",
+    "gt": 5,
+    "pred": 5,
+    "output": "{\"reasoning\": \"The dog is lying down with medium-to-long fur, which obscures key landmarks like the waistline and abdominal tuck. However, the overall body shape appears well-proportioned without obvious signs of emaciation (no visible bones) or severe obesity (no massive fat deposits or extreme rounding). The face and visible torso suggest a healthy, ideal weight, though the thick coat and pose limit a highly precise assessment.\", \"bcs\": 5}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/f627ec9bd067cd96d62345a4553c1796.jpg",
+    "gt": 5,
+    "pred": 5,
+    "output": "{\"reasoning\": \"The dog is in a sitting position, which obscures the waist and abdominal tuck, making a precise assessment difficult. However, the visible chest, shoulders, and neck appear well-proportioned without obvious bony prominences or excess fat deposits. The overall build suggests an ideal body condition, though the pose limits certainty.\", \"bcs\": 5}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/12323e1866cbed70dc388a4300d56098.jpg",
+    "gt": 6,
+    "pred": 2,
+    "output": "{\"reasoning\": \"Based on the rear-oblique view of this dog, the visual evidence strongly supports a BCS of 2/9 (Very Thin). The most prominent feature is the severe, sharp narrowing of the waist behind the ribcage, indicating an extreme lack of fat in the lumbar region. The pelvic bones (ilium) are highly angular and protrude noticeably, forming distinct ridges along the top of the hindquarters. The spine forms a sharp, visible ridge along the dorsal line, and the shoulder blades (scapulae) are prominent. The overall body shape is highly angular with minimal to no fat covering over the ribs, spine, and hips. Furthermore, the hind limbs appear bony with minimal muscle mass, particularly in the hindquarters, which is consistent with a very thin body condition where ribs would be easily visible and palpable with no fat covering.\", \"bcs\": 2}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/46b439b5f9c294c47801e85eae41b777.jpg",
+    "gt": 6,
+    "pred": 3,
+    "output": "{\"reasoning\": \"The image displays a dog with a very pronounced and sharp abdominal tuck, a key indicator of a thin body condition. The rib cage is clearly defined with a visible outline of the ribs along the thorax, suggesting minimal subcutaneous fat covering. The pelvic bones (ilium) are also slightly prominent, though not severely protruding. The overall silhouette is lean and angular, lacking the smooth contouring provided by a healthy layer of fat, which aligns perfectly with a BCS of 3/9.\", \"bcs\": 3}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/4b2e008718beb3ecdbbb721db0f39758.jpg",
+    "gt": 6,
+    "pred": 3,
+    "output": "{\"reasoning\": \"The image displays a dog with a very pronounced and sharp abdominal tuck, a key indicator of a thin body condition. The rib cage is clearly defined with visible outlines of the ribs along the thorax, suggesting minimal subcutaneous fat covering. The flank area is deeply hollowed out, emphasizing the lack of fat and the sharp upward angle of the abdomen. While the front-quarter angle obscures a direct view of the waist from above, the extreme tuck and overall lean, angular appearance of the chest and shoulders strongly support a BCS of 3/9.\", \"bcs\": 3}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/562578a12829eb714de36363f720d7b2.jpg",
+    "gt": 6,
+    "pred": 5,
+    "output": "{\"reasoning\": \"Based on the clear side profile, the dog exhibits a well-proportioned and athletic build consistent with an ideal BCS of 5/9. The rib cage is smooth with no visible ribs, indicating a healthy, minimal fat covering where ribs would be easily palpable without excess. A distinct abdominal tuck is clearly visible, with the underline sloping upward from the chest to the hindquarters. The waist is discernible behind the rib cage, showing a gentle narrowing before the hips. There are no visible fat deposits over the lumbar area, neck, or base of the tail. The overall muscle mass is well-developed, particularly in the shoulders and hind limbs, supporting the assessment of an ideal, fit body condition.\", \"bcs\": 5}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/61c1d8d403693b10bc8f600c0a1f3f9e.jpg",
+    "gt": 6,
+    "pred": 5,
+    "output": "{\"reasoning\": \"The image displays a dog in a clear side profile, allowing for an excellent assessment of its body condition. The dog exhibits a well-proportioned, athletic build consistent with an ideal BCS of 5/9. The rib cage is smooth with no ribs visibly protruding, indicating a healthy, minimal fat covering where the ribs would be easily palpable without excess weight. A distinct and appropriate abdominal tuck is clearly visible, with the underline sloping upward from the chest to the hindquarters. There are no signs of excess fat deposits, such as a sagging abdomen or a thick neck or lumbar area. The overall silhouette is lean and muscular, demonstrating a healthy balance between muscle mass and fat.\", \"bcs\": 5}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/6881a0291365bd778d2e154eb20a9601.jpg",
+    "gt": 6,
+    "pred": 8,
+    "output": "{\"reasoning\": \"From this direct frontal view, the dog exhibits a broad, rounded chest and a complete lack of a waistline. The body widens significantly behind the ribcage, indicating heavy fat deposits over the thorax and lumbar regions. The abdomen is obviously distended and bulges outward, showing no abdominal tuck. The overall blocky, wide shape strongly suggests obesity, consistent with a BCS of 8.\", \"bcs\": 8}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/6eef5fa4f6fcf6676778a0dabee4684f.jpg",
+    "gt": 6,
+    "pred": 3,
+    "output": "{\"reasoning\": \"The image displays a dog with a very pronounced and sharp abdominal tuck, a key indicator of a thin body condition. The rib cage is clearly defined with the outlines of the ribs visible along the thorax, suggesting minimal subcutaneous fat covering. The pelvic bones (hips) are also prominent and angular, further supporting the assessment of a thin state. The overall silhouette is lean and lacks any visible fat deposits over the lumbar area, neck, or limbs, consistent with a BCS of 3/9.\", \"bcs\": 3}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/7b44cbe3434ba28729a4508d1fdb643d.jpg",
+    "gt": 6,
+    "pred": 1,
+    "output": "{\"reasoning\": \"The image displays a dog with a severe, emaciated body condition consistent with a BCS of 1/9. The most striking feature is the extreme abdominal tuck, with the ventral line sweeping sharply upward immediately behind the rib cage. The ribs are starkly visible along the thorax, indicating a complete lack of subcutaneous fat and suggesting they would be easily visible and palpable. The pelvic bones (ilium) are highly prominent and angular, protruding sharply at the hindquarters. There is a complete absence of fat deposits over the lumbar region, spine, and limbs. The overall skeletal structure is highly defined and easily visible, pointing to severe muscle wasting and zero fat reserves.\", \"bcs\": 1}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/b6247ca073f342a24b4a4cccbf781db9.jpg",
+    "gt": 6,
+    "pred": 3,
+    "output": "{\"reasoning\": \"The image displays a dog with a very pronounced and sharp abdominal tuck, a key indicator of a thin body condition. The rib cage is clearly defined with a visible outline of the ribs along the thorax, suggesting minimal fat covering over the rib area. The pelvic bones (hips) are also slightly prominent, though not severely protruding. The overall silhouette is lean and angular, lacking the smooth contouring provided by a healthy layer of subcutaneous fat. While a top-down view is not available to assess the waist directly, the extreme tuck from the side profile strongly supports the assessment of a thin dog (BCS 3/9).\", \"bcs\": 3}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/f7f65da02ffa7c7d2d472756ddd5ad0a.jpg",
+    "gt": 6,
+    "pred": 8,
+    "output": "{\"reasoning\": \"From this top-down perspective, the dog exhibits a complete lack of a waistline. The body shape is uniformly rounded and straight from the shoulders to the hips, indicating heavy fat deposits over the lumbar region and rib cage. The abdomen is obviously distended and bulges outward, lacking any tuck. The overall blocky, cylindrical silhouette strongly supports a BCS of 8, where ribs would be impossible to palpate under the thick layer of fat.\", \"bcs\": 8}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/04f9c122dba4c9eac09e2cfa42ae63fd.jpg",
+    "gt": 7,
+    "pred": 5,
+    "output": "{\"reasoning\": \"The dog is viewed from the side, displaying a clear abdominal tuck and a discernible waist behind the rib cage. The ribs are not visible, indicating adequate fat cover, but the overall body shape is well-proportioned without obvious excess fat deposits or muscle wasting.\", \"bcs\": 5}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/118d9a8a007de62f56c22eb0fef17d5d.jpg",
+    "gt": 7,
+    "pred": 5,
+    "output": "{\"reasoning\": \"Based on the clear side profile, the dog exhibits a well-proportioned and athletic build consistent with an ideal BCS of 5/9. The rib cage is smooth with no ribs visibly protruding, indicating a healthy, minimal fat covering where ribs would be easily palpable without excess. A distinct abdominal tuck is clearly visible, with the underline sloping upward from the chest to the hindquarters. The waist is discernible behind the rib cage, showing a gentle narrowing before the hips. There are no visible fat deposits over the lumbar area, neck, or base of the tail. The overall muscle mass is well-developed, particularly in the shoulders and hind limbs, supporting the assessment of an ideal, fit body condition.\", \"bcs\": 5}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/1c62fccedf596e716c66772b4d8f06ce.jpg",
+    "gt": 7,
+    "pred": 9,
+    "output": "{\"reasoning\": \"The image displays a dog with a massive, barrel-like overall body shape consistent with a BCS of 9/9. The thorax is completely smooth and rounded, indicating heavy fat deposits that would make the ribs impossible to palpate. There is a complete absence of a waistline; the body maintains a thick, cylindrical width from the shoulders straight through to the hindquarters. From this rear-quarter angle, there is no discernible abdominal tuck, and the abdomen is obviously distended and rounded, hanging low. Heavy fat deposits are also visible over the lumbar region, the base of the tail, and the neck, giving the dog a blocky, heavily padded appearance. The limbs and shoulders appear thick and fleshy, further supporting the diagnosis of severe obesity.\", \"bcs\": 9}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/589ed17a8ac5abc9f6fb15258544373d.jpg",
+    "gt": 7,
+    "pred": 3,
+    "output": "{\"reasoning\": \"The image displays a dog with a very pronounced abdominal tuck and a highly defined, narrow waist. The rib cage is clearly visible with the outlines of the ribs discernible, indicating minimal subcutaneous fat covering. The pelvic bones (hips) are also prominent and angular. The overall body shape is very lean with minimal fat deposits, consistent with a thin body condition.\", \"bcs\": 3}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/731bd679e42bd0441ac429c4a845e616.jpg",
+    "gt": 7,
+    "pred": 6,
+    "output": "{\"reasoning\": \"Based on the frontal perspective of this dog, the visual evidence supports a BCS of 6/9 (Slightly Overweight). The dog exhibits a well-proportioned but slightly softened overall body shape. The chest and shoulders are well-developed with smooth contours, indicating a slight excess of fat covering the ribcage and pectoral areas, which are not visible. The waist is discernible but not prominent, and the abdominal tuck is present but shallow, lacking the sharp upward angle seen in an ideal weight. The front-facing angle obscures a clear view of the waist from above and the full abdominal tuck from the side, but the overall smooth, slightly rounded silhouette is consistent with a slight overweight condition.\", \"bcs\": 6}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/99c6840aebb865641566ce5c4400f005.jpg",
+    "gt": 7,
+    "pred": 8,
+    "output": "{\"reasoning\": \"The image displays a dog with a very rounded, blocky silhouette consistent with a BCS of 8. The rib cage is completely smooth with no visible ribs, indicating a heavy fat covering that would make palpation difficult. There is a complete absence of a waistline; the body maintains a thick, cylindrical shape from the shoulders to the hindquarters. The lumbar region and back are broad and heavily padded, showing no definition between the spine and the base of the tail. From this rear-quarter angle, there is no abdominal tuck; the ventral line is flat and shows obvious abdominal distension with a prominent, low-hanging fat pad. The neck and shoulders are thick, blending seamlessly into the chest, which further supports the assessment of heavy fat deposits and a lack of overall body definition.\", \"bcs\": 8}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/a20a38c074cdb886b167c4b85e8fceff.jpg",
+    "gt": 7,
+    "pred": 6,
+    "output": "{\"reasoning\": \"Based on the frontal, slightly elevated view of this short-haired dog, the visual evidence supports a BCS of 6/9 (Slightly Overweight). The dog exhibits a broad, rounded chest and a thick, fleshy neck with no visible bony prominences, indicating a slight excess fat covering. The front of the torso appears somewhat cylindrical rather than well-proportioned, suggesting the waist would be discernible but not prominent from a side view. The ventral line shows a slight rounding and lack of a distinct abdominal tuck, with the belly appearing slightly full. The overall build is robust and well-fleshed, consistent with a slightly overweight condition where ribs would be palpable with slight difficulty and the waist is not easily defined.\", \"bcs\": 6}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/a94fb20e67a6d470d48807abc1907efa.jpg",
+    "gt": 7,
+    "pred": 5,
+    "output": "{\"reasoning\": \"The dog is viewed from the side in a standing position, revealing a clear and distinct abdominal tuck. The overall body shape is well-proportioned and athletic, with no visible excess fat deposits over the ribs, lumbar area, or abdomen. The ribs are not visibly protruding, suggesting an ideal fat covering.\", \"bcs\": 5}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/ba03ea075b6c2088863e30166eefde0c.jpg",
+    "gt": 7,
+    "pred": 5,
+    "output": "{\"reasoning\": \"The dog is standing in a clear side profile with short fur, allowing for excellent visibility of body contours. There is a distinct abdominal tuck and a clearly defined waist behind the rib cage. The ribs are not visibly protruding, indicating an appropriate fat covering, and the overall body is well-proportioned and muscular.\", \"bcs\": 5}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/c0e07687770ee3a09f9d2c449d6fb1da.jpg",
+    "gt": 7,
+    "pred": 8,
+    "output": "{\"reasoning\": \"The image displays a dog with a heavy, blocky overall body shape consistent with a BCS of 8. The rib cage is completely smooth with no visible ribs, indicating a heavy fat covering that would make palpation difficult. There is a complete absence of an abdominal tuck; instead, the ventral line is flat and shows obvious abdominal distension, with the belly hanging low. The waist is barely visible, if present at all, as the transition from the rib cage to the hindquarters is straight and rounded. Additionally, there are noticeable fat deposits over the lumbar region, the base of the tail, and the neck, contributing to the overall rounded and thick appearance of the dog.\", \"bcs\": 8}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/c77f475def6badd4be84e292f8a70c56.jpg",
+    "gt": 7,
+    "pred": 7,
+    "output": "{\"reasoning\": \"The dog is standing in a side profile, revealing a thick, blocky body shape. There is no abdominal tuck; the underline is straight to slightly rounded. The waist is not discernible, and the overall bulk suggests a heavy fat covering over the ribs and lumbar area, consistent with an overweight condition.\", \"bcs\": 7}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/ceea8304ce9821662b85ecc01e64d54d.jpg",
+    "gt": 7,
+    "pred": 6,
+    "output": "{\"reasoning\": \"Based on the frontal perspective of this dog, the visual evidence supports a BCS of 6/9 (Slightly Overweight). The dog exhibits a well-proportioned but slightly softened overall body shape. The chest and shoulders are well-developed with smooth contours, indicating a slight excess of fat covering the ribcage and pectoral areas, which are not visible. The waist is discernible behind the ribcage but lacks the sharp, distinct definition seen in an ideal 5/9 score. The abdominal tuck is present but appears slightly less pronounced, with a hint of a slight abdominal fat pad visible near the lower belly line. The neck and front limbs are well-muscled and thick, consistent with a slight fat covering over the musculature rather than ideal lean definition.\", \"bcs\": 6}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/e7ecca3b04ec92a00f5ffd072298cad2.jpg",
+    "gt": 7,
+    "pred": 8,
+    "output": "{\"reasoning\": \"From this top-down perspective, the dog exhibits a complete lack of a waistline. The body shape is a continuous, straight rectangle from the shoulders to the hindquarters, indicating significant abdominal distension and heavy fat deposits over the thorax and lumbar regions. The sides bulge outward, and the overall profile is very rounded and blocky, which is characteristic of severe obesity.\", \"bcs\": 8}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/ea722ebcc202cb2879328b5c24c85561.jpg",
+    "gt": 7,
+    "pred": 8,
+    "output": "{\"reasoning\": \"The image displays a dog with a very rounded, blocky body shape consistent with a BCS of 8. The rib cage is completely smooth with no visible ribs, indicating a heavy fat covering that would make palpation difficult. There is a complete absence of an abdominal tuck; instead, the ventral line is flat and shows obvious abdominal distension with a prominent, pendulous fat pad hanging down. The neck, shoulders, and lumbar regions are thick and heavily padded, lacking any definition. The overall silhouette is cylindrical and heavy, with no discernible waist from this angle, and the limbs appear thick and fleshy due to excess fat deposits.\", \"bcs\": 8}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/075d7b11b56de895d3265939f446b448.jpg",
+    "gt": 8,
+    "pred": 8,
+    "output": "{\"reasoning\": \"The image displays a dog with a very rounded, blocky silhouette consistent with a BCS of 8. The rib cage is completely obscured by a heavy layer of fat, showing no skeletal definition. There is a complete absence of a waistline; the body maintains a thick, cylindrical shape from the shoulders to the hindquarters. The lumbar region and back are broad and heavily padded, indicating significant fat deposits over the spine and hips. From the side profile, there is no abdominal tuck; instead, the abdomen is obviously distended and hangs low, creating a flat or convex underline. The neck and shoulders are thick, blending seamlessly into the chest and torso, which strongly suggests heavy fat covering over the entire body.\", \"bcs\": 8}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/0ea72ea2ab8fdf3ca3e98ba3712d2305.jpg",
+    "gt": 8,
+    "pred": 8,
+    "output": "{\"reasoning\": \"Based on the visual evidence, the dog exhibits a heavy, blocky overall body shape consistent with a BCS of 8. The rib cage is completely smooth with no visible ribs, indicating a heavy fat covering that would make palpation difficult. From this three-quarter angle, there is a complete absence of a waist; the body maintains a thick, cylindrical width from the shoulders straight through to the hindquarters. The ventral profile shows a complete lack of an abdominal tuck, with the underline being flat and slightly rounded downward, suggesting a heavy abdominal fat pad. Additionally, there are noticeable fat deposits around the neck and shoulders, giving the dog a thick, rounded appearance rather than a well-proportioned one.\", \"bcs\": 8}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/20717d83c22e58cce1b298df0003e626.jpg",
+    "gt": 8,
+    "pred": 8,
+    "output": "{\"reasoning\": \"The image displays a dog with a heavy, blocky silhouette consistent with a BCS of 8. The rib cage is completely smooth with no visible ribs, indicating a heavy fat covering that would make palpation difficult. There is a complete absence of an abdominal tuck; instead, the ventral line is flat to slightly rounded, showing obvious abdominal distension. The lumbar region is broad and heavily padded, with no discernible waist behind the ribs. Additionally, there are noticeable fat deposits over the neck, shoulders, and lumbar area, contributing to the overall rounded and thick appearance of the dog.\", \"bcs\": 8}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/51edb590fcb8c898121ada4ff789a91c.jpg",
+    "gt": 8,
+    "pred": 9,
+    "output": "{\"reasoning\": \"The dog exhibits massive fat deposits over the entire body, including the thorax, neck, and limbs. There is severe abdominal distension with a complete lack of waist definition and no abdominal tuck. The overall shape is extremely round and barrel-like, indicating severe obesity.\", \"bcs\": 9}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/63caa217b619e0248ce245b4925da5bb.jpg",
+    "gt": 8,
+    "pred": 8,
+    "output": "{\"reasoning\": \"Based on the provided image, the dog exhibits a heavy, blocky, and rounded overall body shape consistent with a BCS of 8. The rib cage area is completely smooth with no visible bony definition, indicating a heavy fat covering that would make the ribs difficult to palpate. From this three-quarter angle, there is a complete absence of a waist; the body maintains a thick, cylindrical width from the shoulders straight through to the hindquarters. The ventral profile shows a complete lack of an abdominal tuck, with the belly line running straight and parallel to the ground, suggesting significant abdominal distension and excess fat deposits. Additionally, there are noticeable fat deposits around the neck and chest, contributing to the overall bulky appearance.\", \"bcs\": 8}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/69406ee5f766f44daea819135dcadbe9.jpg",
+    "gt": 8,
+    "pred": 8,
+    "output": "{\"reasoning\": \"The image displays a dog with a heavy, blocky overall body shape consistent with a BCS of 8. The rib cage is completely smooth with no visible ribs, indicating a heavy fat covering that would make palpation difficult. There is a complete absence of an abdominal tuck; instead, the ventral line is flat and shows obvious abdominal distension with a prominent, pendulous fat pad hanging down. The lumbar region is broad and rounded, suggesting heavy fat deposits over the spine and hips. The neck and shoulders are thick and fleshy, further supporting the presence of excess fat. The lack of definition between the chest, abdomen, and hindquarters strongly indicates significant obesity.\", \"bcs\": 8}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/8bffa23609ffbead5c2617ca89946e3b.jpg",
+    "gt": 8,
+    "pred": 7,
+    "output": "{\"reasoning\": \"Based on the clear side profile, the dog exhibits a blocky, cylindrical body shape consistent with a BCS of 7. The rib cage is completely smooth with no visible ribs, indicating a heavy fat covering that would make palpation difficult. There is a complete lack of an abdominal tuck; instead, the ventral line is flat and slightly rounded, showing obvious abdominal distension. The waist is barely visible, if present at all, as the transition from the rib cage to the hindquarters is straight and lacks any inward curve. Additionally, there are noticeable fat deposits around the neck and shoulders, and the lumbar area appears broad and fleshy, further supporting the assessment of excess weight.\", \"bcs\": 7}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/99a4e8c04ad947dfe2da895b6c9bd471.jpg",
+    "gt": 8,
+    "pred": 8,
+    "output": "{\"reasoning\": \"The image displays a dog with a very rounded, blocky silhouette consistent with a BCS of 8. The rib cage is completely smooth with no visible ribs, indicating a heavy fat covering that would make palpation difficult. There is a complete absence of an abdominal tuck; instead, the ventral line is flat to slightly convex, showing obvious abdominal distension. The waist is completely obscured, with the body maintaining a thick, cylindrical shape from the shoulders to the hindquarters. Additionally, there are noticeable fat deposits over the lumbar region, the base of the tail, and the neck, contributing to the overall heavy, rounded appearance.\", \"bcs\": 8}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/a8f72d9cb3c129d38c3645abb6682cc7.jpg",
+    "gt": 8,
+    "pred": 8,
+    "output": "{\"reasoning\": \"The image displays a dog with a heavy, blocky silhouette consistent with a BCS of 8. The rib cage is completely smooth with no visible ribs, indicating a heavy fat covering that would make palpation difficult. There is a complete absence of an abdominal tuck; instead, the ventral line is flat and shows obvious abdominal distension, with the belly hanging low. The waist is barely visible, if present at all, as the body maintains a thick, cylindrical shape from the shoulders to the hindquarters. Additionally, there are noticeable fat deposits over the lumbar region, the base of the tail, and the neck, contributing to the overall rounded and obese appearance.\", \"bcs\": 8}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/cde67cafd1a2c3153facbafdb1e9a39d.jpg",
+    "gt": 8,
+    "pred": 6,
+    "output": "{\"reasoning\": \"Based on the frontal view of this dog, the visual evidence supports a BCS of 6/9. The dog exhibits a broad, rounded chest and a thick neck with noticeable fat deposits, indicating excess weight. The overall body shape is blocky and lacks definition. While the waist and abdominal tuck are obscured by the camera angle, the lack of any visible bony prominences (such as the ribs or spine) suggests a heavy fat covering. The lower abdomen appears full and slightly distended, consistent with a slight abdominal fat pad, though the lack of a clear side profile prevents a definitive assessment of the tuck.\", \"bcs\": 6}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/fa83fea95502d826f2941fdaab521ec6.jpg",
+    "gt": 8,
+    "pred": 6,
+    "output": "{\"reasoning\": \"Based on the rear-dorsal view of this dog, the visual evidence supports a BCS of 6/9 (Slightly Overweight). The rib cage area is smooth with no ribs being visible, indicating a slight excess fat covering over the thorax. The waist is discernible but not prominent; the transition from the rib cage to the hips is relatively straight rather than having a sharp, inward curve. The lumbar region and hips appear slightly rounded and well-padded, suggesting a slight accumulation of fat deposits in these areas. While the abdominal tuck cannot be assessed from this angle, the overall body shape lacks the lean definition of an ideal weight and shows the slight rounding characteristic of a 6/9 score.\", \"bcs\": 6}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/109a66a85dfe708f61d948f0755c4ffb.jpg",
+    "gt": 9,
+    "pred": 7,
+    "output": "{\"reasoning\": \"The dog exhibits a blocky, rounded body shape with no discernible waist from this angle. The rib area is completely smooth with no visible ribs, indicating a heavy fat covering. The abdomen is obviously rounded and distended, lacking any tuck, which is characteristic of an overweight condition.\", \"bcs\": 7}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/1fae340d54b74eb287902f595cc7edb3.jpg",
+    "gt": 9,
+    "pred": 7,
+    "output": "{\"reasoning\": \"The dog is standing in a side profile, revealing a thick, blocky body shape. There is no abdominal tuck; the underline is flat to slightly rounded. The ribs are not visible and appear to have a heavy fat covering. The overall lack of definition and straight ventral line indicate an overweight condition.\", \"bcs\": 7}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/26fa08e50a244f98073bc10dd1fca46e.jpg",
+    "gt": 9,
+    "pred": 8,
+    "output": "{\"reasoning\": \"The image displays a dog with a heavy, blocky silhouette consistent with a BCS of 8. The rib cage is completely smooth with no visible ribs, indicating a heavy fat covering that would make palpation difficult. There is a complete absence of an abdominal tuck; instead, the ventral line is flat and shows obvious abdominal distension with a prominent, pendulous fat pad hanging down. The lumbar region is broad and rounded, and the neck and shoulders appear thick, suggesting heavy fat deposits. The overall body shape is cylindrical and lacks any definition, strongly supporting the visual evidence of significant excess weight.\", \"bcs\": 8}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/412fb8e65f1e8233b8d8a1464a1ce44d.jpg",
+    "gt": 9,
+    "pred": 9,
+    "output": "{\"reasoning\": \"The image displays a dog with a massive, barrel-like overall body shape consistent with a BCS of 9/9. The thorax is completely smooth and rounded, indicating heavy fat deposits that would make the ribs impossible to palpate. There is a complete absence of an abdominal tuck; instead, the abdomen is severely distended and hangs very low, creating a flat, continuous line from the chest to the hindquarters. The lumbar region is broad and heavily padded, with no discernible waistline behind the ribs. Additionally, there are obvious, heavy fat deposits over the neck, shoulders, and lumbar area, giving the dog a blocky, cylindrical appearance with no definition between the limbs and the torso.\", \"bcs\": 9}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/44f292dee1b8b67df3d612ce9a64e8e0.jpg",
+    "gt": 9,
+    "pred": 8,
+    "output": "{\"reasoning\": \"Based on the provided image, the dog exhibits a heavy, blocky, and rounded overall body shape consistent with a BCS of 8. The rib cage area is completely smooth with no visible bony definition, indicating a heavy fat covering that would make the ribs difficult to palpate. From this three-quarter angle, there is a complete absence of a waistline; the body maintains a thick, cylindrical width from the shoulders straight through to the hindquarters. The ventral profile shows obvious abdominal distension with a convex, rounded belly and a complete lack of an abdominal tuck. Additionally, there are noticeable fat deposits around the neck, shoulders, and chest, contributing to the overall bulky appearance.\", \"bcs\": 8}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/7388584bd1e4e787e545a001b1ca4e28.jpg",
+    "gt": 9,
+    "pred": 8,
+    "output": "{\"reasoning\": \"The image displays a dog with a very rounded, blocky silhouette consistent with a BCS of 8. The rib cage is completely obscured by a heavy layer of fat, showing no skeletal definition. There is a complete absence of an abdominal tuck; instead, the ventral line is flat and distended, indicating significant abdominal fat accumulation. The lumbar region and hips are broad and heavily padded, suggesting fat deposits over the spine and pelvic bones. The overall body shape is thick and cylindrical, with no discernible waist from this rear-oblique angle.\", \"bcs\": 8}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/95b8a5f0d8ae8b8bc644ba0f8baa9252.jpg",
+    "gt": 9,
+    "pred": 9,
+    "output": "{\"reasoning\": \"The image displays a dog with a massive, barrel-like overall body shape consistent with a BCS of 9/9. The rib cage is completely obscured by a heavy, thick layer of fat, indicating that the ribs would be impossible to palpate. There is a complete absence of a waist; the body maintains a thick, cylindrical width from the shoulders straight through to the hindquarters. The abdomen shows severe distension with a complete lack of an abdominal tuck, presenting a convex, rounded profile from the chest to the groin. Additionally, there are heavy fat deposits visible around the neck, shoulders, and lumbar region, contributing to the overall blocky and obese appearance.\", \"bcs\": 9}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/a21ebf7c904acc11165ef5cf15a48fb9.jpg",
+    "gt": 9,
+    "pred": 9,
+    "output": "{\"reasoning\": \"The image displays a dog with a massive, barrel-like body shape consistent with a BCS of 9/9. The thorax is completely smooth with no visible ribs, indicating a heavy fat covering that would make palpation impossible. There is a complete absence of an abdominal tuck; instead, the abdomen is severely distended and hangs very low, creating a flat, continuous line from the chest to the hindquarters. The lumbar region is broad and heavily padded, with no discernible waist behind the ribcage. Additionally, there are obvious, heavy fat deposits over the neck, shoulders, and lumbar area, giving the dog a blocky, rounded appearance with no definition between the limbs and the torso.\", \"bcs\": 9}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/a76a1ce2b34fd7ff031a85bdce44da0b.jpg",
+    "gt": 9,
+    "pred": 9,
+    "output": "{\"reasoning\": \"The dog exhibits massive fat deposits over the entire body, including the thorax, neck, and limbs. There is severe abdominal distension with no discernible waist or abdominal tuck. The overall shape is extremely round and barrel-like, indicating severe obesity.\", \"bcs\": 9}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/bbd20cd989597e03393d79af7596324f.jpg",
+    "gt": 9,
+    "pred": 9,
+    "output": "{\"reasoning\": \"The image displays a dog with a massive, barrel-like body shape consistent with a BCS of 9/9. The thorax is completely smooth with no visible ribs, indicating a heavy, thick fat covering that would make palpation impossible. There is a complete absence of an abdominal tuck; instead, the abdomen is severely distended and hangs very low, creating a flat, continuous line from the chest to the hindquarters. The lumbar region is broad and heavily padded, with no discernible waistline behind the ribcage. Additionally, there are obvious, heavy fat deposits over the neck, shoulders, and lumbar area, giving the dog a blocky, rounded appearance with no definition between the limbs and the torso.\", \"bcs\": 9}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/c2876e1282a6846af576c629e3e13ef0.jpg",
+    "gt": 9,
+    "pred": 8,
+    "output": "{\"reasoning\": \"Based on the visual evidence, the dog exhibits a heavy, blocky overall body shape consistent with a BCS of 8. The rib cage is completely smooth with no visible ribs, indicating a heavy fat covering that would make palpation difficult. From this three-quarter angle, there is a complete absence of a waist; the body maintains a thick, cylindrical width from the shoulders straight through to the hindquarters. The ventral profile shows a complete lack of an abdominal tuck, with the underline being flat and slightly rounded downward. Additionally, there are noticeable fat deposits around the neck and shoulders, and the lumbar area appears broad and fleshy, further supporting the assessment of significant excess weight.\", \"bcs\": 8}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/c96711be741ea6b37ff55b44eacfdfaf.jpg",
+    "gt": 9,
+    "pred": 8,
+    "output": "{\"reasoning\": \"The image displays a dog with a very rounded, blocky silhouette consistent with a BCS of 8. The rib cage is completely obscured by a heavy layer of fat, showing no skeletal definition. There is a complete absence of an abdominal tuck; instead, the ventral line is flat to slightly convex, indicating significant abdominal distension. The lumbar region is broad and heavily padded, with no discernible waistline behind the ribs. Additionally, there are noticeable fat deposits over the neck, shoulders, and lumbar area, contributing to the overall thick and rounded appearance.\", \"bcs\": 8}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/fbe08d76521a4fe6c1758ed38e40d087.jpg",
+    "gt": 9,
+    "pred": 9,
+    "output": "{\"reasoning\": \"The image displays a dog with a massive, barrel-like body shape consistent with a BCS of 9/9. The thorax is completely smooth with no visible ribs, indicating a heavy fat covering that would make palpation impossible. There is a complete absence of a waist; the body maintains a thick, cylindrical width from the shoulders straight through to the hindquarters. The abdomen shows severe distension with a complete lack of an abdominal tuck, presenting a convex, rounded profile from the chest to the hind legs. Heavy fat deposits are evident over the neck, shoulders, and lumbar region, giving the dog a blocky, rounded appearance with no discernible skeletal definition.\", \"bcs\": 9}"
+  }
+]
