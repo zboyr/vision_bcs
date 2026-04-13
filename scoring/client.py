@@ -235,27 +235,28 @@ class TransformersClient:
                     {"type": "text", "text": content}]})
                 continue
 
-            parts = []
+            # Separate images and texts; images go FIRST to match training order
+            # (Qwen/Gemma were trained with image-before-text in user content)
+            images, texts = [], []
             for part in content:
                 if part.get("type") == "text":
-                    parts.append({"type": "text", "text": part["text"]})
+                    texts.append({"type": "text", "text": part["text"]})
                 elif part.get("type") == "image_url":
                     url = part["image_url"]["url"]
                     if url.startswith("data:"):
-                        # base64 data URL → PIL → temp path or direct
                         b64_data = url.split(",", 1)[1]
                         img = Image.open(io.BytesIO(
                             base64.b64decode(b64_data))).convert("RGB")
                         if self._is_gemma:
-                            parts.append({"type": "image", "image": img})
+                            images.append({"type": "image", "image": img})
                         else:
-                            parts.append({"type": "image", "image": img})
+                            images.append({"type": "image", "image": img})
                     else:
                         if self._is_gemma:
-                            parts.append({"type": "image", "url": url})
+                            images.append({"type": "image", "url": url})
                         else:
-                            parts.append({"type": "image", "image": url})
-            native.append({"role": role, "content": parts})
+                            images.append({"type": "image", "image": url})
+            native.append({"role": role, "content": images + texts})
         return native
 
 
