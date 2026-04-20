@@ -75,3 +75,11 @@ def p7_debate_prompts(my_bcs: int, my_reasoning: str,
         my_bcs=my_bcs, my_reasoning=my_reasoning,
         other_bcs=other_bcs, other_reasoning=other_reasoning)
     return sys, usr
+
+
+# ── P8: Visual Few-Shot (cat + dog reference, reasoning-first JSON) ──
+
+def p8_vfewshot_prompts() -> tuple[str, str]:
+    p = _load()
+    return (p["p8_vfewshot_system"].strip(),
+            p["p8_vfewshot_user"].strip())

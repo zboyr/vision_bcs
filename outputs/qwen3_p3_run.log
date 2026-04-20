@@ -1,0 +1,11 @@
+HTTP Error 504 thrown while requesting HEAD https://huggingface.co/Qwen/Qwen3-VL-4B-Instruct/resolve/main/processor_config.json
+Retrying in 1s [Retry 1/5].
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+HTTP Error 504 thrown while requesting HEAD https://huggingface.co/Qwen/Qwen3-VL-4B-Instruct/resolve/main/processor_config.json
+Retrying in 1s [Retry 1/5].
+HTTP Error 503 thrown while requesting HEAD https://huggingface.co/Qwen/Qwen3-VL-4B-Instruct/resolve/main/processor_config.json
+Retrying in 2s [Retry 2/5].
+HTTP Error 503 thrown while requesting HEAD https://huggingface.co/Qwen/Qwen3-VL-4B-Instruct/resolve/main/processor_config.json
+Retrying in 4s [Retry 3/5].
+HTTP Error 503 thrown while requesting HEAD https://huggingface.co/Qwen/Qwen3-VL-4B-Instruct/resolve/main/processor_config.json
+Retrying in 8s [Retry 4/5].

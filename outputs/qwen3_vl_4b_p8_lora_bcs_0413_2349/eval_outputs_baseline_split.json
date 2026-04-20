@@ -1,0 +1,62 @@
+[
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/776323d704a3c68617afa457946d4f2c.jpg",
+    "gt": 5,
+    "pred": 5,
+    "output": "{\"reasoning\": \"The target animal is a cat, as confirmed by its feline features (pointed ears, facial structure, and body shape). Comparing it to the cat BCS reference chart: the cat is not emaciated (not 1), nor is it excessively overweight (not 9). Its body is well-muscled with visible but not excessive fat, and the waist is defined but not excessively narrow. The ribcage is partially visible but not prominent, indicating a healthy, moderate condition. This aligns with a BCS of 5 on the cat scale, which represents a healthy, well-conditioned cat.\", \"bcs\": 5}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/461a41b1e8450507b6916e440a5253e4.jpg",
+    "gt": 4,
+    "pred": 7,
+    "output": "{\"reasoning\": \"The target animal is a cat, as confirmed by its facial features, ear shape, and body structure consistent with the cat BCS reference chart. Comparing the target to the cat charts: the cat is visibly plump with a rounded abdomen, minimal visible ribs, and a soft, rounded body profile. This matches the visual cues for a BCS of 7, as it is well-fed but not obese, with a full, rounded torso and no visible ribs. The cat is not as emaciated as 1-3, nor as excessively fat as 8-9, and the body shape is consistent with a healthy, well-nourished cat.\", \"bcs\": 7}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/edae42792c172043806e7289813c59c6.jpg",
+    "gt": 1,
+    "pred": 5,
+    "output": "{\"reasoning\": \"The target animal is a cat, as confirmed by its distinct feline features: pointed ears, facial structure, and body proportions consistent with a cat. Comparing it to the cat BCS reference chart, the cat has a visibly defined waist, minimal rib coverage, and a relatively normal body condition. It is not underweight (as in BCS 1-2) nor overweight (as in BCS 7-9). The body is proportionate with a clear waistline and no excessive fat or muscle loss. This aligns with a BCS of 5, which indicates a healthy, well-conditioned cat.\", \"bcs\": 5}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/21d933dbe06d40c8f59ceebe9aab008e.jpg",
+    "gt": 3,
+    "pred": 5,
+    "output": "{\"reasoning\": \"The target animal is a dog, as it has a canine body structure with a short snout, erect ears, and a tail, consistent with the dog BCS reference chart. Comparing its body shape to the dog chart: it is not extremely thin (not 1), nor is it obese (not 9). The ribs are visible but not prominent, the waist is not clearly defined, and the abdomen is slightly rounded. This matches the visual profile of a dog at BCS 5, which is considered 'normal' or 'ideal' body condition for dogs, with a visible waist and ribs but no excessive fat.\", \"bcs\": 5}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/7264ad658daee7de33caeb7e056735de.jpg",
+    "gt": 7,
+    "pred": 7,
+    "output": "{\"reasoning\": \"The target animal is a cat, as confirmed by its facial features, ear shape, and body structure consistent with the cat BCS reference chart. Comparing the target to the cat chart: the cat is visibly plump with a rounded abdomen, minimal visible ribs, and a lack of defined waist. This matches the visual profile of a cat at BCS 7, which is characterized by a rounded, soft body with minimal visible musculature and a lack of definition in the waistline. The cat is not excessively obese (like BCS 8 or 9) nor underweight (like BCS 1-3).\", \"bcs\": 7}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/b78ba1dfe853281eb117079e38a8b34d.jpg",
+    "gt": 6,
+    "pred": 7,
+    "output": "{\"reasoning\": \"The target animal is a cat, as confirmed by its facial features, ear shape, and body structure consistent with the cat BCS reference chart. Comparing the target to the cat chart: the cat is visibly plump with a rounded abdomen, minimal visible ribs, and a soft, rounded body profile. This matches the visual cues for a BCS of 7, which is characterized by a rounded, well-muscled body with minimal visible ribs and a full, soft abdomen. The cat is not excessively fat (like 8 or 9) nor underweight (like 1-3).\", \"bcs\": 7}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/e35649889d27c85ed7206af90fef3bb3.jpg",
+    "gt": 7,
+    "pred": 7,
+    "output": "{\"reasoning\": \"The target animal is a cat, as confirmed by its feline facial features, body shape, and tabby markings. Comparing it to the cat BCS reference chart: the cat is visibly plump with a rounded abdomen, minimal visible ribs, and a lack of defined waist. This matches the visual profile of a cat at BCS 7, which is characterized by a rounded, soft body with minimal visible musculature and a lack of definition in the waist and ribcage. The dog chart is not applicable as the animal is a cat.\", \"bcs\": 7}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/ae42fe6b3843fcf4a2ec108167ab05e1.jpg",
+    "gt": 5,
+    "pred": 5,
+    "output": "{\"reasoning\": \"The target animal is a cat, as confirmed by its facial features, ear shape, and body structure consistent with the cat BCS reference chart. Comparing the target cat to the reference chart: it has a well-muscled, compact body with visible but not excessive fat. The waist is defined, ribs are not visible, and the abdomen is not overly distended. This matches a BCS of 5 on the cat scale, which indicates a healthy, well-conditioned cat with a balanced body composition.\", \"bcs\": 5}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/3e27596ce744ef78e81e420422a41251.jpg",
+    "gt": 4,
+    "pred": 1,
+    "output": "{\"reasoning\": \"The target animal is a kitten, as it is small, has a furry body, and is clearly feline in appearance. Comparing it to the cat BCS chart, it appears very thin with visible ribs and a narrow waist, consistent with a score of 1. The reference chart for cats shows that score 1 is characterized by extreme emaciation, visible ribs, and a very narrow body. The kitten's body shape matches this description.\", \"bcs\": 1}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/da23c27a6d7a1939627e8c868200d0c2.jpg",
+    "gt": 5,
+    "pred": 5,
+    "output": "{\"reasoning\": \"The target animal is a dog, as it has a canine body structure with a tail, muzzle, and typical dog-like posture. Comparing it to the dog BCS reference chart: the dog is visibly well-muscled with a defined waistline, minimal visible ribs, and a slightly rounded abdomen. It is not excessively fat (not 8 or 9), nor is it underweight (not 1 or 2). The body shape aligns with a score of 5 on the dog BCS chart, as it shows a healthy, balanced build with good muscle tone and no visible signs of obesity or emaciation.\", \"bcs\": 5}"
+  }
+]

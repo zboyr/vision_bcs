@@ -1,0 +1,62 @@
+[
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/776323d704a3c68617afa457946d4f2c.jpg",
+    "gt": 5,
+    "pred": 5,
+    "output": "{\"reasoning\": \"The cat is sitting, which obscures the waist and abdominal tuck. However, the visible torso appears well-proportioned with no obvious ribs or bony prominences. The overall body shape is balanced and lacks excess fat or muscle wasting.\", \"bcs\": 5}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/461a41b1e8450507b6916e440a5253e4.jpg",
+    "gt": 4,
+    "pred": 5,
+    "output": "{\"reasoning\": \"The cat is lying down, which obscures the waist and abdominal tuck. However, the visible torso appears well-proportioned with no obvious ribs or bony prominences. The overall body shape suggests an ideal, healthy weight.\", \"bcs\": 5}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/edae42792c172043806e7289813c59c6.jpg",
+    "gt": 1,
+    "pred": 2,
+    "output": "{\"reasoning\": \"The cat exhibits a very lean appearance with a pronounced, narrow waist and minimal fat covering over the ribs and spine. The overall body shape is elongated and thin, indicating a severe underweight condition.\", \"bcs\": 2}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/21d933dbe06d40c8f59ceebe9aab008e.jpg",
+    "gt": 3,
+    "pred": 2,
+    "output": "{\"reasoning\": \"The dog exhibits a very pronounced abdominal tuck and a distinct waistline behind the ribs. The ribs are clearly visible and protrude significantly, indicating a severe lack of body fat. The overall body shape is lean and angular, with no visible fat deposits on the neck, chest, or abdomen.\", \"bcs\": 2}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/7264ad658daee7de33caeb7e056735de.jpg",
+    "gt": 7,
+    "pred": 8,
+    "output": "{\"reasoning\": \"The cat is lying down, which obscures the waist and abdominal tuck. However, the overall body shape is rounded and bulky, with no visible ribs or spine. The thick fur and heavy fat covering suggest a significant excess of body fat.\", \"bcs\": 8}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/b78ba1dfe853281eb117079e38a8b34d.jpg",
+    "gt": 6,
+    "pred": 5,
+    "output": "{\"reasoning\": \"The cat is lying down, which obscures the waist and abdominal tuck. However, the visible torso appears well-proportioned with no obvious ribs or bony prominences. The overall body shape is balanced and symmetrical, indicating an ideal weight.\", \"bcs\": 5}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/e35649889d27c85ed7206af90fef3bb3.jpg",
+    "gt": 7,
+    "pred": 8,
+    "output": "{\"reasoning\": \"The cat is lying down, which obscures the waist and abdominal tuck. However, the visible torso appears rounded and heavy, with no discernible ribs or spine. The overall body shape suggests a significant excess of fat, consistent with a heavy body condition.\", \"bcs\": 8}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/ae42fe6b3843fcf4a2ec108167ab05e1.jpg",
+    "gt": 5,
+    "pred": 5,
+    "output": "{\"reasoning\": \"The cat is sitting, which obscures the waist and abdominal tuck. However, the overall body shape appears well-proportioned with no visible ribs or prominent spine. The short fur and dark coloration make it difficult to discern fat deposits, but the silhouette suggests an ideal, healthy weight.\", \"bcs\": 5}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/3e27596ce744ef78e81e420422a41251.jpg",
+    "gt": 4,
+    "pred": 5,
+    "output": "{\"reasoning\": \"The kitten is in a crouched position, which obscures the waist and abdominal tuck. However, the visible torso appears well-proportioned with no obvious ribs or bony prominences. The overall body shape suggests an ideal, healthy weight.\", \"bcs\": 5}"
+  },
+  {
+    "image_path": "/home/zby/vision_bcs/datasets/cat_10k/images/da23c27a6d7a1939627e8c868200d0c2.jpg",
+    "gt": 5,
+    "pred": 5,
+    "output": "{\"reasoning\": \"The dog has a well-proportioned body with a clear abdominal tuck and a distinct waist visible from the side. The ribs are not visible, indicating adequate fat covering, and the overall silhouette is balanced without obvious excess fat or muscle wasting.\", \"bcs\": 5}"
+  }
+]

@@ -1,0 +1,21 @@
+{
+  "train_size": 190,
+  "model_id": "Qwen/Qwen3-VL-4B-Instruct",
+  "final_split": {
+    "eval_count": 10,
+    "parsed": 10,
+    "coverage": 1.0,
+    "mae": 0.7
+  },
+  "epoch_history": [
+    {
+      "epoch": 1.0,
+      "split": {
+        "eval_count": 10,
+        "parsed": 10,
+        "coverage": 1.0,
+        "mae": 0.7
+      }
+    }
+  ]
+}

@@ -152,3 +152,29 @@ p7_debate_user: |
   After considering the peer's perspective and re-examining the photo,
   what is your final BCS? You may keep or change your score.
   Output JSON: {{"bcs": <1-9>, "reasoning": "your revised reasoning"}}
+
+# ── P8: Visual Few-Shot with dual species reference charts (reasoning-first) ──
+p8_vfewshot_system: |
+  You are a veterinary expert in Body Condition Scoring (BCS, 1-9 scale) for
+  both cats and dogs. The same 1-9 scale applies to both species, but the
+  visual cues differ — so you will receive TWO reference charts before the
+  target photo:
+    1. A CAT BCS reference chart (1-9).
+    2. A DOG BCS reference chart (1-9).
+  First identify the species of the target animal, then calibrate your score
+  against the matching chart (use the other chart as a cross-check). Compare
+  body shape, waist definition, rib coverage, and abdominal profile.
+  Never refuse. Even if the species is uncertain, pick the closer chart and
+  give your best estimate.
+  Think step-by-step BEFORE committing to a score: output ONLY valid JSON
+  with the reasoning key first, then the bcs key:
+  {{"reasoning": "...", "bcs": <1-9>}}
+
+p8_vfewshot_user: |
+  The first image is a CAT BCS reference chart (scores 1-9).
+  The second image is a DOG BCS reference chart (scores 1-9).
+  The third image is the TARGET animal to assess.
+  Identify whether the target is a cat or a dog, then compare its body shape
+  to the matching chart (the same 1-9 scale applies to both species).
+  Output JSON with reasoning first, then the score:
+  {{"reasoning": "species identification + comparison to reference", "bcs": <1-9>}}

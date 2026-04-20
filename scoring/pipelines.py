@@ -19,7 +19,7 @@ from .parsers import parse_integer, parse_json_bcs, extract_bcs
 from .prompts import (
     p1_prompts, p2_prompts, p3_prompts,
     p5_verifier_prompts, p6_vfewshot_prompts,
-    p7_debate_prompts,
+    p7_debate_prompts, p8_vfewshot_prompts,
 )
 
 # Set by run_experiment.py before scoring starts; used by P5/P7 to reuse data.
@@ -52,6 +52,7 @@ PIPELINE_LABELS: Dict[str, str] = {
     "P5": "P5_aav1",
     "P6": "P6_vfewshot",
     "P7": "P7_debate",
+    "P8": "P8_vfewshot_dual",
 }
 
 
@@ -349,3 +350,55 @@ def p7_debate(client, model, image_path, *, max_retries=3, delay=1.0,
                agent_a_bcs=a_bcs, agent_b_bcs=b_bcs,
                debate_a_bcs=final_a, debate_b_bcs=final_b,
                debate=True, raw=f"A:{c_a}\nB:{c_b}")
+
+
+# ── P8: Visual Few-Shot — cat + dog reference charts, reasoning-first ─
+
+@_register("P8")
+def p8_vfewshot_dual(client, model, image_path, *, max_retries=3, delay=1.0,
+                     reference_images=None, **kwargs):
+    """P8: Send both CAT and DOG BCS reference charts alongside the target.
+
+    Differs from P6 in two ways:
+    - Always sends two reference charts (cat then dog) so the model can
+      handle either species from a single prompt.
+    - Prompt instructs reasoning-first JSON output:
+      ``{"reasoning": "...", "bcs": <1-9>}`` — the model commits its
+      chain-of-thought before the score, which typically improves accuracy
+      on borderline cases.
+    """
+    sys_p, usr_p = p8_vfewshot_prompts()
+
+    if reference_images is None:
+        reference_images = ["prompts/cat_bcs.jpg", "prompts/dog_bcs.jpg"]
+
+    content_parts = [{"type": "text", "text": usr_p}]
+    for ref_path in reference_images:
+        ref_part, ref_err = build_image_part(ref_path)
+        if ref_err:
+            return _fail(f"reference_image '{ref_path}': {ref_err}", raw="")
+        content_parts.append(ref_part)
+
+    tgt_part, tgt_err = build_image_part(image_path)
+    if tgt_err:
+        return _fail(f"target_image: {tgt_err}", raw="")
+    content_parts.append(tgt_part)
+
+    messages = [
+        {"role": "system", "content": sys_p},
+        {"role": "user", "content": content_parts},
+    ]
+
+    content, err = call_llm_raw(client, model, messages,
+                                max_retries=max_retries, temperature=0.1)
+    if err:
+        return _fail(err, raw="")
+
+    result = parse_json_bcs(content)
+    if result:
+        return _ok(result["bcs"], reasoning=result.get("reasoning", ""),
+                   raw=content)
+    bcs = parse_integer(content)
+    if bcs is not None:
+        return _ok(bcs, raw=content)
+    return _fail(f"parse_fail: {content[:100]}", raw=content)

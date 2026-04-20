@@ -8,12 +8,9 @@ Adapted from finetune_qwen3_vl_4b_lora.py. Key differences vs Qwen:
 - No max_pixels (Gemma 4 uses fixed visual token budget internally)
 """
 import argparse
-import csv
 import json
 import os
 import random
-import re
-from dataclasses import dataclass
 from datetime import datetime
 from typing import Any
 
@@ -24,79 +21,17 @@ from PIL import Image
 from transformers import (
     AutoModelForMultimodalLM,
     AutoProcessor,
-    TrainerCallback,
 )
 from trl import SFTConfig, SFTTrainer
 
-
-DEFAULT_PROMPTS_YAML = "prompts/bcs_prompts.yaml"
-
-
-def _load_prompts_yaml():
-    import yaml
-    path = os.path.join(os.path.dirname(os.path.abspath(__file__)), DEFAULT_PROMPTS_YAML)
-    with open(path, "r", encoding="utf-8") as f:
-        return yaml.safe_load(f)
-
-
-_PROMPTS = _load_prompts_yaml()
-USER_MSG = _PROMPTS["user_prompt_reasoning"].strip()
-
-
-@dataclass
-class Sample:
-    image_path: str
-    bcs_primary: int
-    reasoning: str
-
-
-def try_load_file(expected_filepath, dataset_csv_filepath):
-    if os.path.exists(expected_filepath):
-        return expected_filepath
-    recoverePath = os.path.join(os.path.dirname(dataset_csv_filepath), os.path.basename(expected_filepath))
-    if os.path.exists(recoverePath):
-        return recoverePath
-    raise ValueError(f"{expected_filepath} or {recoverePath} don't exist, check your dataset.csv")
-
-
-def load_samples(base_dir: str, dataset_csv: str) -> list[Sample]:
-    path = os.path.join(base_dir, dataset_csv)
-    rows: list[Sample] = []
-    print(path)
-    with open(path, "r", encoding="utf-8", newline="") as f:
-        reader = csv.DictReader(f)
-        for r in reader:
-            try:
-                if r.get("error"):
-                    continue
-                img_path = os.path.join(base_dir, r["path"])
-                corrected_path = try_load_file(img_path, dataset_csv)
-                rows.append(
-                    Sample(
-                        image_path=corrected_path,
-                        bcs_primary=int(r.get("bcs") or r.get("bcs_primary")),
-                        reasoning=r.get("reasoning", ""),
-                    )
-                )
-            except (KeyError, ValueError) as e:
-                print(f"skip row id={r.get('id')} err={e}")
-                continue
-    return rows
-
-
-def target_json_from_row(r: dict[str, Any]) -> str:
-    obj = {
-        "reasoning": r.get("reasoning", "") or "",
-        "bcs": int(r["bcs_primary"]),
-    }
-    return json.dumps(obj, ensure_ascii=False)
-
-
-def load_system_prompt(path: str) -> str:
-    import yaml
-    with open(path, "r", encoding="utf-8") as f:
-        p = yaml.safe_load(f)
-    return p["system_prompt_reasoning"].strip()
+from finetune_common import (
+    SYSTEM_MSG,
+    USER_MSG,
+    EpochEvalCallback,
+    load_samples,
+    run_eval,
+    target_json_from_row,
+)
 
 
 def make_messages(image_path: str, answer_json: str | None, system_msg: str) -> list[dict[str, Any]]:
@@ -159,100 +94,15 @@ def collate_train(processor: Any, batch: list[dict[str, Any]], system_msg: str) 
     return dict(enc)
 
 
-def parse_bcs(output_text: str) -> int | None:
-    match = re.search(r"\{.*\}", output_text, flags=re.DOTALL)
-    if not match:
-        return None
-    try:
-        obj = json.loads(match.group(0))
-        value = int(obj.get("bcs"))
-        if 1 <= value <= 9:
-            return value
-        return None
-    except Exception:
-        return None
-
-
-def run_eval(
-    model: Any,
-    processor: Any,
-    eval_set: list[Sample],
-    device: torch.device,
-    max_new_tokens: int,
-    system_msg: str,
-    log_path: str | None = None,
-) -> dict[str, Any]:
-    abs_errors: list[float] = []
-    parsed = 0
-    records: list[dict[str, Any]] = []
-    model_dtype = next(model.parameters()).dtype
-    for sample in eval_set:
-        messages = make_messages(sample.image_path, None, system_msg)
-        inputs = processor.apply_chat_template(
-            [messages], tokenize=True, return_dict=True,
-            add_generation_prompt=True,
-            processor_kwargs={"return_tensors": "pt", "padding": True},
-        )
-        inputs = inputs.to(device, dtype=model_dtype)
-        with torch.no_grad():
-            generated = model.generate(**inputs, max_new_tokens=max_new_tokens, do_sample=False)
-        output = processor.batch_decode(generated[:, inputs["input_ids"].shape[1]:], skip_special_tokens=True)[0]
-        pred = parse_bcs(output)
-        records.append({
-            "image_path": sample.image_path,
-            "gt": sample.bcs_primary,
-            "pred": pred,
-            "output": output,
-        })
-        if pred is None:
-            continue
-        parsed += 1
-        abs_errors.append(abs(float(pred) - float(sample.bcs_primary)))
-    coverage = parsed / len(eval_set) if eval_set else 0.0
-    mae = sum(abs_errors) / len(abs_errors) if abs_errors else float("nan")
-    if log_path:
-        with open(log_path, "w", encoding="utf-8") as f:
-            json.dump(records, f, ensure_ascii=False, indent=2)
-        print(f"  raw outputs logged to {log_path}")
-    return {"eval_count": len(eval_set), "parsed": parsed, "coverage": coverage, "mae": mae}
-
-
-class EpochEvalCallback(TrainerCallback):
-    def __init__(self, split_eval_set, held_out_eval_set, processor, max_new_tokens, system_msg, adapter_dir):
-        self.split_eval_set = split_eval_set
-        self.held_out_eval_set = held_out_eval_set
-        self.processor = processor
-        self.max_new_tokens = max_new_tokens
-        self.system_msg = system_msg
-        self.adapter_dir = adapter_dir
-        self.history: list[dict[str, Any]] = []
-
-    def on_epoch_end(self, args, state, control, model=None, **kwargs):
-        if model is None:
-            return
-        epoch = round(state.epoch) if state.epoch is not None else 0
-        was_training = model.training
-
-        ckpt_dir = os.path.join(self.adapter_dir, f"epoch_{epoch}")
-        os.makedirs(ckpt_dir, exist_ok=True)
-        model.save_pretrained(ckpt_dir)
-        self.processor.save_pretrained(ckpt_dir)
-        print(f"[epoch {epoch}] saved checkpoint to {ckpt_dir}")
-
-        model.eval()
-        device = next(model.parameters()).device
-        m = {"epoch": round(state.epoch, 3) if state.epoch is not None else None}
-        for name, eset in [("split", self.split_eval_set), ("held_out", self.held_out_eval_set)]:
-            if not eset:
-                continue
-            log_path = os.path.join(self.adapter_dir, f"eval_outputs_epoch{epoch}_{name}.json")
-            r = run_eval(model, self.processor, eset, device, self.max_new_tokens, self.system_msg, log_path=log_path)
-            print(f"[epoch {epoch}] {name}: mae={r['mae']:.3f} coverage={r['coverage']:.2f} parsed={r['parsed']}/{r['eval_count']}")
-            m[name] = r
-        self.history.append(m)
-        if was_training:
-            model.train()
-        torch.cuda.empty_cache()
+def prepare_inputs(processor, sample, system_msg, device, model_dtype):
+    """Per-sample generation inputs for run_eval. Gemma uses apply_chat_template."""
+    messages = make_messages(sample.image_path, None, system_msg)
+    inputs = processor.apply_chat_template(
+        [messages], tokenize=True, return_dict=True,
+        add_generation_prompt=True,
+        processor_kwargs={"return_tensors": "pt", "padding": True},
+    )
+    return inputs.to(device, dtype=model_dtype)
 
 
 def main() -> int:
@@ -278,16 +128,14 @@ def main() -> int:
     parser.add_argument("--image-tokens", type=int, default=140,
                         help="Visual token budget per image (Gemma 4 supports 70/140/280/560/1120). Lower=less VRAM.")
     parser.add_argument("--resume-adapter", default="")
-    parser.add_argument("--system-prompt", default=DEFAULT_PROMPTS_YAML)
     args = parser.parse_args()
 
     random.seed(args.seed)
     torch.manual_seed(args.seed)
 
     base_dir = os.path.dirname(os.path.abspath(__file__))
-    prompt_path = os.path.join(base_dir, args.system_prompt) if not os.path.isabs(args.system_prompt) else args.system_prompt
-    system_msg = load_system_prompt(prompt_path)
-    print(f"Loaded system prompt from: {prompt_path} ({len(system_msg)} chars)")
+    system_msg = SYSTEM_MSG
+    print(f"Loaded P3 reasoning prompts from scoring.prompts ({len(system_msg)} chars)")
     args.output_dir = args.output_dir + "_" + datetime.now().strftime("%m%d_%H%M")
     os.makedirs(os.path.join(base_dir, args.output_dir), exist_ok=True)
 
@@ -357,7 +205,10 @@ def main() -> int:
             if not eset:
                 continue
             log_path = os.path.join(adapter_dir, f"eval_outputs_baseline_{name}.json")
-            r = run_eval(model, processor, eset, device, args.max_new_tokens, system_msg, log_path=log_path)
+            r = run_eval(
+                model, processor, eset, device, args.max_new_tokens, system_msg,
+                prepare_inputs_fn=prepare_inputs, log_path=log_path,
+            )
             baseline_metrics[name] = r
             print(f"baseline {name}: {r}")
 
@@ -391,7 +242,10 @@ def main() -> int:
         dataloader_persistent_workers=True,
         dataset_kwargs={"skip_prepare_dataset": True},
     )
-    epoch_eval_cb = EpochEvalCallback(split_eval_set, held_out_eval_set, processor, args.max_new_tokens, system_msg, adapter_dir)
+    epoch_eval_cb = EpochEvalCallback(
+        split_eval_set, held_out_eval_set, processor, args.max_new_tokens, system_msg,
+        adapter_dir, prepare_inputs_fn=prepare_inputs,
+    )
     trainer = SFTTrainer(
         model=model,
         args=sft_args,
@@ -411,7 +265,10 @@ def main() -> int:
     for name, eset in [("split", split_eval_set), ("held_out", held_out_eval_set)]:
         if eset:
             log_path = os.path.join(adapter_dir, f"eval_outputs_final_{name}.json")
-            metrics[f"final_{name}"] = run_eval(model, processor, eset, device, args.max_new_tokens, system_msg, log_path=log_path)
+            metrics[f"final_{name}"] = run_eval(
+                model, processor, eset, device, args.max_new_tokens, system_msg,
+                prepare_inputs_fn=prepare_inputs, log_path=log_path,
+            )
     if baseline_metrics:
         metrics["baseline"] = baseline_metrics
     metrics["epoch_history"] = epoch_eval_cb.history
